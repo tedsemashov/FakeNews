@@ -1,18 +1,18 @@
 import { connect } from "react-redux";
-import {getNamesData, setSelectedName} from "../../actions";
+import {getTwitterData, setSelectedName} from "../../actions";
 import {getFilteredNames} from '../../selectors';
 import Names from './Names';
 
 const mapStateToProps = (state) => {
    return {
-      filteredNames: getFilteredNames(state)
+      // filteredNames: getFilteredNames(state)
    }
 };
 
 const mapDispatchToProps = (dispatch) => {
    return {
-      getNamesData: () => dispatch(getNamesData()),
-      setSelectedName: (id) => dispatch(setSelectedName(id))
+      getTwitterData: () => dispatch(getTwitterData()),
+      // setSelectedName: (id) => dispatch(setSelectedName(id))
    }
 };
 

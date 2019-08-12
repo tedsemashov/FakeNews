@@ -8,33 +8,33 @@ import './names.css';
 class Names extends Component {
 
    componentDidMount() {
-      this.props.getNamesData();
+      this.props.getTwitterData();
    };
 
-   setSelectedName = (id) => {
-      this.props.setSelectedName(id);
-   };
+   // setSelectedName = (id) => {
+   //    this.props.setSelectedName(id);
+   // };
 
    render() {
-      const {filteredNames} = this.props;
+      // const {filteredNames} = this.props;
       return (
            <div>
-              <ListGroup>
-                 <ListGroup.Item>
-                    <FilterInput/>
-                 </ListGroup.Item>
-                 <ListGroup.Item>
-                    <SelectedNames/>
-                 </ListGroup.Item>
-                 <ListGroup.Item>
-                    {
-                       filteredNames.map(({id, name,}) =>
-                            <Button variant="outline-primary" size="sm" type="button" id="buttonName"
-                                    key={id} onClick = {() => this.setSelectedName(id)}> {name} </Button>
-                       )
-                    }
-                 </ListGroup.Item>
-              </ListGroup>
+              {/*<ListGroup>*/}
+              {/*   <ListGroup.Item>*/}
+              {/*      <FilterInput/>*/}
+              {/*   </ListGroup.Item>*/}
+              {/*   <ListGroup.Item>*/}
+              {/*      <SelectedNames/>*/}
+              {/*   </ListGroup.Item>*/}
+              {/*   <ListGroup.Item>*/}
+              {/*      {*/}
+              {/*         filteredNames.map(({id, name,}) =>*/}
+              {/*              <Button variant="outline-primary" size="sm" type="button" id="buttonName"*/}
+              {/*                      key={id} onClick = {() => this.setSelectedName(id)}> {name} </Button>*/}
+              {/*         )*/}
+              {/*      }*/}
+              {/*   </ListGroup.Item>*/}
+              {/*</ListGroup>*/}
            </div>
       );
    }

@@ -1,33 +1,50 @@
 import *as constants from './constants';
 
 const initialState = {
-   names: [],
-   inputValue: '',
-   selectedNamesIDs: []
+   hashtags: {},
+   keyword: '',
+   top_favorite_tweets: [],
+   tweets_count_ts: {}
 };
 
 const rootReducer = (state = initialState, action) => {
    switch (action.type) {
-      case constants.SET_NAMES_DATA:
+      case constants.SET_HASHTAGS_DATA:
          return {
             ...state,
-            names: action.names
+            hashtags: action.hashtags
          };
-      case constants.SET_INPUT_VALUE:
+      case constants.SET_KEYWORD_DATA:
          return {
             ...state,
-            inputValue: action.value
+            keyword: action.keyword
          };
-      case constants.SET_SELECTED_NAME:
+      case constants.TOP_FAVORITE_TWEETS_DATA:
          return {
             ...state,
-            selectedNamesIDs: state.selectedNamesIDs.concat(action.id)
+            top_favorite_tweets: action.top_favorite_tweets
          };
-      case constants.REMOVE_SELECTED_NAME:
+      case constants.TWEETS_COUNT_TS_DATA:
          return {
             ...state,
-            selectedNamesIDs: state.selectedNamesIDs.filter((id) => action.id !== id)
+            tweets_count_ts: action.tweets_count_ts
          };
+
+      // case constants.SET_INPUT_VALUE:
+      //    return {
+      //       ...state,
+      //       inputValue: action.value
+      //    };
+      // case constants.SET_SELECTED_NAME:
+      //    return {
+      //       ...state,
+      //       selectedNamesIDs: state.selectedNamesIDs.concat(action.id)
+      //    };
+      // case constants.REMOVE_SELECTED_NAME:
+      //    return {
+      //       ...state,
+      //       selectedNamesIDs: state.selectedNamesIDs.filter((id) => action.id !== id)
+      //    };
       default: return state;
    }
 };

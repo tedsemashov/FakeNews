@@ -5,13 +5,13 @@ import InputFilter from './InputFilter';
 
 const mapStateToProps = (state) => {
    return {
-      inputValue: getInputValue(state),
+      // inputValue: getInputValue(state),
    }
 };
 
 const mapDispatchToProps = (dispatch) => {
    return {
-      setInputValue: (filter) => dispatch(setInputValue(filter)),
+      // setInputValue: (filter) => dispatch(setInputValue(filter)),
    }
 };
 

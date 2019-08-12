@@ -1,4 +1,14 @@
-export const SET_NAMES_DATA = 'SET_NAMES_DATA';
-export const SET_INPUT_VALUE = 'SET_INPUT_VALUE';
-export const SET_SELECTED_NAME = 'SET_SELECTED_NAME';
-export const REMOVE_SELECTED_NAME = 'REMOVE_SELECTED_NAME';
+export const TARGET_URL = 'http://18.222.110.159:8080/get_results/';
+export const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
+export const BODY_POST = {
+   "results_names_list": ["hashtags" ,"tweets_count_ts","top_favorite_tweets"],
+   "dates": ["2019-08-01", "2019-08-07"],
+   "keyword": "Ukraine",
+   "hashtags": {"n_hashtags": 10},
+   "tweets_count_ts":{"ts_size_freq":"H"},
+   "top_favorite_tweets": {"n_top_fav_tw":10}
+};
+export const SET_HASHTAGS_DATA = 'SET_HASHTAGS_DATA';
+export const SET_KEYWORD_DATA = 'SET_KEYWORD_DATA';
+export const TOP_FAVORITE_TWEETS_DATA = 'TOP_FAVORITE_TWEETS_DATA';
+export const TWEETS_COUNT_TS_DATA = 'TWEETS_COUNT_TS_DATA';
