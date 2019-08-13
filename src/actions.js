@@ -46,6 +46,7 @@ export const setTweetsCount = (tweets_count_ts) => {
       tweets_count_ts
    };
 };
+
 // export const setInputValue = (value) => {
 //    return {
 //       type: constants.SET_INPUT_VALUE,

@@ -6,6 +6,7 @@ class Analytics extends Component {
    componentDidMount() {
       //Method for getting data from back-end
       // this.props.getTwitterData();
+      console.log(this.props)
    };
 
    // setSelectedName = (id) => {

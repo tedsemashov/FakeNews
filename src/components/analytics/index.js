@@ -5,6 +5,7 @@ import Analytics from './Analytics';
 
 const mapStateToProps = (state) => {
    return {
+      cred: state.user
       // filteredNames: getFilteredNames(state)
    }
 };

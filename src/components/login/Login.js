@@ -2,48 +2,39 @@ import React, {Component} from 'react';
 import *as constants from '../../constants';
 import { Link } from "react-router-dom";
 import Input from '../input/index';
-import Button from '../button/index'
+import Button from '../button/index';
 import './login.css';
 import Footer from "../footer/Footer";
 
 class Login extends Component {
-   constructor(props) {
-      super(props);
-      this.state = {
+   state = {
          emailValue: '',
          passValue: '',
          emailValid: true,
          passValid: true
-      }
-   }
+   };
 
    componentDidMount() {
-
+      console.log(`${this.props.user.email}  ${this.props.user.password}`);
    };
 
    formCheck = () => {
-      let emailValue = this.state.emailValue;
-      let passValue = this.state.passValue;
-      let emailValid = this.state.emailValid;
-      let passValid = this.state.passValid;
-
-      return emailValid === true && passValid === true && emailValue !== '' && passValue !== '' ?
-           <Link to='/analytics' /> :
-           <Link to='/' />;
+      let email = this.props.user.email;
+      let password = this.props.user.password;
+      email === this.state.emailValue && password === this.state.passValue ? alert('login') : alert('not login')
    };
 
    checkEmail = (event) => {
-      let value = event.target.value;
-      value !== '' ? this.setState({emailValue: value}) : this.setState({emailValue: ''});
       let reg = constants.REGEXP_EMAIL;
       let result = reg.test(String(event.target.value).toLowerCase());
-      result ? this.setState({emailValid: true}) : this.setState({emailValid: false});
+      result ? this.setState({emailValid: true, emailValue: event.target.value})
+             : this.setState({emailValid: false, emailValue: ''});
    };
 
    checkPass = (event) => {
       let value = event.target.value;
       value === '' ? this.setState({passValid: false, passValue: ''})
-                   : this.setState({passValid: true, passValue: '*********'})
+                   : this.setState({passValid: true, passValue: event.target.value})
    };
 
    render() {
