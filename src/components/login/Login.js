@@ -48,12 +48,15 @@ class Login extends Component {
                     <div className='inputWrapperEmail'>
                        <Input title={'E-mail'} placeholder={'Your e-mail address'} type={'email'}
                               onBlur={this.checkEmail}
-                              className={this.state.emailValid ? 'input' : 'inputError'}/>
+                              className={this.state.emailValid ? 'input' : 'inputError'}
+                              titleClassName={this.state.emailValid ? 'inputTitle' : 'inputTitleError'}
+                       />
                     </div>
                     <div className='inputWrapperPass'>
                        <Input title={'Password'} placeholder={'Your password'} type={'password'}
                               onBlur={this.checkPass}
-                              className={this.state.passValid ? 'input' : 'inputError'}/>
+                              className={this.state.passValid ? 'input' : 'inputError'}
+                              titleClassName={this.state.passValid ? 'inputTitle' : 'inputTitleError'}/>
                     </div>
                     <div className='forgotPassContainer'>
                        <p>Forgot Password?</p>
