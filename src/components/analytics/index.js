@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import {getTwitterData, setSelectedName} from "../../actions";
 import {getFilteredNames} from '../../selectors';
-import Names from './Names';
+import Analytics from './Analytics';
 
 const mapStateToProps = (state) => {
    return {
@@ -16,4 +16,4 @@ const mapDispatchToProps = (dispatch) => {
    }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Names)
+export default connect(mapStateToProps, mapDispatchToProps)(Analytics)

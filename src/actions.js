@@ -33,17 +33,17 @@ export const setKeywordData = (keyword) => {
    };
 };
 
-export const setTopFavoriteTweetsData = (tweets) => {
+export const setTopFavoriteTweetsData = (top_favorite_tweets) => {
    return {
       type: constants.TOP_FAVORITE_TWEETS_DATA,
-      top_favorite_tweets: tweets
+      top_favorite_tweets
    };
 };
 
-export const setTweetsCount = (count) => {
+export const setTweetsCount = (tweets_count_ts) => {
    return {
       type: constants.TWEETS_COUNT_TS_DATA,
-      tweets_count_ts: count
+      tweets_count_ts
    };
 };
 // export const setInputValue = (value) => {

@@ -1,14 +1,14 @@
 // import {setNamesData, setInputValue, setSelectedName, removeSelectedName} from "../actions";
 // import *as constants from '../constants';
 //
-// describe ('names actions', () => {
-//    it('should set names data', () => {
-//       const names = {names: {name: 'Ted'}};
+// describe ('analytics actions', () => {
+//    it('should set analytics data', () => {
+//       const analytics = {analytics: {name: 'Ted'}};
 //       const expectedAction = {
 //          type: constants.SET_NAMES_DATA,
-//          names
+//          analytics
 //       };
-//       expect(setNamesData(names)).toEqual(expectedAction);
+//       expect(setNamesData(analytics)).toEqual(expectedAction);
 //    });
 //
 //    it('should set input value', () => {

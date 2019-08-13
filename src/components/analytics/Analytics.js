@@ -1,14 +1,14 @@
 import React, {Component} from 'react';
 import { Button } from 'react-bootstrap';
 import FilterInput from '../input';
-import SelectedNames from '../selected-names';
 import ListGroup from 'react-bootstrap/ListGroup';
-import './names.css';
+import './analytics.css';
 
-class Names extends Component {
+class Analytics extends Component {
 
    componentDidMount() {
-      this.props.getTwitterData();
+      //Method for getting data from back-end
+      // this.props.getTwitterData();
    };
 
    // setSelectedName = (id) => {
@@ -40,4 +40,4 @@ class Names extends Component {
    }
 }
 
-export default Names;
+export default Analytics;

@@ -1,22 +1,22 @@
 // import { createSelector } from 'reselect';
 //
-// export const getNames = (state) => state.names;
+// export const getNames = (state) => state.analytics;
 // export const getInputValue = (state) => state.inputValue;
 // export const getSelectedNamesIDs = (state) => state.selectedNamesIDs;
 //
 // //RESELECTOR - library, Memoization - process (get only fragment of Redux state for our components)
 // export const getFilteredNames = createSelector([getNames, getInputValue, getSelectedNamesIDs],
-//      (names, inputValue, selectedNamesIDs) =>
+//      (analytics, inputValue, selectedNamesIDs) =>
 //      {
-//         const filteredNamesByInput = names.filter((obj) => obj.name.toLowerCase()
+//         const filteredNamesByInput = analytics.filter((obj) => obj.name.toLowerCase()
 //              .search(inputValue.toLowerCase()) !== -1);
 //         return filteredNamesByInput.filter(({id}) => !selectedNamesIDs.includes(id));
 //      });
 //
 // export const getSelectedNames = createSelector([getNames, getSelectedNamesIDs],
-//      (names, ids) =>
+//      (analytics, ids) =>
 //      {
-//         return names.filter(({id}) => ids.includes(id));
+//         return analytics.filter(({id}) => ids.includes(id));
 //      });
 //
 //
