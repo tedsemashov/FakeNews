@@ -15,7 +15,8 @@ class Input extends Component {
       return (
            <div className='inputContainer'>
               <p className='inputTitle'>{this.props.title}</p>
-              <input type="email" className='input' placeholder={this.props.placeholder}/>
+              <input type={this.props.type} className={this.props.className} placeholder={this.props.placeholder}
+                     onBlur={this.props.onBlur}/>
            </div>
       );
    }

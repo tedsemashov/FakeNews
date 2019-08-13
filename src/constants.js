@@ -12,3 +12,4 @@ export const SET_HASHTAGS_DATA = 'SET_HASHTAGS_DATA';
 export const SET_KEYWORD_DATA = 'SET_KEYWORD_DATA';
 export const TOP_FAVORITE_TWEETS_DATA = 'TOP_FAVORITE_TWEETS_DATA';
 export const TWEETS_COUNT_TS_DATA = 'TWEETS_COUNT_TS_DATA';
+export const REGEXP_EMAIL = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

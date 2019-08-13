@@ -7,7 +7,7 @@
    margin: 10% auto 0;
    width: 500px;
    height: 410px;
-   min-height: calc(84vh - 96px);
+   min-height: calc(100vh - 250px);
 }
 
 .Logo {
