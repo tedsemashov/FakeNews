@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Input from './Input';
+import Button from './Button';
 
 const mapStateToProps = (state) => {
    return {
@@ -11,4 +11,4 @@ const mapDispatchToProps = (dispatch) => {
    }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Input)
+export default connect(mapStateToProps, mapDispatchToProps)(Button)

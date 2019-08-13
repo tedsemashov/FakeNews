@@ -1,7 +1,4 @@
 import React, {Component} from 'react';
-import { Button } from 'react-bootstrap';
-import FilterInput from '../input';
-import ListGroup from 'react-bootstrap/ListGroup';
 import './analytics.css';
 
 class Analytics extends Component {
