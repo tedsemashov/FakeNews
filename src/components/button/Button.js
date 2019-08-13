@@ -9,7 +9,7 @@ class Button extends Component {
 
    render() {
       return (
-         <button>Click</button>
+         <button className='buttonDefault'>{this.props.value}</button>
       );
    }
 }

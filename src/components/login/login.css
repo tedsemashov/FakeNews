@@ -7,6 +7,7 @@
    margin: 10% auto 0;
    width: 500px;
    height: 410px;
+   min-height: calc(84vh - 96px);
 }
 
 .Logo {
@@ -55,6 +56,7 @@
 }
 
 .forgotPassContainer {
+   align-items: center;
    display: flex;
    margin: 28px 0 0 43px;
    font-size: 14px;
@@ -70,4 +72,16 @@
    text-decoration: underline;
    margin-left: 2px;
    color: #000000;
+}
+
+.buttonWrapper {
+   width: 128px;
+   height: 32px;
+   margin-left: 55px;
+}
+
+.footerWrapper {
+   width: 79%;
+   height: 96px;
+   margin: 0 auto;
 }

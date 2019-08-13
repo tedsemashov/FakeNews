@@ -5,6 +5,8 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: black;
+  /*font-family: "Proxima Nova";*/
 }
 
 code {
@@ -12,7 +14,6 @@ code {
     monospace;
 }
 
-body {
-  background-color: black;
-  /*font-family: "Proxima Nova";*/
+p {
+  margin-bottom: 0 !important;
 }
