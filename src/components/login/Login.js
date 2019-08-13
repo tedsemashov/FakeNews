@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import *as constants from '../../constants';
+import { Link } from "react-router-dom";
 import Input from '../input/index';
 import Button from '../button/index'
 import './login.css';
@@ -9,6 +10,8 @@ class Login extends Component {
    constructor(props) {
       super(props);
       this.state = {
+         emailValue: '',
+         passValue: '',
          emailValid: true,
          passValid: true
       }
@@ -19,10 +22,19 @@ class Login extends Component {
    };
 
    formCheck = () => {
-      this.state.emailValid && this.state.passValid ? alert('both true') : alert('not true both')
+      let emailValue = this.state.emailValue;
+      let passValue = this.state.passValue;
+      let emailValid = this.state.emailValid;
+      let passValid = this.state.passValid;
+
+      return emailValid === true && passValid === true && emailValue !== '' && passValue !== '' ?
+           <Link to='/analytics' /> :
+           <Link to='/' />;
    };
 
    checkEmail = (event) => {
+      let value = event.target.value;
+      value !== '' ? this.setState({emailValue: value}) : this.setState({emailValue: ''});
       let reg = constants.REGEXP_EMAIL;
       let result = reg.test(String(event.target.value).toLowerCase());
       result ? this.setState({emailValid: true}) : this.setState({emailValid: false});
@@ -30,7 +42,8 @@ class Login extends Component {
 
    checkPass = (event) => {
       let value = event.target.value;
-      value === '' ? this.setState({passValid: false}) : this.setState({passValid: true})
+      value === '' ? this.setState({passValid: false, passValue: ''})
+                   : this.setState({passValid: true, passValue: '*********'})
    };
 
    render() {
