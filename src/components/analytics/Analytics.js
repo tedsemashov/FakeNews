@@ -19,6 +19,7 @@ class Analytics extends Component {
       // const {filteredNames} = this.props;
       return (
            <div>
+              <h1>Analytics</h1>
               {/*<ListGroup>*/}
               {/*   <ListGroup.Item>*/}
               {/*      <FilterInput/>*/}
