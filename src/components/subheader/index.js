@@ -1,9 +1,8 @@
 import { connect } from "react-redux";
-import Login from './Login';
+import Subheader from './Subheader';
 
 const mapStateToProps = (state) => {
    return {
-      user: state.user
    }
 };
 
@@ -12,4 +11,4 @@ const mapDispatchToProps = (dispatch) => {
    }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Login)
+export default connect(mapStateToProps, mapDispatchToProps)(Subheader)

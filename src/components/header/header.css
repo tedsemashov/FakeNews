@@ -16,6 +16,7 @@
    margin: 0 auto;
    display: flex;
    align-items: center;
+   justify-content: space-between;
 }
 
 .headerLogo {
@@ -55,11 +56,10 @@
 
 .headerList li a {
    color: #000000;
-   text-decoration: none;
+   text-decoration: none !important;
 }
 
 .headerList :hover {
-   border-bottom: 4px solid #000000;
    cursor: pointer;
 }
 
@@ -73,4 +73,29 @@
 
 .headerList :nth-child(3) {
    width: 90px;
+}
+
+.userLogin {
+   display: flex;
+   align-items: center;
+   margin-right: 24px;
+}
+
+.userName {
+   height: 20px;
+   font-size: 16px;
+   font-weight: normal;
+   font-style: normal;
+   font-stretch: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   text-align: center;
+   color: #000000;
+}
+
+.userLogo {
+   margin-left: 10px;
+   width: 44px;
+   height: 44px;
+   border-radius: 100px;
 }

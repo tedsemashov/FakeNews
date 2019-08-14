@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import './analytics.css';
-import Header from '../header/Header'
+import Header from '../header/Header';
+import Subheader from  '../subheader/Subheader';
 
 class Analytics extends Component {
 
@@ -18,6 +19,7 @@ class Analytics extends Component {
       return (
            <div>
               <Header/>
+              <Subheader/>
               {/*<ListGroup>*/}
               {/*   <ListGroup.Item>*/}
               {/*      <FilterInput/>*/}

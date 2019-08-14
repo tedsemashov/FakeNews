@@ -4,6 +4,7 @@ import './header.css';
 class Header extends Component {
 
    componentDidMount() {
+      console.log(this.props.user)
    };
 
    render() {
@@ -13,7 +14,7 @@ class Header extends Component {
                  <img className='headerLogo' src={require('../../images/header/logo@3x.png')}/>
                  <nav className='navMenu'>
                     <ul className='headerList'>
-                       <li>
+                       <li className='headerLI'>
                           <a href="/analytics">ANALYTICS</a>
                        </li>
                        <li>
@@ -25,8 +26,8 @@ class Header extends Component {
                     </ul>
                  </nav>
                  <div className='userLogin'>
-                     <p className='userName'>{this.props.name}</p>
-                     <p className='userSurname'>{this.props.surname}</p>
+                     <p className='userName'>Name Surname</p>
+                     <img className='userLogo' src={require('../../images/header/Steven_Hallam-slide.jpg')}/>
                  </div>
               </div>
            </header>

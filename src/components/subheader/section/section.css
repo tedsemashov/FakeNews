@@ -1,0 +1,37 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.sectionSelected {
+   margin-left: 20px;
+   width: 128px;
+   height: 32px;
+   background-color: #1f1f1f;
+   font-size: 14px;
+   font-weight: 900;
+   font-style: normal;
+   font-stretch: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   text-align: center;
+   color: #ffffff;
+   outline: none !important;
+   border: 1px solid #1f1f1f;
+}
+
+.sectionDefault {
+   margin-left: 20px;
+   border: none;
+   height: 32px;
+   background-color: transparent;
+   font-size: 14px;
+   font-weight: 900;
+   font-style: normal;
+   font-stretch: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   text-align: center;
+   color: #1f1f1f;
+   outline: none !important;
+}
