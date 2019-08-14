@@ -9,10 +9,10 @@ class Footer extends Component {
 
    render() {
       return (
-           <div className='footerContainer'>
+           <footer className='footerContainer'>
               <img className='FooterLogo' src={require('../../images/footer/SoftServeLogo@3x.png')}/>
               <p>© Copyright 2018 SoftServe Inc.</p>
-           </div>
+           </footer>
       );
    }
 }

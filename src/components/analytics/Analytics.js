@@ -1,12 +1,12 @@
 import React, {Component} from 'react';
 import './analytics.css';
+import Header from '../header/Header'
 
 class Analytics extends Component {
 
    componentDidMount() {
       //Method for getting data from back-end
       // this.props.getTwitterData();
-      console.log(this.props)
    };
 
    // setSelectedName = (id) => {
@@ -17,7 +17,7 @@ class Analytics extends Component {
       // const {filteredNames} = this.props;
       return (
            <div>
-              <h1>Analytics</h1>
+              <Header/>
               {/*<ListGroup>*/}
               {/*   <ListGroup.Item>*/}
               {/*      <FilterInput/>*/}

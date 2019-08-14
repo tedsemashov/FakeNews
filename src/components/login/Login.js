@@ -11,7 +11,6 @@ class Login extends Component {
          passValue: '',
          emailValid: true,
          passValid: true,
-         redirect: false
    };
 
    componentDidMount() {

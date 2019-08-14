@@ -52,7 +52,9 @@ const rootReducer = (state = initialState, action) => {
 const initialState = {
    user: {
       email: 'test@test.com',
-      password: '1234'
+      password: '1234',
+      name: 'Name',
+      surname: 'Surname'
    },
    hashtags: {
       "ukraine": 4615,
