@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import './subheader.css';
 import Section from './section/Section';
+import Dropdown from '../dropdown/Dropdown';
+import Search from './search-input/Search';
 
 class Subheader extends Component {
 
@@ -23,7 +25,25 @@ class Subheader extends Component {
                   </div>
                </div>
                <div className='subheaderSeparator'/>
-               <div className='subheaderInputs'></div>
+               <div className='subheaderInputs'>
+                  <div className='inputWrapperTime'>
+                     <Dropdown className = {'dropdownInput'}
+                               placeholder = {'Select time period'}
+                               title = {'Time Period'}/>
+                  </div>
+                  <div className='inputSearchWrapper'>
+                     <Search title={'Key words'}
+                             className={'searchInputArea'}
+                     />
+                  </div>
+                  <div className='inputWrapperEmotions'>
+                     <Dropdown className = {'dropdownInput'}
+                               placeholder = {'Select emotion'}
+                               title = {'Emotion / Sentiment'}
+                               value = {'Any'}
+                     />
+                  </div>
+               </div>
            </div>
       );
    }

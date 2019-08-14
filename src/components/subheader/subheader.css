@@ -29,6 +29,9 @@
    max-width: 1440px;
    height: 114px;
    margin: 0 auto;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
 }
 
 .sectionsWrapper {
@@ -51,4 +54,21 @@
    height: 6px;
    background-color: #000000;
    border-radius: 50%;
+}
+
+.inputWrapperTime {
+   width: 18.5%;
+   height: 72px;
+   margin-left: 20px;
+}
+
+.inputSearchWrapper {
+   height: 72px;
+   width: 55%;
+}
+
+.inputWrapperEmotions {
+   width: 18.5%;
+   height: 72px;
+   margin-right: 20px;
 }
