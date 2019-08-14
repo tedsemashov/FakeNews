@@ -7,11 +7,16 @@ class Header extends Component {
       console.log(this.props.user)
    };
 
+   userLogout = () => {
+      localStorage.removeItem('user');
+      window.location.href = '/';
+   };
+
    render() {
       return (
            <header className='headerContainer'>
               <div className='headerWrapper'>
-                 <img className='headerLogo' src={require('../../images/header/logo@3x.png')}/>
+                    <img className='headerLogo' src={require('../../images/header/logo@3x.png')}/>
                  <nav className='navMenu'>
                     <ul className='headerList'>
                        <li className='headerLI'>
@@ -27,7 +32,9 @@ class Header extends Component {
                  </nav>
                  <div className='userLogin'>
                      <p className='userName'>Name Surname</p>
-                     <img className='userLogo' src={require('../../images/header/Steven_Hallam-slide.jpg')}/>
+                     <div onClick={this.userLogout} className='userLogoWrapper'>
+                        <img className='userLogo' src={require('../../images/header/Steven_Hallam-slide.jpg')}/>
+                     </div>
                  </div>
               </div>
            </header>

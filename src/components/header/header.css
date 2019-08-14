@@ -99,3 +99,7 @@
    height: 44px;
    border-radius: 100px;
 }
+
+.userLogoWrapper {
+   cursor: pointer;
+}
