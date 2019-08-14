@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import './index.css';
 import * as serviceWorker from './serviceWorker';
 import {createStore, applyMiddleware, compose} from "redux";
@@ -11,6 +11,8 @@ import Analytics from './components/analytics/';
 import Manage from "./components/manage/";
 import Reports from "./components/reports/";
 import Login from "./components/login/";
+import { PrivateRoute } from './components/private-rout/';
+
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composeEnhancers(
@@ -21,9 +23,9 @@ ReactDOM.render(
      <Provider store={store}>
         <Router>
            <Route exact path="/" component={Login} />
-           <Route path="/analytics" component={Analytics} />
-           <Route path="/manage" component={Manage} />
-           <Route path="/reports" component={Reports} />
+           <PrivateRoute path="/analytics" component={Analytics} />
+           <PrivateRoute path="/manage" component={Manage} />
+           <PrivateRoute path="/reports" component={Reports} />
         </Router>
      </Provider>,
      document.getElementById('root')

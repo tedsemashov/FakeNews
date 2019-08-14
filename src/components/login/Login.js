@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import *as constants from '../../constants';
-import { Link } from "react-router-dom";
 import Input from '../input/index';
 import Button from '../button/index';
 import './login.css';
@@ -11,7 +10,8 @@ class Login extends Component {
          emailValue: '',
          passValue: '',
          emailValid: true,
-         passValid: true
+         passValid: true,
+         redirect: false
    };
 
    componentDidMount() {
@@ -21,7 +21,13 @@ class Login extends Component {
    formCheck = () => {
       let email = this.props.user.email;
       let password = this.props.user.password;
-      email === this.state.emailValue && password === this.state.passValue ? alert('login') : alert('not login')
+      //Need to use React Router, don't hardcode JS methods
+      if(email === this.state.emailValue && password === this.state.passValue) {
+         localStorage.setItem('user', email);
+         window.location.href = '/analytics';
+      } else {
+         alert('Invalid user')
+      }
    };
 
    checkEmail = (event) => {
