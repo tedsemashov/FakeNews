@@ -15,7 +15,7 @@ class Dropdown extends Component {
                       className={this.props.className}
                       placeholder={this.props.placeholder}
                       value={this.props.value}
-                      readOnly='true'
+                      readOnly={true}
                />
                <div className='arrowWrapper' onClick={this.props.onClick}>
                   <div className="arrowDown"/>

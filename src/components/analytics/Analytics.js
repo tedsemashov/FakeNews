@@ -3,6 +3,11 @@ import './analytics.css';
 import Header from '../header/Header';
 import Subheader from  '../subheader/Subheader';
 import TimeDropdown from  '../subheader/time-dropdown/TimeDropdown';
+import Hashtags from '../hashtags/Hashtags';
+import TrollsActivity from '../trolls-activity/TrollsActivity';
+import TopNews from '../top-news/TopNews';
+import TopRetweetedNews from '../top-retweeted-news/RetweetedNews';
+import Footer from '../footer/Footer';
 
 class Analytics extends Component {
    state = {
@@ -28,12 +33,8 @@ class Analytics extends Component {
          )
       }
    };
-   // setSelectedName = (id) => {
-   //    this.props.setSelectedName(id);
-   // };
 
    render() {
-      // const {filteredNames} = this.props;
       return (
            <div>
               <Header/>
@@ -41,22 +42,21 @@ class Analytics extends Component {
                          timePeriodValue={this.state.timePeriodValue}
               />
               {this.showTimePeriodDropdown()}
-              {/*<ListGroup>*/}
-              {/*   <ListGroup.Item>*/}
-              {/*      <FilterInput/>*/}
-              {/*   </ListGroup.Item>*/}
-              {/*   <ListGroup.Item>*/}
-              {/*      <SelectedNames/>*/}
-              {/*   </ListGroup.Item>*/}
-              {/*   <ListGroup.Item>*/}
-              {/*      {*/}
-              {/*         filteredNames.map(({id, name,}) =>*/}
-              {/*              <Button variant="outline-primary" size="sm" type="button" id="buttonName"*/}
-              {/*                      key={id} onClick = {() => this.setSelectedName(id)}> {name} </Button>*/}
-              {/*         )*/}
-              {/*      }*/}
-              {/*   </ListGroup.Item>*/}
-              {/*</ListGroup>*/}
+              <Hashtags/>
+              <TrollsActivity/>
+              <section className='topWrapper'>
+              <div className='topAllNewsWrapper'>
+                  <div className='topNewsWrapper'>
+                     <TopNews/>
+                  </div>
+                  <div className='topNewsWrapper'>
+                     <TopRetweetedNews/>
+                  </div>
+              </div>
+              </section>
+              <div className='footerWrapper'>
+                 <Footer/>
+              </div>
            </div>
       );
    }

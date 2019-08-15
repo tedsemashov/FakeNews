@@ -8,3 +8,22 @@
    position: absolute;
    z-index: 2;
 }
+
+.topWrapper {
+   width: 100%;
+   height: 2755px;
+   background-color: #ffffff;
+}
+
+.topAllNewsWrapper {
+   height: 600px;
+   position: relative;
+   top: 59px;
+   margin: 0 152px 0 152px;
+   display: flex;
+}
+
+.topNewsWrapper {
+   width: 50%;
+   height: 100%;
+}

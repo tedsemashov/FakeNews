@@ -1,0 +1,28 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.sectionTitleWrapper {
+   width: 50%;
+   height: 100%;
+}
+
+.sectionTitleLink {
+   font-size: 24px;
+   font-weight: 900;
+   font-style: normal;
+   font-stretch: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   color: #000000 !important;
+   outline: none !important;
+   text-decoration: none !important;
+}
+
+.sectionTitleUnderline {
+   width: 120px;
+   height: 2px;
+   background-color: #000000;
+   margin-top: 23px;
+}

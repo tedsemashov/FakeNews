@@ -4,7 +4,7 @@
 }
 
 .timeContainer {
-   width: 768px;
+   max-width: 768px;
    height: 426px;
    box-shadow: 0 8px 13px 0 rgba(0, 0, 0, 0.16);
    background-color: #ffffff;
