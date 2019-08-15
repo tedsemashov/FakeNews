@@ -3,3 +3,8 @@
    padding: 0;
 }
 
+.timeDropdownWrapper {
+   margin: -11px 0 0 20px;
+   position: absolute;
+   z-index: 2;
+}

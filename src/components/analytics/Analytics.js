@@ -2,10 +2,12 @@ import React, {Component} from 'react';
 import './analytics.css';
 import Header from '../header/Header';
 import Subheader from  '../subheader/Subheader';
+import TimeDropdown from  '../subheader/time-dropdown/TimeDropdown';
 
 class Analytics extends Component {
    state = {
-      timePeriod: false
+      timePeriod: false,
+      timePeriodValue: '15 min'
    };
 
    componentDidMount() {
@@ -16,6 +18,16 @@ class Analytics extends Component {
    toogleTimePeriod = () => {
       this.setState(state => ({timePeriod: !state.timePeriod}))
    };
+
+   showTimePeriodDropdown = () => {
+      if(this.state.timePeriod) {
+         return (
+              <div className='timeDropdownWrapper'>
+                 <TimeDropdown/>
+              </div>
+         )
+      }
+   };
    // setSelectedName = (id) => {
    //    this.props.setSelectedName(id);
    // };
@@ -25,7 +37,10 @@ class Analytics extends Component {
       return (
            <div>
               <Header/>
-              <Subheader onClick={this.toogleTimePeriod}/>
+              <Subheader onClick={this.toogleTimePeriod}
+                         timePeriodValue={this.state.timePeriodValue}
+              />
+              {this.showTimePeriodDropdown()}
               {/*<ListGroup>*/}
               {/*   <ListGroup.Item>*/}
               {/*      <FilterInput/>*/}
