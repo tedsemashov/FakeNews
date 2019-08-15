@@ -16,7 +16,7 @@ class Dropdown extends Component {
                       placeholder={this.props.placeholder}
                       value={this.props.value}
                />
-               <div className='arrowWrapper'>
+               <div className='arrowWrapper' onClick={this.props.onClick}>
                   <div className="arrowDown"/>
                </div>
             </div>

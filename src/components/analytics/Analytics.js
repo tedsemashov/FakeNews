@@ -4,12 +4,18 @@ import Header from '../header/Header';
 import Subheader from  '../subheader/Subheader';
 
 class Analytics extends Component {
+   state = {
+      timePeriod: false
+   };
 
    componentDidMount() {
       //Method for getting data from back-end
       // this.props.getTwitterData();
    };
 
+   toogleTimePeriod = () => {
+      this.setState(state => ({timePeriod: !state.timePeriod}))
+   };
    // setSelectedName = (id) => {
    //    this.props.setSelectedName(id);
    // };
@@ -19,7 +25,7 @@ class Analytics extends Component {
       return (
            <div>
               <Header/>
-              <Subheader/>
+              <Subheader onClick={this.toogleTimePeriod}/>
               {/*<ListGroup>*/}
               {/*   <ListGroup.Item>*/}
               {/*      <FilterInput/>*/}

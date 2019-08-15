@@ -29,7 +29,9 @@ class Subheader extends Component {
                   <div className='inputWrapperTime'>
                      <Dropdown className = {'dropdownInput'}
                                placeholder = {'Select time period'}
-                               title = {'Time Period'}/>
+                               title = {'Time Period'}
+                               onClick = {this.props.onClick}
+                     />
                   </div>
                   <div className='inputSearchWrapper'>
                      <Search title={'Key words'}
