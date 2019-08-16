@@ -1,9 +1,9 @@
 import { connect } from "react-redux";
-import Hashtags from './Hashtags';
+import HashtagChart from './HashtagChart';
 
 const mapStateToProps = (state) => {
    return {
-      hashtags: state.hashtags
+      tweetsCount: state.tweets_count_ts
       // filteredNames: getFilteredNames(state)
    }
 };
@@ -13,4 +13,4 @@ const mapDispatchToProps = (dispatch) => {
    }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hashtags)
+export default connect(mapStateToProps, mapDispatchToProps)(HashtagChart)

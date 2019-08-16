@@ -2,7 +2,7 @@ export const TARGET_URL = 'http://18.222.110.159:8080/get_results/';
 export const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
 export const BODY_POST = {
    "results_names_list": ["hashtags" ,"tweets_count_ts","top_favorite_tweets"],
-   "dates": ["2019-08-01", "2019-08-07"],
+   "dates": ["2019-08-06", "2019-08-07"],
    "keyword": "Ukraine",
    "hashtags": {"n_hashtags": 10},
    "tweets_count_ts":{"ts_size_freq":"H"},

@@ -1,11 +1,12 @@
 import React, {Component} from 'react';
 import './hashtags.css';
-import SectionTitle from '../section-title/SectionTitle'
+import SectionTitle from '../section-title/SectionTitle';
+import Words from './words/index';
+import HashtagChart from '../hashtagChart/index';
 
 class Hashtags extends Component {
 
    componentDidMount() {
-
    };
 
    render() {
@@ -13,6 +14,16 @@ class Hashtags extends Component {
            <div className='hashtagsWrapper'>
               <div className='titleWrapper'>
                  <SectionTitle value='HASHTAGS'/>
+              </div>
+              <div className='wordsGraphicsWrapper'>
+                 <div className='wordsWrapper'>
+                    <div className='maskCopyright'/>
+                    <Words/>
+                 </div>
+                 <div className='wordsWrapper'>
+                    <div className='maskCopyright'/>
+                    <HashtagChart/>
+                 </div>
               </div>
            </div>
       );

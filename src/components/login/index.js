@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import Login from './Login';
+import {getTwitterData} from "../../actions";
 
 const mapStateToProps = (state) => {
    return {
@@ -9,6 +10,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
    return {
+      getTwitterData: () => dispatch(getTwitterData())
    }
 };
 

@@ -10,9 +10,34 @@
 }
 
 .titleWrapper {
-   margin-left: 152px;
-   width: 50%;
+   max-width: 1440px;
+   padding-left: 130px;
+   margin: 0 auto;
    height: 55px;
    position: relative;
    top: 66px;
+}
+
+.wordsGraphicsWrapper {
+   margin: 0 auto;
+   max-width: 1440px;
+   padding: 0 80px 0 80px;
+   height: 401px;
+   position: relative;
+   top: 80px;
+   display: flex;
+}
+
+.wordsWrapper {
+   width: 50%;
+   height: 100%;
+}
+
+.maskCopyright {
+   width: 66px;
+   height: 5%;
+   position: absolute;
+   background-color: #ffffff;
+   z-index: 2;
+   bottom: 0;
 }

@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import Hashtags from './Hashtags';
+import Words from './Words';
 
 const mapStateToProps = (state) => {
    return {
@@ -13,4 +13,4 @@ const mapDispatchToProps = (dispatch) => {
    }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Hashtags)
+export default connect(mapStateToProps, mapDispatchToProps)(Words)

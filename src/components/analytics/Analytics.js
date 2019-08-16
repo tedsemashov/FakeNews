@@ -3,7 +3,7 @@ import './analytics.css';
 import Header from '../header/Header';
 import Subheader from  '../subheader/Subheader';
 import TimeDropdown from  '../subheader/time-dropdown/TimeDropdown';
-import Hashtags from '../hashtags/Hashtags';
+import Hashtags from '../hashtags/index';
 import TrollsActivity from '../trolls-activity/TrollsActivity';
 import TopNews from '../top-news/TopNews';
 import TopRetweetedNews from '../top-retweeted-news/RetweetedNews';
@@ -19,8 +19,7 @@ class Analytics extends Component {
    };
 
    componentDidMount() {
-      //Method for getting data from back-end
-      // this.props.getTwitterData();
+      this.props.getTwitterData();
    };
 
    toogleTimePeriod = () => {
