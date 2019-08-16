@@ -29,7 +29,13 @@
 }
 
 .wordsWrapper {
-   width: 50%;
+   width: 48.5%;
+   height: 100%;
+}
+
+
+.wordsChartWrapper {
+   width: 48.5%;
    height: 100%;
 }
 
@@ -40,4 +46,21 @@
    background-color: #ffffff;
    z-index: 2;
    bottom: 0;
+}
+
+.lineHorizontalSeparator {
+   position: absolute;
+   top: 50%;
+   left: 43%;
+   width: 5.7%;
+   border-top: 2px solid black;
+   z-index: 2;
+}
+
+.lineSeparator {
+   width: 1%;
+   height: 100%;
+   border-top: 2px solid black;
+   border-bottom: 2px solid black;
+   border-left: 2px solid black;
 }

@@ -1,17 +1,16 @@
 import React, {Component} from 'react';
 import * as am4core from "@amcharts/amcharts4/core";
-import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import * as am4charts from "@amcharts/amcharts4/charts";
-import * as am4plugins_wordCloud from "@amcharts/amcharts4/plugins/wordCloud";
 import './hashtagChart.css';
 
 class HashtagChart extends Component {
 
    componentDidMount() {
+      this.createHashtagChart();
    };
 
    componentDidUpdate() {
-      this.createHashtagChart();
+      // this.createHashtagChart();
    }
 
    createHashtagChart = () => {
@@ -22,13 +21,15 @@ class HashtagChart extends Component {
       let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
       let series = chart.series.push(new am4charts.ColumnSeries());
       series.fill = am4core.color("#d0021b");
-      debugger;
       series.stroke = am4core.color("#d0021b");
       series.dataFields.valueY = "value";
       series.dataFields.categoryX = "category";
       valueAxis.renderer.labels.template.fill = am4core.color("#808080");
       valueAxis.renderer.labels.template.fontSize = 11;
+      valueAxis.renderer.grid.template.strokeDasharray = "10";
       categoryAxis.renderer.grid.template.disabled = true;
+      debugger;
+      categoryAxis.renderer.labels.template.fill = am4core.color("#808080");
    };
 
    getHashtagChart = () => {

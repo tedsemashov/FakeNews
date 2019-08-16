@@ -19,7 +19,7 @@ class Analytics extends Component {
    };
 
    componentDidMount() {
-      this.props.getTwitterData();
+      // this.props.getTwitterData();
    };
 
    toogleTimePeriod = () => {

@@ -7,10 +7,11 @@ import './words.css';
 class Words extends Component {
 
    componentDidMount() {
+      this.createWords();
    };
 
    componentDidUpdate() {
-      this.createWords();
+      // this.createWords();
    }
 
    createWords = () => {
@@ -27,6 +28,12 @@ class Words extends Component {
       series.data = this.getHashtags();
       series.dataFields.word = "tag";
       series.dataFields.value = "weight";
+      series.labels.template.events.on("hit", function(ev) {
+         debugger;
+         ev.target.background.fill = am4core.color("#000000");
+         ev.target.fill = am4core.color("#ffffff");
+           }
+      );
    };
 
    getHashtags = () => {

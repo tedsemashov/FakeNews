@@ -19,8 +19,10 @@ class Hashtags extends Component {
                  <div className='wordsWrapper'>
                     <div className='maskCopyright'/>
                     <Words/>
+                    <div className='lineHorizontalSeparator'/>
                  </div>
-                 <div className='wordsWrapper'>
+                 <div className='lineSeparator'/>
+                 <div className='wordsChartWrapper'>
                     <div className='maskCopyright'/>
                     <HashtagChart/>
                  </div>
