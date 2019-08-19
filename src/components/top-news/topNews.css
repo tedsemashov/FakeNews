@@ -2,3 +2,13 @@
    margin: 0;
    padding: 0;
 }
+
+.topNewsBlockWrapper {
+   width: 100%;
+   height: 500px;
+}
+
+.buttonSeeAllWrapper {
+   width: 83px;
+   height: 24px;
+}

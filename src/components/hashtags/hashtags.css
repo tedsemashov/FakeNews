@@ -51,8 +51,8 @@
 .lineHorizontalSeparator {
    position: absolute;
    top: 50%;
-   left: 43%;
-   width: 5.7%;
+   left: 45.7%;
+   width: 3%;
    border-top: 2px solid black;
    z-index: 2;
 }

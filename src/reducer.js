@@ -331,7 +331,48 @@ const initialState = {
       "2019-08-06 21:00:00": 447,
       "2019-08-06 22:00:00": 356,
       "2019-08-06 23:00:00": 241
-   }
+   },
+   fakeUsers: [{
+      "title": "Trolls",
+      "amount": 19
+   }, {
+      "title": "Real users",
+      "amount": 81
+   }],
+   fakeNews: [{
+      "title": "Fake",
+      "amount": 34
+   }, {
+      "title": "Official",
+      "amount": 66
+   }],
+   topNews: [
+      {
+         "text": "RT @prettybutmessy: Church of the Transfiguration in Lviv, Ukraine, a Roman Catholic monastery in the 1700s, which was then abolished, turn…",
+         "count": 20,
+         "date": "2019-08-07 14:37:08"
+      },
+      {
+         "text": "RT @Biz_Ukraine_Mag: LVIV LEADS AS UKRAINE'S AIR TRAVEL BOOM CONTINUES\n\nPassenger numbers at Lviv International Airport soared 41.2% in Jan…",
+         "count": 15,
+         "date": "2019-08-05 22:03:58"
+      },
+      {
+         "text": "RT @EuromaidanPress: The Armenian courtyard in Lviv, Ukraine used to be a cemetery; it was designed in the 15th century. However, some of t…",
+         "count": 7,
+         "date": "2019-08-05 05:34:48"
+      },
+      {
+         "text": "RT @Strange_Sounds: An enormous cumulonimbus cloud near the city of Lviv in Ukraine, July 28, 2019. WOW! #cloud #sky #Ukraine\n\nvia @Strange…",
+         "count": 9,
+         "date": "2019-07-31 21:50:54"
+      },
+      {
+         "text": "RT @historylvrsclub: Parade of the Polish Army in Lviv Ukraine (between 1920 and 1930). See more pics: https://t.co/vvzbcvf4Gv https://t.co…",
+         "count": 5,
+         "date": "2019-07-30 23:50:19"
+      }
+   ]
 };
 
 export default rootReducer;

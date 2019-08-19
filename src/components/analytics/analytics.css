@@ -6,7 +6,7 @@
 .timeDropdownWrapper {
    margin: -11px 0 0 20px;
    position: absolute;
-   z-index: 2;
+   z-index: 5;
 }
 
 .topWrapper {
@@ -19,12 +19,14 @@
    height: 600px;
    position: relative;
    top: 59px;
-   margin: 0 152px 0 152px;
+   max-width: 1440px;
+   margin: 0 auto;
    display: flex;
 }
 
 .topNewsWrapper {
-   width: 50%;
+   padding-left: 130px;
+   width: 46%;
    height: 100%;
 }
 

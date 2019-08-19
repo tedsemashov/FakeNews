@@ -6,6 +6,10 @@ import './words.css';
 
 class Words extends Component {
 
+   state = {
+     checkWords: false
+   };
+
    componentDidMount() {
       this.createWords();
    };
@@ -21,19 +25,17 @@ class Words extends Component {
       series.maxCount = 20;
       series.minWordLength = 2;
       series.minFontSize = 30;
-      series.maxFontSize = 150;
+      series.maxFontSize = 120;
       series.randomness = 0.5;
       series.angles = [0];
-      series.labels.template.fill = am4core.color("#1f1f1f");
+      series.labels.template.fill = am4core.color("#000000");
       series.data = this.getHashtags();
       series.dataFields.word = "tag";
       series.dataFields.value = "weight";
-      series.labels.template.events.on("hit", function(ev) {
-         debugger;
+      series.labels.template.events.on("hit", (ev) => {
          ev.target.background.fill = am4core.color("#000000");
          ev.target.fill = am4core.color("#ffffff");
-           }
-      );
+      });
    };
 
    getHashtags = () => {

@@ -9,3 +9,34 @@
    opacity: 0.95;
    background-image: linear-gradient(to bottom, #f0f0f0, #f0f0f0);
 }
+
+.trollsChartsWrapper {
+   margin: 0 auto;
+   max-width: 1440px;
+   padding: 0 80px 0 80px;
+   height: 330px;
+   position: relative;
+   top: 80px;
+   display: flex;
+}
+
+.trollsPieChartsWrapper {
+   display: flex;
+   width: 50%;
+   height: 100%;
+}
+
+.trollsLinearChart {
+   width: 50%;
+   height: 100%;
+}
+
+.trollsPieWrapperUsers {
+   width: 50%;
+   height: 100%;
+}
+
+.trollsPieWrapperNews {
+   width: 50%;
+   height: 100%;
+}
