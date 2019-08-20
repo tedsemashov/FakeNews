@@ -19,7 +19,7 @@ class TopNews extends Component {
               </div>
               <div className='topNewsBlockWrapper'>
                  {
-                    topNews.map(({text, count, date}) =>
+                    topNews.map(({text, count}) =>
                          <NewsBlock key={count} text={text}/>
                     )
                  }

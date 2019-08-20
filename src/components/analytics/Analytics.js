@@ -7,7 +7,7 @@ import Hashtags from '../hashtags/index';
 import TrollsActivity from '../trolls-activity/index';
 import TopNews from '../top-news/index';
 import TopRetweetedNews from '../top-retweeted-news/index';
-import TopInfluencers from '../top-influencers/TopInfluencers';
+import TopInfluencers from '../top-influencers/index';
 import TopTrolls from '../top-trolls/TopTrolls';
 import TopMentionedUser from '../top-mentioned-user/TopMentionedUser';
 import Footer from '../footer/Footer';
@@ -55,7 +55,7 @@ class Analytics extends Component {
                      <TopRetweetedNews/>
                   </div>
               </div>
-              <div className='topAllNewsWrapper'>
+              <div className='topInfluencersWrapper'>
                  <TopInfluencers/>
               </div>
               <div className='topAllNewsWrapper'>

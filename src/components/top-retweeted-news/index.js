@@ -3,6 +3,7 @@ import RetweetedNews from './RetweetedNews';
 
 const mapStateToProps = (state) => {
    return {
+      topRetweetedNews: state.topRetweetedNews
    }
 };
 

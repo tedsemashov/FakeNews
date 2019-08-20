@@ -346,33 +346,218 @@ const initialState = {
       "title": "Official",
       "amount": 66
    }],
+   topRetweetedNews: [
+      {
+         "text": "RT @sahouraxo: The man who paved the way for racist, slave-selling jihadists to take over #Libya, gave billions of dollars in weapons to mi…",
+         "count": 1315,
+         "date": "2019-08-06 15:54:45"
+      },
+      {
+         "text": "RT @alanferrier: Countries whose primary news source has reported that the latest poll puts support for Scottish independence at 52%:\n* Por…",
+         "count": 1035,
+         "date": "2019-08-05 21:03:27"
+      },
+      {
+         "text": "RT @RudyGiuliani: The Politico coverup article doesn’t mention the bribery of \nUkraine  Pres. by then VP Biden to get the case against his…",
+         "count": 6529,
+         "date": "2019-08-03 22:23:18"
+      },
+      {
+         "text": "RT @RudyGiuliani: Do you think that media coverup of Biden scandals in Ukraine and China shows they are in the tank for Dem party?\nIs it a)…",
+         "count": 5612,
+         "date": "2019-08-02 17:06:14"
+      },
+      {
+         "text": "RT @RudyGiuliani: Once again Biden slurred his words and didn’t seem to answer his opponents effectively. I seem to be on his mind because…",
+         "count": 9339,
+         "date": "2019-08-01 03:36:48"
+      },
+   ],
+
    topNews: [
       {
-         "text": "RT @prettybutmessy: Church of the Transfiguration in Lviv, Ukraine, a Roman Catholic monastery in the 1700s, which was then abolished, turn…",
-         "count": 20,
-         "date": "2019-08-07 14:37:08"
+         "text_rmlink": "Space-age Soviet saucer's role in Chernobyl disaster\n--link--",
+         "count": 40,
+         "text": "Space-age Soviet saucer's role in Chernobyl disaster\nhttps://t.co/Tg50lDB18J",
+         "date": "2019-08-05 16:25:54"
       },
       {
-         "text": "RT @Biz_Ukraine_Mag: LVIV LEADS AS UKRAINE'S AIR TRAVEL BOOM CONTINUES\n\nPassenger numbers at Lviv International Airport soared 41.2% in Jan…",
-         "count": 15,
-         "date": "2019-08-05 22:03:58"
+         "text_rmlink": "Sell Cars Globally --link--\n\n#Cars #popular #news\n#uae\n#usa\n#uk\n#canada\n#italy\n#austrailia\n#India\n#Pakistan\n#austria\n#Belgium\n#Germany\n#Spain\n#France\n#Luxembourg\n#Netherlands\n#Malaysia\n#Sweden\n#Russia\n#Finland\n#Norway\n#bulgaria\n#Poland\n#Ukraine --link--",
+         "count": 80,
+         "text": "Sell Cars Globally https://t.co/os73FkPZic\n\n#Cars #popular #news\n#uae\n#usa\n#uk\n#canada\n#italy\n#austrailia\n#India\n#Pakistan\n#austria\n#Belgium\n#Germany\n#Spain\n#France\n#Luxembourg\n#Netherlands\n#Malaysia\n#Sweden\n#Russia\n#Finland\n#Norway\n#bulgaria\n#Poland\n#Ukraine https://t.co/wBYQgp1VmL",
+         "date": "2019-07-29 00:29:00"
       },
       {
-         "text": "RT @EuromaidanPress: The Armenian courtyard in Lviv, Ukraine used to be a cemetery; it was designed in the 15th century. However, some of t…",
-         "count": 7,
-         "date": "2019-08-05 05:34:48"
+         "text_rmlink": "Two Unofficial US Operatives Reporting To Trump’s Lawyer Privately Lobbied A Foreign Government In A Bid To Help The President Win In 2020 --link-- via @BuzzFeedNews",
+         "count": 101,
+         "text": "Two Unofficial US Operatives Reporting To Trump’s Lawyer Privately Lobbied A Foreign Government In A Bid To Help The President Win In 2020 https://t.co/mRTEfUOTLa via @BuzzFeedNews",
+         "date": "2019-07-22 12:22:21"
       },
       {
-         "text": "RT @Strange_Sounds: An enormous cumulonimbus cloud near the city of Lviv in Ukraine, July 28, 2019. WOW! #cloud #sky #Ukraine\n\nvia @Strange…",
-         "count": 9,
-         "date": "2019-07-31 21:50:54"
+         "text_rmlink": "Two Unofficial US Operatives Reporting To Trump’s Lawyer Privately Lobbied A Foreign Government In A Bid To Help The President Win In 2020 --link--",
+         "count": 108,
+         "text": "Two Unofficial US Operatives Reporting To Trump’s Lawyer Privately Lobbied A Foreign Government In A Bid To Help The President Win In 2020 https://t.co/P0NXQq1Q5i",
+         "date": "2019-07-22 11:08:25"
       },
       {
-         "text": "RT @historylvrsclub: Parade of the Polish Army in Lviv Ukraine (between 1920 and 1930). See more pics: https://t.co/vvzbcvf4Gv https://t.co…",
-         "count": 5,
-         "date": "2019-07-30 23:50:19"
+         "text_rmlink": "As vice president, Biden said Ukraine should increase gas production. Then his son got a job with a Ukrainian gas company. --link--",
+         "count": 56,
+         "text": "As vice president, Biden said Ukraine should increase gas production. Then his son got a job with a Ukrainian gas company. https://t.co/srlfEUP8et",
+         "date": "2019-07-22 10:25:01"
+      },
+   ],
+
+   top_influencers: {
+      "historylvrsclub": {
+         "user_followers_count": 508172.0,
+         "user_statuses_count": 225425.0,
+         "user_profile_image_url": "http://pbs.twimg.com/profile_images/1111759052328091648/XUOR5x4R_normal.png",
+         "user_name": "History Lovers Club",
+         "user_place_country": NaN,
+         "user_place_full_name": NaN,
+         "top_tweets": [
+            {
+               "date": "2019-07-30 23:50:01",
+               "favorite_count": 19.0,
+               "user_followers_count": 508172.0,
+               "id": 1156351272305516544,
+               "user_profile_image_url": "http://pbs.twimg.com/profile_images/1111759052328091648/XUOR5x4R_normal.png",
+               "screen_name": "historylvrsclub",
+               "text": "Parade of the Polish Army in Lviv Ukraine (between 1920 and 1930). See more pics: https://t.co/vvzbcvf4Gv https://t.co/Z5GKnFLSGs",
+               "user_name": "History Lovers Club",
+               "user_verified": false
+            }
+         ]
+      },
+      "KyivPost": {
+         "user_followers_count": 181266.0,
+         "user_statuses_count": 43109.0,
+         "user_profile_image_url": "http://pbs.twimg.com/profile_images/833622521777946625/MqPTETnC_normal.jpg",
+         "user_name": "Kyiv Post",
+         "user_place_country": NaN,
+         "user_place_full_name": NaN,
+         "top_tweets": [
+            {
+               "date": "2019-07-23 15:10:49",
+               "favorite_count": 1.0,
+               "user_followers_count": 181195.0,
+               "id": 1153683895562448896,
+               "user_profile_image_url": "http://pbs.twimg.com/profile_images/833622521777946625/MqPTETnC_normal.jpg",
+               "screen_name": "KyivPost",
+               "text": "Election results update: \n\nServant of the People won in all of #Ukraine’s districts, except for the #Donbas, the city of #Lviv and the west of #Odesa Oblast, according to party-list representation.\n\nMore updates here 👉 https://t.co/bSeXYzUyvR https://t.co/nWKntrnrrB",
+               "user_name": "Kyiv Post",
+               "user_verified": true
+            },
+            {
+               "date": "2019-08-02 09:39:19",
+               "favorite_count": 1.0,
+               "user_followers_count": 181266.0,
+               "id": 1157224348614373381,
+               "user_profile_image_url": "http://pbs.twimg.com/profile_images/833622521777946625/MqPTETnC_normal.jpg",
+               "screen_name": "KyivPost",
+               "text": "We went back to school with #Ukraine's new lawmakers from Zelensky's Servant of the People party 🎓\n\nThe 254 first-time parliamentarians gathered in Truskavets, #Lviv, for a week-long  crash course in economics and public administration.\n\nRead more👉 https://t.co/PnoutoCQ4A https://t.co/5drTCegsAE",
+               "user_name": "Kyiv Post",
+               "user_verified": true
+            },
+            {
+               "date": "2019-07-20 09:39:02",
+               "favorite_count": 0.0,
+               "user_followers_count": 181118.0,
+               "id": 1152513232864710657,
+               "user_profile_image_url": "http://pbs.twimg.com/profile_images/833622521777946625/MqPTETnC_normal.jpg",
+               "screen_name": "KyivPost",
+               "text": "Election Watch: #Lviv \n\n#Ukraine's parliamentary elections are happening tomorrow and a nationalistic standoff is brewing in Lviv. 3 hardcore patriotic candidates are competing against one another in a single-mandate district. https://t.co/qTwicjBepj https://t.co/WVf0cgY831",
+               "user_name": "Kyiv Post",
+               "user_verified": true
+            }
+         ]
+      },
+      "jessesingal": {
+         "user_followers_count": 47252.0,
+         "user_statuses_count": 103518.0,
+         "user_profile_image_url": "http://pbs.twimg.com/profile_images/1055673387174019074/DR9CawFY_normal.jpg",
+         "user_name": "Jesse Singal",
+         "user_place_country": NaN,
+         "user_place_full_name": NaN,
+         "top_tweets": [
+            {
+               "date": "2019-08-09 17:40:23",
+               "favorite_count": 0.0,
+               "user_followers_count": 47252.0,
+               "id": 1159882127636389891,
+               "user_profile_image_url": "http://pbs.twimg.com/profile_images/1055673387174019074/DR9CawFY_normal.jpg",
+               "screen_name": "jessesingal",
+               "text": "@stoicbrooks I'd like to do a Poland/Ukraine trip at some point. Only been to Warsaw (and in the middle of winter) and would like to also see at least Lviv and Kyiv",
+               "user_name": "Jesse Singal",
+               "user_verified": true
+            }
+         ]
+      },
+      "jonworth": {
+         "user_followers_count": 46314.0,
+         "user_statuses_count": 134632.0,
+         "user_profile_image_url": "http://pbs.twimg.com/profile_images/1124354534334246912/SsiZuMgZ_normal.jpg",
+         "user_name": "Jon Worth",
+         "user_place_country": NaN,
+         "user_place_full_name": NaN,
+         "top_tweets": [
+            {
+               "date": "2019-07-24 10:17:50",
+               "favorite_count": 0.0,
+               "user_followers_count": 46314.0,
+               "id": 1153972549958733824,
+               "user_profile_image_url": "http://pbs.twimg.com/profile_images/1124354534334246912/SsiZuMgZ_normal.jpg",
+               "screen_name": "jonworth",
+               "text": "RT @hvondelen: Some more sightseeing in Lviv, the city has become more crowded over the last two years I think. It does not feel like Ukrai…",
+               "user_name": "Jon Worth",
+               "user_verified": true
+            }
+         ]
+      },
+      "globalissuesweb": {
+         "user_followers_count": 44272.0,
+         "user_statuses_count": 815734.0,
+         "user_profile_image_url": "http://pbs.twimg.com/profile_images/2634696934/fbbd02b9e0ac76801b12e7fdecdf68be_normal.jpeg",
+         "user_name": "Global Issues Web",
+         "user_place_country": NaN,
+         "user_place_full_name": NaN,
+         "top_tweets": [
+            {
+               "date": "2019-07-19 20:29:39",
+               "favorite_count": 0.0,
+               "user_followers_count": 44270.0,
+               "id": 1152314578707070978,
+               "user_profile_image_url": "http://pbs.twimg.com/profile_images/2634696934/fbbd02b9e0ac76801b12e7fdecdf68be_normal.jpeg",
+               "screen_name": "globalissuesweb",
+               "text": "Election Watch: Standoff with nationalistic flavor in Lviv election district https://t.co/UXe46HnXJ7 https://t.co/Rux8LSjUSD",
+               "user_name": "Global Issues Web",
+               "user_verified": false
+            },
+            {
+               "date": "2019-07-29 16:53:26",
+               "favorite_count": 0.0,
+               "user_followers_count": 44270.0,
+               "id": 1155884046888701954,
+               "user_profile_image_url": "http://pbs.twimg.com/profile_images/2634696934/fbbd02b9e0ac76801b12e7fdecdf68be_normal.jpeg",
+               "screen_name": "globalissuesweb",
+               "text": "Dragon Capital buys historic building on Rynok Square in Lviv https://t.co/mXr3YBETzU https://t.co/vK7N3kYk7C",
+               "user_name": "Global Issues Web",
+               "user_verified": false
+            },
+            {
+               "date": "2019-08-02 13:01:36",
+               "favorite_count": 0.0,
+               "user_followers_count": 44272.0,
+               "id": 1157275253644640257,
+               "user_profile_image_url": "http://pbs.twimg.com/profile_images/2634696934/fbbd02b9e0ac76801b12e7fdecdf68be_normal.jpeg",
+               "screen_name": "globalissuesweb",
+               "text": "Lviv airport increases passenger traffic by 41.2% in Jan-July https://t.co/cxF3Ejp9lr https://t.co/dyJ9eg3e3n",
+               "user_name": "Global Issues Web",
+               "user_verified": false
+            }
+         ]
       }
-   ]
+   },
 };
 
 export default rootReducer;

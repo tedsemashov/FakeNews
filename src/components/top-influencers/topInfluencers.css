@@ -2,3 +2,19 @@
    margin: 0;
    padding: 0;
 }
+
+.topInfluencersContainer {
+   width: 1180px;
+   margin: 0 auto;
+}
+
+.influencersWrapper {
+   width: 100%;
+   height: 515px;
+   display: flex;
+}
+
+.topInfluencersAccounts {
+   width: 50%;
+   height: 100%;
+}
