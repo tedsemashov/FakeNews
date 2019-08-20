@@ -27,3 +27,7 @@ input {
   letter-spacing: normal;
   color: #000000;
 }
+
+button {
+  outline: none !important;
+}
