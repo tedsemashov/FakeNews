@@ -30,7 +30,7 @@
    height: 100%;
 }
 
-.topInfluencersWrapper {
+.influencersTrollsMentionedWrapper {
    height: 620px;
    position: relative;
    top: 135px;
@@ -38,4 +38,5 @@
    margin: 0 auto;
    display: flex;
 }
+
 

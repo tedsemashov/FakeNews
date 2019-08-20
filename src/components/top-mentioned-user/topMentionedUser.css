@@ -2,3 +2,19 @@
    margin: 0;
    padding: 0;
 }
+
+.topMentionedUsersContainer {
+   width: 1180px;
+   margin: 0 auto;
+}
+
+.topMentionedUsersWrapper {
+   width: 100%;
+   height: 515px;
+   display: flex;
+}
+
+.topMentionedUsersAccounts {
+   width: 50%;
+   height: 100%;
+}

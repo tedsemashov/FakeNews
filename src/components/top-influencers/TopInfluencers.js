@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './topInfluencers.css';
 import SectionTitle from '../section-title/SectionTitle';
 import TopInfluencersSection from '../top-influencers/top-influencers-section/TopInfluencersSection';
+import Button from "../button/Button";
 
 class TopInfluencers extends Component {
 
@@ -39,6 +40,9 @@ class TopInfluencers extends Component {
                        )
                     }
                  </div>
+              </div>
+              <div className='buttonSeeAllWrapper'>
+                 <Button value={'SEE ALL'}/>
               </div>
            </div>
       );

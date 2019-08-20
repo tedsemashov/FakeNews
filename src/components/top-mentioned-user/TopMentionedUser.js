@@ -10,9 +10,14 @@ class TopMentionedUser extends Component {
 
    render() {
       return (
-           <div className='hashtagsWrapper'>
+           <div className='topMentionedUsersContainer'>
               <div className='titleWrapperNews'>
                  <SectionTitle value='TOP MENTIONED USER'/>
+              </div>
+              <div className='topMentionedUsersWrapper'>
+                 <div className='topMentionedUsersAccounts'>
+
+                 </div>
               </div>
            </div>
       );
