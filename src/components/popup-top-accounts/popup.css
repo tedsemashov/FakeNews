@@ -32,6 +32,12 @@
 .popupHeader {
    width: 100%;
    height: 105px;
+   display: flex;
+}
+
+.popupProfile {
+   width: 50%;
+   height: 100%;
 }
 
 .topTweetsLabel {

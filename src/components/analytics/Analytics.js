@@ -36,39 +36,43 @@ class Analytics extends Component {
     }
   };
 
-  render() {
-    return (
-      <div>
-        <Header />
-        <Subheader onClick={this.toogleTimePeriod} timePeriodValue={this.state.timePeriodValue} />
-        {this.showTimePeriodDropdown()}
-        <Hashtags />
-        <TrollsActivity />
-        <section className="topWrapper">
-          <div className="topAllNewsWrapper">
-            <div className="topNewsWrapper">
-              <TopNews />
-            </div>
-            <div className="topNewsWrapper">
-              <TopRetweetedNews />
-            </div>
-          </div>
-          <div className="influencersTrollsMentionedWrapper">
-            <TopInfluencers />
-          </div>
-          <div className="influencersTrollsMentionedWrapper">
-            <TopTrolls />
-          </div>
-          <div className="influencersTrollsMentionedWrapper">
-            <TopMentionedUser />
-          </div>
-        </section>
-        <div className="footerWrapper">
-          <Footer />
-        </div>
-      </div>
-    );
-  }
+   render() {
+      return (
+           <div>
+              <Header/>
+              <Subheader onClick={this.toogleTimePeriod}
+                         timePeriodValue={this.state.timePeriodValue}
+              />
+              <div className='dropdownWrapper'>
+                 {this.showTimePeriodDropdown()}
+              </div>
+              <Hashtags/>
+              <TrollsActivity/>
+              <section className='topWrapper'>
+              <div className='topAllNewsWrapper'>
+                  <div className='topNewsWrapper'>
+                     <TopNews/>
+                  </div>
+                  <div className='topNewsWrapper'>
+                     <TopRetweetedNews/>
+                  </div>
+              </div>
+              <div className='influencersTrollsMentionedWrapper'>
+                 <TopInfluencers/>
+              </div>
+              <div className='influencersTrollsMentionedWrapper'>
+                  <TopTrolls/>
+              </div>
+              <div className='influencersTrollsMentionedWrapper'>
+                 <TopMentionedUser/>
+              </div>
+              </section>
+              <div className='footerWrapper'>
+                 <Footer/>
+              </div>
+           </div>
+      );
+   }
 }
 
 export default Analytics;

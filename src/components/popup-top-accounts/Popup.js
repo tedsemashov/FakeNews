@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './popup.css';
-import PopupSection from './popup-section/index'
-import TopInfluencersSection from "../top-influencers/top-influencers-section/TopInfluencersSection";
+import PopupSection from './popup-section/index';
+import PopupHeaderNumbers from './popup-header-numbers/index';
 
 class Popup extends Component {
 
@@ -16,7 +16,12 @@ class Popup extends Component {
            <div className='popupContainer'>
               <div className='popupContentWrapper'>
                  <div className='popupHeader'>
-
+                  <div className='popupProfile'>
+                     <PopupHeaderNumbers numbers={'1,615'} descr={'PROFILE VISITS'} percent={'138'} color={'green'}/>
+                  </div>
+                  <div className='popupProfile'>
+                     <PopupHeaderNumbers numbers={'101'} descr={'MENTIONS'} percent={'12'} color={'red'}/>
+                  </div>
                  </div>
                  <p className='topTweetsLabel'>TOP TWEETS</p>
                  <div className='popupTweetsContainer'>
@@ -26,7 +31,7 @@ class Popup extends Component {
                                  tweetText={text}
                                  date={date}
                                  name={user_name}
-                                 acc={selected}
+                                 acc={'@' + selected}
                             />
                        )
                     }
