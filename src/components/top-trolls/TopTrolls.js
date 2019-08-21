@@ -1,7 +1,9 @@
 import React, {Component} from 'react';
 import './topTrolls.css';
-import SectionTitle from '../section-title/SectionTitle'
-import TopInfluencersSection from "../top-influencers/top-influencers-section/TopInfluencersSection";
+import SectionTitle from '../section-title/SectionTitle';
+import TopTrollsWorld from './top-trolls-world/index';
+import TopTrollsGender from './top-trolls-gender/index';
+import TopTrollsAge from './top-trolls-age/index';
 
 class TopTrolls extends Component {
 
@@ -16,7 +18,21 @@ class TopTrolls extends Component {
                  <SectionTitle value='TOP TROLLS'/>
               </div>
               <div className='topTrollsWrapper'>
-                 <div className='topTrollsAccounts'>
+                 <div className='topTrollsSection'>
+
+                 </div>
+                 <div className='topTrollsSection'>
+                     <div className='topTrollsSectionBlock'>
+                        <div className='topTrollsCharts'>
+
+                        </div>
+                        <div className='topTrollsCharts'>
+
+                        </div>
+                     </div>
+                     <div className='topTrollsSectionBlock'>
+
+                     </div>
 
                  </div>
               </div>
