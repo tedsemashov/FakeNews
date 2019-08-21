@@ -39,4 +39,10 @@
    display: flex;
 }
 
+.dropdownWrapper {
+   position: relative;
+   max-width: 1440px;
+   margin: 0 auto;
+}
+
 

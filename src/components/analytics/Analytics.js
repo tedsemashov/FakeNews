@@ -43,7 +43,9 @@ class Analytics extends Component {
               <Subheader onClick={this.toogleTimePeriod}
                          timePeriodValue={this.state.timePeriodValue}
               />
-              {this.showTimePeriodDropdown()}
+              <div className='dropdownWrapper'>
+                 {this.showTimePeriodDropdown()}
+              </div>
               <Hashtags/>
               <TrollsActivity/>
               <section className='topWrapper'>
