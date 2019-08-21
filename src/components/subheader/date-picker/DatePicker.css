@@ -1,0 +1,47 @@
+.DatePicker {
+  margin-top: 32px;
+  height: auto;
+  min-height: 280px;
+  width: 100%;
+}
+
+.cancelBtn {
+  display: none !important;
+}
+
+.drp-selected {
+  display: none !important;
+}
+
+.btn-primary {
+  padding: 4px 15px !important;
+  background-color: transparent !important;
+  border: 2px solid black !important;
+  border-radius: 0 !important;
+  color: #000 !important;
+}
+.daterangepicker {
+  position: static !important;
+  top: 20px !important;
+  width: auto !important;
+  max-width: 682px !important;
+  height: auto !important;
+  min-height: 280px !important;
+}
+.daterangepicker td.in-range {
+  background-color: #EAEAEA !important;
+}
+.daterangepicker td.active, .daterangepicker td.active:hover {
+  background-color: black !important;
+  opacity: 1;
+}
+.daterangepicker .drp-calendar.left {
+  margin-left: 50px !important;
+  padding-left: 0 !important;
+}
+.daterangepicker.show-calendar .drp-buttons {
+  border: none;
+}
+
+
+
