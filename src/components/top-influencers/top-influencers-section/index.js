@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import TopInfluencersSection from './TopInfluencersSection';
+import {setSelectedInfluencer} from "../../../actions";
 
 const mapStateToProps = (state) => {
    return {
@@ -8,6 +9,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = (dispatch) => {
    return {
+      setSelectedInfluencer: (value) => dispatch(setSelectedInfluencer(value))
    }
 };
 

@@ -1,8 +1,9 @@
 import React, {Component} from 'react';
 import './topInfluencers.css';
 import SectionTitle from '../section-title/SectionTitle';
-import TopInfluencersSection from '../top-influencers/top-influencers-section/TopInfluencersSection';
-import Button from "../button/Button";
+import TopInfluencersSection from '../top-influencers/top-influencers-section/index';
+import Button from '../button/Button';
+import Popup from '../popup-top-accounts/index';
 
 class TopInfluencers extends Component {
 
@@ -39,6 +40,9 @@ class TopInfluencers extends Component {
                             />
                        )
                     }
+                 </div>
+                 <div className='topUsersPopupWrapper'>
+                  <Popup />
                  </div>
               </div>
               <div className='buttonSeeAllWrapper'>

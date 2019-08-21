@@ -47,6 +47,13 @@ export const setTweetsCount = (tweets_count_ts) => {
    };
 };
 
+export const setSelectedInfluencer = (value) => {
+   return {
+      type: constants.SET_SELECTED_INFLUENCER,
+      value
+   }
+};
+
 // export const setInputValue = (value) => {
 //    return {
 //       type: constants.SET_INPUT_VALUE,

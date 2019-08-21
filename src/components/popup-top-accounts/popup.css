@@ -1,0 +1,52 @@
+* {
+   margin: 0;
+   padding: 0;
+}
+
+.popupContainer {
+   width: 560px;
+   height: 510px;
+   border-radius: 4px;
+   box-shadow: 0 8px 13px 0 rgba(0, 0, 0, 0.16);
+   background-color: #ffffff;
+}
+
+.popupContainer:after {
+   content: ' ';
+   width: 0;
+   height: 0;
+   border-top: 10px solid transparent;
+   border-left: 10px solid transparent;
+   border-bottom: 10px solid transparent;
+   border-right: 10px solid #ffffff;
+   position: absolute;
+   margin: -460px 0 0 -18px;
+}
+
+.popupContentWrapper {
+   width: 470px;
+   height: 100%;
+   margin: 0 auto;
+}
+
+.popupHeader {
+   width: 100%;
+   height: 105px;
+}
+
+.topTweetsLabel {
+   margin-top: 50px;
+   font-size: 16px;
+   font-weight: 900;
+   font-style: normal;
+   font-stretch: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   color: #030303;
+}
+
+.popupTweetsContainer {
+   width: 100%;
+   height: 300px;
+   overflow-y: scroll;
+}

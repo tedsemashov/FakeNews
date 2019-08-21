@@ -4,16 +4,19 @@ import './topInfluencersSection.css';
 class TopInfluencersSection extends Component {
 
    componentDidMount() {
-      console.log(this.props.account)
    };
 
    convertNumbers = (num) => {
       return Math.abs(num) > 999 ? Math.sign(num)*((Math.abs(num)/1000).toFixed(1)) + 'K' : Math.sign(num)*Math.abs(num)
    };
 
+   setSelectedInfluencerHandler = () => {
+      this.props.setSelectedInfluencer(this.props.account);
+   };
+
    render() {
       return (
-           <div className='accountSection'>
+           <div className='accountSection' onClick={this.setSelectedInfluencerHandler}>
               <div className='imageNameSection'>
                  <img className='userImage' src={this.props.img}/>
                  <div className='userInformWrapper'>

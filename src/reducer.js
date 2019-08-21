@@ -35,6 +35,11 @@ const rootReducer = (state = initialState, action) => {
             ...state,
             tweets_count_ts: action.tweets_count_ts
          };
+      case constants.SET_SELECTED_INFLUENCER:
+         return {
+            ...state,
+            selectedInfluencer: action.value
+         };
 
       // case constants.SET_INPUT_VALUE:
       //    return {
@@ -558,6 +563,7 @@ const initialState = {
          ]
       }
    },
+   selectedInfluencer: '@KyivPost'
 };
 
 export default rootReducer;
