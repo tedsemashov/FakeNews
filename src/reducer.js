@@ -351,6 +351,13 @@ const initialState = {
       "title": "Official",
       "amount": 66
    }],
+   fakeData: [{
+      "title": "Ukr",
+      "amount": 55
+   }, {
+      "title": "Foreign",
+      "amount": 45
+   }],
    topRetweetedNews: [
       {
          "text": "RT @sahouraxo: The man who paved the way for racist, slave-selling jihadists to take over #Libya, gave billions of dollars in weapons to mi…",

@@ -24,14 +24,16 @@ class TopTrolls extends Component {
                  <div className='topTrollsSection'>
                      <div className='topTrollsSectionBlock'>
                         <div className='topTrollsCharts'>
-
+                           <p className='topTrollsWorldHeader'>IN THE WORLD</p>
+                           <TopTrollsWorld data={this.props.fakeData}/>
                         </div>
                         <div className='topTrollsCharts'>
-
+                           <p className='topTrollsWorldHeader'>GENDER</p>
+                           <TopTrollsGender/>
                         </div>
                      </div>
                      <div className='topTrollsSectionBlock'>
-
+                        <TopTrollsAge/>
                      </div>
 
                  </div>
