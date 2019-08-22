@@ -54,7 +54,7 @@ export const setSelectedInfluencer = value => {
   };
 };
 
-export const getTwitterByDate = reqBody => {
+export const getTwittersByDate = reqBody => {
   return dispatch => {
     fetch(constants.PROXY_URL + constants.TARGET_URL, {
       method: 'POST',

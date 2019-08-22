@@ -1,10 +1,10 @@
 import { connect } from 'react-redux';
 import DatePicker from './DatePicker';
-import { getTwitterByDate } from '../../../actions';
+import { getTwittersByDate } from '../../../actions';
 
 const mapDispatchToProps = dispatch => {
   return {
-    getTwitterByDate: reqBody => dispatch(getTwitterByDate(reqBody))
+    getTwitterByDate: reqBody => dispatch(getTwittersByDate(reqBody))
   };
 };
 
