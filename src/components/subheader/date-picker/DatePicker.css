@@ -21,6 +21,7 @@
   color: #000 !important;
 }
 .daterangepicker {
+  border: none !important;
   position: static !important;
   top: 20px !important;
   width: auto !important;
@@ -36,11 +37,14 @@
   opacity: 1;
 }
 .daterangepicker .drp-calendar.left {
-  margin-left: 50px !important;
+  margin-left: 45px !important;
   padding-left: 0 !important;
 }
 .daterangepicker.show-calendar .drp-buttons {
   border: none;
+}
+.daterangepicker:before, .daterangepicker:after {
+  display: none !important;
 }
 
 
