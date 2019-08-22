@@ -32,10 +32,10 @@ class TopTrolls extends Component {
                            <TopTrollsGender/>
                         </div>
                      </div>
-                     <div className='topTrollsSectionBlock'>
+                     <div className='topTrollsSectionAge'>
+                        <p className='topTrollsAgeHeader'>AGE</p>
                         <TopTrollsAge/>
                      </div>
-
                  </div>
               </div>
            </div>

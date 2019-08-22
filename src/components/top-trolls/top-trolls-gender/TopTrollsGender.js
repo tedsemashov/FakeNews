@@ -36,6 +36,7 @@ class TopTrollsGender extends Component {
       series.name = "Man";
       series.tooltipText = "{name}: [bold]{valueY}[/]";
       series.columns.template.fill = am4core.color("#4a90e2");
+      series.stroke = am4core.color("#4a90e2");
 
       let series3 = chart.series.push(new am4charts.ColumnSeries());
       series3.dataFields.valueY = "woman";
@@ -43,6 +44,7 @@ class TopTrollsGender extends Component {
       series3.name = "Woman";
       series3.tooltipText = "{name}: [bold]{valueY}[/]";
       series3.columns.template.fill = am4core.color("#a2cdff");
+      series3.stroke = am4core.color("#a2cdff");
 
 // Add cursor
       chart.cursor = new am4charts.XYCursor();

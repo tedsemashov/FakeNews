@@ -25,6 +25,11 @@
    display: flex;
 }
 
+.topTrollsSectionAge {
+   width: 100%;
+   height: 38%;
+}
+
 .topTrollsCharts {
    height: 100%;
    width: 50%;
@@ -38,4 +43,15 @@
    line-height: normal;
    letter-spacing: normal;
    color: #030303;
+}
+
+.topTrollsAgeHeader {
+   font-size: 16px;
+   font-weight: 900;
+   font-style: normal;
+   font-stretch: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   color: #030303;
+   margin-top: 50px;
 }
