@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './timeDropdown.css';
 import Section from '../section/Section';
-import DatePicker from '../../subheader/date-picker/DatePicker';
+import DatePicker from '../../subheader/date-picker/index';
 
 class TimeDropdown extends Component {
   state = {};
