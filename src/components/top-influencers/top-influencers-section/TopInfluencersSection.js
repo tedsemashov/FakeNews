@@ -14,7 +14,18 @@ class TopInfluencersSection extends Component {
       this.props.setSelectedInfluencer(this.props.account);
    };
 
+   checkBtnColor = (color) => {
+      if (color === 'green') {
+         return 'btnFakeNewsGreen'
+      } else if (color === 'orange') {
+         return 'btnFakeNewsOrange'
+      } else {
+         return 'btnFakeNewsRed'
+      }
+   };
+
    render() {
+      const btnColor = this.checkBtnColor(this.props.color);
       return (
            <div className='accountSection' onClick={this.setSelectedInfluencerHandler}>
               <div className='imageNameSection'>
@@ -31,7 +42,7 @@ class TopInfluencersSection extends Component {
                  <button className='btnFollowers buttonsTweetFollowers'>
                     {this.convertNumbers(this.props.followers)} followers
                  </button>
-                 <button className='btnFakeNews btnFakeNewsGreen'>90% fake news</button>
+                 <button className={`btnFakeNews ${btnColor}`}>90% fake news</button>
               </div>
            </div>
       );

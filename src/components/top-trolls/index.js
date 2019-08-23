@@ -3,7 +3,8 @@ import TopTrolls from './TopTrolls';
 
 const mapStateToProps = (state) => {
    return {
-      fakeData: state.fakeData
+      fakeData: state.fakeData,
+      topInfluencers: state.top_influencers
    }
 };
 

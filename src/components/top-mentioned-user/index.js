@@ -3,6 +3,7 @@ import TopMentionedUser from './TopMentionedUser';
 
 const mapStateToProps = (state) => {
    return {
+      topInfluencers: state.top_influencers
    }
 };
 

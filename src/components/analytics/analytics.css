@@ -45,4 +45,13 @@
    margin: 0 auto;
 }
 
+.influencersMentionedWrapper {
+   height: 620px;
+   position: relative;
+   top: 244px;
+   max-width: 1440px;
+   margin: 0 auto;
+   display: flex;
+}
+
 
