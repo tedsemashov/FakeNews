@@ -34,26 +34,6 @@ button {
 
 
 /*Removed watermarks from all charts*/
-.trollsPieChart g [aria-labelledby=id-268-title] {
-  display: none !important;
-}
-
-.trollsNewsChart g [aria-labelledby=id-355-title] {
-  display: none !important;
-}
-
-.trollsLinearChartContainer g [aria-labelledby=id-442-title] {
-  display: none !important;
-}
-
-.topTrollsWorld g [aria-labelledby=id-575-title] {
-  display: none !important;
-}
-
-.topTrollsGender g [aria-labelledby=id-663-title] {
-  display: none !important;
-}
-
-.topTrollsAge g [aria-labelledby=id-826-title] {
+g[aria-labelledby$='-title'] {
   display: none !important;
 }

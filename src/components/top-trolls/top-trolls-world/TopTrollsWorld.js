@@ -11,6 +11,7 @@ class TopTrollsWorld extends Component {
    };
 
    componentDidUpdate() {
+      this.createTrollsPieChart();
    }
 
    createTrollsPieChart = () => {

@@ -86,6 +86,15 @@ const initialState = {
       amount: 66
     }
   ],
+
+  fakeData: [{
+    "title": "Ukr",
+    "amount": 55
+  }, {
+    "title": "Foreign",
+    "amount": 45
+  }],
+
   topRetweetedNews: [],
 
   topNews: [],
