@@ -52,31 +52,31 @@ class Analytics extends Component {
         <Subheader
           onClick={this.toggleTimePeriod}
           timePeriodValue={this.state.timePeriodValue}
-        />{' '}
+        />
         <div className="dropdownWrapper"> {this.showTimePeriodDropdown()} </div> <Hashtags />
         <TrollsActivity />
         <section className="topWrapper">
           <div className="topAllNewsWrapper">
             <div className="topNewsWrapper">
               <TopNews />
-            </div>{' '}
+            </div>
             <div className="topNewsWrapper">
               <TopRetweetedNews />
-            </div>{' '}
-          </div>{' '}
+            </div>
+          </div>
           <div className="influencersTrollsMentionedWrapper">
             <TopInfluencers />
-          </div>{' '}
+          </div>
           <div className="influencersTrollsMentionedWrapper">
             <TopTrolls />
-          </div>{' '}
+          </div>
           <div className="influencersTrollsMentionedWrapper">
             <TopMentionedUser />
-          </div>{' '}
-        </section>{' '}
+          </div>
+        </section>
         <div className="footerWrapper">
           <Footer />
-        </div>{' '}
+        </div>
       </div>
     );
   }
