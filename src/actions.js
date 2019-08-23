@@ -3,12 +3,12 @@ import * as constants from './constants';
 export const getTwitterData = () => {
   return dispatch => {
     fetch(constants.PROXY_URL + constants.TARGET_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(constants.BODY_POST)
-    })
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(constants.BODY_POST)
+      })
       .then(res => res.json())
       .then(data => {
         dispatch(setHashtagsData(data.hashtags));
@@ -57,19 +57,20 @@ export const setSelectedInfluencer = value => {
 export const getTwittersByDate = reqBody => {
   return dispatch => {
     fetch(constants.PROXY_URL + constants.TARGET_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(reqBody)
-    })
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(reqBody)
+      })
       .then(res => res.json())
       .then(data => {
         dispatch(setHashtagsData(data.hashtags));
         dispatch(setKeywordData(data.keyword));
         dispatch(setTopFavoriteTweetsData(data.top_favorite_tweets));
         dispatch(setTweetsCount(data.tweets_count_ts));
-      });
+      })
+      .catch(err => console.log(err));
   };
 };
 
