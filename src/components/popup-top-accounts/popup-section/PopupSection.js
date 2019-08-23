@@ -14,7 +14,7 @@ class PopupSection extends Component {
                <p className='popupSectionFullName'>{this.props.name}</p>
                <p className='popupSectionNickDate'>{this.props.acc} • {this.props.date}</p>
             </div>
-              <a className='popupSectionTweet' href=''>
+              <a target='_blank' className='popupSectionTweet' href=''>
                  {this.props.tweetText}
               </a>
            </div>
