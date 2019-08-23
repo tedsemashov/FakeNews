@@ -9,6 +9,10 @@ class TrollsLinearChart extends Component {
       this.createHashtagChart();
    };
 
+   componentDidUpdate() {
+      this.createHashtagChart();
+   }
+
    createHashtagChart = () => {
       let chart = am4core.create("TrollsLinearChart", am4charts.XYChart);
       chart.data = this.getHashtagChart();

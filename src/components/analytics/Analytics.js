@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './analytics.css';
+import Spinner from 'react-bootstrap/Spinner';
 import Header from '../header/Header';
 import Subheader from '../subheader/Subheader';
 import TimeDropdown from '../subheader/time-dropdown/TimeDropdown';
@@ -19,30 +20,40 @@ class Analytics extends Component {
   };
 
   componentDidMount() {
-    // this.props.getTwitterData();
+    this.props.getTwitterData();
   }
 
   toggleTimePeriod = () => {
-    this.setState(state => ({ timePeriod: !state.timePeriod }));
+    this.setState(state => ({
+      timePeriod: !state.timePeriod
+    }));
   };
 
   showTimePeriodDropdown = () => {
     if (this.state.timePeriod) {
       return (
         <div className="timeDropdownWrapper">
-          <TimeDropdown toogleTimePeriod={this.toggleTimePeriod} />
+          <TimeDropdown toogleTimePeriod={this.toggleTimePeriod} />{' '}
         </div>
       );
     }
   };
 
   render() {
+    const spinner = (
+      <div className="spinnerWrapper">
+        <Spinner animation="border" role="status" variant="dark" />
+      </div>
+    );
     return (
       <div>
+        {this.props.isLoading ? spinner : null}
         <Header />
-        <Subheader onClick={this.toggleTimePeriod} timePeriodValue={this.state.timePeriodValue} />
-        <div className="dropdownWrapper">{this.showTimePeriodDropdown()}</div>
-        <Hashtags />
+        <Subheader
+          onClick={this.toggleTimePeriod}
+          timePeriodValue={this.state.timePeriodValue}
+        />
+        <div className="dropdownWrapper"> {this.showTimePeriodDropdown()} </div> <Hashtags />
         <TrollsActivity />
         <section className="topWrapper">
           <div className="topAllNewsWrapper">

@@ -15,6 +15,8 @@ export const getTwitterData = () => {
         dispatch(setKeywordData(data.keyword));
         dispatch(setTopFavoriteTweetsData(data.top_favorite_tweets));
         dispatch(setTweetsCount(data.tweets_count_ts));
+        dispatch(setTopNewsData(data.top_news_tw));
+        dispatch(setTopRetweetsData(data.top_rtweets));
       });
   };
 };
@@ -23,6 +25,20 @@ export const setHashtagsData = hashtags => {
   return {
     type: constants.SET_HASHTAGS_DATA,
     hashtags
+  };
+};
+
+export const setTopNewsData = topNews => {
+  return {
+    type: constants.TOP_NEWS_DATA,
+    topNews
+  };
+};
+
+export const setTopRetweetsData = topRetweetedNews => {
+  return {
+    type: constants.TOP_RETWEETED_NEWS,
+    topRetweetedNews
   };
 };
 
@@ -69,27 +85,7 @@ export const getTwittersByDate = reqBody => {
         dispatch(setKeywordData(data.keyword));
         dispatch(setTopFavoriteTweetsData(data.top_favorite_tweets));
         dispatch(setTweetsCount(data.tweets_count_ts));
-      });
+      })
+      .catch(err => console.log(err));
   };
 };
-
-// export const setInputValue = (value) => {
-//    return {
-//       type: constants.SET_INPUT_VALUE,
-//       value
-//    }
-// };
-//
-// export const setSelectedName = (id) => {
-//    return {
-//       type: constants.SET_SELECTED_NAME,
-//       id
-//    }
-// };
-//
-// export const removeSelectedName = (id) => {
-//    return {
-//       type: constants.REMOVE_SELECTED_NAME,
-//       id
-//    }
-// };
