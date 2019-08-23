@@ -70,7 +70,7 @@ class Analytics extends Component {
           <div className="influencersTrollsMentionedWrapper">
             <TopTrolls />
           </div>
-          <div className="influencersTrollsMentionedWrapper">
+          <div className="influencersMentionedWrapper">
             <TopMentionedUser />
           </div>
         </section>

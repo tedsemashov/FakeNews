@@ -47,7 +47,7 @@
 
 /* .spinnerWrapper {
    position: absolute;
-   background: black; 
+   background: black;
    height: 2500px;
 } */
 .spinner-border {
@@ -61,6 +61,15 @@
    height: 100%;
    background-color: rgba(255,255,255,0.9);
    z-index: 100;
+}
+
+.influencersMentionedWrapper {
+   height: 620px;
+   position: relative;
+   top: 244px;
+   max-width: 1440px;
+   margin: 0 auto;
+   display: flex;
 }
 
 

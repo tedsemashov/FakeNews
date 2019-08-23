@@ -2,9 +2,9 @@ import React, {Component} from 'react';
 import * as am4core from "@amcharts/amcharts4/core";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import * as am4charts from "@amcharts/amcharts4/charts";
-import './topTrollsWorld.css';
+import './trollsNewsChart.css';
 
-class TopTrollsWorld extends Component {
+class TrollsNewsChart extends Component {
 
    componentDidMount() {
       this.createTrollsPieChart();
@@ -15,7 +15,7 @@ class TopTrollsWorld extends Component {
 
    createTrollsPieChart = () => {
       am4core.useTheme(am4themes_animated);
-      let chart = am4core.create("topTrollsWorld", am4charts.PieChart);
+      let chart = am4core.create("trollsNewsChart", am4charts.PieChart);
       chart.data = this.props.data;
       let pieSeries = chart.series.push(new am4charts.PieSeries());
       pieSeries.dataFields.value = "amount";
@@ -24,19 +24,17 @@ class TopTrollsWorld extends Component {
       pieSeries.slices.template.strokeWidth = 2;
       pieSeries.slices.template.strokeOpacity = 1;
       chart.legend = new am4charts.Legend();
-      pieSeries.labels.template.disabled = true;
-      pieSeries.ticks.template.disabled = true;
       pieSeries.colors.list = [
-         am4core.color("#fee58c"),
-         am4core.color("#ffc800")
+         am4core.color("#d0021b"),
+         am4core.color("#000000")
       ];
    };
 
    render() {
       return (
-           <div className="topTrollsWorld"/>
+           <div className="trollsNewsChart" />
       );
    }
 }
 
-export default TopTrollsWorld;
+export default TrollsNewsChart;

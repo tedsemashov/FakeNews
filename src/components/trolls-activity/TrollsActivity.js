@@ -2,6 +2,8 @@ import React, {Component} from 'react';
 import './trollsActivity.css';
 import SectionTitle from '../section-title/SectionTitle';
 import TrollsPieChart from '../trolls-activity/trolls-pie-chart/index';
+import TrollsNewsChart from "./trolls-news-chart/index";
+import TrollsLinearChart from "./trolls-linear-chart/index";
 
 class TrollsActivity extends Component {
 
@@ -18,13 +20,17 @@ class TrollsActivity extends Component {
               <div className='trollsChartsWrapper'>
                  <div className='trollsPieChartsWrapper'>
                     <div className='trollsPieWrapperUsers'>
+                       <p className='topTrollsWorldHeader'>FAKE USERS</p>
                        <TrollsPieChart data={this.props.fakeUsers}/>
                     </div>
                     <div className='trollsPieWrapperNews'>
-                       <TrollsPieChart data={this.props.fakeNews}/>
+                       <p className='topTrollsWorldHeader'>FAKE NEWS</p>
+                       <TrollsNewsChart data={this.props.fakeNews}/>
                     </div>
                  </div>
                  <div className='trollsLinearChart'>
+                    <p className='topTrollsWorldHeader'>SENTIMENT OVER TIME</p>
+                    <TrollsLinearChart/>
                  </div>
               </div>
 

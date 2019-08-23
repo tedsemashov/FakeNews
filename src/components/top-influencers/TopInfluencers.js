@@ -37,6 +37,7 @@ class TopInfluencers extends Component {
                                  img={user_profile_image_url}
                                  tweets={user_statuses_count}
                                  followers={user_followers_count}
+                                 color={'green'}
                             />
                        )
                     }

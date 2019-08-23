@@ -1,5 +1,4 @@
-import * as constants from './constants';
-import { bindActionCreators } from 'redux';
+import *as constants from './constants';
 
 // const initialState = {
 //    hashtags: {},
