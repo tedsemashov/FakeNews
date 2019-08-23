@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './analytics.css';
 import Spinner from 'react-bootstrap/Spinner';
 import Header from '../header/Header';
-import Subheader from '../subheader/Subheader';
+import Subheader from '../subheader/index';
 import TimeDropdown from '../subheader/time-dropdown/TimeDropdown';
 import Hashtags from '../hashtags/index';
 import TrollsActivity from '../trolls-activity/index';
@@ -15,8 +15,7 @@ import Footer from '../footer/Footer';
 
 class Analytics extends Component {
   state = {
-    timePeriod: false,
-    timePeriodValue: '15 min'
+    timePeriod: false
   };
 
   componentDidMount() {
@@ -39,6 +38,18 @@ class Analytics extends Component {
     }
   };
 
+  // showSpinner = () => {
+  //   if (loadedState) {
+  //     const spinner = (
+  //       <div className="spinnerWrapper">
+  //         <Spinner animation="border" role="status" variant="dark" />
+  //       </div>
+  //     );
+  //     return spinner;
+  //   }
+  //   return null;
+  // }
+
   render() {
     const spinner = (
       <div className="spinnerWrapper">
@@ -47,12 +58,9 @@ class Analytics extends Component {
     );
     return (
       <div>
-        {this.props.isLoading ? spinner : null}
+        {!this.props.isLoaded ? spinner : null}
         <Header />
-        <Subheader
-          onClick={this.toggleTimePeriod}
-          timePeriodValue={this.state.timePeriodValue}
-        />
+        <Subheader onClick={this.toggleTimePeriod} />
         <div className="dropdownWrapper"> {this.showTimePeriodDropdown()} </div> <Hashtags />
         <TrollsActivity />
         <section className="topWrapper">

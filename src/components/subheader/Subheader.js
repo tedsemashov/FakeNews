@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import './subheader.css';
 import Section from './section/Section';
-import Dropdown from '../dropdown/Dropdown';
+import Dropdown from '../dropdown/index';
 import Search from './search-input/Search';
 
 class Subheader extends Component {
@@ -31,7 +31,8 @@ class Subheader extends Component {
                                placeholder = {'Select time period'}
                                title = {'Time Period'}
                                onClick = {this.props.onClick}
-                               value = {this.props.timePeriodValue}
+                               text={this.props.timePeriod}
+                               
                      />
                   </div>
                   <div className='inputSearchWrapper'>
@@ -44,6 +45,7 @@ class Subheader extends Component {
                                placeholder = {'Select emotion'}
                                title = {'Emotion / Sentiment'}
                                value = {'Any'}
+                               
                      />
                   </div>
                </div>

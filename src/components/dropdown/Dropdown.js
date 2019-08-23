@@ -14,7 +14,7 @@ class Dropdown extends Component {
                <input type="text"
                       className={this.props.className}
                       placeholder={this.props.placeholder}
-                      value={this.props.value}
+                      value={this.props.text}
                       readOnly={true}
                />
                <div className='arrowWrapper' onClick={this.props.onClick}>

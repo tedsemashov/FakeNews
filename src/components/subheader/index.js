@@ -3,6 +3,8 @@ import Subheader from './Subheader';
 
 const mapStateToProps = (state) => {
    return {
+      timePeriod: state.timePeriod
+      // filteredNames: getFilteredNames(state)
    }
 };
 

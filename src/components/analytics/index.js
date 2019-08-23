@@ -6,15 +6,13 @@ import Analytics from './Analytics';
 const mapStateToProps = state => {
   return {
     cred: state.user,
-    isLoading: state.isLoading
-    // filteredNames: getFilteredNames(state)
+    isLoaded: state.isLoaded
   };
 };
 
 const mapDispatchToProps = dispatch => {
   return {
     getTwitterData: () => dispatch(getTwitterData())
-    // setSelectedName: (id) => dispatch(setSelectedName(id))
   };
 };
 

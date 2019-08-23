@@ -40,4 +40,6 @@ export const TOP_FAVORITE_TWEETS_DATA = 'TOP_FAVORITE_TWEETS_DATA';
 export const TWEETS_COUNT_TS_DATA = 'TWEETS_COUNT_TS_DATA';
 export const GET_USER_CREDENTIALS = 'GET_USER_CREDENTIALS';
 export const SET_SELECTED_INFLUENCER = 'SET_SELECTED_INFLUENCER';
+export const LOADING_STATE = 'LOADING_STATE';
+export const TIME_PERIOD = 'TIME_PERIOD';
 export const REGEXP_EMAIL = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

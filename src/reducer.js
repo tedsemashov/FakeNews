@@ -50,6 +50,16 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         topRetweetedNews: action.topRetweetedNews
       };
+    case constants.LOADING_STATE:
+      return {
+        ...state,
+        isLoaded: action.isLoaded
+      }
+    case constants.TIME_PERIOD:
+      return {
+        ...state,
+        timePeriod: action.timePeriod
+      }
     default:
       return state;
   }
@@ -62,6 +72,7 @@ const initialState = {
     name: 'Name',
     surname: 'Surname'
   },
+  timePeriod: '1 DAY',
   hashtags: {},
   keyword: '',
   top_favorite_tweets: [],
@@ -265,7 +276,7 @@ const initialState = {
     }
   },
   selectedInfluencer: '@KyivPost',
-  isLoading: false
+  isLoaded: false
 };
 
 export default rootReducer;
