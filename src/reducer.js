@@ -69,8 +69,8 @@ const initialState = {
   user: {
     email: 'test@test.com',
     password: '1234',
-    name: 'Name',
-    surname: 'Surname'
+    name: 'John',
+    surname: 'McCarthy'
   },
   timePeriod: '1 DAY',
   hashtags: {},

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './analytics.css';
 import Spinner from 'react-bootstrap/Spinner';
-import Header from '../header/Header';
+import Header from '../header/index';
 import Subheader from '../subheader/index';
 import TimeDropdown from '../subheader/time-dropdown/TimeDropdown';
 import Hashtags from '../hashtags/index';

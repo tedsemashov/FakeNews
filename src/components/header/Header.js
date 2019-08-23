@@ -30,7 +30,7 @@ class Header extends Component {
                     </ul>
                  </nav>
                  <div className='userLogin'>
-                     <p className='userName'>Name Surname</p>
+                     <p className='userName'>{this.props.user.name} {this.props.user.surname}</p>
                      <div onClick={this.userLogout} className='userLogoWrapper'>
                         <img className='userLogo' src={require('../../images/header/Steven_Hallam-slide.jpg')}/>
                      </div>
