@@ -22,57 +22,41 @@ class topTrollsAge extends Component {
             category: "2 to 12",
             value1: 1,
             value2: 5,
-            value3: 3,
-            value4: 3
          },
          {
             category: "13 to 17",
             value1: 2,
             value2: 5,
-            value3: 3,
-            value4: 4
          },
          {
             category: "18 to 24",
-            value1: 2,
-            value2: 5,
-            value3: 3,
-            value4: 4
+            value1: 3,
+            value2: 6,
          },
          {
             category: "25 to 34",
-            value1: 2,
-            value2: 5,
-            value3: 3,
-            value4: 4
+            value1: 4,
+            value2: 8,
          },
          {
             category: "35 to 44",
-            value1: 2,
-            value2: 5,
-            value3: 3,
-            value4: 4
+            value1: 9,
+            value2: 2,
          },
          {
             category: "45 to 54",
-            value1: 2,
-            value2: 5,
-            value3: 3,
-            value4: 4
+            value1: 7,
+            value2: 4,
          },
          {
             category: "55 to 64",
-            value1: 2,
-            value2: 5,
-            value3: 3,
-            value4: 4
+            value1: 9,
+            value2: 3,
          },
          {
             category: "65+",
-            value1: 2,
-            value2: 5,
-            value3: 3,
-            value4: 4
+            value1: 1,
+            value2: 2,
          },
       ];
 
@@ -93,7 +77,7 @@ class topTrollsAge extends Component {
       series1.columns.template.width = am4core.percent(80);
       series1.columns.template.tooltipText = "{name}: {valueY.value}";
       series1.columns.template.strokeWidth = 0;
-      series1.name = "Series 1";
+      series1.name = "Man";
       series1.dataFields.categoryX = "category";
       series1.dataFields.valueY = "value1";
       series1.columns.template.fill = am4core.color("#4a90e2");
@@ -103,7 +87,7 @@ class topTrollsAge extends Component {
       series2.columns.template.width = am4core.percent(80);
       series2.columns.template.tooltipText = "{name}: {valueY.value}";
       series2.columns.template.strokeWidth = 0;
-      series2.name = "Series 2";
+      series2.name = "Woman";
       series2.dataFields.categoryX = "category";
       series2.dataFields.valueY = "value2";
       series2.columns.template.fill = am4core.color("#a2cdff");

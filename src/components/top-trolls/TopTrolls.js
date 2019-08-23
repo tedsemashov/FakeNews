@@ -45,7 +45,7 @@ class TopTrolls extends Component {
                        )
                     }
                  </div>
-                 <div className='topTrollsSection'>
+                 <div className='topTrollsSectionCharts'>
                      <div className='topTrollsSectionBlock'>
                         <div className='topTrollsCharts'>
                            <p className='topTrollsWorldHeader'>IN THE WORLD</p>

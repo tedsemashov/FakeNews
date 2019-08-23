@@ -24,6 +24,8 @@ class TrollsNewsChart extends Component {
       pieSeries.slices.template.strokeWidth = 2;
       pieSeries.slices.template.strokeOpacity = 1;
       chart.legend = new am4charts.Legend();
+      pieSeries.labels.template.disabled = true;
+      pieSeries.ticks.template.disabled = true;
       pieSeries.colors.list = [
          am4core.color("#d0021b"),
          am4core.color("#000000")
