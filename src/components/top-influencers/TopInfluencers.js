@@ -38,6 +38,7 @@ class TopInfluencers extends Component {
                                  tweets={user_statuses_count}
                                  followers={user_followers_count}
                                  color={'green'}
+                                 key={user_statuses_count}
                             />
                        )
                     }

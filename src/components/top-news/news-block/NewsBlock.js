@@ -2,15 +2,21 @@ import React, {Component} from 'react';
 import './newsBlock.css';
 
 class NewsBlock extends Component {
+   state = {
+      link: ''
+   };
 
-   componentDidMount() {
-
+   generateHttpLink = () => {
+      let text = this.props.text;
+      let index = text.lastIndexOf('http');
+      let result = text.slice(index);
+      this.setState({link: result});
    };
 
    render() {
       return (
-           <div className='newsContainer'>
-              <a href=''>{this.props.text}</a>
+           <div className='newsContainer' onClick={this.generateHttpLink}>
+              <a target="_blank" href={this.state.link}>{this.props.text}</a>
            </div>
       );
    }

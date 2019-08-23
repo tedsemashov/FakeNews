@@ -40,6 +40,7 @@ class TopMentionedUser extends Component {
                                  tweets={user_statuses_count}
                                  followers={user_followers_count}
                                  color={'orange'}
+                                 key={user_statuses_count}
                             />
                        )
                     }

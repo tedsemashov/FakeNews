@@ -41,11 +41,12 @@ class TopTrolls extends Component {
                                  tweets={user_statuses_count}
                                  followers={user_followers_count}
                                  color={'red'}
+                                 key={user_statuses_count}
                             />
                        )
                     }
                  </div>
-                 <div className='topTrollsSection'>
+                 <div className='topTrollsSectionCharts'>
                      <div className='topTrollsSectionBlock'>
                         <div className='topTrollsCharts'>
                            <p className='topTrollsWorldHeader'>IN THE WORLD</p>

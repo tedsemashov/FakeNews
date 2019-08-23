@@ -5,12 +5,14 @@
 
 .newsContainer {
    margin-top: 20px;
-   height: 80px;
    width: 100%;
    box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.12);
    background-color: #ffffff;
    text-overflow: ellipsis;
    overflow: hidden;
+   min-height: 4.8em;
+   max-height: 4.8em;
+   line-height: 1.6em;
 }
 
 .newsContainer a {

@@ -31,3 +31,9 @@ input {
 button {
   outline: none !important;
 }
+
+
+/*Removed watermarks from all charts*/
+g[aria-labelledby$='-title'] {
+  display: none !important;
+}
