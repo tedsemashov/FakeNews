@@ -42,7 +42,6 @@ class TrollsLinearChart extends Component {
             "value": data[key]
          })
       }
-      console.log(dataArray);
       return dataArray;
    };
 

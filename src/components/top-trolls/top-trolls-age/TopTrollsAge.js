@@ -94,6 +94,7 @@ class topTrollsAge extends Component {
       series2.stroke = am4core.color("#a2cdff");
 
       valueAxis.renderer.grid.template.disabled = true;
+      categoryAxis.renderer.grid.template.disabled = true;
    };
 
    render() {

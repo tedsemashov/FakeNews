@@ -18,7 +18,7 @@ class TopNews extends Component {
         </div>
         <div className="topNewsBlockWrapper">
           {topNews.map(({ text, count }) => (
-            <NewsBlock key={count} text={text} />
+            <NewsBlock key={text} text={text} />
           ))}
         </div>
         <div className="buttonSeeAllWrapper">

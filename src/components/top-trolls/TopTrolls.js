@@ -41,6 +41,7 @@ class TopTrolls extends Component {
                                  tweets={user_statuses_count}
                                  followers={user_followers_count}
                                  color={'red'}
+                                 key={user_statuses_count}
                             />
                        )
                     }

@@ -52,7 +52,9 @@ class TopTrollsGender extends Component {
 // Add legend
       chart.legend = new am4charts.Legend();
       categoryAxis.renderer.disabled = true;
+      categoryAxis.renderer.grid.template.disabled = true;
       valueAxis.renderer.grid.template.disabled = true;
+      // valueAxis.renderer.disabled = true;
    };
 
    render() {

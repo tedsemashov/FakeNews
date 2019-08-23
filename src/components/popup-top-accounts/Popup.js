@@ -26,12 +26,13 @@ class Popup extends Component {
                  <p className='topTweetsLabel'>TOP TWEETS</p>
                  <div className='popupTweetsContainer'>
                     {
-                       currentTweets.map(({text, date, user_name}) =>
+                       currentTweets.map(({text, date, user_name, user_followers_count}) =>
                             <PopupSection
                                  tweetText={text}
                                  date={date}
                                  name={user_name}
                                  acc={'@' + selected}
+                                 key={user_followers_count}
                             />
                        )
                     }

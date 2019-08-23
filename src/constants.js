@@ -12,13 +12,10 @@ export const BODY_POST = {
   dates: ['2019-08-06', '2019-08-07'],
   keyword: 'Ukraine',
   hashtags: {
-    n_hashtags: 10
+    n_hashtags: 20
   },
   tweets_count_ts: {
     ts_size_freq: 'H'
-  },
-  top_favorite_tweets: {
-    n_top_fav_tw: 10
   },
   top_news_tw: {
     min_tweets_count: 5,
