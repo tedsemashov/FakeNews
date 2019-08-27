@@ -1,29 +1,24 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './dropdown.css';
 
-class Dropdown extends Component {
-
-   componentDidMount() {
-   };
-
-   render() {
-      return (
-         <div className='dropdown'>
-            <p className='dropdownTitle'>{this.props.title}</p>
-            <div className='dropdownContainer'>
-               <input type="text"
-                      className={this.props.className}
-                      placeholder={this.props.placeholder}
-                      value={this.props.text}
-                      readOnly={true}
-               />
-               <div className='arrowWrapper' onClick={this.props.onClick}>
-                  <div className="arrowDown"/>
-               </div>
-            </div>
-         </div>
-      );
-   }
-}
+const Dropdown = ({ title, className, placeholder, text, onClick }) => {
+  return (
+    <div className="dropdown">
+      <p className="dropdownTitle">{title}</p>
+      <div className="dropdownContainer">
+        <input
+          type="text"
+          className={className}
+          placeholder={placeholder}
+          value={text}
+          readOnly={true}
+        />
+        <div className="arrowWrapper" onClick={onClick}>
+          <div className="arrowDown" />
+        </div>
+      </div>
+    </div>
+  );
+};
 
 export default Dropdown;

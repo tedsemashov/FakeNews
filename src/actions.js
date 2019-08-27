@@ -17,7 +17,7 @@ export const getTwitterData = () => {
         dispatch(setTweetsCount(data.tweets_count_ts));
         dispatch(setTopNewsData(data.top_news_tw));
         dispatch(setTopRetweetsData(data.top_rtweets));
-        dispatch(setLoadingState('true'))
+        dispatch(setLoadingState('true'));
       });
   };
 };
@@ -71,19 +71,19 @@ export const setSelectedInfluencer = value => {
   };
 };
 
-export const setLoadingState = (loadingState) => {
+export const setLoadingState = loadingState => {
   return {
     type: constants.LOADING_STATE,
     isLoaded: loadingState
-  }
-}
+  };
+};
 
-export const setTimePeriod = (timePeriod) => {
+export const setTimePeriod = timePeriod => {
   return {
     type: constants.TIME_PERIOD,
     timePeriod
-  }
-}
+  };
+};
 
 export const getTwittersByDate = reqBody => {
   return dispatch => {
@@ -100,9 +100,8 @@ export const getTwittersByDate = reqBody => {
         dispatch(setKeywordData(data.keyword));
         dispatch(setTopFavoriteTweetsData(data.top_favorite_tweets));
         dispatch(setTweetsCount(data.tweets_count_ts));
-        dispatch(setLoadingState('false'))
+        dispatch(setLoadingState('false'));
       })
       .catch(err => console.log(err));
-      
   };
 };

@@ -1,25 +1,13 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './input.css';
 
-class Input extends Component {
-
-   filterNames = (value) => {
-      // this.props.setInputValue(value);
-   };
-
-   onCancel = () => {
-      // this.props.setInputValue('');
-   };
-
-   render() {
-      return (
-           <div className='inputContainer'>
-              <p className={this.props.titleClassName}>{this.props.title}</p>
-              <input type={this.props.type} className={this.props.className} placeholder={this.props.placeholder}
-                     onBlur={this.props.onBlur}/>
-           </div>
-      );
-   }
-}
+const Input = ({ titleClassName, title, type, className, placeholder, onBlur }) => {
+  return (
+    <div className="inputContainer">
+      <p className={titleClassName}>{title}</p>
+      <input type={type} className={className} placeholder={placeholder} onBlur={onBlur} />
+    </div>
+  );
+};
 
 export default Input;

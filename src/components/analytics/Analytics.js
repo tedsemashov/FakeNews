@@ -4,7 +4,7 @@ import Spinner from 'react-bootstrap/Spinner';
 import Header from '../header/index';
 import Subheader from '../subheader/index';
 import TimeDropdown from '../subheader/time-dropdown/TimeDropdown';
-import Hashtags from '../hashtags/index';
+import Hashtags from '../hashtags/Hashtags';
 import TrollsActivity from '../trolls-activity/index';
 import TopNews from '../top-news/index';
 import TopRetweetedNews from '../top-retweeted-news/index';
@@ -37,18 +37,6 @@ class Analytics extends Component {
       );
     }
   };
-
-  // showSpinner = () => {
-  //   if (loadedState) {
-  //     const spinner = (
-  //       <div className="spinnerWrapper">
-  //         <Spinner animation="border" role="status" variant="dark" />
-  //       </div>
-  //     );
-  //     return spinner;
-  //   }
-  //   return null;
-  // }
 
   render() {
     const spinner = (
