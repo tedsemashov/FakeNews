@@ -30,6 +30,7 @@ class TrollsLinearChart extends Component {
       categoryAxis.renderer.grid.template.disabled = true;
       categoryAxis.renderer.labels.template.fill = am4core.color("#808080");
       chart.cursor = new am4charts.XYCursor();
+      categoryAxis.renderer.disabled = true;
       valueAxis.cursorTooltipEnabled = true;
    };
 
@@ -38,7 +39,7 @@ class TrollsLinearChart extends Component {
       let dataArray = [];
       for (let key in data) {
          dataArray.push({
-            "category": key.slice(11,16),
+            "category": key,
             "value": data[key]
          })
       }
