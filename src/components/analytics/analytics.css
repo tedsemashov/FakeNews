@@ -22,10 +22,11 @@
    max-width: 1180px;
    margin: 0 auto;
    display: flex;
+   justify-content: space-between;
 }
 
 .topNewsWrapper {
-   width: 46%;
+   width: 44%;
    height: 100%;
 }
 
