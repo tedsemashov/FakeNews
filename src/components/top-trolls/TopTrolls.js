@@ -4,7 +4,7 @@ import SectionTitle from '../section-title/SectionTitle';
 import TopTrollsWorld from './top-trolls-world/index';
 import TopTrollsGender from './top-trolls-gender/index';
 import TopTrollsAge from './top-trolls-age/index';
-import InfluencerDetails from '../influencer-details/index';
+import InfluencerDetails from '../influencer-details/InfluencerDetails';
 import Button from '../button/Button';
 
 class TopTrolls extends Component {
@@ -36,6 +36,7 @@ class TopTrolls extends Component {
                   followers={user_followers_count}
                   color={'red'}
                   key={user_statuses_count}
+                  setSelectedUser={() => console.log('TROLLS!!!')}
                 />
               )
             )}

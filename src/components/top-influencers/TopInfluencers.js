@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './topInfluencers.css';
+import './TopInfluencers.css';
 import SectionTitle from '../section-title/SectionTitle';
-import InfluencerDetails from '../influencer-details/index';
+import InfluencerDetails from '../influencer-details/InfluencerDetails';
 import Button from '../button/Button';
-import Popup from '../popup-top-accounts/index';
+import Popup from '../popup-top-accounts/Popup';
 
 class TopInfluencers extends Component {
   returnInfluencersSection = () => {
@@ -37,12 +37,13 @@ class TopInfluencers extends Component {
                   followers={user_followers_count}
                   color={'green'}
                   key={user_statuses_count}
+                  setSelectedUser={this.props.setSelectedInfluencer}
                 />
               )
             )}
           </div>
           <div className="topUsersPopupWrapper">
-            <Popup />
+            <Popup users={this.props.topInfluencers} selectedInfluencer={this.props.selectedInfluencer} />
           </div>
         </div>
         <div className="buttonSeeAllWrapper">

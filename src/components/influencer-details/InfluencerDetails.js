@@ -1,7 +1,7 @@
 import React from 'react';
 import './InfluencerDetails.css';
 
-const InfluencerDetails = ({ setSelectedInfluencer, account, color, img, name, tweets, followers }) => {
+const InfluencerDetails = ({ setSelectedUser, account, color, img, name, tweets, followers }) => {
   const convertNumbers = num => {
     return Math.abs(num) > 999
       ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + 'K'
@@ -9,7 +9,7 @@ const InfluencerDetails = ({ setSelectedInfluencer, account, color, img, name, t
   };
 
   const setSelectedInfluencerHandler = () => {
-    setSelectedInfluencer(account);
+    setSelectedUser(account);
   };
 
   const checkBtnColor = color => {

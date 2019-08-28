@@ -18,7 +18,9 @@ export const getTwitterData = () => {
         dispatch(setTopNewsData(data.top_news_tw));
         dispatch(setTopRetweetsData(data.top_rtweets));
         dispatch(setTopInfluencersData(data.top_influencers));
+        dispatch(setTopMentionedUsersData(data.top_active_users));
         dispatch(setSelectedInfluencer(Object.keys(data.top_influencers)[0]));
+        dispatch(setSelectedMentionedUser(Object.keys(data.top_active_users)[0]));
         dispatch(setLoadingState('true'));
       });
   };
@@ -68,7 +70,13 @@ export const setTweetsCount = tweets_count_ts => {
 
 export const setSelectedInfluencer = value => {
   return {
-    type: constants.SET_SELECTED_INFLUENCER,
+    type: constants.SELECTED_INFLUENCER,
+    value: value.charAt(0) === '@' ? value : '@' + value
+  };
+};
+export const setSelectedMentionedUser = value => {
+  return {
+    type: constants.MENTIONED_USER,
     value: value.charAt(0) === '@' ? value : '@' + value
   };
 };
@@ -91,6 +99,13 @@ export const setTopInfluencersData = topInfluencers => {
   return {
     type: constants.TOP_INFLUENCERS,
     topInfluencers
+  };
+};
+
+export const setTopMentionedUsersData = topMentionedUsers => {
+  return {
+    type: constants.TOP_MENTIONED_USERS,
+    topMentionedUsers
   };
 };
 

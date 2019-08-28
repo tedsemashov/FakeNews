@@ -3,9 +3,9 @@ import './popup.css';
 import PopupSection from './popup-section/PopupSection';
 import PopupHeaderNumbers from './popup-header-numbers/PopupHeaderNumbers';
 
-const Popup = ({ selectedInfluencer, topInfluencers }) => {
-  const selected = selectedInfluencer.substr(1);
-  const currentTweets = selected ? topInfluencers[selected].top_tweets : '';
+const Popup = props => {
+  const selected = props.selectedInfluencer.substr(1);
+  const currentTweets = selected ? props.users[selected].top_tweets : '';
   return (
     <div className="popupContainer">
       <div className="popupContentWrapper">

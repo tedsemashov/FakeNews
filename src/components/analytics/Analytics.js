@@ -10,7 +10,7 @@ import TopNews from '../top-news/index';
 import TopRetweetedNews from '../top-retweeted-news/index';
 import TopInfluencers from '../top-influencers/index';
 import TopTrolls from '../top-trolls/index';
-import TopMentionedUser from '../top-mentioned-user/index';
+import TopMentionedUsers from '../top-mentioned-users/index';
 import Footer from '../footer/Footer';
 
 class Analytics extends Component {
@@ -67,7 +67,7 @@ class Analytics extends Component {
             <TopTrolls />
           </div>
           <div className="influencersMentionedWrapper">
-            <TopMentionedUser />
+            <TopMentionedUsers />
           </div>
         </section>
         <div className="footerWrapper">
