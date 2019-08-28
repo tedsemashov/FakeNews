@@ -17,6 +17,8 @@ export const getTwitterData = () => {
         dispatch(setTweetsCount(data.tweets_count_ts));
         dispatch(setTopNewsData(data.top_news_tw));
         dispatch(setTopRetweetsData(data.top_rtweets));
+        dispatch(setTopInfluencersData(data.top_influencers));
+        dispatch(setSelectedInfluencer(Object.keys(data.top_influencers)[0]));
         dispatch(setLoadingState('true'));
       });
   };
@@ -24,7 +26,7 @@ export const getTwitterData = () => {
 
 export const setHashtagsData = hashtags => {
   return {
-    type: constants.SET_HASHTAGS_DATA,
+    type: constants.HASHTAGS_DATA,
     hashtags
   };
 };
@@ -45,7 +47,7 @@ export const setTopRetweetsData = topRetweetedNews => {
 
 export const setKeywordData = keyword => {
   return {
-    type: constants.SET_KEYWORD_DATA,
+    type: constants.KEYWORD_DATA,
     keyword
   };
 };
@@ -67,7 +69,7 @@ export const setTweetsCount = tweets_count_ts => {
 export const setSelectedInfluencer = value => {
   return {
     type: constants.SET_SELECTED_INFLUENCER,
-    value
+    value: value.charAt(0) === '@' ? value : '@' + value
   };
 };
 
@@ -82,6 +84,13 @@ export const setTimePeriod = timePeriod => {
   return {
     type: constants.TIME_PERIOD,
     timePeriod
+  };
+};
+
+export const setTopInfluencersData = topInfluencers => {
+  return {
+    type: constants.TOP_INFLUENCERS,
+    topInfluencers
   };
 };
 

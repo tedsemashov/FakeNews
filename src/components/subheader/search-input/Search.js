@@ -8,10 +8,10 @@ const Search = ({ title, className, placeholder }) => {
       <div className="searchContainer">
         <div className="keyWord">
           <p className="keyWordValue">Ukraine</p>
-          <img className="closeImg" src={require('../../../images/header/close@3x.png')} />
+          <img className="closeImg" src={require('../../../images/header/close@3x.png')} alt="Close" />
         </div>
         <input type="text" className={className} placeholder={placeholder} />
-        <img className="closeImg" src={require('../../../images/header/search@3x.png')} />
+        <img className="closeImg" src={require('../../../images/header/search@3x.png')} alt="Search" />
       </div>
     </div>
   );

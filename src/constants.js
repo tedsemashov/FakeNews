@@ -31,25 +31,26 @@ export const BODY_POST = {
     n_top_fav_tw: 10
   },
   top_influencers: {
-    n_top_users: 3,
-    n_usr_tw: 3
+    n_top_users: 5,
+    n_usr_tw: 5
   },
   top_favorite_tw_users: {
-    n_top_users: 3,
-    n_usr_tw: 3
+    n_top_users: 5,
+    n_usr_tw: 5
   },
   top_active_users: {
-    n_top_users: 3,
-    n_usr_tw: 3
+    n_top_users: 5,
+    n_usr_tw: 5
   }
 };
 
-export const SET_HASHTAGS_DATA = 'SET_HASHTAGS_DATA';
-export const SET_KEYWORD_DATA = 'SET_KEYWORD_DATA';
+export const HASHTAGS_DATA = 'HASHTAGS_DATA';
+export const KEYWORD_DATA = 'KEYWORD_DATA';
 export const TOP_NEWS_DATA = 'TOP_NEWS_DATA';
 export const TOP_RETWEETED_NEWS = 'TOP_RETWEETED_NEWS';
 export const TOP_FAVORITE_TWEETS_DATA = 'TOP_FAVORITE_TWEETS_DATA';
 export const TWEETS_COUNT_TS_DATA = 'TWEETS_COUNT_TS_DATA';
+export const TOP_INFLUENCERS = 'TOP_INFLUENCERS';
 export const GET_USER_CREDENTIALS = 'GET_USER_CREDENTIALS';
 export const SET_SELECTED_INFLUENCER = 'SET_SELECTED_INFLUENCER';
 export const LOADING_STATE = 'LOADING_STATE';

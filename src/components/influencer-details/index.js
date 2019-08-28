@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
-import TopInfluencersSection from './TopInfluencersSection';
-import { setSelectedInfluencer } from '../../../actions';
+import InfluencerDetails from './InfluencerDetails';
+import { setSelectedInfluencer } from '../../actions';
 
 const mapDispatchToProps = dispatch => {
   return {
@@ -11,4 +11,4 @@ const mapDispatchToProps = dispatch => {
 export default connect(
   null,
   mapDispatchToProps
-)(TopInfluencersSection);
+)(InfluencerDetails);

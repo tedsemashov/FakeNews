@@ -1,7 +1,7 @@
 import React from 'react';
 import './topMentionedUser.css';
 import SectionTitle from '../section-title/SectionTitle';
-import TopInfluencersSection from '../top-influencers/top-influencers-section/index';
+import InfluencerDetails from '../influencer-details/index';
 import Popup from '../popup-top-accounts/index';
 import Button from '../button/Button';
 
@@ -24,7 +24,7 @@ const TopMentionedUser = ({ topInfluencers }) => {
         <div className="topMentionedUsersAccounts">
           {influencersArr.map(
             ({ user_name, user_profile_image_url, account, user_followers_count, user_statuses_count }) => (
-              <TopInfluencersSection
+              <InfluencerDetails
                 account={account}
                 name={user_name}
                 img={user_profile_image_url}

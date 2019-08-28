@@ -4,7 +4,7 @@ import SectionTitle from '../section-title/SectionTitle';
 import TopTrollsWorld from './top-trolls-world/index';
 import TopTrollsGender from './top-trolls-gender/index';
 import TopTrollsAge from './top-trolls-age/index';
-import TopInfluencersSection from '../top-influencers/top-influencers-section/index';
+import InfluencerDetails from '../influencer-details/index';
 import Button from '../button/Button';
 
 class TopTrolls extends Component {
@@ -28,7 +28,7 @@ class TopTrolls extends Component {
           <div className="topTrollsSection">
             {influencersArr.map(
               ({ user_name, user_profile_image_url, account, user_followers_count, user_statuses_count }) => (
-                <TopInfluencersSection
+                <InfluencerDetails
                   account={account}
                   name={user_name}
                   img={user_profile_image_url}

@@ -1,7 +1,7 @@
 import React from 'react';
-import './topInfluencersSection.css';
+import './InfluencerDetails.css';
 
-const TopInfluencersSection = ({ setSelectedInfluencer, account, color, img, name, tweets, followers }) => {
+const InfluencerDetails = ({ setSelectedInfluencer, account, color, img, name, tweets, followers }) => {
   const convertNumbers = num => {
     return Math.abs(num) > 999
       ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + 'K'
@@ -40,4 +40,4 @@ const TopInfluencersSection = ({ setSelectedInfluencer, account, color, img, nam
   );
 };
 
-export default TopInfluencersSection;
+export default InfluencerDetails;
