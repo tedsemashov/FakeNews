@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './TopInfluencers.css';
+import './topInfluencers.css';
 import SectionTitle from '../section-title/SectionTitle';
 import InfluencerDetails from '../influencer-details/InfluencerDetails';
 import Button from '../button/Button';
