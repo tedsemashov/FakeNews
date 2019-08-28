@@ -1,18 +1,12 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './manage.css';
 
 class Manage extends Component {
+  componentDidMount() {}
 
-   componentDidMount() {
-   };
-
-   render() {
-      return (
-           <div>
-              <h1>Manage</h1>
-           </div>
-      );
-   }
+  render() {
+    return <h1>Manage</h1>;
+  }
 }
 
 export default Manage;

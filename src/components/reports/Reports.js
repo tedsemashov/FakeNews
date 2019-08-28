@@ -1,18 +1,8 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './reports.css';
 
-class Reports extends Component {
-
-   componentDidMount() {
-   };
-
-   render() {
-      return (
-           <div>
-              <h1>Reports</h1>
-           </div>
-      );
-   }
-}
+const Reports = () => {
+  return <h1>Reports</h1>;
+};
 
 export default Reports;

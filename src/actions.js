@@ -2,7 +2,7 @@ import * as constants from './constants';
 
 export const getTwitterData = () => {
   return dispatch => {
-    fetch(constants.PROXY_URL + constants.TARGET_URL, {
+    fetch(constants.TARGET_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -87,7 +87,7 @@ export const setTimePeriod = timePeriod => {
 
 export const getTwittersByDate = reqBody => {
   return dispatch => {
-    fetch(constants.PROXY_URL + constants.TARGET_URL, {
+    fetch(constants.TARGET_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

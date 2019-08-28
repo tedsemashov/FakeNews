@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './popup.css';
 import PopupSection from './popup-section/PopupSection';
 import PopupHeaderNumbers from './popup-header-numbers/PopupHeaderNumbers';

@@ -1,16 +1,8 @@
-import React, {Component} from 'react';
+import React from 'react';
 import './section.css';
 
-class Section extends Component {
-
-   componentDidMount() {
-   };
-
-   render() {
-      return (
-         <button className={this.props.sectionClass}>{this.props.sectionValue}</button>
-      );
-   }
-}
+const Section = ({ sectionClass, sectionValue }) => {
+  return <button className={sectionClass}>{sectionValue}</button>;
+};
 
 export default Section;
