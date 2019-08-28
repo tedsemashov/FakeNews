@@ -10,8 +10,7 @@
 }
 
 .titleWrapper {
-   max-width: 1440px;
-   padding-left: 130px;
+   max-width: 1180px;
    margin: 0 auto;
    height: 55px;
    position: relative;
@@ -20,8 +19,7 @@
 
 .wordsGraphicsWrapper {
    margin: 0 auto;
-   max-width: 1440px;
-   padding: 0 80px 0 80px;
+   max-width: 1180px;
    height: 401px;
    position: relative;
    top: 80px;
@@ -37,15 +35,6 @@
 .wordsChartWrapper {
    width: 48.5%;
    height: 100%;
-}
-
-.maskCopyright {
-   width: 66px;
-   height: 5%;
-   position: absolute;
-   background-color: #ffffff;
-   z-index: 2;
-   bottom: 0;
 }
 
 .lineHorizontalSeparator {

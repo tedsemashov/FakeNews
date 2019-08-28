@@ -6,23 +6,21 @@ import HashtagChart from '../hashtagChart/index';
 
 const Hashtags = () => {
   return (
-    <div className="hashtagsWrapper">
-      <div className="titleWrapper">
-        <SectionTitle value="HASHTAGS" />
+    <div className='hashtagsWrapper'>
+      <div className='titleWrapper'>
+         <SectionTitle value='HASHTAGS'/>
       </div>
-      <div className="wordsGraphicsWrapper">
-        <div className="wordsWrapper">
-          <div className="maskCopyright" />
-          <Words />
-          <div className="lineHorizontalSeparator" />
-        </div>
-        <div className="lineSeparator" />
-        <div className="wordsChartWrapper">
-          <div className="maskCopyright" />
-          <HashtagChart />
-        </div>
+      <div className='wordsGraphicsWrapper'>
+         <div className='wordsWrapper'>
+            <Words/>
+            <div className='lineHorizontalSeparator'/>
+         </div>
+         <div className='lineSeparator'/>
+         <div className='wordsChartWrapper'>
+            <HashtagChart/>
+         </div>
       </div>
-    </div>
+   </div>
   );
 };
 

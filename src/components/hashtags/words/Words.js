@@ -19,7 +19,7 @@ class Words extends Component {
 
   createWords = () => {
     am4core.useTheme(am4themes_animated);
-    let chart = am4core.create('chartdiv', am4plugins_wordCloud.WordCloud);
+    let chart = am4core.create('hashtagsWords', am4plugins_wordCloud.WordCloud);
     let series = chart.series.push(new am4plugins_wordCloud.WordCloudSeries());
     series.maxCount = 20;
     series.minWordLength = 2;
@@ -52,7 +52,7 @@ class Words extends Component {
   render() {
     return (
       <div>
-        <div id="chartdiv" />
+        <div className="hashtagsWords" />
       </div>
     );
   }
