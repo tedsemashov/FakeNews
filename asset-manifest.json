@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/tedsemashov/FakeNews/static/css/main.ca909bc2.chunk.css",
+    "main.js": "/tedsemashov/FakeNews/static/js/main.4b9be352.chunk.js",
+    "main.js.map": "/tedsemashov/FakeNews/static/js/main.4b9be352.chunk.js.map",
+    "runtime~main.js": "/tedsemashov/FakeNews/static/js/runtime~main.38e8c4bc.js",
+    "runtime~main.js.map": "/tedsemashov/FakeNews/static/js/runtime~main.38e8c4bc.js.map",
+    "xlsx.js": "/tedsemashov/FakeNews/static/js/xlsx.bf4962bd.chunk.js",
+    "xlsx.js.map": "/tedsemashov/FakeNews/static/js/xlsx.bf4962bd.chunk.js.map",
+    "static/css/3.689ec195.chunk.css": "/tedsemashov/FakeNews/static/css/3.689ec195.chunk.css",
+    "static/js/3.5fb2944b.chunk.js": "/tedsemashov/FakeNews/static/js/3.5fb2944b.chunk.js",
+    "static/js/3.5fb2944b.chunk.js.map": "/tedsemashov/FakeNews/static/js/3.5fb2944b.chunk.js.map",
+    "static/js/4.638ca290.chunk.js": "/tedsemashov/FakeNews/static/js/4.638ca290.chunk.js",
+    "static/js/4.638ca290.chunk.js.map": "/tedsemashov/FakeNews/static/js/4.638ca290.chunk.js.map",
+    "static/js/5.7c62b074.chunk.js": "/tedsemashov/FakeNews/static/js/5.7c62b074.chunk.js",
+    "static/js/5.7c62b074.chunk.js.map": "/tedsemashov/FakeNews/static/js/5.7c62b074.chunk.js.map",
+    "static/js/6.d007a2b2.chunk.js": "/tedsemashov/FakeNews/static/js/6.d007a2b2.chunk.js",
+    "static/js/6.d007a2b2.chunk.js.map": "/tedsemashov/FakeNews/static/js/6.d007a2b2.chunk.js.map",
+    "index.html": "/tedsemashov/FakeNews/index.html",
+    "precache-manifest.851480678a91d8d062d9c5c1063d410b.js": "/tedsemashov/FakeNews/precache-manifest.851480678a91d8d062d9c5c1063d410b.js",
+    "service-worker.js": "/tedsemashov/FakeNews/service-worker.js",
+    "static/css/3.689ec195.chunk.css.map": "/tedsemashov/FakeNews/static/css/3.689ec195.chunk.css.map",
+    "static/css/main.ca909bc2.chunk.css.map": "/tedsemashov/FakeNews/static/css/main.ca909bc2.chunk.css.map",
+    "static/media/Steven_Hallam-slide.jpg": "/tedsemashov/FakeNews/static/media/Steven_Hallam-slide.9f8c00f9.jpg",
+    "static/media/logo@3x.png": "/tedsemashov/FakeNews/static/media/logo@3x.58bbb165.png"
+  }
+}
