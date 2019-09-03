@@ -1,4 +1,5 @@
 export const TARGET_URL = 'http://18.222.110.159:8080/get_results/';
+export const EXPERTS_INFO_URL = 'http://18.222.110.159:8080/exp_ml/';
 export const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
 export const BODY_POST = {
   results_names_list: [
@@ -44,6 +45,35 @@ export const BODY_POST = {
   }
 };
 
+export const EXPERT_BODY_POST = {
+  keyword: "",
+  dates: ["2019-07-01", "2019-08-07"],
+  top_news_tw_ml: {
+    min_tweets_count: 3,
+    top_news_tweets_count: 10
+  },
+  top_rtweets_ml: {
+    min_tweets_count: 3,
+    top_rt_count: 25
+  },
+  top_users_tw: {
+    top_users_count: 30,
+    max_tw_top_usr: 10
+  },
+  top_rt_users_tw: {
+    top_rt_users_count: 30,
+     min_rt_count: 3,
+     max_tw_top_usr: 5
+   },
+  tw_user_filter: {
+   min_user_followers: 100,
+   min_user_favorites: 10,
+   min_user_tw_count: 3,
+   min_retweet_count: 1
+ },
+ request_type: "get_exp_tw_labeling"
+}
+
 export const HASHTAGS_DATA = 'HASHTAGS_DATA';
 export const KEYWORD_DATA = 'KEYWORD_DATA';
 export const TOP_NEWS_DATA = 'TOP_NEWS_DATA';
@@ -57,4 +87,5 @@ export const SELECTED_INFLUENCER = 'SELECTED_INFLUENCER';
 export const MENTIONED_USER = 'MENTIONED_USER';
 export const LOADING_STATE = 'LOADING_STATE';
 export const TIME_PERIOD = 'TIME_PERIOD';
+export const EXPERTS_DATA = 'EXPERTS_DATA';
 export const REGEXP_EMAIL = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

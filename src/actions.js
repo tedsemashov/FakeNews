@@ -26,6 +26,22 @@ export const getTwitterData = (params = {}) => {
   };
 };
 
+export const getExpertsData = () => {
+  return dispatch => {
+    fetch(constants.EXPERTS_INFO_URL, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(constants.EXPERT_BODY_POST)
+    })
+      .then(res => res.json())
+      .then(data => {
+        dispatch(setExpertsData(data));
+      });
+  };
+};
+
 export const setHashtagsData = hashtags => {
   return {
     type: constants.HASHTAGS_DATA,
@@ -127,5 +143,12 @@ export const getTwittersByDate = reqBody => {
         dispatch(setLoadingState('false'));
       })
       .catch(err => console.log(err));
+  };
+};
+
+export const setExpertsData = data => {
+  return {
+    type: constants.EXPERTS_DATA,
+    expertsData: data
   };
 };

@@ -60,7 +60,8 @@ const initialState = {
   selectedInfluencer: '',
   selectedMentionedUser: '',
   selectedTroll: '',
-  isLoaded: false
+  isLoaded: false,
+  expertsData: {},
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -124,6 +125,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         topMentionedUsers: action.topMentionedUsers
+      };
+    case constants.EXPERTS_DATA:
+      return {
+        ...state,
+        expertsData: action.expertsData
       };
     default:
       return state;
