@@ -4,11 +4,11 @@ import Manage from './Manage';
 
 const mapStateToProps = (state) => {
    return {
-     topNewsList:  state.topNewsList,
-     topRtweets:  state.topRtweets,
-     topRtUsersTw:  state.topRtUsersTw,
-     topUsersTweets:  state.topUsersTweets,
-     fakeNewsUsers:  state.fakeNewsUsers,
+     topNewsList: state.topNewsList,
+     topRtweets: state.topRtweets,
+     topRtUsersTw: state.topRtUsersTw,
+     topUsersTweets: state.topUsersTweets,
+     fakeNewsUsers: state.fakeNewsUsers,
      isLoaded: state.isLoaded
    }
 };

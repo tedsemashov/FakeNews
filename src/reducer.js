@@ -63,8 +63,7 @@ const initialState = {
   selectedInfluencer: '',
   selectedMentionedUser: '',
   selectedTroll: '',
-  isLoaded: false,
-  expertsData: {},
+  isLoaded: false
 };
 
 const rootReducer = (state = initialState, action) => {
