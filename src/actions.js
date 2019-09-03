@@ -37,7 +37,12 @@ export const getExpertsData = () => {
     })
       .then(res => res.json())
       .then(data => {
-        dispatch(setExpertsData(data));
+        dispatch(setTopNewsListData(data.top_news_list));
+        dispatch(setTopRtweetsData(data.top_rtweets));
+        dispatch(setTopRtUsersTwData(data.top_rt_users_tw));
+        dispatch(setTopUsersTweetsData(data.top_users_tw));
+        dispatch(setFakeNewsUsersData(data.fn_users));
+        dispatch(setLoadingState('true'));
       });
   };
 };
@@ -146,9 +151,37 @@ export const getTwittersByDate = reqBody => {
   };
 };
 
-export const setExpertsData = data => {
+export const setTopNewsListData = data => {
   return {
-    type: constants.EXPERTS_DATA,
-    expertsData: data
+    type: constants.TOP_NEWS_LIST,
+    topNewsList: data
+  };
+};
+
+export const setTopRtweetsData = data => {
+  return {
+    type: constants.TOP_RTWEETS,
+    topRtweets: data
+  };
+};
+
+export const setTopRtUsersTwData = data => {
+  return {
+    type: constants.TOP_RT_USERS_TW,
+    topRtUsersTw: data
+  };
+};
+
+export const setTopUsersTweetsData = data => {
+  return {
+    type: constants.TOP_USERS_TWEETS,
+    topUsersTweets: data
+  };
+};
+
+export const setFakeNewsUsersData = data => {
+  return {
+    type: constants.FAKE_NEWS_USERS,
+    fakeNewsUsers: data
   };
 };

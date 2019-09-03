@@ -1,9 +1,12 @@
 import * as constants from './constants';
 
-const expertInitialState = {
-  top_rtweets: [],
-  top_rt_users_tw: []
-};
+const expertPageData = {
+  topNewsList: {},
+  topRtweets: {},
+  topRtUsersTw: {},
+  topUsersTweets: {},
+  fakeNewsUsers: {}
+}
 
 const initialState = {
   ...expertInitialState,
@@ -126,10 +129,30 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         topMentionedUsers: action.topMentionedUsers
       };
-    case constants.EXPERTS_DATA:
+    case constants.TOP_NEWS_LIST:
       return {
         ...state,
-        expertsData: action.expertsData
+        topNewsList: action.topNewsList
+      };
+    case constants.TOP_RTWEETS:
+      return {
+        ...state,
+        topRtweets: action.topRtweets
+      };
+    case constants.TOP_RT_USERS_TW:
+      return {
+        ...state,
+        topRtUsersTw: action.topRtUsersTw
+      };
+    case constants.TOP_USERS_TWEETS:
+      return {
+        ...state,
+        topUsersTweets: action.topUsersTweets
+      };
+    case constants.FAKE_NEWS_USERS:
+      return {
+        ...state,
+        fakeNewsUsers: action.fakeNewsUsers
       };
     default:
       return state;
