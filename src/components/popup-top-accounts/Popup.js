@@ -1,11 +1,14 @@
-import React, { Component } from 'react';
-import './popup.css';
+import React from "react";
+import _ from "lodash";
+
 import PopupSection from './popup-section/PopupSection';
 import PopupHeaderNumbers from './popup-header-numbers/PopupHeaderNumbers';
 
+import './popup.css';
+
 const Popup = props => {
   const selected = props.selectedInfluencer.substr(1);
-  const currentTweets = selected ? props.users[selected].top_tweets : '';
+  const currentTweets = _.get(props.users, [selected, "top_tweets"], null);
   return (
     <div className="popupContainer">
       <div className="popupContentWrapper">

@@ -1,13 +1,13 @@
 import * as constants from './constants';
 
-export const getTwitterData = () => {
+export const getTwitterData = (params = {}) => {
   return dispatch => {
     fetch(constants.TARGET_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(constants.BODY_POST)
+      body: JSON.stringify({...constants.BODY_POST, ...params})
     })
       .then(res => res.json())
       .then(data => {
