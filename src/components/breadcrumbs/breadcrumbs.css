@@ -1,0 +1,16 @@
+.breadcrumbs {
+  font-size: 16px;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.breadcrumbs a, .breadcrumbs a:hover  {
+  text-decoration: none;
+  color: inherit;
+}
+
+.breadcrumbs .breadcrumb-item + .breadcrumb-item:before {
+  display: inline;
+  white-space: pre;
+  content: "<";
+}

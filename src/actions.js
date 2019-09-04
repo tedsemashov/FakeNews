@@ -1,4 +1,6 @@
 import * as constants from './constants';
+import expertsConstants from './constants';
+export * from './actions/expert';
 
 export const getTwitterData = (params = {}) => {
   return dispatch => {
@@ -21,27 +23,6 @@ export const getTwitterData = (params = {}) => {
         dispatch(setTopMentionedUsersData(data.top_active_users));
         dispatch(setSelectedInfluencer(Object.keys(data.top_influencers)[0]));
         dispatch(setSelectedMentionedUser(Object.keys(data.top_active_users)[0]));
-        dispatch(setLoadingState('true'));
-      });
-  };
-};
-
-export const getExpertsData = () => {
-  return dispatch => {
-    fetch(constants.expertsConstants.EXPERTS_INFO_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(constants.expertsConstants.EXPERT_BODY_POST)
-    })
-      .then(res => res.json())
-      .then(data => {
-        dispatch(setTopNewsListData(data.top_news_list));
-        dispatch(setTopRtweetsData(data.top_rtweets));
-        dispatch(setTopRtUsersTwData(data.top_rt_users_tw));
-        dispatch(setTopUsersTweetsData(data.top_users_tw));
-        dispatch(setFakeNewsUsersData(data.fn_users));
         dispatch(setLoadingState('true'));
       });
   };
@@ -95,6 +76,7 @@ export const setSelectedInfluencer = value => {
     value: value.charAt(0) === '@' ? value : '@' + value
   };
 };
+
 export const setSelectedMentionedUser = value => {
   return {
     type: constants.MENTIONED_USER,
@@ -183,5 +165,12 @@ export const setFakeNewsUsersData = data => {
   return {
     type: constants.expertsConstants.FAKE_NEWS_USERS,
     fakeNewsUsers: data
+  };
+};
+
+export const setTimePeriodExpert = data => {
+  return {
+    type: constants.expertsConstants.TIME_PERIOD_EXPERT,
+    timePeriodExpert: data
   };
 };

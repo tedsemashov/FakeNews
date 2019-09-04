@@ -9,6 +9,7 @@ import thunk from 'redux-thunk';
 import rootReducer from './reducer';
 import Analytics from './components/analytics/';
 import Manage from './components/manage/';
+import Expert from './components/expert/';
 import Reports from './components/reports/';
 import Login from './components/login/';
 import { PrivateRoute } from './components/private-rout/PrivateRoute';
@@ -22,6 +23,7 @@ ReactDOM.render(
       <Route exact path="/" component={Login} />
       <PrivateRoute path="/analytics" component={Analytics} />
       <PrivateRoute path="/manage" component={Manage} />
+      <PrivateRoute path="/expert" component={Expert} />
       <PrivateRoute path="/reports" component={Reports} />
     </Router>
   </Provider>,

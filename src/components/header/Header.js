@@ -10,7 +10,7 @@ const Header = ({ user }) => {
   return (
     <header className="headerContainer">
       <div className="headerWrapper">
-        <img className="headerLogo" src={require('../../images/header/logo@3x.png')} />
+        <img className="headerLogo" src={require('../../images/header/logo@3x.png')} alt='logo' />
         <nav className="navMenu">
           <ul className="headerList">
             <li className="headerLI">
@@ -22,6 +22,9 @@ const Header = ({ user }) => {
             <li>
               <a href="/manage">MANAGE</a>
             </li>
+            <li>
+              <a href="/reports">EXPERT</a>
+            </li>
           </ul>
         </nav>
         <div className="userLogin">
@@ -32,6 +35,7 @@ const Header = ({ user }) => {
             <img
               className="userLogo"
               src={require('../../images/header/Steven_Hallam-slide.jpg')}
+              alt='user-logo'
             />
           </div>
         </div>

@@ -1,4 +1,5 @@
 import * as constants from './constants';
+import { expertsConstants } from './constants';
 
 const expertPageData = {
   topNewsList: {},
@@ -9,7 +10,11 @@ const expertPageData = {
 }
 
 const initialState = {
+<<<<<<< HEAD
   ...expertInitialState,
+=======
+  ...expertPageData,
+>>>>>>> expert page filter section, breadcrumbs
   user: {
     email: 'test@test.com',
     password: '1234',
@@ -128,31 +133,14 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         topMentionedUsers: action.topMentionedUsers
       };
-    case constants.expertsConstants.TOP_NEWS_LIST:
+    case expertsConstants.TOP_NEWS_LIST:
       return {
         ...state,
         topNewsList: action.topNewsList
       };
-    case constants.expertsConstants.TOP_RTWEETS:
-      return {
-        ...state,
-        topRtweets: action.topRtweets
-      };
-    case constants.expertsConstants.TOP_RT_USERS_TW:
-      return {
-        ...state,
-        topRtUsersTw: action.topRtUsersTw
-      };
-    case constants.expertsConstants.TOP_USERS_TWEETS:
-      return {
-        ...state,
-        topUsersTweets: action.topUsersTweets
-      };
-    case constants.expertsConstants.FAKE_NEWS_USERS:
-      return {
-        ...state,
-        fakeNewsUsers: action.fakeNewsUsers
-      };
+    case expertsConstants.SET_EXPERT_DATA:
+      const { type, ...data } = action;
+      return data;
     default:
       return state;
   }
