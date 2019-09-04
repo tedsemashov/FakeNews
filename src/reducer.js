@@ -1,6 +1,12 @@
 import * as constants from './constants';
 
+const expertInitialState = {
+  top_rtweets: [],
+  top_rt_users_tw: []
+};
+
 const initialState = {
+  ...expertInitialState,
   user: {
     email: 'test@test.com',
     password: '1234',
@@ -9,7 +15,7 @@ const initialState = {
   },
   timePeriod: '1 DAY',
   hashtags: {},
-  keyword: '',
+  keyword: "ukraine",
   top_favorite_tweets: [],
   tweets_count_ts: {},
   fakeUsers: [

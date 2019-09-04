@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-import { getTwitterData, setSelectedName } from '../../actions';
-import { getFilteredNames } from '../../selectors';
+import { getTwitterData } from '../../actions';
 import Analytics from './Analytics';
 
 const mapStateToProps = state => {

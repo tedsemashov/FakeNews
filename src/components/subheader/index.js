@@ -1,16 +1,9 @@
 import { connect } from "react-redux";
-import Subheader from './Subheader';
+import _ from "lodash";
 
-const mapStateToProps = (state) => {
-   return {
-      timePeriod: state.timePeriod
-      // filteredNames: getFilteredNames(state)
-   }
-};
+import Subheader from "./Subheader";
 
-const mapDispatchToProps = (dispatch) => {
-   return {
-   }
-};
+const mapStateToProps = (state) => _.pick(state, ["keyword", "timePeriod"]);
+const mapDispatchToProps = () => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(Subheader)
+export default connect(mapStateToProps, mapDispatchToProps)(Subheader);

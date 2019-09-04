@@ -1,16 +1,21 @@
 import { connect } from "react-redux";
-import Words from './Words';
+import _ from "lodash";
 
-const mapStateToProps = (state) => {
-   return {
-      hashtags: state.hashtags
-      // filteredNames: getFilteredNames(state)
-   }
-};
+import Words from "./Words";
 
+import { getTwitterData, setLoadingState } from "./../../../actions";
+
+const mapStateToProps = (state) => _.pick(state, ["keyword", "hashtags", "timePeriod"]);
 const mapDispatchToProps = (dispatch) => {
-   return {
-   }
+  return {
+    onChange: (keyword, snapshot) => {
+      dispatch(setLoadingState(false));
+
+      // TBD: add dates to params list from filter;
+      // const dates = snapshot.timePeriod; ???
+      dispatch(getTwitterData({ keyword }));
+    }
+  };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Words)
+export default connect(mapStateToProps, mapDispatchToProps)(Words);

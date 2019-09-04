@@ -10,6 +10,7 @@
     "bootstrap-daterangepicker": "^3.0.5",
     "dayjs": "^1.8.15",
     "fetch-mock": "^7.3.3",
+    "lodash": "^4.17.15",
     "node-fetch": "^2.6.0",
     "prop-types": "^15.7.2",
     "rb-datepicker": "^0.0.5",

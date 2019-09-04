@@ -9,8 +9,8 @@ import 'bootstrap-daterangepicker/daterangepicker.css';
 const DatePicker = (props) => {
   let pickedDate = '';
   const onDatesChange = ({ startDate, endDate }) => {
-    console.log({ startDate, endDate });
-
+    // TBD: dispatch action!!!
+    // don't forget to preserve current filters!!!
     props.getTwitterByDate(generateRequestObject(BODY_POST, startDate, endDate));
     props.toogleTimePeriod();
     props.setLoadingState();
