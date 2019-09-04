@@ -4,7 +4,7 @@ import Section from './section/Section';
 import Dropdown from '../dropdown/index';
 import Search from './search-input/Search';
 
-const Subheader = ({ onClick, timePeriod }) => {
+const Subheader = ({ onClick, timePeriod, keyword }) => {
   return (
     <div className="subheaderContainer">
       <div className="subheaderSections">
@@ -31,7 +31,7 @@ const Subheader = ({ onClick, timePeriod }) => {
           />
         </div>
         <div className="inputSearchWrapper">
-          <Search title={'Key words'} className={'searchInputArea'} />
+          <Search title={'Key words'} className={'searchInputArea'} keyword={keyword} />
         </div>
         <div className="inputWrapperEmotions">
           <Dropdown

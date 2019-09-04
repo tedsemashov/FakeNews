@@ -12,7 +12,7 @@ const Hashtags = () => {
       </div>
       <div className='wordsGraphicsWrapper'>
          <div className='wordsWrapper'>
-            <Words/>
+            <Words />
             <div className='lineHorizontalSeparator'/>
          </div>
          <div className='lineSeparator'/>
