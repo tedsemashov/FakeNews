@@ -28,12 +28,12 @@ export const getTwitterData = (params = {}) => {
 
 export const getExpertsData = () => {
   return dispatch => {
-    fetch(constants.EXPERTS_INFO_URL, {
+    fetch(constants.expertsConstants.EXPERTS_INFO_URL, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify(constants.EXPERT_BODY_POST)
+      body: JSON.stringify(constants.expertsConstants.EXPERT_BODY_POST)
     })
       .then(res => res.json())
       .then(data => {
@@ -153,35 +153,35 @@ export const getTwittersByDate = reqBody => {
 
 export const setTopNewsListData = data => {
   return {
-    type: constants.TOP_NEWS_LIST,
+    type: constants.expertsConstants.TOP_NEWS_LIST,
     topNewsList: data
   };
 };
 
 export const setTopRtweetsData = data => {
   return {
-    type: constants.TOP_RTWEETS,
+    type: constants.expertsConstants.TOP_RTWEETS,
     topRtweets: data
   };
 };
 
 export const setTopRtUsersTwData = data => {
   return {
-    type: constants.TOP_RT_USERS_TW,
+    type: constants.expertsConstants.TOP_RT_USERS_TW,
     topRtUsersTw: data
   };
 };
 
 export const setTopUsersTweetsData = data => {
   return {
-    type: constants.TOP_USERS_TWEETS,
+    type: constants.expertsConstants.TOP_USERS_TWEETS,
     topUsersTweets: data
   };
 };
 
 export const setFakeNewsUsersData = data => {
   return {
-    type: constants.FAKE_NEWS_USERS,
+    type: constants.expertsConstants.FAKE_NEWS_USERS,
     fakeNewsUsers: data
   };
 };

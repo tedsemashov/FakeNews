@@ -42,6 +42,7 @@ class Manage extends Component {
         {!this.props.isLoaded ? spinner : null}
         <Header />
         <Subheader onClick={this.toggleTimePeriod} />
+        <div className="dropdownWrapper"> {this.showTimePeriodDropdown()} </div>
         <h1>Manage </h1>
         {JSON.stringify(this.props.topRtweets)}
       </div>

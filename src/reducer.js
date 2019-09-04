@@ -128,27 +128,27 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         topMentionedUsers: action.topMentionedUsers
       };
-    case constants.TOP_NEWS_LIST:
+    case constants.expertsConstants.TOP_NEWS_LIST:
       return {
         ...state,
         topNewsList: action.topNewsList
       };
-    case constants.TOP_RTWEETS:
+    case constants.expertsConstants.TOP_RTWEETS:
       return {
         ...state,
         topRtweets: action.topRtweets
       };
-    case constants.TOP_RT_USERS_TW:
+    case constants.expertsConstants.TOP_RT_USERS_TW:
       return {
         ...state,
         topRtUsersTw: action.topRtUsersTw
       };
-    case constants.TOP_USERS_TWEETS:
+    case constants.expertsConstants.TOP_USERS_TWEETS:
       return {
         ...state,
         topUsersTweets: action.topUsersTweets
       };
-    case constants.FAKE_NEWS_USERS:
+    case constants.expertsConstants.FAKE_NEWS_USERS:
       return {
         ...state,
         fakeNewsUsers: action.fakeNewsUsers
