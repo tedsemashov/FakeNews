@@ -3,7 +3,7 @@ export const EXPERT_API_URL = "http://18.222.110.159:8080/exp_ml/";
 // API DATA BODY DEFAULT;
 export const EXPERT_BODY_POST = {
   keyword: "",
-  dates: ["2019-07-01", "2019-08-07"],
+  dates: ["2019-09-01", "2019-09-04"],
   top_news_tw_ml: {
     min_tweets_count: 3,
     top_news_tweets_count: 10
