@@ -23,7 +23,7 @@ const Header = ({ user }) => {
               <a href="/manage">MANAGE</a>
             </li>
             <li>
-              <a href="/reports">EXPERT</a>
+              <a href="/expert">EXPERT</a>
             </li>
           </ul>
         </nav>
