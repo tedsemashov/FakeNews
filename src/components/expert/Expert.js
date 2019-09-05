@@ -15,7 +15,7 @@ class Expert extends Component {
   };
 
   componentDidMount() {
-    //this.props.getExpertsData();
+    this.props.getExpertsData();
   }
 
   toggleTimePeriod = () => {
@@ -44,15 +44,18 @@ class Expert extends Component {
     const breadcrumbs = [{title: 'Expert', link: '/expert'}]
     return (
       <div>
-        {!this.props.isLoaded && false ? spinner : null}
+        {!this.props.isLoaded ? spinner : null}
         <Header />
         <Subheader onClick={this.toggleTimePeriod} />
         <div className="dropdownWrapper"> {this.showTimePeriodDropdown()} </div>
         <section className="topWrapper">
           <div className="markFake">
-           <div>
+            <div>
               <Breadcrumbs breadcrumbs={breadcrumbs} active={this.props.location.pathname}/>
-              <h1 className='main-title'>MArk the fake</h1>
+              <h1 className='main-title'>Mark the fake</h1>
+            </div>
+            <div>
+              {JSON.stringify(this.props.fakeNewsUsers)}
             </div>
           </div>
         </section>

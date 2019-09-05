@@ -1,9 +1,5 @@
 export const EXPERTS_INFO_URL = 'http://18.222.110.159:8080/exp_ml/';
-export const TOP_NEWS_LIST = 'TOP_NEWS_LIST';
-export const TOP_RTWEETS = 'TOP_RTWEETS';
-export const TOP_RT_USERS_TW = 'TOP_RT_USERS_TW';
-export const TOP_USERS_TWEETS = 'TOP_USERS_TWEETS';
-export const FAKE_NEWS_USERS = 'FAKE_NEWS_USERS';
+export const SET_EXPERT_DATA = 'SET_EXPERT_DATA';
 
 export const EXPERT_BODY_POST = {
   keyword: "",
