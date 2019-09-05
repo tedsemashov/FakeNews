@@ -1,31 +1,47 @@
+import axios from 'axios';
+
 import * as constants from './constants';
 import expertsConstants from './constants';
 export * from './actions/expert';
 
 export const getTwitterData = (params = {}) => {
   return dispatch => {
-    fetch(constants.TARGET_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({...constants.BODY_POST, ...params})
+    axios.post(constants.TARGET_URL,
+      {...constants.BODY_POST, ...params},
+      {headers: {'Content-Type': 'application/json'}}
+    ).then((response) => {
+      const data = response.data;
+      dispatch(setHashtagsData(data.hashtags));
+      dispatch(setKeywordData(data.keyword));
+      dispatch(setTopFavoriteTweetsData(data.top_favorite_tweets));
+      dispatch(setTweetsCount(data.tweets_count_ts));
+      dispatch(setTopNewsData(data.top_news_tw));
+      dispatch(setTopRetweetsData(data.top_rtweets));
+      dispatch(setTopInfluencersData(data.top_influencers));
+      dispatch(setTopMentionedUsersData(data.top_active_users));
+      dispatch(setSelectedInfluencer(Object.keys(data.top_influencers)[0]));
+      dispatch(setSelectedMentionedUser(Object.keys(data.top_active_users)[0]));
+      dispatch(setLoadingState(true));
     })
-      .then(res => res.json())
-      .then(data => {
-        dispatch(setHashtagsData(data.hashtags));
-        dispatch(setKeywordData(data.keyword));
-        dispatch(setTopFavoriteTweetsData(data.top_favorite_tweets));
-        dispatch(setTweetsCount(data.tweets_count_ts));
-        dispatch(setTopNewsData(data.top_news_tw));
-        dispatch(setTopRetweetsData(data.top_rtweets));
-        dispatch(setTopInfluencersData(data.top_influencers));
-        dispatch(setTopMentionedUsersData(data.top_active_users));
-        dispatch(setSelectedInfluencer(Object.keys(data.top_influencers)[0]));
-        dispatch(setSelectedMentionedUser(Object.keys(data.top_active_users)[0]));
-        dispatch(setLoadingState('true'));
-      });
-  };
+  }
+};
+
+export function getTwittersByDate(reqBody) {
+  return dispatch => {
+    axios.post(constants.TARGET_URL,
+      reqBody,
+      {headers: {'Content-Type': 'application/json'}}
+    ).then((response) => {
+      const data = response.data;
+      dispatch(setHashtagsData(data.hashtags));
+      dispatch(setKeywordData(data.keyword));
+      dispatch(setTopFavoriteTweetsData(data.top_favorite_tweets));
+      dispatch(setTweetsCount(data.tweets_count_ts));
+      dispatch(setLoadingState(false));
+    }).catch(error => {
+      console.log(error)
+    });
+  }
 };
 
 export const setHashtagsData = hashtags => {
@@ -109,68 +125,5 @@ export const setTopMentionedUsersData = topMentionedUsers => {
   return {
     type: constants.TOP_MENTIONED_USERS,
     topMentionedUsers
-  };
-};
-
-export const getTwittersByDate = reqBody => {
-  return dispatch => {
-    fetch(constants.TARGET_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(reqBody)
-    })
-      .then(res => res.json())
-      .then(data => {
-        dispatch(setHashtagsData(data.hashtags));
-        dispatch(setKeywordData(data.keyword));
-        dispatch(setTopFavoriteTweetsData(data.top_favorite_tweets));
-        dispatch(setTweetsCount(data.tweets_count_ts));
-        dispatch(setLoadingState('false'));
-      })
-      .catch(err => console.log(err));
-  };
-};
-
-export const setTopNewsListData = data => {
-  return {
-    type: constants.expertsConstants.TOP_NEWS_LIST,
-    topNewsList: data
-  };
-};
-
-export const setTopRtweetsData = data => {
-  return {
-    type: constants.expertsConstants.TOP_RTWEETS,
-    topRtweets: data
-  };
-};
-
-export const setTopRtUsersTwData = data => {
-  return {
-    type: constants.expertsConstants.TOP_RT_USERS_TW,
-    topRtUsersTw: data
-  };
-};
-
-export const setTopUsersTweetsData = data => {
-  return {
-    type: constants.expertsConstants.TOP_USERS_TWEETS,
-    topUsersTweets: data
-  };
-};
-
-export const setFakeNewsUsersData = data => {
-  return {
-    type: constants.expertsConstants.FAKE_NEWS_USERS,
-    fakeNewsUsers: data
-  };
-};
-
-export const setTimePeriodExpert = data => {
-  return {
-    type: constants.expertsConstants.TIME_PERIOD_EXPERT,
-    timePeriodExpert: data
   };
 };

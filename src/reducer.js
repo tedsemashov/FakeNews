@@ -3,8 +3,8 @@ import { expertsConstants } from './constants';
 
 const expertPageData = {
   topNewsList: {},
-  topRtweets: {},
-  topRtUsersTw: {},
+  topReTweets: {},
+  topReTweetedUsersTweets: {},
   topUsersTweets: {},
   fakeNewsUsers: {}
 }
@@ -132,11 +132,6 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         topMentionedUsers: action.topMentionedUsers
-      };
-    case expertsConstants.TOP_NEWS_LIST:
-      return {
-        ...state,
-        topNewsList: action.topNewsList
       };
     case expertsConstants.SET_EXPERT_DATA:
       const { type, ...data } = action;

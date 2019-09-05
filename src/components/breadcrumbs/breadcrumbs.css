@@ -11,6 +11,5 @@
 
 .breadcrumbs .breadcrumb-item + .breadcrumb-item:before {
   display: inline;
-  white-space: pre;
   content: "<";
 }

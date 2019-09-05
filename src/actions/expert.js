@@ -6,13 +6,13 @@ import { setLoadingState } from '../actions'
 
 export function getExpertsData() {
   return dispatch => {
-    axios.post(constants.expertsConstants.EXPERTS_INFO_URL,
+    axios.post(expertsConstants.EXPERTS_INFO_URL,
       expertsConstants.EXPERT_BODY_POST,
       {headers: {'Content-Type': 'application/json'}}
     ).then((response) => {
       const data = response.data;
       dispatch(setExpertsData(response.data));
-      dispatch(setLoadingState('true'));
+      dispatch(setLoadingState(true));
     })
   }
 };
