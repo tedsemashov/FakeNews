@@ -10,7 +10,7 @@ export default function Breadcrumbs(props) {
   breadcrumbs.unshift({title: 'Home', link: '/analytics'});
 
   const breadcrumbsList = _.map(breadcrumbs, (breadcrumb)=> {
-    const { link, title} = breadcrumb;
+    const { link, title } = breadcrumb;
 
     if (link == active) {
       return <span key={title} className='breadcrumb-item'>{title}</span>
