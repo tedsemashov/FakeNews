@@ -1,5 +1,4 @@
 import * as constants from './constants';
-import { expertsConstants } from './constants';
 
 const expertInitialState = {
   top_news_list: {},
@@ -7,8 +6,7 @@ const expertInitialState = {
   top_rt_users_tw: {},
   top_users_tw: {},
   fn_users: {}
-}
-
+};
 
 const initialState = {
   ...expertInitialState,
@@ -65,8 +63,7 @@ const initialState = {
   selectedInfluencer: '',
   selectedMentionedUser: '',
   selectedTroll: '',
-  isLoaded: false,
-  expertsData: {},
+  isLoaded: false
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -131,13 +128,12 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         topMentionedUsers: action.topMentionedUsers
       };
-
-    case expertsConstants.SET_EXPERT_DATA:
+    case constants.EXPERT_SET_DATA:
       const { type, ...data } = action;
       return {
         ...state,
         data
-      }
+      };
     default:
       return state;
   }

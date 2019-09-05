@@ -1,5 +1,7 @@
 import { connect } from "react-redux";
-import { getExpertsData } from '../../actions';
+
+import { getExpertsData, setLoadingState } from '../../actions';
+
 import Expert from './Expert';
 
 const mapStateToProps = (state) => {
@@ -15,7 +17,10 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getExpertsData: () => dispatch(getExpertsData())
+    getExpertsData: () => {
+      dispatch(setLoadingState(false));
+      dispatch(getExpertsData());
+    }
   };
 };
 

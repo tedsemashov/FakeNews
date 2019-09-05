@@ -1,27 +1,22 @@
 import axios from 'axios';
-import _ from 'lodash';
-import * as constants from '../constants';
-import { expertsConstants } from '../constants';
-import { setLoadingState } from '../actions'
+import { EXPERT_API_URL, EXPERT_BODY_POST, EXPERT_SET_DATA } from "../constants";
+import { setLoadingState } from "../actions";
 
 export function getExpertsData() {
-  return dispatch => {
-    axios.post(expertsConstants.EXPERTS_INFO_URL,
-      expertsConstants.EXPERT_BODY_POST,
+  return (dispatch) => {
+    axios.post(EXPERT_API_URL,
+      EXPERT_BODY_POST,
       {headers: {'Content-Type': 'application/json'}}
-    ).then((response) => {
-      const data = response.data;
-      dispatch(setExpertsData(response.data));
+    ).then(({ data }) => {
+      dispatch(setExpertsData(data));
       dispatch(setLoadingState(true));
-    }).catch(error => {
-      console.log(error)
-    });
+    }).catch((error) => console.log(error));
   }
-};
+}
 
-export const setExpertsData = data => {
+export function setExpertsData(data) {
   return {
-    type: expertsConstants.SET_EXPERT_DATA,
+    type: EXPERT_SET_DATA,
     ...data
   };
-};
+}

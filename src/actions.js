@@ -1,48 +1,39 @@
 import axios from 'axios';
 
 import * as constants from './constants';
-import expertsConstants from './constants';
-export * from './actions/expert';
 
 export const getTwitterData = (params = {}) => {
-  return dispatch => {
-    axios.post(constants.TARGET_URL,
-      {...constants.BODY_POST, ...params},
-      {headers: {'Content-Type': 'application/json'}}
-    ).then((response) => {
-      const data = response.data;
-      dispatch(setHashtagsData(data.hashtags));
-      dispatch(setKeywordData(data.keyword));
-      dispatch(setTopFavoriteTweetsData(data.top_favorite_tweets));
-      dispatch(setTweetsCount(data.tweets_count_ts));
-      dispatch(setTopNewsData(data.top_news_tw));
-      dispatch(setTopRetweetsData(data.top_rtweets));
-      dispatch(setTopInfluencersData(data.top_influencers));
-      dispatch(setTopMentionedUsersData(data.top_active_users));
-      dispatch(setSelectedInfluencer(Object.keys(data.top_influencers)[0]));
-      dispatch(setSelectedMentionedUser(Object.keys(data.top_active_users)[0]));
-      dispatch(setLoadingState(true));
-    })
+  return (dispatch) => {
+    axios.post(constants.TARGET_URL, {...constants.BODY_POST, ...params}, {headers: {'Content-Type': 'application/json'}})
+      .then((response) => {
+        const data = response.data;
+        dispatch(setHashtagsData(data.hashtags));
+        dispatch(setKeywordData(data.keyword));
+        dispatch(setTopFavoriteTweetsData(data.top_favorite_tweets));
+        dispatch(setTweetsCount(data.tweets_count_ts));
+        dispatch(setTopNewsData(data.top_news_tw));
+        dispatch(setTopRetweetsData(data.top_rtweets));
+        dispatch(setTopInfluencersData(data.top_influencers));
+        dispatch(setTopMentionedUsersData(data.top_active_users));
+        dispatch(setSelectedInfluencer(Object.keys(data.top_influencers)[0]));
+        dispatch(setSelectedMentionedUser(Object.keys(data.top_active_users)[0]));
+        dispatch(setLoadingState(true));
+      });
   }
 };
 
 export function getTwittersByDate(reqBody) {
-  return dispatch => {
-    axios.post(constants.TARGET_URL,
-      reqBody,
-      {headers: {'Content-Type': 'application/json'}}
-    ).then((response) => {
-      const data = response.data;
-      dispatch(setHashtagsData(data.hashtags));
-      dispatch(setKeywordData(data.keyword));
-      dispatch(setTopFavoriteTweetsData(data.top_favorite_tweets));
-      dispatch(setTweetsCount(data.tweets_count_ts));
-      dispatch(setLoadingState(false));
-    }).catch(error => {
-      console.log(error)
-    });
+  return (dispatch) => {
+    axios.post(constants.TARGET_URL, reqBody, {headers: {'Content-Type': 'application/json'}})
+      .then(({ data }) => {
+        dispatch(setHashtagsData(data.hashtags));
+        dispatch(setKeywordData(data.keyword));
+        dispatch(setTopFavoriteTweetsData(data.top_favorite_tweets));
+        dispatch(setTweetsCount(data.tweets_count_ts));
+        dispatch(setLoadingState(false));
+      }).catch((error) => console.log(error));
   }
-};
+}
 
 export const setHashtagsData = hashtags => {
   return {
@@ -127,3 +118,5 @@ export const setTopMentionedUsersData = topMentionedUsers => {
     topMentionedUsers
   };
 };
+
+export * from "./actions/expert";

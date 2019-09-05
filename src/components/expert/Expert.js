@@ -1,7 +1,6 @@
-import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import React from "react";
+import Spinner from "react-bootstrap/Spinner";
 
-import Spinner from 'react-bootstrap/Spinner';
 import Header from '../header/index';
 import Subheader from '../subheader/index';
 import TimeDropdown from '../subheader/time-dropdown/TimeDropdown';
@@ -9,51 +8,70 @@ import Breadcrumbs from '../breadcrumbs';
 
 import './expert.css';
 
-class Expert extends Component {
-  state = {
-    timePeriod: false
-  };
+export default class Expert extends React.Component {
+  breadcrumbs = [
+    { title: "Expert", link: "/expert", active: true }
+  ];
+
+  spinner = (
+    <div className="spinnerWrapper">
+      <Spinner animation="border" role="status" variant="dark" />
+    </div>
+  );
+
+  constructor(props) {
+    super(props);
+
+    this.state = { togglePeriod: false };
+
+    this.toggleTimePeriod = this.toggleTimePeriod.bind(this);
+    this.onTimePeriodSelect = this.onTimePeriodSelect.bind(this);
+  }
 
   componentDidMount() {
     this.props.getExpertsData();
   }
 
-  toggleTimePeriod = () => {
-    this.setState(state => ({
-      timePeriod: !state.timePeriod
-    }));
-  };
+  toggleTimePeriod() {
+    const togglePeriod = !this.state.togglePeriod;
 
-  showTimePeriodDropdown = () => {
-    if (this.state.timePeriod) {
-      return (
-        <div className="timeDropdownWrapper">
-          <TimeDropdown toogleTimePeriod={this.toggleTimePeriod} onTimePeriodSelect={this.onTimePeriodSelect} />{' '}
-        </div>
-      );
-    }
+    this.setState({ togglePeriod });
+  }
+
+  onTimePeriodSelect(arg) {
+    // TBD; sync w/ date range filter;
+    console.log(arg);
+  }
+
+  renderTimePeriodDropdown() {
+    if(!this.state.togglePeriod) return null;
+
+    return (
+      <div className="timeDropdownWrapper">
+        <TimeDropdown toogleTimePeriod={this.toggleTimePeriod} onTimePeriodSelect={this.onTimePeriodSelect} />
+      </div>
+    );
   };
 
   render() {
-    const spinner = (
-      <div className="spinnerWrapper">
-        <Spinner animation="border" role="status" variant="dark" />
-      </div>
-    );
+    const { isLoaded } = this.props;
 
-    const breadcrumbs = [{title: 'Expert', link: '/expert'}]
     return (
-      <div>
-        {!this.props.isLoaded ? spinner : null}
+      <div className="expert-page">
+        {!isLoaded && this.spinner}
+
         <Header />
+
         <Subheader onClick={this.toggleTimePeriod} />
-        <div className="dropdownWrapper"> {this.showTimePeriodDropdown()} </div>
+        <div className="dropdownWrapper">{this.renderTimePeriodDropdown()}</div>
         <section className="topWrapper">
           <div className="markFake">
             <div>
-              <Breadcrumbs breadcrumbs={breadcrumbs} active={this.props.location.pathname}/>
-              <h1 className='main-title'>Mark the fake</h1>
+              <Breadcrumbs breadcrumbs={this.breadcrumbs} />
+
+              <h1 className="main-title">Mark the fake</h1>
             </div>
+
             <div>
               {JSON.stringify(this.props.fakeNewsUsers)}
             </div>
@@ -63,5 +81,3 @@ class Expert extends Component {
     );
   }
 }
-
-export default Expert;

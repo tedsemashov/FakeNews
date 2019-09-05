@@ -1,9 +1,4 @@
-* {
-   margin: 0;
-   padding: 0;
-}
-
-.markFake {
+.expert-page .markFake {
   position: relative;
   top: 60px;
   max-width: 1180px;
@@ -12,7 +7,7 @@
   justify-content: space-between;
 }
 
-.main-title {
+.expert-page .main-title {
   font-size: 64px;
   font-weight: 900;
   position: relative;
@@ -21,7 +16,7 @@
   padding: 26px 0 7px;
 }
 
-.main-title:after {
+.expert-page .main-title:after {
   content: '';
   position: absolute;
   width: 147px;

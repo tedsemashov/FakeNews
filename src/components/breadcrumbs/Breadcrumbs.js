@@ -4,29 +4,26 @@ import _ from 'lodash';
 
 import './breadcrumbs.css';
 
+export const DEFAULT_HOME = { title: "Home", link: "/analytics" };
+
+const renderBreadcrumb = (breadcrumb, i) => {
+  const { title, link, active } = breadcrumb;
+  const key = `${i}-${title}`;
+
+  if(active) {
+    return(<span key={key} className="breadcrumb-item">{title}</span>);
+  }
+
+  return(<Link to={link} key={key} className="breadcrumb-item">{title}</Link>);
+};
+
 export default function Breadcrumbs(props) {
-  const {breadcrumbs, active}=props;
-
-  breadcrumbs.unshift({title: 'Home', link: '/analytics'});
-
-  const breadcrumbsList = _.map(breadcrumbs, (breadcrumb)=> {
-    const { link, title } = breadcrumb;
-
-    if (link == active) {
-      return <span key={title} className='breadcrumb-item'>{title}</span>
-    }
-
-    if (link && title) {
-      return <Link to={link} key={title} className='breadcrumb-item'>{title}</Link>;
-    }
-
-    return null;
-  })
+  const { breadcrumbs }=props;
 
   return(
     <div className='breadcrumbs'>
-     {breadcrumbsList}
+      {renderBreadcrumb(DEFAULT_HOME)}
+      {_.map(breadcrumbs, renderBreadcrumb)}
     </div>
-
   );
 }
