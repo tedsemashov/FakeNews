@@ -1,8 +1,11 @@
 import * as constants from './constants';
 
 const expertInitialState = {
-  top_rtweets: [],
-  top_rt_users_tw: []
+  top_news: [],
+  top_rtweets: {},
+  top_rt_users_tw: {},
+  top_users_tw: {},
+  fn_users: []
 };
 
 const initialState = {
@@ -124,6 +127,13 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         topMentionedUsers: action.topMentionedUsers
+      };
+    case constants.EXPERT_SET_DATA:
+      const { type, ...data } = action;
+
+      return {
+        ...state,
+        ...data
       };
     default:
       return state;

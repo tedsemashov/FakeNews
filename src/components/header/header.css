@@ -63,16 +63,12 @@
    cursor: pointer;
 }
 
-.headerList :first-child {
-   width: 104px;
+.headerList li {
+   padding-right: 50px;
 }
 
-.headerList :nth-child(2) {
-   width: 92px;
-}
-
-.headerList :nth-child(3) {
-   width: 90px;
+.headerList li:last-child {
+   padding-right: 0;
 }
 
 .userLogin {

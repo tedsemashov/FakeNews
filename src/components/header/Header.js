@@ -1,7 +1,10 @@
 import React from 'react';
+import { Link } from "react-router-dom";
+
 import './header.css';
 
 const Header = ({ user }) => {
+  // TBD: move this to state; logout thru dispatcher;
   const userLogout = () => {
     localStorage.removeItem('user');
     window.location.href = '/';
@@ -10,17 +13,20 @@ const Header = ({ user }) => {
   return (
     <header className="headerContainer">
       <div className="headerWrapper">
-        <img className="headerLogo" src={require('../../images/header/logo@3x.png')} />
+        <img className="headerLogo" src={require('../../images/header/logo@3x.png')} alt='logo' />
         <nav className="navMenu">
           <ul className="headerList">
             <li className="headerLI">
-              <a href="/analytics">ANALYTICS</a>
+              <Link to={"/analytics"}>ANALYTICS</Link>
             </li>
             <li>
-              <a href="/reports">REPORTS</a>
+              <Link to={"/reports"}>REPORTS</Link>
             </li>
             <li>
-              <a href="/manage">MANAGE</a>
+              <Link to={"/manage"}>MANAGE</Link>
+            </li>
+            <li>
+              <Link to={"/expert"}>EXPERT</Link>
             </li>
           </ul>
         </nav>
@@ -29,10 +35,7 @@ const Header = ({ user }) => {
             {user.name} {user.surname}
           </p>
           <div onClick={userLogout} className="userLogoWrapper">
-            <img
-              className="userLogo"
-              src={require('../../images/header/Steven_Hallam-slide.jpg')}
-            />
+            <img className="userLogo" src={require('../../images/header/Steven_Hallam-slide.jpg')} alt='user-logo' />
           </div>
         </div>
       </div>
