@@ -130,6 +130,7 @@ const rootReducer = (state = initialState, action) => {
       };
     case constants.EXPERT_SET_DATA:
       const { type, ...data } = action;
+
       return {
         ...state,
         ...data
