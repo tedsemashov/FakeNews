@@ -5,6 +5,7 @@ import Header from '../header/index';
 import Subheader from '../subheader/index';
 import TimeDropdown from '../subheader/time-dropdown/TimeDropdown';
 import Breadcrumbs from '../breadcrumbs';
+import TopNews from './topNews';
 
 import TopUserTweets from "./../top-user-tweets";
 import TopMentionedUsersReTweets from "./../top-mentioned-users-re-tweets";
@@ -57,7 +58,9 @@ export default class Expert extends React.Component {
   };
 
   render() {
-    const { isLoaded } = this.props;
+    const { isLoaded, topNewsList } = this.props;
+    const topNewsTitle = 'Top news';
+    const topReTwNewsTitle = 'Top retweeted neews';
 
     return (
       <div className="expert-page">
@@ -75,8 +78,11 @@ export default class Expert extends React.Component {
               <h1 className="main-title">Mark the fake</h1>
             </div>
             <div className="clearfix" />
-            <div>
-              {JSON.stringify(this.props.fakeNewsUsers)}
+            <div className="markFake top-news-container">
+              <TopNews topNewsList={topNewsList} title={topNewsTitle}/>
+            </div>
+            <div className="markFake top-news-container">
+              <TopNews topNewsList={topNewsList} title={topReTwNewsTitle}/>
             </div>
           </div>
 
