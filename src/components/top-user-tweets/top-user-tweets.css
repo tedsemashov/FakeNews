@@ -106,10 +106,10 @@
 }
 
 .top-user-tweets .mark-fake {
+  background-color: #d0021b !important;
+  color: #ffffff !important;
   border: solid 2px #d0021b !important;
-  background-color: #ffffff !important;
   padding: 6px 0 !important;
-  color: #d0021b !important;
 
   margin-top: 1px;
   width: 106px;
@@ -128,8 +128,8 @@
 }
 
 .top-user-tweets .mark-fake.isFake {
-  background-color: #d0021b !important;
-  color: #ffffff !important;
+  background-color: #ffffff !important;
+  color: #d0021b !important;
 }
 
 .top-user-tweets .tweets-layout {
