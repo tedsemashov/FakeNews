@@ -67,30 +67,25 @@ export default class Expert extends React.Component {
     const { isLoaded } = this.props;
 
     return (
-      <div>
-        <div className="expert-page">
-          {setDocumentTitle("Expert")}
-          {!isLoaded && this.spinner}
+      <div className="expert-page">
+        {setDocumentTitle("Expert")}
+        {!isLoaded && this.spinner}
 
-          <Header />
+        <Header />
 
-          <Subheader onClick={this.toggleTimePeriod} />
-          <div className="dropdownWrapper">{this.renderTimePeriodDropdown()}</div>
+        <Subheader onClick={this.toggleTimePeriod} />
+        <div className="dropdownWrapper">{this.renderTimePeriodDropdown()}</div>
 
-          <div className="default-container">
-            <Container>
-              <div>
-                <Breadcrumbs breadcrumbs={this.breadcrumbs} />
-                <h1 className="main-title">Mark the fake</h1>
-              </div>
-              <TopNews/>
-              <TopRetweetedNews/>
-              <TopUserTweets />
-              <TopMentionedUsersReTweets />
-            </Container>
-          </div>
+        <div className="default-container">
+          <Container>
+            <Breadcrumbs breadcrumbs={this.breadcrumbs} />
+            <h1 className="main-title">Mark the fake</h1>
+            <TopNews/>
+            <TopRetweetedNews/>
+            <TopUserTweets />
+            <TopMentionedUsersReTweets />
+          </Container>
         </div>
-
         <div className="footerWrapper">
           <Footer />
         </div>
