@@ -17,7 +17,7 @@ export default class TopRetweetedNews extends React.Component{
           {avatar(news.image_url)}
           <span>{_.get(news, 'text', '')}</span>
         </div>
-         <button className={news.clicked ? 'fake' : 'not-fake'}>
+         <button className={news.clicked ? 'not-fake' : 'fake'}>
            <span/>
            Fake
          </button>
@@ -26,7 +26,7 @@ export default class TopRetweetedNews extends React.Component{
     };
 
     return(
-      <div>
+      <div className="w-100">
         <div className='news-block-header'>
           <h2>{title}</h2>
           <span>Mark news as fake</span>
