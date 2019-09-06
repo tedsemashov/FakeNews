@@ -5,6 +5,25 @@
   padding: 0;
 }
 
+.top-user-tweets .spinner-layout {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+.top-user-tweets .spinner-layout .spinner-border {
+  position: static !important;
+  top: auto;
+  left: auto;
+}
+
 .top-user-tweets .section-content {
   padding-left: 0;
   padding-right: 0;
@@ -21,11 +40,17 @@
   color: #222222;
 }
 
+.top-user-tweets .container-heading div {
+  padding-right: 30px;
+  text-align: right;
+}
+
 .top-user-tweets .users-container {
   margin-top: 23px;
 }
 
 .top-user-tweets .user-row {
+  position: relative;
   padding-top: 13px;
   padding-bottom: 13px;
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.12);
@@ -81,13 +106,13 @@
 }
 
 .top-user-tweets .mark-fake {
+  border: solid 2px #d0021b !important;
+  background-color: #ffffff !important;
+  padding: 6px 0 !important;
+  color: #d0021b !important;
+
   margin-top: 1px;
   width: 106px;
-  background-color: #d0021b !important;
-  border: none !important;
-  padding: 6px 0 !important;
-  color: #ffffff !important;
-
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 900;
@@ -96,6 +121,15 @@
   line-height: normal;
   letter-spacing: normal;
   text-align: center;
+}
+
+.top-user-tweets .mark-fake .check-icon {
+  margin-right: 9px;
+}
+
+.top-user-tweets .mark-fake.isFake {
+  background-color: #d0021b !important;
+  color: #ffffff !important;
 }
 
 .top-user-tweets .tweets-layout {

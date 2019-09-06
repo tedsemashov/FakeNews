@@ -1,6 +1,13 @@
+import _ from "lodash";
+
 import * as constants from './constants';
+import {TOPUSERTWEETS_UNMARK_AS_FAKE} from "./constants";
 
 const expertInitialState = {
+  // manipulations;
+  topUserTweetsProcessing: [],
+
+  // API;
   top_news: [],
   top_rtweets: {},
   top_rt_users_tw: {},
@@ -136,13 +143,25 @@ const rootReducer = (state = initialState, action) => {
         ...data
       };
     case constants.TOPUSERTWEETS_MARK_AS_FAKE:
-      console.log("constants.TOPUSERTWEETS_MARK_AS_FAKE");
-
-      return { ...state };
-    case constants.TOPUSERTWEETS_MARK_AS_MANIPULATOR:
-      console.log("constants.TOPUSERTWEETS_MARK_AS_MANIPULATOR");
-
-      return { ...state };
+      return {
+        ...state,
+        fn_users: [...state.fn_users, action.user]
+      };
+    case constants.TOPUSERTWEETS_UNMARK_AS_FAKE:
+      return {
+        ...state,
+        fn_users: _.reject(state.fn_users, (e) => e === action.user)
+      };
+    case constants.TOPUSERTWEETS_ADD_PROCESSING:
+      return {
+        ...state,
+        topUserTweetsProcessing: [...state.topUserTweetsProcessing, action.user]
+      };
+    case constants.TOPUSERTWEETS_REMOVE_PROCESSING:
+      return {
+        ...state,
+        topUserTweetsProcessing: _.reject(state.topUserTweetsProcessing, (e) => e === action.user)
+      };
     default:
       return state;
   }
