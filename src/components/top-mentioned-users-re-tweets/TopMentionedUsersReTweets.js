@@ -8,20 +8,31 @@ import Button from "react-bootstrap/Button";
 
 import SectionTitle from "../section-title/SectionTitle";
 import { userAvatar } from "../../utils/avatar";
+import Spinner from "react-bootstrap/Spinner";
 
 import "./top-mentioned-users-re-tweets.css";
+import checkIcon from "./../../images/tip_icon.svg";
 
 export default class TopMentionedUsersReTweets extends React.Component {
+  spinner = (
+    <div className="spinner-layout">
+      <Spinner animation="border" role="status" variant="dark" />
+    </div>
+  );
+  renderTweets = (tweet, index) => {
+    return(
+      <div className="tweet" key={index}>
+        {tweet}
+      </div>
+    );
+  };
+
   constructor(props) {
     super(props);
 
-    this.state = {
-      user: null,
-      processing: []
-    };
+    this.state = { user: null };
 
     this.onMarkFake = this.onMarkFake.bind(this);
-    this.onMarkManipulator = this.onMarkManipulator.bind(this);
 
     this.renderUser = this.renderUser.bind(this);
     this.renderTweets = this.renderTweets.bind(this);
@@ -31,20 +42,34 @@ export default class TopMentionedUsersReTweets extends React.Component {
     console.log("onMarkFake", user);
   }
 
-  onMarkManipulator(user) {
-    console.log("onMarkManipulator", user);
+  renderButton(user) {
+    const { fn_users } = this.props;
+    const isFake = _.includes(fn_users, user);
+    const buttonClass = classNames("mark-fake", { isFake });
+    const onClick = () => {
+      if(isFake) {
+        this.props.unmarkFake(user);
+      } else {
+        this.props.markFake(user);
+      }
+    };
+
+    return(
+      <Button className={buttonClass} onClick={onClick}>
+        {isFake && <img className="check-icon" src={checkIcon} alt="" />}
+        Fake
+      </Button>
+    );
   }
 
   renderUser(userData, user) {
-    if(_.includes(this.props.fn_users, user)) return null;
-
-    const processing = _.includes(this.state.processing, user);
-    const buttonClass = classNames("mark-fake", { active: _.includes(this.props.fn_users, user) });
-    const onClick = () => this.onMarkManipulator(user);
+    const isProcessing = _.includes(this.props.processing, user);
     const onSelect = () => this.setState({ user });
 
     return(
-      <Row className="m-0 user-row" key={`${user}-${processing}`} >
+      <Row className="m-0 user-row" key={`${user}-${isProcessing}`} >
+        {isProcessing && this.spinner}
+
         <Col className="pl-0 user-selection" sm={9} onClick={onSelect}>
           <Row>
             <Col className="" sm={3}>{userAvatar({...userData, nickname: user})}</Col>
@@ -54,22 +79,8 @@ export default class TopMentionedUsersReTweets extends React.Component {
             </Col>
           </Row>
         </Col>
-        <Col sm={3}>
-          <Button className={buttonClass} onClick={onClick}>
-            Fake
-          </Button>
-        </Col>
+        <Col className="text-right pr-0" sm={3}>{this.renderButton(user)}</Col>
       </Row>
-    );
-  }
-
-  renderTweets(tweet, index) {
-    debugger;
-
-    return(
-      <div className="tweet" key={index}>
-        {tweet}
-      </div>
     );
   }
 
