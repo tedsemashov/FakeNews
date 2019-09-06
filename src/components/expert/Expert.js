@@ -1,5 +1,6 @@
 import React from "react";
 import Spinner from "react-bootstrap/Spinner";
+import Container from "react-bootstrap/Container";
 
 import Header from '../header/index';
 import Footer from '../footer/Footer';
@@ -8,7 +9,7 @@ import TimeDropdown from '../subheader/time-dropdown/TimeDropdown';
 import Breadcrumbs from '../breadcrumbs';
 import TopNews from './topNews';
 import TopRetweetedNews from './topRetweetedNews';
-import AppMetaTags from '../appMetaTags';
+import { setDocumentTitle } from '../meta';
 
 import TopUserTweets from "./../top-user-tweets";
 import TopMentionedUsersReTweets from "./../top-mentioned-users-re-tweets";
@@ -64,36 +65,30 @@ export default class Expert extends React.Component {
     const { isLoaded } = this.props;
 
     return (
-      <div className="expert-page">
-        <AppMetaTags title="Expert" description='desctiption' />
-        {!isLoaded && this.spinner}
+      <div>
+        <div className="expert-page">
+          {setDocumentTitle("Expert")}
+          {!isLoaded && this.spinner}
 
-        <Header />
+          <Header />
 
-        <Subheader onClick={this.toggleTimePeriod} />
-        <div className="dropdownWrapper">{this.renderTimePeriodDropdown()}</div>
-        <section className="topWrapper">
-          <div className="markFake">
-            <div>
-              <Breadcrumbs breadcrumbs={this.breadcrumbs} />
+          <Subheader onClick={this.toggleTimePeriod} />
+          <div className="dropdownWrapper">{this.renderTimePeriodDropdown()}</div>
 
-              <h1 className="main-title">Mark the fake</h1>
-            </div>
-            <div className="clearfix" />
+          <div className="default-container">
+            <Container>
+              <div>
+                <Breadcrumbs breadcrumbs={this.breadcrumbs} />
+                <h1 className="main-title">Mark the fake</h1>
+              </div>
+              <TopNews/>
+              <TopRetweetedNews/>
+              <TopUserTweets />
+              <TopMentionedUsersReTweets />
+            </Container>
           </div>
-          <div className="markFake top-news-container">
-            <TopNews/>
-          </div>
+        </div>
 
-          <div className="markFake top-news-container pb-4">
-            <TopRetweetedNews/>
-          </div>
-          <div className="clearfix" />
-
-          <TopUserTweets />
-
-          <TopMentionedUsersReTweets />
-        </section>
         <div className="footerWrapper">
           <Footer />
         </div>

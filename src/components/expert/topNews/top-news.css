@@ -1,4 +1,4 @@
-.expert-top-news {
+.expert-page  .expert-top-news {
   display: flex;
   justify-content: space-between;
   min-height: 80px;
@@ -7,20 +7,20 @@
   padding: 21px 0 14px;
 }
 
-.news-block-header {
+.expert-page  .news-block-header {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: flex-end;
 }
 
-.news-block-header span {
+.expert-page  .news-block-header span {
   font-size: 10px;
   font-weight: 600;
   color: #222222;
 }
 
-.news-block-header h2 {
+.expert-page  .news-block-header h2 {
   position: relative;
   font-size: 24px;
   padding-bottom: 23px;
@@ -29,7 +29,7 @@
   text-transform: uppercase;
 }
 
-.news-block-header h2:after {
+.expert-page  .news-block-header h2:after {
   content: '';
   display: block;
   position: absolute;
@@ -40,7 +40,7 @@
   background-color: #000000;
 }
 
-.expert-top-news button {
+.expert-page .expert-top-news button {
   margin-left: 24px;
   min-width: 106px;
   height: 32px;
@@ -53,19 +53,24 @@
   text-transform: uppercase;
 }
 
-.expert-top-news button.not-fake {
+.expert-page .expert-top-news button.not-fake {
   border: 2px solid #d0021b;
   color: #d0021b;
   background-color: #fff;
 }
 
-.expert-top-news button.not-fake span {
+.expert-page .mark-fake-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.expert-page .expert-top-news button.not-fake span {
   position: relative;
   display: inline-block;
   width: 30px;
 }
 
-.expert-top-news button.not-fake span:before {
+.expert-page .expert-top-news button.not-fake span:before {
   content: '';
   position: absolute;
   background: url(../../../images/icons/tick-mark.png);
@@ -79,11 +84,12 @@
   right: 8px;
 }
 
-.expert-top-news span {
+.expert-page .expert-top-news span {
   font-size: 18px;
+  padding: 0;
 }
 
-.top-news-container .see-all {
+.expert-page .top-news-container .see-all {
   min-width: 83px;
   height: 24px;
   border: solid 2px #000;
@@ -93,11 +99,14 @@
   text-transform: uppercase;
 }
 
-.top-news-content img + span {
-  margin-left: 16px;
+.expert-page  .expert-top-news img {
+  margin-right: 16px;
 }
 
-.user-avatar {
+.expert-page .news-text {
+  display: flex;
+}
+.expert-page .user-avatar {
   width: 60px;
   height: 60px;
   border-radius: 50%;
