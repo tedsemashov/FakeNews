@@ -7,7 +7,6 @@ export function setDocumentTitle(title) {
 
   return(
     <MetaTags>
-    debugger;
       <title>{metaTitle}</title>
     </MetaTags>
   );
