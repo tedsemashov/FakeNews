@@ -96,3 +96,9 @@
 .top-news-content img + span {
   margin-left: 16px;
 }
+
+.user-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}

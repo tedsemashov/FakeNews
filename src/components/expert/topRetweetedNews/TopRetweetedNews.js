@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
 
-import { avatar } from '../../helpers.js'
+import { userAvatar } from "../../../utils/avatar";
 
 import '../topNews/top-news.css';
 
@@ -14,7 +14,7 @@ export default class TopRetweetedNews extends React.Component{
       return(
         <div className='expert-top-news' key={news.id_txt}>
         <div className='top-news-content d-flex'>
-          {avatar(news.image_url)}
+          {userAvatar(news.image_url)}
           <span>
             {_.get(news, 'text', '')}
           </span>
