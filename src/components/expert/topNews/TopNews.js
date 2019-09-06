@@ -15,7 +15,9 @@ export default class TopNews extends React.Component{
     const newsBlock = (news)=> {
       return(
         <div className='expert-top-news' key={news.id_txt}>
-         <span>{_.get(news, 'text', '')}</span>
+         <span>
+           {_.get(news, 'text', '')}
+         </span>
          <button className={news.clicked ? 'not-fake' : 'fake'} onClick={this.toggleFakeStatus}>
            <span/>
            Fake

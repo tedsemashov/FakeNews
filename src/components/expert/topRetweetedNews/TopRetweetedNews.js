@@ -15,7 +15,9 @@ export default class TopRetweetedNews extends React.Component{
         <div className='expert-top-news' key={news.id_txt}>
         <div className='top-news-content d-flex'>
           {avatar(news.image_url)}
-          <span>{_.get(news, 'text', '')}</span>
+          <span>
+            {_.get(news, 'text', '')}
+          </span>
         </div>
          <button className={news.clicked ? 'not-fake' : 'fake'}>
            <span/>
