@@ -34,7 +34,6 @@ export default class TopRetweetedNews extends React.Component{
           <span>Mark news as fake</span>
         </div>
         {_.map(topReTweetedNews, newsBlock)}
-        <button className="see-all">see all</button>
       </div>
     );
   }

@@ -33,7 +33,6 @@ export default class TopNews extends React.Component{
           <span>Mark news as fake</span>
         </div>
         {_.map(topNewsList, newsBlock)}
-        <button className="see-all">see all</button>
       </div>
     );
   }
