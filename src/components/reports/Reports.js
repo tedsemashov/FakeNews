@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 
-import AppMetaTags from '../appMetaTags';
+import { setDocumentTitle } from '../meta';
 
 import './reports.css';
 
 const Reports = () => {
   return (
     <div>
-      <AppMetaTags title="Reports" description='desctiption' />
+      {setDocumentTitle("Reports")}
       <h1>Reports</h1>
     </div>
   )

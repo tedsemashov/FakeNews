@@ -2,7 +2,7 @@ import React from 'react';
 import MetaTags from 'react-meta-tags';
 import _ from 'lodash';
 
-function AppMetaTags ({title, description}) {
+export function setDocumentTitle({title}) {
   const metaTitle = _.join(_.compact(['Fake News', title]), ' | ');
 
   return(
@@ -11,5 +11,3 @@ function AppMetaTags ({title, description}) {
     </MetaTags>
   );
 };
-
-export default AppMetaTags;

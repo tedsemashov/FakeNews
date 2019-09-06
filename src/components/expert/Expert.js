@@ -73,7 +73,7 @@ export default class Expert extends React.Component {
         <Subheader onClick={this.toggleTimePeriod} />
         <div className="dropdownWrapper">{this.renderTimePeriodDropdown()}</div>
         <section className="topWrapper">
-          <div className="markFake col-12">
+          <div className="markFake">
             <div>
               <Breadcrumbs breadcrumbs={this.breadcrumbs} />
 
@@ -81,11 +81,11 @@ export default class Expert extends React.Component {
             </div>
             <div className="clearfix" />
           </div>
-          <div className="markFake top-news-container col-12">
+          <div className="markFake top-news-container">
             <TopNews/>
           </div>
 
-          <div className="markFake top-news-container col-12 pb-4">
+          <div className="markFake top-news-container pb-4">
             <TopRetweetedNews/>
           </div>
           <div className="clearfix" />

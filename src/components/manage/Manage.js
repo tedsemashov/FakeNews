@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import AppMetaTags from '../appMetaTags';
+import { setDocumentTitle } from '../meta';
 
 import './manage.css';
 
@@ -10,7 +10,7 @@ class Manage extends Component {
   render() {
     return (
       <div>
-        <AppMetaTags title="Manage" description='desctiption' />
+        {setDocumentTitle("Manage")}
         <h1>Manage</h1>
       </div>
     )
