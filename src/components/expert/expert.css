@@ -10,8 +10,8 @@
 
 .expert-page .default-container {
   width: 1440px;
-  margin: 0 auto;
-  padding: 60px 0;
+  margin: 60px auto;
+  padding: 0;
 }
 
 .expert-page .main-title {
