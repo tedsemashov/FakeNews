@@ -6,7 +6,7 @@ import Expert from './Expert';
 
 const mapStateToProps = (state) => {
    return {
-     topNewsList: state.top_news_list,
+     topNewsList: state.top_news,
      topReTweets: state.top_rtweets,
      topReTweetedUsersTweets: state.top_rt_users_tw,
      topUsersTweets: state.top_users_tw,

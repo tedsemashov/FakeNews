@@ -13,7 +13,7 @@ const Header = ({ user }) => {
   return (
     <header className="headerContainer">
       <div className="headerWrapper">
-        <img className="headerLogo" src={require('../../images/header/logo@3x.png')} alt='logo' />
+        <img className="headerLogo" src={require('../../images/header/logo.svg')} alt='logo' />
         <nav className="navMenu">
           <ul className="headerList">
             <li className="headerLI">

@@ -12,6 +12,7 @@ import TopInfluencers from '../top-influencers/index';
 import TopTrolls from '../top-trolls/index';
 import TopMentionedUsers from '../top-mentioned-users/index';
 import Footer from '../footer/Footer';
+import { setDocumentTitle } from '../meta';
 
 class Analytics extends Component {
   state = {
@@ -46,6 +47,7 @@ class Analytics extends Component {
     );
     return (
       <div>
+        {setDocumentTitle("Analytics")}
         {!this.props.isLoaded ? spinner : null}
         <Header />
         <Subheader onClick={this.toggleTimePeriod} />

@@ -1,0 +1,127 @@
+.top-news .expert-top-news {
+  display: flex;
+  justify-content: space-between;
+  min-height: 80px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  margin-bottom: 20px;
+  padding: 21px 0 14px;
+}
+
+.top-news.inner-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.top-news .news-block-header {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.top-news .hint-text {
+  font-size: 10px;
+  font-weight: 600;
+  padding-right: 0;
+  padding-left: 68px;
+  color: #222222;
+  align-self: flex-end;
+}
+
+.top-news .news-block-header h2 {
+  position: relative;
+  font-size: 24px;
+  padding-bottom: 23px;
+  margin-top: 41px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.top-news .news-block-header h2:after {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  width: 120px;
+  height: 2px;
+  background-color: #000000;
+}
+
+.top-news h2.retweeted-news-title {
+  margin-top: 80px;
+}
+
+.top-news .expert-top-news button {
+  margin-left: 24px;
+  min-width: 106px;
+  height: 32px;
+  background-color: #d0021b;
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  font-size: 16px;
+  font-weight: 900;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+.top-news .expert-top-news button.not-fake {
+  border: 2px solid #d0021b;
+  color: #d0021b;
+  background-color: #fff;
+}
+
+.top-news .mark-fake-button {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 0;
+}
+
+.top-news .expert-top-news button.not-fake span {
+  position: relative;
+  display: inline-block;
+  width: 30px;
+}
+
+.top-news .expert-top-news button.not-fake span:before {
+  content: '';
+  position: absolute;
+  background: url(../../../images/icons/tick-mark.png);
+  background-position: left;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-color: transparent;
+  width: 20px;
+  height: 20px;
+  bottom: -4px;
+  right: 8px;
+}
+
+.top-news .expert-top-news span {
+  font-size: 18px;
+  padding: 0;
+}
+
+.top-news .top-news-container .see-all {
+  min-width: 83px;
+  height: 24px;
+  border: solid 2px #000;
+  color: #000;
+  font-size: 10px;
+  font-weight: normal;
+  text-transform: uppercase;
+}
+
+.top-news .expert-top-news img {
+  margin-right: 16px;
+}
+
+.top-news .news-text {
+  display: flex;
+  padding-left: 0;
+}
+.top-news .user-avatar {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}

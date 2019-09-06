@@ -1,10 +1,17 @@
 import React from "react";
 import Spinner from "react-bootstrap/Spinner";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 
 import Header from '../header/index';
+import Footer from '../footer/Footer';
 import Subheader from '../subheader/index';
 import TimeDropdown from '../subheader/time-dropdown/TimeDropdown';
 import Breadcrumbs from '../breadcrumbs';
+import TopNews from './topNews';
+import TopRetweetedNews from './topRetweetedNews';
+import { setDocumentTitle } from '../meta';
 
 import TopUserTweets from "./../top-user-tweets";
 import TopMentionedUsersReTweets from "./../top-mentioned-users-re-tweets";
@@ -61,31 +68,27 @@ export default class Expert extends React.Component {
 
     return (
       <div className="expert-page">
+        {setDocumentTitle("Expert")}
         {!isLoaded && this.spinner}
 
         <Header />
 
         <Subheader onClick={this.toggleTimePeriod} />
         <div className="dropdownWrapper">{this.renderTimePeriodDropdown()}</div>
-        <section className="topWrapper">
-          <div className="markFake">
-            <div>
-              <Breadcrumbs breadcrumbs={this.breadcrumbs} />
 
-              <h1 className="main-title">Mark the fake</h1>
-            </div>
-            <div className="clearfix" />
-            <div>
-              {JSON.stringify(this.props.fakeNewsUsers)}
-            </div>
-          </div>
-
-          <div className="clearfix" />
-
-          <TopUserTweets />
-
-          <TopMentionedUsersReTweets />
-        </section>
+        <div className="default-container">
+          <Container>
+            <Breadcrumbs breadcrumbs={this.breadcrumbs} />
+            <h1 className="main-title">Mark the fake</h1>
+            <TopNews/>
+            <TopRetweetedNews/>
+            <TopUserTweets />
+            <TopMentionedUsersReTweets />
+          </Container>
+        </div>
+        <div className="footerWrapper">
+          <Footer />
+        </div>
       </div>
     );
   }
