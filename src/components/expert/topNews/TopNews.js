@@ -5,7 +5,7 @@ import './top-news.css';
 
 export default class TopNews extends React.Component{
   toggleFakeStatus() {
-    this.props.toggleFakeStatus();
+    //this.props.toggleFakeStatus();
   }
 
   render() {
