@@ -30,5 +30,16 @@ export const EXPERT_BODY_POST = {
   request_type: "get_exp_tw_labeling"
 };
 
+export const SAVE_LABELS_BODY = {
+  news_id_fn: [],
+  rt_id_fn: [],
+  fn_users: [],
+  rm_fn_users: [],
+  rm_id_fn: [],
+  request_type: "save_labels"
+};
+
 // events;
 export const EXPERT_SET_DATA = "SET_EXPERT_DATA";
+export const TOPUSERTWEETS_MARK_AS_FAKE = "TOPUSERTWEETS_MARK_AS_FAKE";
+export const TOPUSERTWEETS_MARK_AS_MANIPULATOR = "TOPUSERTWEETS_MARK_AS_MANIPULATOR";

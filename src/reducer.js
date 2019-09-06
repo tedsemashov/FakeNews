@@ -135,6 +135,14 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         ...data
       };
+    case constants.TOPUSERTWEETS_MARK_AS_FAKE:
+      console.log("constants.TOPUSERTWEETS_MARK_AS_FAKE");
+
+      return { ...state };
+    case constants.TOPUSERTWEETS_MARK_AS_MANIPULATOR:
+      console.log("constants.TOPUSERTWEETS_MARK_AS_MANIPULATOR");
+
+      return { ...state };
     default:
       return state;
   }
