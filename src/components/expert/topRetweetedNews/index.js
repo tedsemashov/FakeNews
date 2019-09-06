@@ -1,10 +1,10 @@
 import { connect } from "react-redux";
 
-import TopNews from './TopNews';
+import TopRetweetedNews from './TopRetweetedNews';
 
 const mapStateToProps = (state) => {
    return {
-     topNewsList: state.top_news,
+     topReTweetedNews: state.top_rtweets,
      isLoaded: state.isLoaded
    }
 };
@@ -16,4 +16,4 @@ const mapDispatchToProps = dispatch => {
   };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(TopNews);
+export default connect(mapStateToProps, mapDispatchToProps)(TopRetweetedNews);

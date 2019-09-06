@@ -2,10 +2,13 @@ import React from "react";
 import Spinner from "react-bootstrap/Spinner";
 
 import Header from '../header/index';
+import Footer from '../footer/Footer';
 import Subheader from '../subheader/index';
 import TimeDropdown from '../subheader/time-dropdown/TimeDropdown';
 import Breadcrumbs from '../breadcrumbs';
 import TopNews from './topNews';
+import TopRetweetedNews from './topRetweetedNews';
+import AppMetaTags from '../appMetaTags';
 
 import TopUserTweets from "./../top-user-tweets";
 import TopMentionedUsersReTweets from "./../top-mentioned-users-re-tweets";
@@ -58,12 +61,11 @@ export default class Expert extends React.Component {
   };
 
   render() {
-    const { isLoaded, topNewsList } = this.props;
-    const topNewsTitle = 'Top news';
-    const topReTwNewsTitle = 'Top retweeted neews';
+    const { isLoaded } = this.props;
 
     return (
       <div className="expert-page">
+        <AppMetaTags title="Expert" description='desctiption' />
         {!isLoaded && this.spinner}
 
         <Header />
@@ -71,27 +73,30 @@ export default class Expert extends React.Component {
         <Subheader onClick={this.toggleTimePeriod} />
         <div className="dropdownWrapper">{this.renderTimePeriodDropdown()}</div>
         <section className="topWrapper">
-          <div className="markFake">
+          <div className="markFake col-12">
             <div>
               <Breadcrumbs breadcrumbs={this.breadcrumbs} />
 
               <h1 className="main-title">Mark the fake</h1>
             </div>
             <div className="clearfix" />
-            <div className="markFake top-news-container">
-              <TopNews topNewsList={topNewsList} title={topNewsTitle}/>
-            </div>
-            <div className="markFake top-news-container">
-              <TopNews topNewsList={topNewsList} title={topReTwNewsTitle}/>
-            </div>
+          </div>
+          <div className="markFake top-news-container col-12">
+            <TopNews/>
           </div>
 
+          <div className="markFake top-news-container col-12 pb-4">
+            <TopRetweetedNews/>
+          </div>
           <div className="clearfix" />
 
           <TopUserTweets />
 
           <TopMentionedUsersReTweets />
         </section>
+        <div className="footerWrapper">
+          <Footer />
+        </div>
       </div>
     );
   }

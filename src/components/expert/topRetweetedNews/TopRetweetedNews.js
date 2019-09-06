@@ -1,18 +1,23 @@
 import React from 'react';
 import _ from 'lodash';
 
-import './top-news.css';
+import { avatar } from '../../helpers.js'
 
-export default class TopNews extends React.Component{
+import '../topNews/top-news.css';
+
+export default class TopRetweetedNews extends React.Component{
   render() {
-    const { topNewsList } = this.props;
-    const title = 'Top news';
+    const { topReTweetedNews } = this.props;
+    const title = 'Top retweeted neews';
 
     const newsBlock = (news)=> {
       return(
         <div className='expert-top-news' key={news.id_txt}>
-         <span>{_.get(news, 'text', '')}</span>
-         <button className={news.clicked ? 'not-fake' : 'fake'}>
+        <div className='top-news-content d-flex'>
+          {avatar(news.image_url)}
+          <span>{_.get(news, 'text', '')}</span>
+        </div>
+         <button className={news.clicked ? 'fake' : 'not-fake'}>
            <span/>
            Fake
          </button>
@@ -26,7 +31,7 @@ export default class TopNews extends React.Component{
           <h2>{title}</h2>
           <span>Mark news as fake</span>
         </div>
-        {_.map(topNewsList, newsBlock)}
+        {_.map(topReTweetedNews, newsBlock)}
         <button className="see-all">see all</button>
       </div>
     );
