@@ -24,7 +24,7 @@ export default class TopRetweetedNews extends React.Component{
         <div className="news">
           {_.map(topReTweetedNews, (news)=> {
             return(
-              <Row className='expert-top-news' key={news.id_txt}>
+              <Row className='expert-top-news m-0' key={news.id_txt}>
                 <Col md="10" className="news-text">
                  {userAvatar(news.image_url)}
 

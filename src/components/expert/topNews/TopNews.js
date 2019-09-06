@@ -25,7 +25,7 @@ export default class TopNews extends React.Component{
         </Row>
         {_.map(topNewsList, (news)=> {
           return(
-            <Row className='expert-top-news' key={news.id_txt}>
+            <Row className='expert-top-news m-0' key={news.id_txt}>
               <Col md="10" className="news-text">
                 <span>
                  {_.get(news, 'text', '')}
