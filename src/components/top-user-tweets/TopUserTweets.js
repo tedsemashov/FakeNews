@@ -51,15 +51,13 @@ export default class TopUserTweets extends React.Component {
 
     return(
       <Button className={buttonClass} onClick={onClick}>
-        {!isFake && <img className="check-icon" src={checkIcon} alt="" />}
+        {isFake && <img className="check-icon" src={checkIcon} alt="" />}
         Fake
       </Button>
     );
   }
 
   renderUser(userData, user) {
-    if(_.includes(this.props.fn_users, user)) return null;
-
     const isProcessing = _.includes(this.props.processing, user);
     const onSelect = () => this.setState({ user });
 
