@@ -16,22 +16,24 @@ export default class TopNews extends React.Component{
     const title = 'Top news';
 
     return(
-      <Container className="top-news-section" fluid>
+      <Container className="inner-container top-news" fluid>
         <Row>
-          <Col className='news-block-header'>
+          <Col sm={10} className='news-block-header'>
             <h2>{title}</h2>
+          </Col>
+          <Col sm={2} className="hint-text">
             <span>Mark news as fake</span>
           </Col>
         </Row>
         {_.map(topNewsList, (news)=> {
           return(
             <Row className='expert-top-news m-0' key={news.id_txt}>
-              <Col md="10" className="news-text">
+              <Col sm="10" className="news-text">
                 <span>
                  {_.get(news, 'text', '')}
                 </span>
               </Col>
-              <Col md="2" className="mark-fake-button">
+              <Col sm="2" className="mark-fake-button">
                 <button className={news.clicked ? 'not-fake' : 'fake'} onClick={this.toggleFakeStatus}>
                  <span/>
                  Fake

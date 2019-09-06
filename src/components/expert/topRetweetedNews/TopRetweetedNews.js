@@ -14,10 +14,12 @@ export default class TopRetweetedNews extends React.Component{
     const title = 'Top retweeted neews';
 
     return(
-      <Container fluid>
+      <Container className="inner-container top-news" fluid>
         <Row>
-          <Col className='news-block-header'>
-            <h2>{title}</h2>
+          <Col sm={10} className='news-block-header'>
+            <h2 className="retweeted-news-title">{title}</h2>
+          </Col>
+          <Col sm={2} className="hint-text">
             <span>Mark news as fake</span>
           </Col>
         </Row>

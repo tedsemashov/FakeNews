@@ -1,4 +1,4 @@
-.expert-page  .expert-top-news {
+.top-news .expert-top-news {
   display: flex;
   justify-content: space-between;
   min-height: 80px;
@@ -7,20 +7,28 @@
   padding: 21px 0 14px;
 }
 
-.expert-page  .news-block-header {
+.top-news.inner-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.top-news .news-block-header {
   display: flex;
   justify-content: space-between;
   flex-direction: row;
   align-items: flex-end;
 }
 
-.expert-page  .news-block-header span {
+.top-news .hint-text {
   font-size: 10px;
   font-weight: 600;
+  padding-right: 0;
+  padding-left: 73px;
   color: #222222;
+  align-self: flex-end;
 }
 
-.expert-page  .news-block-header h2 {
+.top-news .news-block-header h2 {
   position: relative;
   font-size: 24px;
   padding-bottom: 23px;
@@ -29,7 +37,7 @@
   text-transform: uppercase;
 }
 
-.expert-page  .news-block-header h2:after {
+.top-news .news-block-header h2:after {
   content: '';
   display: block;
   position: absolute;
@@ -40,7 +48,11 @@
   background-color: #000000;
 }
 
-.expert-page .expert-top-news button {
+.top-news h2.retweeted-news-title {
+  margin-top: 80px;
+}
+
+.top-news .expert-top-news button {
   margin-left: 24px;
   min-width: 106px;
   height: 32px;
@@ -53,25 +65,25 @@
   text-transform: uppercase;
 }
 
-.expert-page .expert-top-news button.not-fake {
+.top-news .expert-top-news button.not-fake {
   border: 2px solid #d0021b;
   color: #d0021b;
   background-color: #fff;
 }
 
-.expert-page .mark-fake-button {
+.top-news .mark-fake-button {
   display: flex;
   justify-content: flex-end;
   padding-right: 0;
 }
 
-.expert-page .expert-top-news button.not-fake span {
+.top-news .expert-top-news button.not-fake span {
   position: relative;
   display: inline-block;
   width: 30px;
 }
 
-.expert-page .expert-top-news button.not-fake span:before {
+.top-news .expert-top-news button.not-fake span:before {
   content: '';
   position: absolute;
   background: url(../../../images/icons/tick-mark.png);
@@ -85,12 +97,12 @@
   right: 8px;
 }
 
-.expert-page .expert-top-news span {
+.top-news .expert-top-news span {
   font-size: 18px;
   padding: 0;
 }
 
-.expert-page .top-news-container .see-all {
+.top-news .top-news-container .see-all {
   min-width: 83px;
   height: 24px;
   border: solid 2px #000;
@@ -100,15 +112,15 @@
   text-transform: uppercase;
 }
 
-.expert-page  .expert-top-news img {
+.top-news .expert-top-news img {
   margin-right: 16px;
 }
 
-.expert-page .news-text {
+.top-news .news-text {
   display: flex;
   padding-left: 0;
 }
-.expert-page .user-avatar {
+.top-news .user-avatar {
   width: 60px;
   height: 60px;
   border-radius: 50%;
