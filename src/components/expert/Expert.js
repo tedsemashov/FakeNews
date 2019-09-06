@@ -6,6 +6,8 @@ import Subheader from '../subheader/index';
 import TimeDropdown from '../subheader/time-dropdown/TimeDropdown';
 import Breadcrumbs from '../breadcrumbs';
 
+import TopUserTweets from "./../top-user-tweets";
+
 import './expert.css';
 
 export default class Expert extends React.Component {
@@ -71,11 +73,14 @@ export default class Expert extends React.Component {
 
               <h1 className="main-title">Mark the fake</h1>
             </div>
-
+            <div className="clearfix" />
             <div>
               {JSON.stringify(this.props.fakeNewsUsers)}
             </div>
           </div>
+
+          <div className="clearfix" />
+          <TopUserTweets />
         </section>
       </div>
     );

@@ -1,0 +1,138 @@
+.top-user-tweets {
+  position: relative;
+  width: 1180px;
+  margin: 80px auto 0;
+  padding: 0;
+}
+
+.top-user-tweets .section-content {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.top-user-tweets .container-heading {
+  margin-top: -14px;
+  font-size: 10px;
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #222222;
+}
+
+.top-user-tweets .users-container {
+  margin-top: 23px;
+}
+
+.top-user-tweets .user-row {
+  padding-top: 13px;
+  padding-bottom: 13px;
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.12);
+}
+
+.top-user-tweets .user-row + .user-row {
+  margin-top: 10px;
+}
+
+.top-user-tweets .user-selection:hover {
+  cursor: pointer;
+}
+
+.top-user-tweets .switch-user {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.top-user-tweets .user-avatar {
+  width: 60px;
+  height: 60px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+}
+
+.top-user-tweets .user-details {
+  padding-left: 1px;
+}
+
+.top-user-tweets .user-name {
+  font-size: 18px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.top-user-tweets .user-nickname {
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.top-user-tweets .mark-fake {
+  margin-top: 1px;
+  width: 106px;
+  background-color: #d0021b !important;
+  border: none !important;
+  padding: 6px 0 !important;
+  color: #ffffff !important;
+
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+.top-user-tweets .tweets-layout {
+  position: relative;
+}
+
+.top-user-tweets .tweets-list {
+  margin: 5px;
+  padding: 19px 43px;
+  display: flex;
+  width: 100%;
+  min-height: 340px;
+  max-height: 340px;
+  overflow: hidden;
+  overflow-y: scroll;
+  border-radius: 4px;
+  box-shadow: 0 8px 13px 0 rgba(0, 0, 0, 0.16);
+  flex-direction: column;
+}
+
+.top-user-tweets .tweets-list:before {
+  display: block;
+  position: absolute;
+  margin-top: 35px;
+  margin-left: -59px;
+  border-top: 8px solid transparent;
+  border-right: 8px solid #ffffff;
+  border-bottom: 8px solid transparent;
+  border-left: 8px solid transparent;
+  content: "";
+}
+
+.top-user-tweets .tweet {
+  padding: 26px 0 17px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.top-user-tweets .tweet:first-child {
+  padding-top: 0;
+}
