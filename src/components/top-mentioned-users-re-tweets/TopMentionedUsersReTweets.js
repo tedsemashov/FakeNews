@@ -9,9 +9,9 @@ import Button from "react-bootstrap/Button";
 import SectionTitle from "../section-title/SectionTitle";
 import { userAvatar } from "../../utils/avatar";
 
-import "./top-user-tweets.css";
+import "./top-mentioned-users-re-tweets.css";
 
-export default class TopUserTweets extends React.Component {
+export default class TopMentionedUsersReTweets extends React.Component {
   constructor(props) {
     super(props);
 
@@ -77,12 +77,12 @@ export default class TopUserTweets extends React.Component {
     const { users } = this.props;
     const user = this.state.user ||  _.keys(this.props.users)[0];
     const usersList = _.map(users, this.renderUser);
-    const tweetsList = _.get(users, [user, "tweets"], []).map(this.renderTweets);
+    const tweetsList = _.get(users, [user, "rtweets"], []).map(this.renderTweets);
 
     return (
-      <section className="top-user-tweets">
+      <section className="top-mentioned-users-re-tweets">
         <div className="section-title">
-          <SectionTitle value="TOP USER'S TWEETS" />
+          <SectionTitle value="TOP MENTIONED USERS IN RETWEETS" />
         </div>
 
         <Container className="section-content" fluid>

@@ -7,6 +7,7 @@ import TimeDropdown from '../subheader/time-dropdown/TimeDropdown';
 import Breadcrumbs from '../breadcrumbs';
 
 import TopUserTweets from "./../top-user-tweets";
+import TopMentionedUsersReTweets from "./../top-mentioned-users-re-tweets";
 
 import './expert.css';
 
@@ -80,7 +81,10 @@ export default class Expert extends React.Component {
           </div>
 
           <div className="clearfix" />
+
           <TopUserTweets />
+
+          <TopMentionedUsersReTweets />
         </section>
       </div>
     );
