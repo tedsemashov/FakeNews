@@ -7,6 +7,7 @@ const expertInitialState = {
   topMentionedUsersReTweetsProcessing: [],
   topUserTweetsProcessing: [],
   manipulatorsProcessing: [],
+  topNewsProcessing: [],
 
   // API;
   top_news: [],
@@ -197,6 +198,25 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         fn_users: _.reject(state.fn_users, (e) => e === action.user)
+    case constants.TOPNEWS_MARK_AS_FAKE:
+      return {
+        ...state,
+        top_news: _.map(state.top_news, (e) => e.id_txt === action.news.id_txt ? action.news : e )
+      };
+    case constants.TOPNEWS_UNMARK_AS_FAKE:
+      return {
+        ...state,
+        top_news: _.map(state.top_news, (e) => e.id_txt === action.news.id_txt ? action.news : e )
+      };
+    case constants.TOPNEWS_ADD_PROCESSING:
+      return {
+        ...state,
+        topNewsProcessing: [...state.topNewsProcessing, action.newsId]
+      };
+    case constants.TOPNEWS_REMOVE_PROCESSING:
+      return {
+        ...state,
+        topNewsProcessing: _.reject(state.topNewsProcessing, (e) => e === action.newsId)
       };
     default:
       return state;

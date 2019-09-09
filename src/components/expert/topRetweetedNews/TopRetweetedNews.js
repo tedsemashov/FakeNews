@@ -35,7 +35,7 @@ export default class TopRetweetedNews extends React.Component{
                  </span>
                 </Col>
                 <Col md="2" className="mark-fake-button">
-                 <button className={news.clicked ? 'not-fake' : 'fake'} onClick={this.toggleFakeStatus}>
+                 <button className={news.checked ? 'not-fake' : 'fake'} onClick={this.toggleFakeStatus}>
                    <span/>
                    Fake
                  </button>

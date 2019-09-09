@@ -5,6 +5,20 @@
   border-bottom: 1px solid rgba(0, 0, 0, 0.12);
   margin-bottom: 20px;
   padding: 21px 0 14px;
+  position: relative;
+}
+
+.top-news .expert-top-news .spinner-layout {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.8);
 }
 
 .top-news.inner-container {
@@ -53,48 +67,25 @@
 }
 
 .top-news .expert-top-news button {
-  margin-left: 24px;
-  min-width: 106px;
-  height: 32px;
-  background-color: #d0021b;
-  border: 0;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.12);
+  background-color: #d0021b !important;
+  color: #ffffff !important;
+  border: solid 2px #d0021b !important;
+  padding: 6px 0 !important;
+  width: 106px;
+  text-transform: uppercase;
   font-size: 16px;
   font-weight: 900;
-  color: #fff;
-  text-transform: uppercase;
+  line-height: normal;
 }
 
 .top-news .expert-top-news button.not-fake {
   border: 2px solid #d0021b;
-  color: #d0021b;
-  background-color: #fff;
+  background-color: #ffffff !important;
+  color: #d0021b !important;
 }
 
 .top-news .mark-fake-button {
-  display: flex;
-  justify-content: flex-end;
-  padding-right: 0;
-}
-
-.top-news .expert-top-news button.not-fake span {
-  position: relative;
-  display: inline-block;
-  width: 30px;
-}
-
-.top-news .expert-top-news button.not-fake span:before {
-  content: '';
-  position: absolute;
-  background: url(../../../images/icons/tick-mark.png);
-  background-position: left;
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-color: transparent;
-  width: 20px;
-  height: 20px;
-  bottom: -4px;
-  right: 8px;
+  text-align: right;
 }
 
 .top-news .expert-top-news span {

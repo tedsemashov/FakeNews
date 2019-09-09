@@ -3,17 +3,41 @@ import _ from 'lodash';
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
+import Spinner from "react-bootstrap/Spinner";
 
 import './top-news.css';
+import checkIcon from "./../../../images/tip_icon.svg";
 
-export default class TopNews extends React.Component{
-  toggleFakeStatus() {
-    //this.props.toggleFakeStatus();
+
+export default class TopNews extends React.Component {
+  spinner = (
+    <div className="spinner-layout">
+      <Spinner animation="border" role="status" variant="dark" />
+    </div>
+  );
+
+  renderButton(news) {
+    const isFake = news.checked === 1;
+    const onClick = () => {
+      if (news.checked) {
+        this.props.unmarkFake(news);
+      } else {
+        this.props.markFake(news);
+      }
+    };
+
+    return(
+      <Button className={isFake ? "not-fake" : "fake"} onClick={onClick}>
+        {isFake && <img className="check-icon" src={checkIcon} alt="" />}
+        Fake
+      </Button>
+    );
   }
 
   render() {
-    const { topNewsList } = this.props;
     const title = 'Top news';
+    const { topNewsList, topNewsProcessing } = this.props;
 
     return(
       <Container className="inner-container top-news" fluid>
@@ -28,16 +52,15 @@ export default class TopNews extends React.Component{
         {_.map(topNewsList, (news)=> {
           return(
             <Row className='expert-top-news m-0' key={news.id_txt}>
+            {_.includes(topNewsProcessing, news.id_txt) && this.spinner}
+            {_.includes(topNewsProcessing, news.id_txt) && this.spinner}
               <Col sm="10" className="news-text">
                 <span>
                  {_.get(news, 'text', '')}
                 </span>
               </Col>
               <Col sm="2" className="mark-fake-button">
-                <button className={news.clicked ? 'not-fake' : 'fake'} onClick={this.toggleFakeStatus}>
-                 <span/>
-                 Fake
-                </button>
+                {this.renderButton(news)}
               </Col>
             </Row>
           )}
