@@ -1,6 +1,5 @@
 .top-mentioned-users-re-tweets {
   position: relative;
-  width: 1180px;
   margin: 80px auto 0;
   padding: 0;
 }
@@ -41,7 +40,7 @@
 }
 
 .top-mentioned-users-re-tweets .users-container {
-  margin-top: 23px;
+  margin-top: 7px;
 }
 
 .top-mentioned-users-re-tweets .container-heading div {
