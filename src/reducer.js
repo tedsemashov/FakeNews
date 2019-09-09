@@ -199,6 +199,7 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         fn_users: _.reject(state.fn_users, (e) => e === action.user)
+      };
 
     case constants.TOPNEWS_TOGGLE_FAKE_STATUS:
       return {
