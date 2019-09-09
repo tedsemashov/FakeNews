@@ -10,7 +10,7 @@
 
 .expert-page .default-container {
   width: 1136px;
-  margin: 60px auto;
+  margin: 60px auto 70px;
 }
 
 .expert-page .main-title {
@@ -35,7 +35,7 @@
 
 .train-model {
   text-align: center;
-  margin-top: 45px;  
+  margin-top: 45px;
 }
 
 .expert-page .outline-black {
