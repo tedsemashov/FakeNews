@@ -89,7 +89,7 @@ export default class Manipulators extends React.Component {
         </div>
 
         <Container className="section-content" fluid>
-          <Row>
+          <Row className="grid-row">
             {users}
           </Row>
         </Container>

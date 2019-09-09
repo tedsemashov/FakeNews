@@ -1,17 +1,21 @@
 import { connect } from "react-redux";
 
+import {apiToggleTopReTweetedNewsFakeStatus, processTopReTweetedNews} from "../../../actions/top-re-tweeted-news";
+
 import TopRetweetedNews from './TopRetweetedNews';
 
 const mapStateToProps = (state) => {
    return {
      topReTweetedNews: state.top_rtweets,
-     isLoaded: state.isLoaded
+     topReTweetedNewsProcessing: state.topReTweetedNewsProcessing,
    }
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    toggleNewsFakeStatus: () => {
+    toggleFakeStatus: (news) => {
+      dispatch(processTopReTweetedNews(news.id_txt));
+      dispatch(apiToggleTopReTweetedNewsFakeStatus(news));
     }
   };
 };

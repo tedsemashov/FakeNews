@@ -1,17 +1,21 @@
 import { connect } from "react-redux";
 
-import TopNews from './TopNews';
+import {apiToggleTopNewsFakeStatus, processTopNews} from "../../../actions/top-news";
+
+import TopNews from "./TopNews";
 
 const mapStateToProps = (state) => {
-   return {
-     topNewsList: state.top_news,
-     isLoaded: state.isLoaded
-   }
+  return {
+    topNewsList: state.top_news,
+    topNewsProcessing: state.topNewsProcessing
+  };
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
   return {
-    toggleFakeStatus: () => {
+    toggleFakeStatus: (news) => {
+      dispatch(processTopNews(news.id_txt));
+      dispatch(apiToggleTopNewsFakeStatus(news));
     }
   };
 };
