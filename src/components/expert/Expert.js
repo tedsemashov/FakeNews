@@ -15,6 +15,7 @@ import { setDocumentTitle } from '../meta';
 
 import TopUserTweets from "./../top-user-tweets";
 import TopMentionedUsersReTweets from "./../top-mentioned-users-re-tweets";
+import Manipulators from "./../manipulators";
 
 import './expert.css';
 
@@ -84,6 +85,7 @@ export default class Expert extends React.Component {
             <TopRetweetedNews/>
             <TopUserTweets />
             <TopMentionedUsersReTweets />
+            <Manipulators />
           </Container>
         </div>
         <div className="footerWrapper">
