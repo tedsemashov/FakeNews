@@ -32,3 +32,17 @@
   bottom: 0;
   left: 0;
 }
+
+.train-model {
+  text-align: center;
+  margin-top: 45px;  
+}
+
+.expert-page .outline-black {
+  min-width: 200px;
+  font-size: 16px;
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: normal;
+  padding: 5px 0px !important;
+}

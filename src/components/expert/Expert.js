@@ -3,6 +3,7 @@ import Spinner from "react-bootstrap/Spinner";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Button from "react-bootstrap/Button";
 
 import Header from '../header/index';
 import Footer from '../footer/Footer';
@@ -86,6 +87,9 @@ export default class Expert extends React.Component {
             <TopUserTweets />
             <TopMentionedUsersReTweets />
             <Manipulators />
+            <div className="train-model">
+              <Button className="outline-black">Train model</Button>
+            </div>
           </Container>
         </div>
         <div className="footerWrapper">
