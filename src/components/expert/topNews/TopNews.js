@@ -19,13 +19,7 @@ export default class TopNews extends React.Component {
 
   renderButton(news) {
     const isFake = news.checked === 1;
-    const onClick = () => {
-      if (news.checked) {
-        this.props.unmarkFake(news);
-      } else {
-        this.props.markFake(news);
-      }
-    };
+    const onClick = () => this.props.toggleFakeStatus(news);
 
     return(
       <Button className={isFake ? "not-fake" : "fake"} onClick={onClick}>
@@ -52,7 +46,6 @@ export default class TopNews extends React.Component {
         {_.map(topNewsList, (news)=> {
           return(
             <Row className='expert-top-news m-0' key={news.id_txt}>
-            {_.includes(topNewsProcessing, news.id_txt) && this.spinner}
             {_.includes(topNewsProcessing, news.id_txt) && this.spinner}
               <Col sm="10" className="news-text">
                 <span>

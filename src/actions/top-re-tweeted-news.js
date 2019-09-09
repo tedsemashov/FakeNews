@@ -1,11 +1,11 @@
 import axios from "axios";
 
 import {
-  EXPERT_API_URL, SAVE_LABELS_BODY, TOPNEWS_TOGGLE_FAKE_STATUS,
-   TOPNEWS_ADD_PROCESSING, TOPNEWS_REMOVE_PROCESSING
+  EXPERT_API_URL, SAVE_LABELS_BODY, TOPRETWEETEDNEWS_TOGGLE_FAKE_STATUS,
+   TOPRETWEETEDNEWS_ADD_PROCESSING, TOPRETWEETEDNEWS_REMOVE_PROCESSING
 } from "../constants/expertsConstants";
 
-export function apiToggleTopNewsFakeStatus(news) {
+export function apiToggleTopReTweetedNewsFakeStatus(news) {
   return (dispatch) => {
     const params = { ...SAVE_LABELS_BODY, news_id_fn: [news.id_txt] };
     const headers = { "Content-Type": "application/json" };
@@ -15,7 +15,7 @@ export function apiToggleTopNewsFakeStatus(news) {
         dispatch(toggleTopReTweetedNewsFakeStatus(news));
       }
 
-      dispatch(completeProcessTopNews(news.id_txt));
+      dispatch(completeProcessTopReTweetedNews(news.id_txt));
     };
 
     // perform request;
@@ -23,23 +23,23 @@ export function apiToggleTopNewsFakeStatus(news) {
   };
 }
 
-export function processTopNews(newsId) {
+export function processTopReTweetedNews(newsId) {
   return {
-    type: TOPNEWS_ADD_PROCESSING,
+    type: TOPRETWEETEDNEWS_ADD_PROCESSING,
     newsId
   };
 }
 
-export function completeProcessTopNews(newsId) {
+export function completeProcessTopReTweetedNews(newsId) {
   return {
-    type: TOPNEWS_REMOVE_PROCESSING,
+    type: TOPRETWEETEDNEWS_REMOVE_PROCESSING,
     newsId
   };
 }
 
 export function toggleTopReTweetedNewsFakeStatus(news) {
   return {
-    type: TOPNEWS_TOGGLE_FAKE_STATUS,
+    type: TOPRETWEETEDNEWS_TOGGLE_FAKE_STATUS,
     news
   };
 }

@@ -21,6 +21,10 @@
   background-color: rgba(255, 255, 255, 0.8);
 }
 
+.top-news .expert-top-news .spinner-border {
+  top: calc(50% - 1rem);
+}
+
 .top-news.inner-container {
   padding-left: 0;
   padding-right: 0;
@@ -86,6 +90,7 @@
 
 .top-news .mark-fake-button {
   text-align: right;
+  padding-right: 0;
 }
 
 .top-news .expert-top-news span {
