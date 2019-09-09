@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="227px" height="26px" viewBox="0 0 227 26" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 56.3 (81716) - https://sketch.com -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Elements/Logo">
+            <g id="Group-12" stroke-width="1" fill-rule="evenodd" fill="#1F1F1F">
+                <rect id="Rectangle" fill-rule="nonzero" x="0" y="0" width="143" height="26"></rect>
+            </g>
+            <text id="FAKE-NEWS" font-family="ProximaNova-Black, Proxima Nova" font-size="22" font-weight="700" line-spacing="26" letter-spacing="0.385" fill="#FFFFFF">
+                <tspan x="7" y="20">FAKE NEWS</tspan>
+            </text>
+            <text id="detection" font-family="ProximaNova-Black, Proxima Nova" font-size="22" font-weight="700" line-spacing="26" letter-spacing="0.385" fill="#1F1F1F">
+                <tspan x="148" y="20">RADAR</tspan>
+            </text>
+        </g>
+    </g>
+</svg>

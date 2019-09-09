@@ -1,16 +1,12 @@
+import axios from 'axios';
+
 import * as constants from './constants';
 
 export const getTwitterData = (params = {}) => {
-  return dispatch => {
-    fetch(constants.TARGET_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({...constants.BODY_POST, ...params})
-    })
-      .then(res => res.json())
-      .then(data => {
+  return (dispatch) => {
+    axios.post(constants.TARGET_URL, {...constants.BODY_POST, ...params}, {headers: {'Content-Type': 'application/json'}})
+      .then((response) => {
+        const data = response.data;
         dispatch(setHashtagsData(data.hashtags));
         dispatch(setKeywordData(data.keyword));
         dispatch(setTopFavoriteTweetsData(data.top_favorite_tweets));
@@ -21,10 +17,23 @@ export const getTwitterData = (params = {}) => {
         dispatch(setTopMentionedUsersData(data.top_active_users));
         dispatch(setSelectedInfluencer(Object.keys(data.top_influencers)[0]));
         dispatch(setSelectedMentionedUser(Object.keys(data.top_active_users)[0]));
-        dispatch(setLoadingState('true'));
+        dispatch(setLoadingState(true));
       });
-  };
+  }
 };
+
+export function getTwittersByDate(reqBody) {
+  return (dispatch) => {
+    axios.post(constants.TARGET_URL, reqBody, {headers: {'Content-Type': 'application/json'}})
+      .then(({ data }) => {
+        dispatch(setHashtagsData(data.hashtags));
+        dispatch(setKeywordData(data.keyword));
+        dispatch(setTopFavoriteTweetsData(data.top_favorite_tweets));
+        dispatch(setTweetsCount(data.tweets_count_ts));
+        dispatch(setLoadingState(false));
+      }).catch((error) => console.log(error));
+  }
+}
 
 export const setHashtagsData = hashtags => {
   return {
@@ -74,6 +83,7 @@ export const setSelectedInfluencer = value => {
     value: value.charAt(0) === '@' ? value : '@' + value
   };
 };
+
 export const setSelectedMentionedUser = value => {
   return {
     type: constants.MENTIONED_USER,
@@ -109,23 +119,4 @@ export const setTopMentionedUsersData = topMentionedUsers => {
   };
 };
 
-export const getTwittersByDate = reqBody => {
-  return dispatch => {
-    fetch(constants.TARGET_URL, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(reqBody)
-    })
-      .then(res => res.json())
-      .then(data => {
-        dispatch(setHashtagsData(data.hashtags));
-        dispatch(setKeywordData(data.keyword));
-        dispatch(setTopFavoriteTweetsData(data.top_favorite_tweets));
-        dispatch(setTweetsCount(data.tweets_count_ts));
-        dispatch(setLoadingState('false'));
-      })
-      .catch(err => console.log(err));
-  };
-};
+export * from "./actions/expert";

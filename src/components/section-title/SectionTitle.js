@@ -4,7 +4,7 @@ import './sectionTitle.css';
 const SectionTitle = ({ value }) => {
   return (
     <div className="sectionTitleWrapper">
-      <a href="#hashtags" className="sectionTitleLink">
+      <a href="#" className="sectionTitleLink">
         {value}
       </a>
       <div className="sectionTitleUnderline" />

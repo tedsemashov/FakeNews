@@ -11,8 +11,9 @@
 
 .topWrapper {
    width: 100%;
-   height: 2755px;
+   min-height: 2755px;
    background-color: #ffffff;
+   padding-bottom: 60px;
 }
 
 .topAllNewsWrapper {
@@ -71,5 +72,3 @@
    margin: 0 auto;
    display: flex;
 }
-
-
