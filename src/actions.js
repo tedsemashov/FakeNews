@@ -98,10 +98,17 @@ export const setLoadingState = loadingState => {
   };
 };
 
+export const setDates = dates => {
+  return {
+    type: constants.DATES,
+    dates: dates
+  };
+};
+
 export const setTimePeriod = timePeriod => {
   return {
     type: constants.TIME_PERIOD,
-    timePeriod
+    timePeriod: timePeriod
   };
 };
 

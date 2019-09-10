@@ -1,3 +1,5 @@
+import moment from "moment";
+
 // expert constants;
 export * from "./constants/expertsConstants";
 
@@ -15,7 +17,7 @@ export const BODY_POST = {
     'top_favorite_tw_users',
     'top_active_users'
   ],
-  dates: ['2019-08-23', '2019-08-24'],
+  dates: [moment().add(-1, 'week').format('YYYY-MM-DD'), moment().format('YYYY-MM-DD')],
   keyword: 'Ukraine',
   hashtags: {
     n_hashtags: 20
@@ -60,5 +62,6 @@ export const GET_USER_CREDENTIALS = 'GET_USER_CREDENTIALS';
 export const SELECTED_INFLUENCER = 'SELECTED_INFLUENCER';
 export const MENTIONED_USER = 'MENTIONED_USER';
 export const LOADING_STATE = 'LOADING_STATE';
+export const DATES = 'DATES';
 export const TIME_PERIOD = 'TIME_PERIOD';
 export const REGEXP_EMAIL = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;

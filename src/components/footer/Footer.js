@@ -2,10 +2,11 @@ import React from 'react';
 import './footer.css';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear();
   return (
     <footer className="footerContainer">
       <img className="FooterLogo" src={require('../../images/footer/SoftServeLogo@3x.png')} />
-      <p>© Copyright 2018 SoftServe Inc.</p>
+      <p>© Copyright {currentYear} SoftServe Inc.</p>
     </footer>
   );
 };

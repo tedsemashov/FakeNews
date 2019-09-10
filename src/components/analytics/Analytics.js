@@ -3,7 +3,7 @@ import './analytics.css';
 import Spinner from 'react-bootstrap/Spinner';
 import Header from '../header/index';
 import Subheader from '../subheader/index';
-import TimeDropdown from '../subheader/time-dropdown/TimeDropdown';
+import TimeDropdown from '../subheader/time-dropdown';
 import Hashtags from '../hashtags/Hashtags';
 import TrollsActivity from '../trolls-activity/index';
 import TopNews from '../top-news/index';
@@ -33,7 +33,7 @@ class Analytics extends Component {
     if (this.state.timePeriod) {
       return (
         <div className="timeDropdownWrapper">
-          <TimeDropdown toogleTimePeriod={this.toggleTimePeriod} />{' '}
+          <TimeDropdown toogleTimePeriod={this.toggleTimePeriod} onTimePeriodSelect={this.props.getTwitterData} />{' '}
         </div>
       );
     }
@@ -48,7 +48,7 @@ class Analytics extends Component {
     return (
       <div>
         {setDocumentTitle("Analytics")}
-        {!this.props.isLoaded ? spinner : null}
+        {!this.props.isLoaded && false ? spinner : null}
         <Header />
         <Subheader onClick={this.toggleTimePeriod} />
         <div className="dropdownWrapper"> {this.showTimePeriodDropdown()} </div> <Hashtags />

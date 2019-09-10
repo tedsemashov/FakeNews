@@ -8,6 +8,7 @@ export function getExpertsData() {
       EXPERT_BODY_POST,
       {headers: {'Content-Type': 'application/json'}}
     ).then(({ data }) => {
+      debugger;
       dispatch(setExpertsData(data));
       dispatch(setLoadingState(true));
     }).catch((error) => console.log(error));

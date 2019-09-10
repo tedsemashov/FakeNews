@@ -8,7 +8,7 @@ import Button from "react-bootstrap/Button";
 import Header from '../header/index';
 import Footer from '../footer/Footer';
 import Subheader from '../subheader/index';
-import TimeDropdown from '../subheader/time-dropdown/TimeDropdown';
+import TimeDropdown from '../subheader/time-dropdown';
 import Breadcrumbs from '../breadcrumbs';
 import TopNews from './topNews';
 import TopRetweetedNews from './topRetweetedNews';
@@ -37,12 +37,17 @@ export default class Expert extends React.Component {
     this.state = { togglePeriod: false };
 
     this.toggleTimePeriod = this.toggleTimePeriod.bind(this);
-    this.onTimePeriodSelect = this.onTimePeriodSelect.bind(this);
   }
 
   componentDidMount() {
     this.props.getExpertsData();
   }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.term !== this.state.term) {
+        this.handleFetchCollections(this.state.term);
+    }
+}
 
   toggleTimePeriod() {
     const togglePeriod = !this.state.togglePeriod;
@@ -50,17 +55,12 @@ export default class Expert extends React.Component {
     this.setState({ togglePeriod });
   }
 
-  onTimePeriodSelect(arg) {
-    // TBD; sync w/ date range filter;
-    console.log(arg);
-  }
-
   renderTimePeriodDropdown() {
     if(!this.state.togglePeriod) return null;
 
     return (
       <div className="timeDropdownWrapper">
-        <TimeDropdown toogleTimePeriod={this.toggleTimePeriod} onTimePeriodSelect={this.onTimePeriodSelect} />
+        <TimeDropdown toogleTimePeriod={this.toggleTimePeriod} onTimePeriodSelect={this.props.getExpertsData} />
       </div>
     );
   };

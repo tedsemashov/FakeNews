@@ -27,6 +27,7 @@ const initialState = {
     surname: 'McCarthy'
   },
   timePeriod: '1 DAY',
+  dates: '',
   hashtags: {},
   keyword: "ukraine",
   top_favorite_tweets: [],
@@ -122,6 +123,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         isLoaded: action.isLoaded
+      };
+    case constants.DATES:
+      return {
+        ...state,
+        dates: action.dates
       };
     case constants.TIME_PERIOD:
       return {
