@@ -232,6 +232,12 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         topReTweetedNewsProcessing: _.reject(state.topReTweetedNewsProcessing, (e) => e === action.newsId)
       };
+    case constants.FILTERS_ON_CHANGE:
+      return {
+        ...state,
+        timePeriod: action.timePeriod,
+        keyword: action.keyword
+      };
     default:
       return state;
   }

@@ -14,6 +14,9 @@ import Reports from './components/reports/';
 import Login from './components/login/';
 import { PrivateRoute } from './components/private-rout/PrivateRoute';
 
+import "bootstrap/dist/css/bootstrap.css";
+import "bootstrap-daterangepicker/daterangepicker.css";
+
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));
 
