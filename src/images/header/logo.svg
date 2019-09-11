@@ -8,10 +8,10 @@
             <g id="Group-12" stroke-width="1" fill-rule="evenodd" fill="#1F1F1F">
                 <rect id="Rectangle" fill-rule="nonzero" x="0" y="0" width="143" height="26"></rect>
             </g>
-            <text id="FAKE-NEWS" font-family="ProximaNova-Black, Proxima Nova" font-size="22" font-weight="700" line-spacing="26" letter-spacing="0.385" fill="#FFFFFF">
+            <text id="FAKE-NEWS" style="font-family: 'proxima-nova'; font-size: 22; font-weight: 900; letter-spacing: 0.385" fill="#FFFFFF">
                 <tspan x="7" y="20">FAKE NEWS</tspan>
             </text>
-            <text id="detection" font-family="ProximaNova-Black, Proxima Nova" font-size="22" font-weight="700" line-spacing="26" letter-spacing="0.385" fill="#1F1F1F">
+            <text id="detection" font-family="proxima-nova" font-size="22" font-weight="900" line-spacing="26" letter-spacing="0.385" fill="#1F1F1F">
                 <tspan x="148" y="20">RADAR</tspan>
             </text>
         </g>
