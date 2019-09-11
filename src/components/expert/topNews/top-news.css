@@ -6,6 +6,7 @@
   margin-bottom: 20px;
   padding: 21px 0 14px;
   position: relative;
+  color: #000;
 }
 
 .top-news .expert-top-news .spinner-layout {
@@ -38,8 +39,8 @@
 }
 
 .top-news .hint-text {
+  width: 106px;
   font-size: 10px;
-  font-weight: 600;
   padding-right: 0;
   padding-left: 68px;
   color: #222222;
@@ -53,6 +54,7 @@
   margin-top: 41px;
   font-weight: 900;
   text-transform: uppercase;
+  color: #000;
 }
 
 .top-news .news-block-header h2:after {
@@ -74,7 +76,7 @@
   background-color: #d0021b !important;
   color: #ffffff !important;
   border: solid 2px #d0021b !important;
-  padding: 6px 0 !important;
+  padding: 5px 0 !important;
   width: 106px;
   text-transform: uppercase;
   font-size: 16px;
@@ -117,6 +119,7 @@
   padding-left: 0;
 }
 .top-news .user-avatar {
+  min-width: 60px;
   width: 60px;
   height: 60px;
   border-radius: 50%;

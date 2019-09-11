@@ -32,7 +32,7 @@ export default class TopRetweetedNews extends React.Component {
 
   render() {
     const { topReTweetedNews, topReTweetedNewsProcessing } = this.props;
-    const title = 'Top retweeted neews';
+    const title = 'Top retweeted news';
 
     return(
       <Container className="inner-container top-news" fluid>

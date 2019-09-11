@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 
+import { Logo } from "../images/Logo"
+
 import './header.css';
 
 const Header = ({ user }) => {
@@ -13,7 +15,8 @@ const Header = ({ user }) => {
   return (
     <header className="headerContainer">
       <div className="headerWrapper">
-        <img className="headerLogo" src={require('../../images/header/logo.svg')} alt='logo' />
+        <Logo/>
+
         <nav className="navMenu">
           <ul className="headerList">
             <li className="headerLI">

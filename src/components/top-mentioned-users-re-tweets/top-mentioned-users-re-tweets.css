@@ -31,7 +31,6 @@
 .top-mentioned-users-re-tweets .container-heading {
   margin-top: -14px;
   font-size: 10px;
-  font-weight: 600;
   font-style: normal;
   font-stretch: normal;
   line-height: normal;
@@ -44,7 +43,7 @@
 }
 
 .top-mentioned-users-re-tweets .container-heading div {
-  padding-right: 30px;
+  padding-right: 40px;
   text-align: right;
 }
 
@@ -108,8 +107,7 @@
   background-color: #d0021b !important;
   color: #ffffff !important;
   border: solid 2px #d0021b !important;
-  padding: 6px 0 !important;
-
+  padding: 5px 0 !important;
   margin-top: 1px;
   width: 106px;
   text-transform: uppercase;
@@ -147,6 +145,7 @@
   border-radius: 4px;
   box-shadow: 0 8px 13px 0 rgba(0, 0, 0, 0.16);
   flex-direction: column;
+  color: #000;
 }
 
 .top-mentioned-users-re-tweets .tweets-list:before {
