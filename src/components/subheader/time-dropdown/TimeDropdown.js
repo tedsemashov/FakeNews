@@ -1,22 +1,44 @@
-import React from 'react';
-import './timeDropdown.css';
-import Section from '../section/Section';
-import DatePicker from '../../subheader/date-picker/index';
+import React from "react";
+import PropTypes from "prop-types";
+import classNames from "classnames";
 
-const TimeDropdown = ({ toogleTimePeriod }) => {
-  return (
-    <div className="timeContainer">
-      <div className="timeTypesWrapper">
-        <Section sectionClass="sectionSelected" sectionValue="15 MIN" />
-        <Section sectionClass="sectionDefault" sectionValue="YESTERDAY" />
-        <Section sectionClass="sectionDefault" sectionValue="3 DAYS" />
-        <Section sectionClass="sectionDefault" sectionValue="LAST WEEK" />
-        <Section sectionClass="sectionDefault" sectionValue="LAST MONTH" />
-        <Section sectionClass="sectionDefault" sectionValue="LAST QUARTER" />
+import Section from "../section/Section";
+import DatePicker from "../date-picker/DatePicker";
+
+import "./timeDropdown.css";
+
+export default class TimeDropdown extends React.Component {
+  static propTypes = {
+    onChange: PropTypes.func.isRequired,
+    periods: PropTypes.array.isRequired
+  };
+
+  render() {
+    const { period } = this.props;
+    const sections = this.props.periods.map((section) => {
+      const className = classNames({
+        sectionDefault: period !== section,
+        sectionSelected: period === section
+      });
+
+      return(
+        <Section
+          key={section}
+          sectionClass={className}
+          sectionValue={section}
+          onClick={() => this.props.onChange(section)}
+          />
+      );
+    });
+
+    return(
+      <div className="timeContainer">
+        <div className="timeTypesWrapper">
+          {sections}
+        </div>
+
+        <DatePicker onChange={({ startDate, endDate }) => this.props.onChange([startDate, endDate])} />
       </div>
-      <DatePicker toogleTimePeriod={toogleTimePeriod} />
-    </div>
-  );
-};
-
-export default TimeDropdown;
+    );
+  }
+}

@@ -3,7 +3,6 @@ import './analytics.css';
 import Spinner from 'react-bootstrap/Spinner';
 import Header from '../header/index';
 import Subheader from '../subheader/index';
-import TimeDropdown from '../subheader/time-dropdown/TimeDropdown';
 import Hashtags from '../hashtags/Hashtags';
 import TrollsActivity from '../trolls-activity/index';
 import TopNews from '../top-news/index';
@@ -14,64 +13,60 @@ import TopMentionedUsers from '../top-mentioned-users/index';
 import Footer from '../footer/Footer';
 import { setDocumentTitle } from '../meta';
 
-class Analytics extends Component {
-  state = {
-    timePeriod: false
-  };
+export default class Analytics extends Component {
+  spinner = (
+    <div className="spinnerWrapper">
+      <Spinner animation="border" role="status" variant="dark" />
+    </div>
+  );
 
   componentDidMount() {
-    this.props.getTwitterData();
+    const { period, keyword } = this.props;
+
+    this.props.getTwitterData(period, keyword);
   }
 
-  toggleTimePeriod = () => {
-    this.setState(state => ({
-      timePeriod: !state.timePeriod
-    }));
-  };
-
-  showTimePeriodDropdown = () => {
-    if (this.state.timePeriod) {
-      return (
-        <div className="timeDropdownWrapper">
-          <TimeDropdown toogleTimePeriod={this.toggleTimePeriod} />{' '}
-        </div>
-      );
-    }
-  };
-
   render() {
-    const spinner = (
-      <div className="spinnerWrapper">
-        <Spinner animation="border" role="status" variant="dark" />
-      </div>
-    );
+    const { isLoaded } = this.props;
+
     return (
       <div>
         {setDocumentTitle("Analytics")}
-        {!this.props.isLoaded ? spinner : null}
+
+        {!isLoaded && this.spinner}
+
         <Header />
-        <Subheader onClick={this.toggleTimePeriod} />
-        <div className="dropdownWrapper"> {this.showTimePeriodDropdown()} </div> <Hashtags />
+
+        <Subheader onFilterChange={this.props.onFilterChange}/>
+
+        <Hashtags />
+
         <TrollsActivity />
+
         <section className="topWrapper">
           <div className="topAllNewsWrapper">
             <div className="topNewsWrapper">
               <TopNews />
             </div>
+
             <div className="topNewsWrapper">
               <TopRetweetedNews />
             </div>
           </div>
+
           <div className="influencersTrollsMentionedWrapper">
             <TopInfluencers />
           </div>
+
           <div className="influencersTrollsMentionedWrapper">
             <TopTrolls />
           </div>
+
           <div className="influencersMentionedWrapper">
             <TopMentionedUsers />
           </div>
         </section>
+
         <div className="footerWrapper">
           <Footer />
         </div>
@@ -79,5 +74,3 @@ class Analytics extends Component {
     );
   }
 }
-
-export default Analytics;

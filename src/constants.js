@@ -2,7 +2,7 @@
 export * from "./constants/expertsConstants";
 
 // analytics constants;
-export const TARGET_URL = 'http://18.222.110.159:8080/get_results/';
+export const TARGET_URL = 'http://18.222.107.208:8080/get_results/';
 export const PROXY_URL = 'https://cors-anywhere.herokuapp.com/';
 export const BODY_POST = {
   results_names_list: [
@@ -62,3 +62,4 @@ export const MENTIONED_USER = 'MENTIONED_USER';
 export const LOADING_STATE = 'LOADING_STATE';
 export const TIME_PERIOD = 'TIME_PERIOD';
 export const REGEXP_EMAIL = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+export const FILTERS_ON_CHANGE = "FILTERS_ON_CHANGE";

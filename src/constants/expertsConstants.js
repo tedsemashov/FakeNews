@@ -1,4 +1,4 @@
-export const EXPERT_API_URL = "http://18.222.110.159:8080/exp_ml/";
+export const EXPERT_API_URL = "http://18.222.107.208:8080/exp_ml/";
 
 // API DATA BODY DEFAULT;
 export const EXPERT_BODY_POST = {
