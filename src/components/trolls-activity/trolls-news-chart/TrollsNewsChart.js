@@ -11,25 +11,24 @@ am4core.useTheme(am4themes_animated);
 export default class TrollsNewsChart extends React.Component {
 
   componentDidMount() {
-    this.chart = am4core.create("trollsNewsChart", am4charts.PieChart);
-    this.pieSeries = new am4charts.PieSeries();
-
-    this.chart.series.push(this.pieSeries);
-
     this.createTrollsPieChart();
   };
 
   componentWillUnmount() {
-    if(!this.chart) return;
+    this.disposeChart();
+  }
 
-    this.chart.dispose();
+  disposeChart() {
+    if(this.pieSeries) this.pieSeries.dispose();
+    if(this.chart) this.chart.dispose();
+
     this.chart = null;
     this.pieSeries = null;
   }
 
   createTrollsPieChart() {
-    if(!this.chart) return;
-
+    this.chart = am4core.create("trollsNewsChart", am4charts.PieChart);
+    this.pieSeries = new am4charts.PieSeries();
     this.chart.data = this.props.data;
     this.pieSeries.dataFields.value = "amount";
     this.pieSeries.dataFields.category = "title";
@@ -40,6 +39,8 @@ export default class TrollsNewsChart extends React.Component {
     this.pieSeries.labels.template.disabled = true;
     this.pieSeries.ticks.template.disabled = true;
     this.pieSeries.colors.list = [am4core.color("#d0021b"), am4core.color("#000000")];
+
+    this.chart.series.push(this.pieSeries);
   };
 
   render() {

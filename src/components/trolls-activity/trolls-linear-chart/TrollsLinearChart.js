@@ -8,14 +8,11 @@ import './trollsLinearChart.css';
 export default class TrollsLinearChart extends React.Component {
   componentDidMount() {
     this.setChart();
-
-    this.createHashtagChart();
   };
 
   componentDidUpdate() {
     this.disposeChart();
     this.setChart();
-    this.createHashtagChart();
   }
 
   componentWillUnmount() {
@@ -31,21 +28,7 @@ export default class TrollsLinearChart extends React.Component {
     this.chart.xAxes.push(this.categoryAxis);
     this.chart.yAxes.push(this.valueAxis);
     this.chart.series.push(this.series);
-  }
 
-  disposeChart() {
-    if(this.chart) this.chart.dispose();
-    if(this.categoryAxis) this.categoryAxis.dispose();
-    if(this.valueAxis) this.valueAxis.dispose();
-    if(this.series) this.series.dispose();
-
-    this.chart = null;
-    this.categoryAxis = null;
-    this.valueAxis = null;
-    this.series = null;
-  }
-
-  createHashtagChart = () => {
     this.chart.data = this.getHashtagChart();
     this.categoryAxis.dataFields.category = "category";
     this.series.fill = am4core.color("#ffc800");
@@ -60,7 +43,19 @@ export default class TrollsLinearChart extends React.Component {
     this.chart.cursor = new am4charts.XYCursor();
     this.categoryAxis.renderer.disabled = true;
     this.valueAxis.cursorTooltipEnabled = true;
-  };
+  }
+
+  disposeChart() {
+    if(this.valueAxis) this.valueAxis.dispose();
+    if(this.categoryAxis) this.categoryAxis.dispose();
+    if(this.series) this.series.dispose();
+    if(this.chart) this.chart.dispose();
+
+    this.chart = null;
+    this.categoryAxis = null;
+    this.valueAxis = null;
+    this.series = null;
+  }
 
   getHashtagChart() {
     let data = this.props.tweetsCount;

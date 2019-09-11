@@ -15,13 +15,16 @@ export default class Words extends React.Component {
     this.state = { checkWords: false };
 
     this.onHashTagSelect = this.onHashTagSelect.bind(this);
-    this.createWords = this.createWords.bind(this);
+    this.disposeChart = this.disposeChart.bind(this);
     this.onChartReady = this.onChartReady.bind(this);
   }
 
   componentDidMount() {
     this.chart = am4core.create("hashtagsWords", am4plugins_wordCloud.WordCloud);
     this.series = new am4plugins_wordCloud.WordCloudSeries();
+
+    this.chart.series.push(this.series);
+
     this.series.maxCount = 20;
     this.series.minWordLength = 2;
     this.series.minFontSize = 30;
@@ -31,12 +34,12 @@ export default class Words extends React.Component {
     this.series.labels.template.fill = am4core.color("#000000");
     this.series.dataFields.word = "tag";
     this.series.dataFields.value = "weight";
-
-    this.chart.series.push(this.series);
     this.series.events.off("arrangestarted", this.onChartReady);
     this.series.events.on("arrangestarted", this.onChartReady);
+    this.series.labels.template.events.off("hit", this.onHashTagSelect);
+    this.series.labels.template.events.on("hit", this.onHashTagSelect);
 
-    this.createWords();
+    this.refreshChartData();
   }
 
   componentWillUnmount() {
@@ -44,31 +47,26 @@ export default class Words extends React.Component {
   }
 
   componentDidUpdate() {
-    this.createWords();
+    this.refreshChartData();
   }
 
   disposeChart() {
-    if(!this.chart) return;
+    if(this.chart) this.chart.dispose();
 
-    this.chart.dispose();
     this.chart = null;
     this.series = null;
   }
 
-  createWords() {
-    if(!this.chart) return;
-
+  refreshChartData() {
     const { hashtags } = this.props;
 
     this.series.data = _.map(hashtags, (weight, tag) => ({ tag, weight }));
-    this.series.labels.template.events.off("hit", this.onHashTagSelect);
-    this.series.labels.template.events.on("hit", this.onHashTagSelect);
-  };
+  }
 
   onChartReady(event) {
     const { keyword } = this.props;
 
-    const current = _.find(event.target.labels.values, (v) => v.currentText.toLowerCase() === keyword.toLowerCase());
+    const current = _.find(event.target.labels.values, (v) => `${v.currentText}`.toLowerCase() === keyword.toLowerCase());
     // not found;
     if(!current) return;
 
