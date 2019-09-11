@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setSelectedInfluencer } from '../../actions';
+
 import TopTrolls from './TopTrolls';
 
 const mapStateToProps = state => {
@@ -9,11 +9,6 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {};
-};
+const mapDispatchToProps = () => ({});
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TopTrolls);
+export default connect(mapStateToProps,mapDispatchToProps)(TopTrolls);

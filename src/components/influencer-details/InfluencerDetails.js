@@ -25,7 +25,7 @@ const InfluencerDetails = ({ setSelectedUser, account, color, img, name, tweets,
   return (
     <div className="accountSection" onClick={setSelectedInfluencerHandler}>
       <div className="imageNameSection">
-        <img className="userImage" src={img} />
+        <img className="userImage" src={img} alt="User" />
         <div className="userInformWrapper">
           <p className="userNickname">{name}</p>
           <p className="userAccount">{account}</p>

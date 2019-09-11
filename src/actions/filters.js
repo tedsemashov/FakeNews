@@ -1,5 +1,3 @@
-import axios from "axios";
-
 import { FILTERS_ON_CHANGE } from "./../constants";
 
 export function onFilterChange(timePeriod, keyword) {

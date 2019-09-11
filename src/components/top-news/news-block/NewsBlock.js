@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+
 import './newsBlock.css';
 
 class NewsBlock extends Component {
@@ -16,7 +17,7 @@ class NewsBlock extends Component {
    render() {
       return (
            <div className='newsContainer' onClick={this.generateHttpLink}>
-              <a target="_blank" href={this.state.link}>{this.props.text}</a>
+              <a target="_blank" rel="noopener noreferrer" href={this.state.link}>{this.props.text}</a>
            </div>
       );
    }
