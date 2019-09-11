@@ -1,42 +1,46 @@
-import React, {Component} from 'react';
+import React from 'react';
 import * as am4core from "@amcharts/amcharts4/core";
 import am4themes_animated from "@amcharts/amcharts4/themes/animated";
 import * as am4charts from "@amcharts/amcharts4/charts";
+
 import './trollsPieChart.css';
 
-class TrollsPieChart extends Component {
+am4core.useTheme(am4themes_animated);
 
-   componentDidMount() {
-      this.createTrollsPieChart();
-   };
+export default class TrollsPieChart extends React.Component {
+  componentDidMount() {
+    this.chart = am4core.create("trollsPieChart", am4charts.PieChart);
+    this.pieSeries = new am4charts.PieSeries();
 
-   componentDidUpdate() {
-   }
+    this.chart.series.push(this.pieSeries);
 
-   createTrollsPieChart = () => {
-      am4core.useTheme(am4themes_animated);
-      let chart = am4core.create("trollsPieChart", am4charts.PieChart);
-      chart.data = this.props.data;
-      let pieSeries = chart.series.push(new am4charts.PieSeries());
-      pieSeries.dataFields.value = "amount";
-      pieSeries.dataFields.category = "title";
-      chart.innerRadius = am4core.percent(45);
-      pieSeries.slices.template.strokeWidth = 2;
-      pieSeries.slices.template.strokeOpacity = 1;
-      chart.legend = new am4charts.Legend();
-      pieSeries.labels.template.disabled = true;
-      pieSeries.ticks.template.disabled = true;
-      pieSeries.colors.list = [
-         am4core.color("#d0021b"),
-         am4core.color("#000000")
-      ];
-   };
+    this.createTrollsPieChart();
+  };
 
-   render() {
-      return (
-           <div className="trollsPieChart" />
-      );
-   }
+  componentWillUnmount() {
+    if(!this.chart) return;
+
+    this.chart.dispose();
+    this.chart = null;
+    this.pieSeries = null;
+  }
+
+  createTrollsPieChart() {
+    if(!this.chart) return;
+
+    this.chart.data = this.props.data;
+    this.pieSeries.dataFields.value = "amount";
+    this.pieSeries.dataFields.category = "title";
+    this.chart.innerRadius = am4core.percent(45);
+    this.pieSeries.slices.template.strokeWidth = 2;
+    this.pieSeries.slices.template.strokeOpacity = 1;
+    this.chart.legend = new am4charts.Legend();
+    this.pieSeries.labels.template.disabled = true;
+    this.pieSeries.ticks.template.disabled = true;
+    this.pieSeries.colors.list = [am4core.color("#d0021b"), am4core.color("#000000")];
+  };
+
+  render() {
+    return (<div className="trollsPieChart" />);
+  }
 }
-
-export default TrollsPieChart;
