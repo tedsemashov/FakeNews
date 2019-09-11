@@ -53,6 +53,7 @@ export default class Subheader extends React.Component {
 
     this.onPeriodChange = this.onPeriodChange.bind(this);
     this.toggleTimePeriod = this.toggleTimePeriod.bind(this);
+    this.onKeywordChange = this.onKeywordChange.bind(this);
   }
 
   toggleTimePeriod(event) {
@@ -140,6 +141,8 @@ export default class Subheader extends React.Component {
                 title="Key words"
                 className="searchInputArea"
                 keyword={keyword}
+                onChange={this.onKeywordChange}
+
                 />
             </div>
 

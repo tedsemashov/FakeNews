@@ -21,7 +21,9 @@ export default class Analytics extends Component {
   );
 
   componentDidMount() {
-    this.props.getTwitterData();
+    const { period, keyword } = this.props;
+
+    this.props.getTwitterData(period, keyword);
   }
 
   render() {
