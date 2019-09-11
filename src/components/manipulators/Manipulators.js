@@ -12,7 +12,6 @@ import SectionTitle from "./../section-title/SectionTitle";
 import {userAvatar} from "./../../utils/avatar";
 
 import "./manipulators.css";
-import checkIcon from "./../../images/tip_icon.svg";
 
 export const PER_PAGE = 15;
 

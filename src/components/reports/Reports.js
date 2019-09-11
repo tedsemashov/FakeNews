@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from "react";
 
 import { setDocumentTitle } from '../meta';
 
@@ -8,6 +8,7 @@ const Reports = () => {
   return (
     <div>
       {setDocumentTitle("Reports")}
+
       <h1>Reports</h1>
     </div>
   )

@@ -17,6 +17,7 @@ const mapDispatchToProps = dispatch => {
     getTwitterData: (period, keyword) => {
       const dates = convertToDates(period);
 
+      dispatch(setLoadingState(false));
       dispatch(getTwitterData({ dates, keyword }));
     },
 
