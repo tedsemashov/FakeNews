@@ -13,6 +13,7 @@ export default class Search extends React.Component {
     this.onChange = this.onChange.bind(this);
     this.onClick = this.onClick.bind(this);
     this.onKeyPress = this.onKeyPress.bind(this);
+    this.onReset = this.onReset.bind(this);
   }
 
   onChange(e) {
@@ -30,6 +31,11 @@ export default class Search extends React.Component {
     this.props.onChange(this.state.keyword || DEFAULT_KEYWORD);
   }
 
+  onReset() {
+    this.setState({keyword: ""});
+    this.props.onChange(DEFAULT_KEYWORD);
+  }
+
   render() {
     const { title, className, placeholder, keyword } = this.props;
     return (
@@ -38,7 +44,7 @@ export default class Search extends React.Component {
         <div className="searchContainer">
           <div className="keyWord">
             <p className="keyWordValue">{keyword}</p>
-            <img className="closeImg" src={require('../../../images/header/close@3x.png')} alt="Close" />
+            <img className="closeImg" src={require('../../../images/header/close@3x.png')} alt="Close"  onClick={this.onReset}/>
           </div>
           <input type="text" className={className} placeholder={placeholder} value={this.state.keyword} onChange={this.onChange} onKeyPress={this.onKeyPress}/>
           <img className="closeImg" src={require('../../../images/header/search@3x.png')} alt="Search" onClick={this.onClick} />

@@ -37,7 +37,7 @@ export default class Analytics extends Component {
 
         <Header />
 
-        <Subheader />
+        <Subheader onFilterChange={this.props.onFilterChange}/>
 
         <Hashtags />
 
