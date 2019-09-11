@@ -1,0 +1,11 @@
+.no-data {
+  font-size: 18px;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100%;
+  padding-top: 15px;
+  padding-bottom: 10px;
+}

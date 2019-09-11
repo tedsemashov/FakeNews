@@ -1,29 +1,43 @@
-import React from 'react';
+import React from "react";
+import _ from "lodash";
 
 import SectionTitle from '../section-title/SectionTitle';
-import Words from './words/index';
-import HashtagChart from '../hashtagChart/index';
+import Words from './words/Words';
+import HashtagChart from '../hashtagChart/HashtagChart';
+import NoData from "./../no-data/NoData";
 
 import './hashtags.css';
 
-const Hashtags = () => {
-  return (
-    <div className='hashtagsWrapper'>
-      <div className='titleWrapper'>
-         <SectionTitle value='HASHTAGS'/>
-      </div>
-      <div className='wordsGraphicsWrapper'>
-         <div className='wordsWrapper'>
-            <Words />
-            <div className='lineHorizontalSeparator'/>
-         </div>
-         <div className='lineSeparator'/>
-         <div className='wordsChartWrapper'>
-            <HashtagChart/>
-         </div>
-      </div>
-   </div>
-  );
-};
+export default class Hashtags extends React.Component {
+  renderData() {
+    const { hashtags, keyword, tweets_count_ts, onTagClick } = this.props;
 
-export default Hashtags;
+    return(
+      <React.Fragment>
+        <div className='wordsWrapper'>
+          <Words hashtags={hashtags} keyword={keyword} onChange={onTagClick} />
+          <div className='lineHorizontalSeparator'/>
+        </div>
+        <div className='lineSeparator'/>
+        <div className='wordsChartWrapper'>
+          <HashtagChart tweetsCount={tweets_count_ts} />
+        </div>
+      </React.Fragment>
+    );
+  }
+
+  render() {
+    const { hashtags } = this.props;
+
+    return(
+      <div className='hashtagsWrapper'>
+        <div className='titleWrapper'>
+          <SectionTitle value='HASHTAGS'/>
+        </div>
+        <div className='wordsGraphicsWrapper'>
+          {_.isEmpty(hashtags) ? <NoData /> : this.renderData()}
+        </div>
+      </div>
+    );
+  }
+}
