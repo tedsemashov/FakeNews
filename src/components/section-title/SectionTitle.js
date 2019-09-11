@@ -1,7 +1,7 @@
 import React from 'react';
 import './sectionTitle.css';
 
-const SectionTitle = ({ value, addLink }) => {
+const SectionTitle = ({ value }) => {
   return (
     <div className="sectionTitleWrapper">
       <a href="#" className="sectionTitleLink">

@@ -48,7 +48,7 @@ class Analytics extends Component {
     return (
       <div>
         {setDocumentTitle("Analytics")}
-        {!this.props.isLoaded && false ? spinner : null}
+        {!this.props.isLoaded ? spinner : null}
         <Header />
         <Subheader onClick={this.toggleTimePeriod} />
         <div className="dropdownWrapper"> {this.showTimePeriodDropdown()} </div> <Hashtags />

@@ -1,4 +1,5 @@
 import _ from "lodash";
+import moment from "moment";
 
 import * as constants from './constants';
 
@@ -26,8 +27,11 @@ const initialState = {
     name: 'John',
     surname: 'McCarthy'
   },
-  timePeriod: '1 DAY',
-  dates: '',
+  timePeriod: '',
+  dates: [
+    moment().subtract(1, 'week').format("YYYY-MM-DD"),
+    moment().format("YYYY-MM-DD")
+  ],
   hashtags: {},
   keyword: "ukraine",
   top_favorite_tweets: [],

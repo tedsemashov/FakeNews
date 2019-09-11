@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import TimeDropdown from './TimeDropdown';
-import { setLoadingState, setDates, setTimePeriod } from '../../../actions';
+import { setLoadingState, setDates } from '../../../actions';
 
 const mapStateToProps = (state) => {
   return {
@@ -13,7 +13,6 @@ const mapDispatchToProps = dispatch => {
     setDates: (dates) => {
       dispatch(setLoadingState(false));
       dispatch(setDates(dates));
-      dispatch(setTimePeriod(dates));
     }
   }
 };

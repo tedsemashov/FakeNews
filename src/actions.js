@@ -105,13 +105,6 @@ export const setDates = dates => {
   };
 };
 
-export const setTimePeriod = timePeriod => {
-  return {
-    type: constants.TIME_PERIOD,
-    timePeriod: timePeriod
-  };
-};
-
 export const setTopInfluencersData = topInfluencers => {
   return {
     type: constants.TOP_INFLUENCERS,

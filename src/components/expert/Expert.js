@@ -43,12 +43,6 @@ export default class Expert extends React.Component {
     this.props.getExpertsData();
   }
 
-  componentDidUpdate(prevProps, prevState) {
-    if (prevState.term !== this.state.term) {
-        this.handleFetchCollections(this.state.term);
-    }
-}
-
   toggleTimePeriod() {
     const togglePeriod = !this.state.togglePeriod;
 
@@ -57,10 +51,11 @@ export default class Expert extends React.Component {
 
   renderTimePeriodDropdown() {
     if(!this.state.togglePeriod) return null;
+    const { getExpertsData } = this.props;
 
     return (
       <div className="timeDropdownWrapper">
-        <TimeDropdown toogleTimePeriod={this.toggleTimePeriod} onTimePeriodSelect={this.props.getExpertsData} />
+        <TimeDropdown toogleTimePeriod={this.toggleTimePeriod} onTimePeriodSelect={getExpertsData} />
       </div>
     );
   };

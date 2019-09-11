@@ -1,19 +1,20 @@
 import { connect } from 'react-redux';
 import DatePicker from './DatePicker';
-import { getTwittersByDate, setLoadingState, setTimePeriod, setDates } from '../../../actions';
+import { setLoadingState, setDates } from '../../../actions';
 
 
 const mapStateToProps = (state) => {
   return {
-     timePeriod: state.timePeriod,
      dates: state.dates
   }
 };
 
 const mapDispatchToProps = dispatch => {
   return {
-    setLoadingState: isLoaded => dispatch(setLoadingState(isLoaded)),
-    setDates: dates => dispatch(setDates(dates))
+    setDates: (dates) => {
+      dispatch(setLoadingState(false));
+      dispatch(setDates(dates));
+    }
   };
 };
 
