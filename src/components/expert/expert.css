@@ -13,6 +13,10 @@
   margin: 60px auto 70px;
 }
 
+.expert-page .default-container .container {
+  padding: 0;
+}
+
 .expert-page .main-title {
   font-size: 64px;
   font-weight: 900;

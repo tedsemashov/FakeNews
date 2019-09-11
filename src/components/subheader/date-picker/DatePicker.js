@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { LinkedCalendar } from "rb-datepicker";
-import moment from "moment";
+import _ from "lodash";
 
 import "./DatePicker.css";
 
@@ -13,7 +13,7 @@ export default class DatePicker extends React.Component {
   dateOptions() {
     const { timePeriod } = this.props;
 
-    if(typeof(timePeriod) !== "Array") return {};
+    if(!_.isArray(timePeriod)) return {};
 
     return { startDate: timePeriod[0], endDate: timePeriod[1] };
   }

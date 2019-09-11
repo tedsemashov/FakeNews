@@ -10,7 +10,7 @@ const PopupSection = ({ name, acc, date, tweetText }) => {
           {acc} • {date}
         </p>
       </div>
-      <a target="_blank" className="popupSectionTweet" href="">
+      <a target="_blank" className="popupSectionTweet" href={`#${tweetText}`} rel="noopener noreferrer">
         {tweetText}
       </a>
     </div>

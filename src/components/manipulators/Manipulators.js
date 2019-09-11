@@ -12,7 +12,6 @@ import SectionTitle from "./../section-title/SectionTitle";
 import {userAvatar} from "./../../utils/avatar";
 
 import "./manipulators.css";
-import checkIcon from "./../../images/tip_icon.svg";
 
 export const PER_PAGE = 15;
 
@@ -33,6 +32,8 @@ export default class Manipulators extends React.Component {
     this.onPageChange = this.onPageChange.bind(this);
 
     this.renderUser = this.renderUser.bind(this);
+
+    this.renderPagination = this.renderPagination.bind(this);
   }
 
   list() {
@@ -66,7 +67,7 @@ export default class Manipulators extends React.Component {
               <br />
               <span className="user-nickname">{nickname}</span>
             </Col>
-            <Col className="p-0" sm={4}>
+            <Col className="p-0 text-right" sm={4}>
               <button className="action" onClick={() => this.props.unmarkFake(user)}>
                 DELETE
               </button>
@@ -75,6 +76,23 @@ export default class Manipulators extends React.Component {
         </div>
       </Col>
     );
+  }
+
+  renderPagination() {
+    const totalPages = this.totalPages();
+    if (totalPages < 2) return null;
+
+     return(
+      <ReactPaginate
+        pageCount={totalPages}
+        pageRangeDisplayed={2}
+        marginPagesDisplayed={1}
+        previousLabel={<FontAwesomeIcon icon={faArrowLeft} />}
+        nextLabel={<FontAwesomeIcon icon={faArrowRight} />}
+        onPageChange={this.onPageChange}
+        pageClassName={'pagination-item'}
+        />
+    )
   }
 
   render() {
@@ -94,14 +112,7 @@ export default class Manipulators extends React.Component {
           </Row>
         </Container>
 
-        <ReactPaginate
-          pageCount={this.totalPages()}
-          pageRangeDisplayed={2}
-          marginPagesDisplayed={1}
-          previousLabel={<FontAwesomeIcon icon={faArrowLeft} />}
-          nextLabel={<FontAwesomeIcon icon={faArrowRight} />}
-          onPageChange={this.onPageChange}
-          />
+        {this.renderPagination()}
       </section>
     );
   }

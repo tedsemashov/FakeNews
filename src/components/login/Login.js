@@ -48,7 +48,7 @@ class Login extends Component {
     return (
       <div>
         <div id="container">
-          <img className="Logo" src={require('../../images/login/logo@3x.png')} />
+          <img className="Logo" src={require('../../images/login/logo@3x.png')} alt="Log in" />
           <div className="Rectangle">
             <p className="Log-in">Log in</p>
             <div className="Separator" />
@@ -74,7 +74,7 @@ class Login extends Component {
             </div>
             <div className="forgotPassContainer">
               <p>Forgot Password?</p>
-              <a href="">Reset password</a>
+              <a href="#reset-password">Reset password</a>
               <div className="buttonWrapper">
                 <Button value={'LOG IN'} onClick={this.formCheck} />
               </div>

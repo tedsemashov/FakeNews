@@ -1,8 +1,10 @@
 import React from 'react';
-import './hashtags.css';
+
 import SectionTitle from '../section-title/SectionTitle';
 import Words from './words/index';
 import HashtagChart from '../hashtagChart/index';
+
+import './hashtags.css';
 
 const Hashtags = () => {
   return (
