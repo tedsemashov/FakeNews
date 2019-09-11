@@ -79,11 +79,12 @@ export default class Manipulators extends React.Component {
   }
 
   renderPagination() {
-    if (this.totalPages() < 2) return null;
+    const totalPages = this.totalPages();
+    if (totalPages < 2) return null;
 
      return(
       <ReactPaginate
-        pageCount={this.totalPages()}
+        pageCount={totalPages}
         pageRangeDisplayed={2}
         marginPagesDisplayed={1}
         previousLabel={<FontAwesomeIcon icon={faArrowLeft} />}
