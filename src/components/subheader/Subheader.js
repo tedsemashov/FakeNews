@@ -53,6 +53,7 @@ export default class Subheader extends React.Component {
 
     this.onPeriodChange = this.onPeriodChange.bind(this);
     this.toggleTimePeriod = this.toggleTimePeriod.bind(this);
+    this.onKeywordChange = this.onKeywordChange.bind(this);
   }
 
   toggleTimePeriod(event) {
@@ -64,20 +65,20 @@ export default class Subheader extends React.Component {
   onPeriodChange(period) {
     const { keyword } = this.props;
 
-    this.setState({ togglePeriod: false }, () => this.props.onChange(period, keyword));
+    this.setState({ togglePeriod: false }, () => this.props.onFilterChange(period, keyword));
   }
 
   onKeywordChange(keyword) {
     const { timePeriod } = this.props;
 
-    this.props.onChange(timePeriod, keyword);
+    this.props.onFilterChange(timePeriod, keyword);
   }
 
   onEmotionChange(emotion) {
     // TBD: also add to other callbacks and pass on props.onChange;
     const { keyword, timePeriod } = this.props;
 
-    this.props.onChange(timePeriod, keyword, emotion);
+    this.props.onFilterChange(timePeriod, keyword, emotion);
   }
 
   renderPeriod() {
@@ -140,6 +141,7 @@ export default class Subheader extends React.Component {
                 title="Key words"
                 className="searchInputArea"
                 keyword={keyword}
+                onChange={this.onKeywordChange}
                 />
             </div>
 

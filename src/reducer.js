@@ -139,11 +139,13 @@ const rootReducer = (state = initialState, action) => {
         topMentionedUsers: action.topMentionedUsers
       };
     case constants.EXPERT_SET_DATA:
-      const { type, ...data } = action;
-
       return {
         ...state,
-        ...data
+        top_news: _.get(action, 'top_news', []),
+        top_rtweets: _.get(action, 'top_rtweets', {}),
+        top_rt_users_tw: _.get(action, 'top_rt_users_tw', {}),
+        top_users_tw: _.get(action, 'top_users_tw', {}),
+        fn_users: _.get(action, 'fn_users', []),
       };
     case constants.TOPUSERTWEETS_MARK_AS_FAKE:
       return {

@@ -41,7 +41,9 @@ export default class Expert extends React.Component {
   }
 
   componentDidMount() {
-    this.props.getExpertsData();
+    const { dates, keyword } = this.props;
+
+    this.props.getExpertsData(dates, keyword);
   }
 
   toggleTimePeriod() {
@@ -75,7 +77,7 @@ export default class Expert extends React.Component {
 
         <Header />
 
-        <Subheader onClick={this.toggleTimePeriod} />
+        <Subheader onClick={this.toggleTimePeriod} onFilterChange={this.props.onFilterChange}/>
         <div className="dropdownWrapper">{this.renderTimePeriodDropdown()}</div>
 
         <div className="default-container">

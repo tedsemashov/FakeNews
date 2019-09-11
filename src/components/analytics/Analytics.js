@@ -21,7 +21,9 @@ export default class Analytics extends Component {
   );
 
   componentDidMount() {
-    this.props.getTwitterData();
+    const { period, keyword } = this.props;
+
+    this.props.getTwitterData(period, keyword);
   }
 
   render() {
@@ -35,7 +37,7 @@ export default class Analytics extends Component {
 
         <Header />
 
-        <Subheader />
+        <Subheader onFilterChange={this.props.onFilterChange}/>
 
         <Hashtags />
 
