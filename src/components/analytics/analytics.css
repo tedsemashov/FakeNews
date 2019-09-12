@@ -4,9 +4,29 @@
 }
 
 .timeDropdownWrapper {
-   margin: -11px 0 0 20px;
-   position: absolute;
-   z-index: 5;
+  margin: 0;
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 8px 13px 0 rgba(0, 0, 0, 0.16);
+  cursor: pointer;
+}
+
+.timeDropdownWrapper div {
+  border-bottom: 1px solid #a0a0a028;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: 900;
+}
+
+.timeDropdownWrapper div.active {
+  background-color: #000;
+  color: #fff;
+}
+
+.timeDropdownWrapper div:last-child {
+  border-bottom-width: 0;
 }
 
 .topWrapper {

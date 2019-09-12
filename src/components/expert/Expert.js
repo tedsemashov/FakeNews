@@ -6,7 +6,6 @@ import Button from "react-bootstrap/Button";
 import Header from '../header/index';
 import Footer from '../footer/Footer';
 import Subheader from '../subheader/index';
-import TimeDropdown from '../subheader/time-dropdown/TimeDropdown';
 import Breadcrumbs from '../breadcrumbs';
 import TopNews from './topNews';
 import TopRetweetedNews from './topRetweetedNews';
@@ -29,41 +28,17 @@ export default class Expert extends React.Component {
     </div>
   );
 
-  constructor(props) {
-    super(props);
-
-    this.state = { togglePeriod: false };
-
-    this.toggleTimePeriod = this.toggleTimePeriod.bind(this);
-    this.onTimePeriodSelect = this.onTimePeriodSelect.bind(this);
-  }
-
   componentDidMount() {
     const { dates, keyword } = this.props;
 
     this.props.getExpertsData(dates, keyword);
   }
 
-  toggleTimePeriod() {
-    const togglePeriod = !this.state.togglePeriod;
-
-    this.setState({ togglePeriod });
-  }
 
   onTimePeriodSelect(arg) {
     // TBD; sync w/ date range filter;
     console.log(arg);
   }
-
-  renderTimePeriodDropdown() {
-    if(!this.state.togglePeriod) return null;
-
-    return (
-      <div className="timeDropdownWrapper">
-        <TimeDropdown toogleTimePeriod={this.toggleTimePeriod} onTimePeriodSelect={this.onTimePeriodSelect} />
-      </div>
-    );
-  };
 
   render() {
     const { isLoaded } = this.props;
@@ -75,13 +50,13 @@ export default class Expert extends React.Component {
 
         <Header />
 
-        <Subheader onClick={this.toggleTimePeriod} onFilterChange={this.props.onFilterChange}/>
-        <div className="dropdownWrapper">{this.renderTimePeriodDropdown()}</div>
+        <Subheader onFilterChange={this.props.onFilterChange}/>
 
         <div className="default-container">
           <Container>
             <Breadcrumbs breadcrumbs={this.breadcrumbs} />
             <h1 className="main-title">Mark the fake</h1>
+            <div className="main-title-line"/>
             <TopNews/>
             <TopRetweetedNews/>
             <TopUserTweets />

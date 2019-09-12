@@ -107,6 +107,7 @@
   background-color: #d0021b !important;
   color: #ffffff !important;
   border: solid 2px #d0021b !important;
+  border-radius: 0;
   padding: 5px 0 !important;
   margin-top: 1px;
   width: 106px;
