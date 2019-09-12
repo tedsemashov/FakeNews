@@ -50,7 +50,7 @@ export default class Expert extends React.Component {
   }
 
   renderTrainButton() {
-    const {needTrainModel, } = this.props;
+    const { needTrainModel } = this.props;
 
     if(!needTrainModel) return null;
 

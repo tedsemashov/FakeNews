@@ -30,10 +30,10 @@ export default class FlashMessage extends React.Component {
 
     return (
       <div className="flash-message-container">
+        {this.setTimer()}
         <div className="flash-message">
           <img className="check-icon" src={checkIcon} alt="" />
           {flashMessage}
-          {this.setTimer()}
           <img className="close-icon" src={closeIcon} alt="" onClick={this.removeMessage} />
         </div>
       </div>
