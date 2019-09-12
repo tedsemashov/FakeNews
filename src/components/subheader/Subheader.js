@@ -9,8 +9,8 @@ import Search from "./search-input/Search";
 import "./subheader.css";
 
 export const LAST_WEEK = "LAST WEEK";
-export const LAST_TWO_WEEKS = "2 WEEKS";
-export const LAST_THREE_WEEKS = "3 WEEKS";
+export const LAST_TWO_WEEKS = "LAST TWO WEEKS";
+export const LAST_THREE_WEEKS = "LAST THREE WEEKS";
 export const LAST_MONTH = "LAST MONTH";
 export const LAST_QUOTER = "LAST QUARTER";
 
