@@ -130,6 +130,7 @@ export default class Subheader extends React.Component {
                 onClick={this.toggleTimePeriod}
                 text={timePeriod}
                 />
+                {this.renderPeriod()}
             </div>
 
             <div className="inputSearchWrapper">
