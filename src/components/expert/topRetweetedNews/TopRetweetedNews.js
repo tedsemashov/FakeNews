@@ -31,7 +31,7 @@ export default class TopRetweetedNews extends React.Component {
   }
 
   render() {
-    const { topReTweetedNews, topReTweetedNewsProcessing } = this.props;
+    const { topReTweetedNews, topReTweetedNewsProcessing, trainingProcessing } = this.props;
     const title = 'Top retweeted news';
 
     return(
@@ -46,9 +46,11 @@ export default class TopRetweetedNews extends React.Component {
         </Row>
         <div className="news">
           {_.map(topReTweetedNews, (news)=> {
+            const processing = _.includes(topReTweetedNewsProcessing, news.id_txt) || trainingProcessing;
+
             return(
               <Row className='expert-top-news m-0' key={news.id_txt}>
-              {_.includes(topReTweetedNewsProcessing, news.id_txt) && this.spinner}
+                {processing && this.spinner}
                 <Col md="10" className="news-text">
                  {userAvatar(news.image_url)}
 

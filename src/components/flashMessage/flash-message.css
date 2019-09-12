@@ -1,0 +1,26 @@
+.flash-message-container {
+  position: fixed;
+  z-index: 5;
+  bottom: 40px;
+  right: 50%;
+  width: 600px;
+  min-height: 64px;
+  transform: translate(50%, 0);
+}
+
+.flash-message {
+  visibility: visible;
+  background: #39c38c;
+  border: none;
+  border-radius: 0;
+  padding: 20px 16px;
+  color: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  margin: 0;
+  box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.5);
+}

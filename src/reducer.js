@@ -15,7 +15,11 @@ const expertInitialState = {
   top_rtweets: {},
   top_rt_users_tw: {},
   top_users_tw: {},
-  fn_users: []
+  fn_users: [],
+
+  needTrainModel: false,
+  trainingProcessing: false
+
 };
 
 const initialState = {
@@ -73,6 +77,7 @@ const initialState = {
   selectedInfluencer: '',
   selectedMentionedUser: '',
   selectedTroll: '',
+  flashMessage: "",
   isLoaded: false
 };
 
@@ -239,6 +244,22 @@ const rootReducer = (state = initialState, action) => {
         ...state,
         timePeriod: action.timePeriod,
         keyword: action.keyword
+      };
+
+    case constants.NEED_TRAIN_MODEL:
+      return {
+        ...state,
+        needTrainModel: action.needTrainModel
+      };
+    case constants.TRAINING_PROCESSING:
+      return {
+        ...state,
+        trainingProcessing: action.trainingProcessing
+      };
+    case constants.FLASH_MESSAGE:
+      return {
+        ...state,
+        flashMessage: action.flashMessage
       };
     default:
       return state;
