@@ -1,19 +1,22 @@
 import React from "react";
 
+import checkIcon from "./../../images/icons/check-icon-white.svg";
+import closeIcon from "./../../images/icons/close-icon.svg";
+
 import "./flash-message.css";
 
 export default class FlashMessage extends React.Component {
   constructor(props) {
     super(props);
 
-    this.onShow = this.onShow.bind(this);
+    this.setTimer = this.setTimer.bind(this);
     this.removeMessage = this.removeMessage.bind(this);
   }
 
-  onShow() {
+  setTimer() {
     window.setTimeout(() => {
       this.removeMessage()
-    }, 2000);
+    }, 12000);
   }
 
   removeMessage() {
@@ -28,8 +31,10 @@ export default class FlashMessage extends React.Component {
     return (
       <div className="flash-message-container">
         <div className="flash-message">
+          <img className="check-icon" src={checkIcon} alt="" />
           {flashMessage}
-          {this.onShow()}
+          {this.setTimer()}
+          <img className="close-icon" src={closeIcon} alt="" onClick={this.removeMessage} />
         </div>
       </div>
     );

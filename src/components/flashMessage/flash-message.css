@@ -24,3 +24,17 @@
   margin: 0;
   box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.5);
 }
+
+.flash-message-container .close-icon {
+  position: relative;
+  opacity: 1;
+  text-shadow: none;
+  color: transparent;
+  padding-right: 10px;
+  order: 3;
+  margin-left: auto;
+}
+
+.flash-message-container .check-icon {
+  padding-right: 10px;
+}
