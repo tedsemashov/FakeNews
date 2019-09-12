@@ -8,7 +8,7 @@ import TopNews from "./TopNews";
 const mapStateToProps = (state) => {
   return {
     topNewsList: state.top_news,
-    topNewsProcessing: state.topNewsProcessing,
+    topNewsProcessing: state.topNewsProcessing
   };
 };
 

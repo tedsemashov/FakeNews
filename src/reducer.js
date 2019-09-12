@@ -18,7 +18,6 @@ const expertInitialState = {
   fn_users: [],
 
   needTrainModel: false
-
 };
 
 const initialState = {
