@@ -2,19 +2,17 @@ import React from "react";
 import moment from "moment";
 import _ from "lodash";
 
-import TimeDropdown from "./time-dropdown/TimeDropdown";
 import Section from "./section/Section";
 import Dropdown from "../dropdown";
 import Search from "./search-input/Search";
 
 import "./subheader.css";
 
-export const ONE_DAY_PERIOD = "1 DAY";
-export const YESTERDAY_PERIOD = "YESTERDAY";
-export const THREE_DAYS_PERIOD = "3 DAYS";
-export const LAST_WEEK_PERIOD = "LAST WEEK";
-export const LAST_MONTH_PERIOD = "LAST MONTH";
-export const LAST_QUARTER_PERIOD = "LAST QUARTER";
+export const LAST_WEEK = "LAST WEEK";
+export const LAST_TWO_WEEKS = "LAST TWO WEEKS";
+export const LAST_THREE_WEEKS = "LAST THREE WEEKS";
+export const LAST_MONTH = "LAST MONTH";
+export const LAST_QUOTER = "LAST QUARTER";
 
 export const DATE_FORMAT = "YYYY-MM-DD";
 
@@ -24,25 +22,19 @@ export function formatDate(date) {
 
 export function convertToDates(timePeriod) {
   switch(timePeriod) {
-    case ONE_DAY_PERIOD:
-      return [formatDate(moment().subtract(1, "d")), formatDate(moment())];
-    case YESTERDAY_PERIOD:
-      return [formatDate(moment().subtract(1, "d")), formatDate(moment().subtract(1, "day"))];
-    case THREE_DAYS_PERIOD:
-      return [formatDate(moment().subtract(3, "d")), formatDate(moment())];
-    case LAST_WEEK_PERIOD:
+    case LAST_WEEK:
       return [formatDate(moment().subtract(1, "w")), formatDate(moment())];
-    case LAST_MONTH_PERIOD:
-      return [formatDate(moment().subtract(1, "M")), formatDate(moment())];
-    case LAST_QUARTER_PERIOD:
+    case LAST_TWO_WEEKS:
+      return [formatDate(moment().subtract(2, "w")), formatDate(moment())];
+    case LAST_THREE_WEEKS:
+     return [formatDate(moment().subtract(3, "w")), formatDate(moment())];
+    case LAST_MONTH:
+     return [formatDate(moment().subtract(1, "M")), formatDate(moment())];
+    case LAST_QUOTER:
       return [formatDate(moment().subtract(4, "M")), formatDate(moment())];
     default: // [<date>, <date>]
       return timePeriod;
   }
-}
-
-export function convertToLabel(timePeriod) {
-  return _.isArray(timePeriod) ? timePeriod.map(formatDate).join(" - ") : timePeriod;
 }
 
 export default class Subheader extends React.Component {
@@ -62,7 +54,8 @@ export default class Subheader extends React.Component {
     this.setState({ togglePeriod });
   };
 
-  onPeriodChange(period) {
+  onPeriodChange(e) {
+    let period = e.target.outerText;
     const { keyword } = this.props;
 
     this.setState({ togglePeriod: false }, () => this.props.onFilterChange(period, keyword));
@@ -86,18 +79,21 @@ export default class Subheader extends React.Component {
 
     const { timePeriod } = this.props;
     const periods = [
-      ONE_DAY_PERIOD,
-      YESTERDAY_PERIOD,
-      THREE_DAYS_PERIOD,
-      LAST_WEEK_PERIOD,
-      LAST_MONTH_PERIOD,
-      LAST_QUARTER_PERIOD
+      LAST_WEEK,
+      LAST_TWO_WEEKS,
+      LAST_THREE_WEEKS,
+      LAST_MONTH,
+      LAST_QUOTER
     ];
 
     return(
       <div className="dropdownWrapper">
         <div className="timeDropdownWrapper">
-          <TimeDropdown period={timePeriod} periods={periods} onChange={this.onPeriodChange} />
+          {_.map(periods, (period)=> {
+            const className = timePeriod === period ? "active" : "default";
+
+            return <div key={period} className={className} onClick={this.onPeriodChange}>{period}</div>
+          })}
         </div>
       </div>
     );
@@ -132,8 +128,9 @@ export default class Subheader extends React.Component {
                 placeholder="Select time period"
                 title="Time Period"
                 onClick={this.toggleTimePeriod}
-                text={convertToLabel(timePeriod)}
+                text={timePeriod}
                 />
+                {this.renderPeriod()}
             </div>
 
             <div className="inputSearchWrapper">
@@ -155,7 +152,6 @@ export default class Subheader extends React.Component {
             </div>
           </div>
         </div>
-        {this.renderPeriod()}
       </React.Fragment>
     );
   }

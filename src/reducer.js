@@ -26,7 +26,7 @@ const initialState = {
     name: 'John',
     surname: 'McCarthy'
   },
-  timePeriod: '1 DAY',
+  timePeriod: 'LAST WEEK',
   hashtags: {},
   keyword: "ukraine",
   top_favorite_tweets: [],

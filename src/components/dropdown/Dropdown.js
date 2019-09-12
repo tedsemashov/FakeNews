@@ -5,7 +5,7 @@ const Dropdown = ({ title, className, placeholder, text, onClick }) => {
   return (
     <div className="dropdown">
       <p className="dropdownTitle">{title}</p>
-      <div className="dropdownContainer">
+      <div className="dropdownContainer" onClick={onClick}>
         <input
           type="text"
           className={className}
@@ -13,7 +13,7 @@ const Dropdown = ({ title, className, placeholder, text, onClick }) => {
           value={text}
           readOnly={true}
         />
-        <div className="arrowWrapper" onClick={onClick}>
+        <div className="arrowWrapper">
           <div className="arrowDown" />
         </div>
       </div>
