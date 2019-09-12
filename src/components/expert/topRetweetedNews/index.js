@@ -9,7 +9,6 @@ const mapStateToProps = (state) => {
    return {
      topReTweetedNews: state.top_rtweets,
      topReTweetedNewsProcessing: state.topReTweetedNewsProcessing,
-     trainingProcessing: state.trainingProcessing
    }
 };
 

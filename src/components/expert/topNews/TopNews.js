@@ -31,7 +31,7 @@ export default class TopNews extends React.Component {
 
   render() {
     const title = 'Top news';
-    const { topNewsList, topNewsProcessing, trainingProcessing } = this.props;
+    const { topNewsList, topNewsProcessing } = this.props;
 
     return(
       <Container className="inner-container top-news" fluid>
@@ -44,7 +44,7 @@ export default class TopNews extends React.Component {
           </Col>
         </Row>
         {_.map(topNewsList, (news)=> {
-          const processing = _.includes(topNewsProcessing, news.id_txt) || trainingProcessing;
+          const processing = _.includes(topNewsProcessing, news.id_txt)
 
           return(
             <Row className='expert-top-news m-0' key={news.id_txt}>

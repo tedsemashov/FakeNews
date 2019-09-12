@@ -50,9 +50,8 @@ export default class Manipulators extends React.Component {
   onPageChange({ selected }) { this.setState({ page: selected }); }
 
   renderUser(user) {
-    const { processing, trainingProcessing } = this.props;
     const userData = _.get(this.props, ["top_users_tw", user]) || _.get(this.props, ["top_rt_users_tw", user]);
-    const isProcessing = _.includes(processing, user) || trainingProcessing;
+    const isProcessing = _.includes(this.props.processing, user);
     const nickname = _.startsWith(user, "@") ? user : `@${user}`;
 
     return(

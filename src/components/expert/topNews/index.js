@@ -9,7 +9,6 @@ const mapStateToProps = (state) => {
   return {
     topNewsList: state.top_news,
     topNewsProcessing: state.topNewsProcessing,
-    trainingProcessing: state.trainingProcessing
   };
 };
 

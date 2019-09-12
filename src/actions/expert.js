@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { EXPERT_API_URL, EXPERT_BODY_POST, EXPERT_SET_DATA, TRAIN_MODEL_BODY, NEED_TRAIN_MODEL, TRAINING_PROCESSING } from "../constants";
+import { EXPERT_API_URL, EXPERT_BODY_POST, EXPERT_SET_DATA, TRAIN_MODEL_BODY, NEED_TRAIN_MODEL } from "../constants";
 import { setLoadingState, setFlashMessage } from "../actions";
 
 export function getExpertsData({dates, keyword}) {
@@ -16,7 +16,7 @@ export function getExpertsData({dates, keyword}) {
 
 export function trainModel({dates}) {
   return (dispatch) => {
-    dispatch(trainingProcessing(true));
+    dispatch(setLoadingState(false));
 
     axios.post(EXPERT_API_URL,
       {...TRAIN_MODEL_BODY, dates },
@@ -24,13 +24,13 @@ export function trainModel({dates}) {
     ).then(({ data }) => {
       if(data.result_code === "Ok") {
         dispatch(needTrainModel(false));
-        dispatch(setFlashMessage("Your model was successfully trained!"));
+        dispatch(setFlashMessage(data.result_info));
       } else {
         dispatch(setFlashMessage("Something is wrong! Please try again later."));
       }
     }).catch((error) => console.log(error));
 
-    dispatch(trainingProcessing(false));
+    dispatch(setLoadingState(true));
   };
 }
 
@@ -45,12 +45,5 @@ export function needTrainModel(data) {
   return {
     type: NEED_TRAIN_MODEL,
     needTrainModel: data
-  };
-}
-
-export function trainingProcessing(data) {
-  return {
-    type: TRAINING_PROCESSING,
-    trainingProcessing: data
   };
 }

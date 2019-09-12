@@ -75,10 +75,7 @@ export default class TopMentionedUsersReTweets extends React.Component {
     );
   }
 
-  renderUser(userData, user) {
-    const { processing, trainingProcessing } = this.props;
-
-    const isProcessing = _.includes(processing, user) || trainingProcessing;
+  renderUser(userData, user) {const isProcessing = _.includes(this.props.processing, user);
     const onSelect = () => this.setState({ user });
     const selectedUser = this.state.user ||  _.keys(this.props.users)[0];
     const isSelected = selectedUser === user;

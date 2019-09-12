@@ -9,8 +9,7 @@ const mapStateToProps = (state) => {
   return {
     processing: state.topUserTweetsProcessing,
     users: state.top_users_tw,
-    fn_users: state.fn_users,
-    trainingProcessing: state.trainingProcessing
+    fn_users: state.fn_users
   };
 };
 

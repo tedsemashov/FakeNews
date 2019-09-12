@@ -35,6 +35,9 @@
 .train-model {
   text-align: center;
   margin-top: 45px;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
 }
 
 .expert-page .outline-black, .expert-page .outline-black:hover {
@@ -48,4 +51,12 @@
   color: #000 !important;
   border-radius: 0;
   line-height: normal;
+  animation: glowing 2000ms infinite;
+}
+
+@keyframes glowing {
+  0% { box-shadow: 0 0 0px #000; }
+  40% { box-shadow: 0 0 10px #000; }
+  60% { box-shadow: 0 0 10px #000; }
+  100% { box-shadow: 0 0 0px #000; }
 }

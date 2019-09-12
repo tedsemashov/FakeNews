@@ -10,8 +10,7 @@ const mapStateToProps = (state) => {
     processing: state.manipulatorsProcessing,
     fn_users: state.fn_users,
     top_rt_users_tw: state.top_rt_users_tw,
-    top_users_tw: state.top_users_tw,
-    trainingProcessing: state.trainingProcessing
+    top_users_tw: state.top_users_tw
   };
 };
 

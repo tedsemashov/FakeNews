@@ -17,8 +17,7 @@ const expertInitialState = {
   top_users_tw: {},
   fn_users: [],
 
-  needTrainModel: false,
-  trainingProcessing: false
+  needTrainModel: false
 
 };
 
@@ -250,11 +249,6 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         needTrainModel: action.needTrainModel
-      };
-    case constants.TRAINING_PROCESSING:
-      return {
-        ...state,
-        trainingProcessing: action.trainingProcessing
       };
     case constants.FLASH_MESSAGE:
       return {
