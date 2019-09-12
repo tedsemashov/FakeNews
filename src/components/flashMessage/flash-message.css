@@ -1,7 +1,7 @@
 .flash-message-container {
   position: fixed;
   z-index: 5;
-  bottom: 40px;
+  bottom: 15px;
   right: 50%;
   width: 600px;
   min-height: 64px;
