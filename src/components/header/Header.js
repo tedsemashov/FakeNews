@@ -1,49 +1,49 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import { Redirect } from "react-router";
 
 import { Logo } from "../images/Logo"
 
 import './header.css';
 
-const Header = ({ user }) => {
-  // TBD: move this to state; logout thru dispatcher;
-  const userLogout = () => {
-    localStorage.removeItem('user');
-    window.location.href = '/';
-  };
+// WARN: pages w/o Header will not be tracked on login/logout;
+export default class Header extends React.Component {
+  render() {
+    const { user, userLoggedIn } = this.props;
 
-  return (
-    <header className="headerContainer">
-      <div className="headerWrapper">
-        <Logo/>
+    if(!userLoggedIn) return(<Redirect to={{ pathname: "/" }} />);
 
-        <nav className="navMenu">
-          <ul className="headerList">
-            <li className="headerLI">
-              <Link to={"/analytics"}>ANALYTICS</Link>
-            </li>
-            <li>
-              <Link to={"/reports"}>REPORTS</Link>
-            </li>
-            <li>
-              <Link to={"/manage"}>MANAGE</Link>
-            </li>
-            <li>
-              <Link to={"/expert"}>EXPERT</Link>
-            </li>
-          </ul>
-        </nav>
-        <div className="userLogin">
-          <p className="userName">
-            {user.name} {user.surname}
-          </p>
-          <div onClick={userLogout} className="userLogoWrapper">
-            <img className="userLogo" src={require('../../images/header/Steven_Hallam-slide.jpg')} alt='user-logo' />
+    return (
+      <header className="headerContainer">
+        <div className="headerWrapper">
+          <Logo/>
+
+          <nav className="navMenu">
+            <ul className="headerList">
+              <li className="headerLI">
+                <Link to={"/analytics"}>ANALYTICS</Link>
+              </li>
+              <li>
+                <Link to={"/reports"}>REPORTS</Link>
+              </li>
+              <li>
+                <Link to={"/manage"}>MANAGE</Link>
+              </li>
+              <li>
+                <Link to={"/expert"}>EXPERT</Link>
+              </li>
+            </ul>
+          </nav>
+          <div className="userLogin">
+            <p className="userName">
+              {user.name} {user.surname}
+            </p>
+            <div onClick={this.props.logOut} className="userLogoWrapper">
+              <img className="userLogo" src={require('../../images/header/Steven_Hallam-slide.jpg')} alt='user-logo' />
+            </div>
           </div>
         </div>
-      </div>
-    </header>
-  );
-};
-
-export default Header;
+      </header>
+    );
+  }
+}
