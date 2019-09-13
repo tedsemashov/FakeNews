@@ -20,12 +20,8 @@ export function trainModel({dates}) {
       {...TRAIN_MODEL_BODY, dates },
       {headers: {'Content-Type': 'application/json'}}
     ).then(({ data }) => {
-      if(data.result_code === "Ok") {
-        dispatch(needTrainModel(false));
-        dispatch(setFlashMessage(data.result_info));
-      } else {
-        dispatch(setFlashMessage("Something is wrong! Please try again later."));
-      }
+      dispatch(needTrainModel(data.result_code !== "Ok"));
+      dispatch(setFlashMessage(data.result_info || "Something is wrong! Please try again later."));
       dispatch(setLoadingState(true));
     }).catch((error) => console.log(error));
   };
