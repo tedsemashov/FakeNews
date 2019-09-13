@@ -108,3 +108,4 @@ export const setTopMentionedUsersData = topMentionedUsers => {
 
 export * from "./actions/expert";
 export * from "./actions/filters";
+export * from "./actions/flashMessage";

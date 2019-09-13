@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 
 import {apiUnmarkFakeUser, processUser} from "../../actions/manipulators";
+import { needTrainModel } from "../../actions/expert";
 
 import Manipulators from "./Manipulators";
 
@@ -16,6 +17,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     unmarkFake: (user) => {
+      dispatch(needTrainModel(true));
       dispatch(processUser(user));
       dispatch(apiUnmarkFakeUser(user));
     }

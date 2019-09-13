@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 
-import {apiToggleTopNewsFakeStatus, processTopNews} from "../../../actions/top-news";
+import { apiToggleTopNewsFakeStatus, processTopNews } from "../../../actions/top-news";
+import { needTrainModel } from "../../../actions/expert";
 
 import TopNews from "./TopNews";
 
@@ -14,6 +15,7 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
   return {
     toggleFakeStatus: (news) => {
+      dispatch(needTrainModel(true));
       dispatch(processTopNews(news.id_txt));
       dispatch(apiToggleTopNewsFakeStatus(news));
     }
