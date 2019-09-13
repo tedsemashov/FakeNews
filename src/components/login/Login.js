@@ -44,7 +44,6 @@ class Login extends React.Component {
 
   render() {
     if(this.props.userLoggedIn) return(<Redirect to={{pathname: "/analytics"}} />);
-
     const { email, password, valid } = this.state;
 
     return (
