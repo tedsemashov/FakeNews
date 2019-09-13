@@ -124,8 +124,9 @@
   border-radius: 60px;
 }
 
-.top-user-tweets .user-details {
-  padding-left: 1px;
+.top-user-tweets .user-avatar-col {
+  width: 60px;
+  flex-basis: 76px;
 }
 
 .top-user-tweets .user-name {
