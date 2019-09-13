@@ -1,26 +1,13 @@
-import React, {Component} from 'react';
+import React from "react";
 
-import './newsBlock.css';
+import "./newsBlock.css";
 
-class NewsBlock extends Component {
-   state = {
-      link: ''
-   };
-
-   generateHttpLink = () => {
-      let text = this.props.text;
-      let index = text.lastIndexOf('http');
-      let result = text.slice(index);
-      this.setState({link: result});
-   };
-
-   render() {
-      return (
-           <div className='newsContainer' onClick={this.generateHttpLink}>
-              <a target="_blank" rel="noopener noreferrer" href={this.state.link}>{this.props.text}</a>
-           </div>
-      );
-   }
+export default class NewsBlock extends React.Component {
+  render() {
+    return (
+      <div className='newsContainer'>
+        {this.props.text}
+      </div>
+    );
+  }
 }
-
-export default NewsBlock;
