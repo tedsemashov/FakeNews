@@ -1,17 +1,20 @@
 import { connect } from "react-redux";
 import Login from './Login';
-import {getTwitterData} from "../../actions";
+import {logInUser} from "../../actions";
 
 const mapStateToProps = (state) => {
-   return {
-      user: state.user
-   }
+  return {
+    user: state.user,
+    userLoggedIn: state.userLoggedIn
+  }
 };
 
 const mapDispatchToProps = (dispatch) => {
-   return {
-      getTwitterData: () => dispatch(getTwitterData())
-   }
+  return {
+    loginUser: (user) => {
+      dispatch(logInUser(user));
+    }
+  }
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Login)

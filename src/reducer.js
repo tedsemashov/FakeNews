@@ -2,6 +2,8 @@ import _ from "lodash";
 
 import * as constants from './constants';
 
+const USER_SESSION_KEY = "currentUser";
+
 const expertInitialState = {
   // manipulations;
   topMentionedUsersReTweetsProcessing: [],
@@ -28,6 +30,7 @@ const initialState = {
     name: 'John',
     surname: 'McCarthy'
   },
+  userLoggedIn: !_.isEmpty(localStorage.getItem(USER_SESSION_KEY)),
   timePeriod: 'LAST WEEK',
   hashtags: {},
   keyword: "ukraine",
@@ -253,6 +256,20 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         flashMessage: action.flashMessage
+      };
+    case constants.LOGIN_USER_LOG_OUT:
+      localStorage.removeItem(USER_SESSION_KEY);
+
+      return {
+        ...state,
+        userLoggedIn: false
+      };
+    case constants.LOGIN_USER_LOG_IN:
+      localStorage.setItem(USER_SESSION_KEY, action.user.email);
+
+      return {
+        ...state,
+        userLoggedIn: true
       };
     default:
       return state;

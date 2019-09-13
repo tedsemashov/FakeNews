@@ -1,15 +1,20 @@
 import { connect } from "react-redux";
-import Header from './Header';
+
+import { userLogOut } from "./../../actions";
+
+import Header from "./Header";
 
 const mapStateToProps = (state) => {
-   return {
-      user: state.user
-   }
+  return {
+    user: state.user,
+    userLoggedIn: state.userLoggedIn
+  }
 };
 
 const mapDispatchToProps = (dispatch) => {
-   return {
-   }
+  return {
+    logOut: () => dispatch(userLogOut())
+  }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Header)
+export default connect(mapStateToProps, mapDispatchToProps)(Header);
