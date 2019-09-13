@@ -4,7 +4,6 @@ import Spinner from 'react-bootstrap/Spinner';
 import Header from '../header/index';
 import Subheader from '../subheader/index';
 import Hashtags from '../hashtags';
-import TrollsActivity from '../trolls-activity/index';
 import TopNews from '../top-news/index';
 import TopRetweetedNews from '../top-retweeted-news/index';
 import TopInfluencers from '../top-influencers/index';
@@ -40,8 +39,6 @@ export default class Analytics extends Component {
         <Subheader onFilterChange={this.props.onFilterChange}/>
 
         <Hashtags />
-
-        <TrollsActivity />
 
         <section className="topWrapper">
           <div className="topAllNewsWrapper">
