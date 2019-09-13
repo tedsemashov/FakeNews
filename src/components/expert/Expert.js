@@ -3,23 +3,30 @@ import Spinner from "react-bootstrap/Spinner";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 
-import Header from '../header/index';
-import Footer from '../footer/Footer';
-import Subheader from '../subheader/index';
-import Breadcrumbs from '../breadcrumbs';
-import TopNews from './topNews';
-import TopRetweetedNews from './topRetweetedNews';
-import { setDocumentTitle } from '../meta';
-
+import Header from "../header/index";
+import Footer from "../footer/Footer";
+import Subheader from "../subheader/index";
+import Breadcrumbs from "../breadcrumbs";
+import FlashMessage from "./../flashMessage";
+import TopNews from "./topNews";
+import TopRetweetedNews from "./topRetweetedNews";
+import { setDocumentTitle } from "../meta";
 import TopUserTweets from "./../top-user-tweets";
 import TopMentionedUsersReTweets from "./../top-mentioned-users-re-tweets";
 import Manipulators from "./../manipulators";
 
-import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import './expert.css';
 
 export default class Expert extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.onTrainModelButtonClick = this.onTrainModelButtonClick.bind(this);
+    this.renderTrainButton = this.renderTrainButton.bind(this);
+  }
+
   breadcrumbs = [
     { title: "Expert", link: "/expert", active: true }
   ];
@@ -36,10 +43,24 @@ export default class Expert extends React.Component {
     this.props.getExpertsData(dates, keyword);
   }
 
+  onTrainModelButtonClick() {
+    const { dates, trainModel } = this.props;
 
-  onTimePeriodSelect(arg) {
-    // TBD; sync w/ date range filter;
-    console.log(arg);
+    trainModel(dates);
+  }
+
+  renderTrainButton() {
+    const { needTrainModel } = this.props;
+
+    if(!needTrainModel) return null;
+
+    return (
+      <div className="train-model">
+        <Button className="outline-black" onClick={this.onTrainModelButtonClick}>
+          Train model
+        </Button>
+      </div>
+    )
   }
 
   render() {
@@ -64,14 +85,13 @@ export default class Expert extends React.Component {
             <TopUserTweets />
             <TopMentionedUsersReTweets />
             <Manipulators />
-            <div className="train-model">
-              <Button className="outline-black">Train model</Button>
-            </div>
+            {this.renderTrainButton()}
           </Container>
         </div>
         <div className="footerWrapper">
           <Footer />
         </div>
+        <FlashMessage/>
       </div>
     );
   }

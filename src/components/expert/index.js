@@ -1,6 +1,6 @@
 import { connect } from "react-redux";
 
-import { getExpertsData, setLoadingState, onFilterChange } from '../../actions';
+import { getExpertsData, setLoadingState, onFilterChange, trainModel } from '../../actions';
 import { convertToDates } from "./../subheader/Subheader";
 
 import Expert from './Expert';
@@ -14,6 +14,7 @@ const mapStateToProps = (state) => {
      fakeNewsUsers: state.fn_users,
      dates: state.timePeriod,
      keyword: state.keyword,
+     needTrainModel: state.needTrainModel,
      isLoaded: state.isLoaded
    }
 };
@@ -33,6 +34,12 @@ const mapDispatchToProps = dispatch => {
       dispatch(setLoadingState(false));
       dispatch(onFilterChange(period, keyword));
       dispatch(getExpertsData({ dates, keyword }));
+    },
+    trainModel: (period) => {
+      const dates = convertToDates(period);
+
+      dispatch(setLoadingState(false));
+      dispatch(trainModel({dates}));
     }
   };
 };

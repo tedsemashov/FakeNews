@@ -6,6 +6,7 @@
   margin-bottom: 20px;
   padding: 21px 0 14px;
   color: #000;
+  position: relative;
 }
 
 .top-news .expert-top-news .spinner-layout {
@@ -41,7 +42,7 @@
   width: 106px;
   font-size: 10px;
   padding-right: 0;
-  padding-left: 68px;
+  padding-left: 72px;
   color: #222222;
   align-self: flex-end;
 }

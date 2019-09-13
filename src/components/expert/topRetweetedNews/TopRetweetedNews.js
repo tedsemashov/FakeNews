@@ -46,9 +46,11 @@ export default class TopRetweetedNews extends React.Component {
         </Row>
         <div className="news">
           {_.map(topReTweetedNews, (news)=> {
+            const processing = _.includes(topReTweetedNewsProcessing, news.id_txt);
+
             return(
               <Row className='expert-top-news m-0' key={news.id_txt}>
-              {_.includes(topReTweetedNewsProcessing, news.id_txt) && this.spinner}
+                {processing && this.spinner}
                 <Col md="10" className="news-text">
                  {userAvatar(news.image_url)}
 
