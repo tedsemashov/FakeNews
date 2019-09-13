@@ -17,20 +17,14 @@ import "./top-user-tweets.css";
 import checkIcon from "./../../images/tip_icon.svg";
 
 export function NextArrow({ currentSlide, slideCount, ...props }) {
-  return(
-    <div {...props}>
-      <FontAwesomeIcon icon={faChevronDown} />
-    </div>
-  );
+  const show = currentSlide + 4 < slideCount;
+
+  return show && (<div {...props}><FontAwesomeIcon icon={faChevronDown} /></div>);
 }
 
 export function PrevArrow({ currentSlide, slideCount, ...props }) {
-  return(
-    <div {...props}>
-      <FontAwesomeIcon icon={faChevronUp} />
-    </div>
-  );
-};
+  return currentSlide > 0 && (<div {...props}><FontAwesomeIcon icon={faChevronUp} /></div>);
+}
 
 export default class TopUserTweets extends React.Component {
   spinner = (
@@ -137,6 +131,7 @@ export default class TopUserTweets extends React.Component {
                     prevArrow={<PrevArrow />}
                     vertical
                     verticalSwiping
+                    swipeToSlide
                     >
                     {usersList}
                   </Slider>
