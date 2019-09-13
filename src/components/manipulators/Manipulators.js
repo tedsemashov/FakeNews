@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import Spinner from "react-bootstrap/Spinner";
 import ReactPaginate from "react-paginate";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { confirmAlert } from 'react-confirm-alert';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 import SectionTitle from "./../section-title/SectionTitle";
@@ -49,6 +50,21 @@ export default class Manipulators extends React.Component {
 
   onPageChange({ selected }) { this.setState({ page: selected }); }
 
+  submit = (user) => {
+    confirmAlert({
+      message: 'Are you sure to do this?',
+      buttons: [
+        {
+          label: 'Yes',
+          onClick: () => this.props.unmarkFake(user)
+        },
+        {
+          label: 'No'
+        }
+      ]
+    });
+  };
+
   renderUser(user) {
     const userData = _.get(this.props, ["top_users_tw", user]) || _.get(this.props, ["top_rt_users_tw", user]);
     const isProcessing = _.includes(this.props.processing, user);
@@ -69,7 +85,7 @@ export default class Manipulators extends React.Component {
               </div>
             </Col>
             <Col className="text-right" sm={4}>
-              <button className="action" onClick={() => this.props.unmarkFake(user)}>
+              <button className="action" onClick={()=>this.submit(user)}>
                 DELETE
               </button>
             </Col>

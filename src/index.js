@@ -18,8 +18,10 @@ import PrivateRoute from './components/private-route';
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-daterangepicker/daterangepicker.css";
+import 'react-confirm-alert/src/react-confirm-alert.css';
 
 import './assets/stylesheets/fonts.css';
+import './assets/stylesheets/confirm.css';
 import './index.css';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;

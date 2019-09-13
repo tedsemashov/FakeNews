@@ -8,6 +8,7 @@ import Search from "./search-input/Search";
 
 import "./subheader.css";
 
+export const TREE_DAYS = "TREE DAYS";
 export const LAST_WEEK = "LAST WEEK";
 export const LAST_TWO_WEEKS = "LAST TWO WEEKS";
 export const LAST_THREE_WEEKS = "LAST THREE WEEKS";
@@ -22,6 +23,8 @@ export function formatDate(date) {
 
 export function convertToDates(timePeriod) {
   switch(timePeriod) {
+    case TREE_DAYS:
+      return [formatDate(moment().subtract(3, "d")), formatDate(moment())];
     case LAST_WEEK:
       return [formatDate(moment().subtract(1, "w")), formatDate(moment())];
     case LAST_TWO_WEEKS:
@@ -79,6 +82,7 @@ export default class Subheader extends React.Component {
 
     const { timePeriod } = this.props;
     const periods = [
+      TREE_DAYS,
       LAST_WEEK,
       LAST_TWO_WEEKS,
       LAST_THREE_WEEKS,
