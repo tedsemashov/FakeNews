@@ -63,3 +63,5 @@ export const LOADING_STATE = 'LOADING_STATE';
 export const TIME_PERIOD = 'TIME_PERIOD';
 export const REGEXP_EMAIL = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 export const FILTERS_ON_CHANGE = "FILTERS_ON_CHANGE";
+export const LOGIN_USER_LOG_OUT = "LOGIN_USER_LOG_OUT";
+export const LOGIN_USER_LOG_IN = "LOGIN_USER_LOG_IN";

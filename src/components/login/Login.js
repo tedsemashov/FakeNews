@@ -1,50 +1,52 @@
-import React, { Component } from 'react';
-import * as constants from '../../constants';
+import React from "react";
+import { Redirect } from "react-router";
+
 import Input from '../input/Input';
 import Button from '../button/Button';
-import './login.css';
 import Footer from '../footer/Footer';
 
-class Login extends Component {
-  state = {
-    emailValue: '',
-    passValue: '',
-    emailValid: true,
-    passValid: true
-  };
+import './login.css';
 
-  componentDidMount() {
-    console.log(`${this.props.user.email}  ${this.props.user.password}`);
+class Login extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      email: "",
+      password: "",
+      valid: true
+    };
+
+    this.submit = this.submit.bind(this);
+    this.autoSubmit = this.autoSubmit.bind(this);
   }
 
-  formCheck = () => {
-    let email = this.props.user.email;
-    let password = this.props.user.password;
-    //Need to use React Router, don't hardcode JS methods
-    if (email === this.state.emailValue && password === this.state.passValue) {
-      localStorage.setItem('user', email);
-      window.location.href = '/analytics';
-    } else {
-      alert('Invalid user');
-    }
+  componentDidMount() {
+    console.log("User:", this.props.user.email, this.props.user.password);
+  }
+
+  submit() {
+    const { user } = this.props;
+    const { email, password } = this.state;
+
+    const valid = email === user.email && password === user.password;
+
+    // refresh;
+    this.setState({ valid }, () => {
+      // log in user;
+      if(valid) this.props.loginUser(user);
+    });
   };
 
-  checkEmail = event => {
-    let reg = constants.REGEXP_EMAIL;
-    let result = reg.test(String(event.target.value).toLowerCase());
-    result
-      ? this.setState({ emailValid: true, emailValue: event.target.value })
-      : this.setState({ emailValid: false, emailValue: '' });
-  };
-
-  checkPass = event => {
-    let value = event.target.value;
-    value === ''
-      ? this.setState({ passValid: false, passValue: '' })
-      : this.setState({ passValid: true, passValue: event.target.value });
-  };
+  autoSubmit(event) {
+    if(event.which === 13) this.submit();
+  }
 
   render() {
+    if(this.props.userLoggedIn) return(<Redirect to={{pathname: "/analytics"}} />);
+
+    const { email, password, valid } = this.state;
+
     return (
       <div>
         <div id="container">
@@ -57,9 +59,11 @@ class Login extends Component {
                 title={'E-mail'}
                 placeholder={'Your e-mail address'}
                 type={'email'}
-                onBlur={this.checkEmail}
-                className={this.state.emailValid ? 'input' : 'inputError'}
-                titleClassName={this.state.emailValid ? 'inputTitle' : 'inputTitleError'}
+                className={valid ? 'input' : 'inputError'}
+                titleClassName={valid ? 'inputTitle' : 'inputTitleError'}
+                value={email}
+                onChange={(event) => { this.setState({ email: event.target.value }) }}
+                onKeyPress={this.autoSubmit}
               />
             </div>
             <div className="inputWrapperPass">
@@ -67,16 +71,18 @@ class Login extends Component {
                 title={'Password'}
                 placeholder={'Your password'}
                 type={'password'}
-                onBlur={this.checkPass}
-                className={this.state.passValid ? 'input' : 'inputError'}
-                titleClassName={this.state.passValid ? 'inputTitle' : 'inputTitleError'}
+                value={password}
+                className={valid ? 'input' : 'inputError'}
+                titleClassName={valid ? 'inputTitle' : 'inputTitleError'}
+                onChange={(event) => { this.setState({ password: event.target.value }) }}
+                onKeyPress={this.autoSubmit}
               />
             </div>
             <div className="forgotPassContainer">
               <p>Forgot Password?</p>
               <a href="#reset-password">Reset password</a>
               <div className="buttonWrapper">
-                <Button value={'LOG IN'} onClick={this.formCheck} />
+                <Button value="LOG IN" onClick={this.submit} />
               </div>
             </div>
           </div>

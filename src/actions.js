@@ -106,6 +106,19 @@ export const setTopMentionedUsersData = topMentionedUsers => {
   };
 };
 
+export const userLogOut = () => {
+  return {
+    type: constants.LOGIN_USER_LOG_OUT
+  };
+};
+
+export const logInUser = (user) => {
+  return {
+    type: constants.LOGIN_USER_LOG_IN,
+    user: user
+  };
+};
+
 export * from "./actions/expert";
 export * from "./actions/filters";
 export * from "./actions/flashMessage";
