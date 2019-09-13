@@ -6,6 +6,9 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Spinner from "react-bootstrap/Spinner";
+import Slider from "react-slick";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 import SectionTitle from "../section-title/SectionTitle";
 import { userAvatar } from "../../utils/avatar";
@@ -13,13 +16,28 @@ import { userAvatar } from "../../utils/avatar";
 import "./top-user-tweets.css";
 import checkIcon from "./../../images/tip_icon.svg";
 
+export function NextArrow({ currentSlide, slideCount, ...props }) {
+  return(
+    <div {...props}>
+      <FontAwesomeIcon icon={faChevronDown} />
+    </div>
+  );
+}
+
+export function PrevArrow({ currentSlide, slideCount, ...props }) {
+  return(
+    <div {...props}>
+      <FontAwesomeIcon icon={faChevronUp} />
+    </div>
+  );
+};
+
 export default class TopUserTweets extends React.Component {
   spinner = (
     <div className="spinner-layout">
       <Spinner animation="border" role="status" variant="dark" />
     </div>
   );
-
   renderTweets = (tweet, index) => {
     return(
       <div className="tweet" key={index}>
@@ -60,23 +78,32 @@ export default class TopUserTweets extends React.Component {
   renderUser(userData, user) {
     const isProcessing = _.includes(this.props.processing, user);
     const onSelect = () => this.setState({ user });
+    const selectedUser = this.state.user ||  _.keys(this.props.users)[0];
+    const isSelected = selectedUser === user;
+    const className = classNames("m-0 user-row", { isSelected });
 
     return(
-      <Row className="m-0 user-row" key={`${user}-${isProcessing}`} >
+      <div className={className} key={`${user}-${isProcessing}`} >
         {isProcessing && this.spinner}
-        <Col className="pl-0 user-selection" sm={9} onClick={onSelect}>
-          <Row>
-            <Col className="" sm={3}>{userAvatar({...userData, nickname: user})}</Col>
-            <Col className="user-details" sm={6}>
-              <h5 className="user-name"> </h5>
-              <span className="user-nickname">@{user}</span>
-            </Col>
-          </Row>
-        </Col>
-        <Col className="text-right pr-0" sm={3}>
-          {this.renderButton(user)}
-        </Col>
-      </Row>
+
+        <Row>
+          <Col sm={9}>
+            <div className="user-selection" onClick={onSelect}>
+              <Row>
+                <Col sm={3}>{userAvatar({...userData, nickname: user})}</Col>
+                <Col className="user-details" sm={9}>
+                  <h5 className="user-name"> </h5>
+                  <span className="user-nickname">@{user}</span>
+                </Col>
+              </Row>
+            </div>
+          </Col>
+
+          <Col sm={3}>
+            {this.renderButton(user)}
+          </Col>
+        </Row>
+      </div>
     );
   }
 
@@ -99,11 +126,26 @@ export default class TopUserTweets extends React.Component {
                 <Col sm={{ offset: 9, span: 3}}>Mark fake user</Col>
               </Row>
 
-              <div className="users-container">{usersList}</div>
+              <div className="users-container">
+                {
+                  !_.isEmpty(usersList) &&
+                  <Slider
+                    infinite={false}
+                    slidesToShow={4}
+                    slidesToScroll={1}
+                    nextArrow={<NextArrow />}
+                    prevArrow={<PrevArrow />}
+                    vertical
+                    verticalSwiping
+                    >
+                    {usersList}
+                  </Slider>
+                }
+              </div>
             </Col>
             <Col className="tweets-layout" sm={6}>
               <div className="tweets-list">
-                {tweetsList}
+                {_.isEmpty(tweetsList) ? "No data" : tweetsList}
               </div>
             </Col>
           </Row>

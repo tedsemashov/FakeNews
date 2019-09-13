@@ -3,7 +3,7 @@ import './analytics.css';
 import Spinner from 'react-bootstrap/Spinner';
 import Header from '../header/index';
 import Subheader from '../subheader/index';
-import Hashtags from '../hashtags/Hashtags';
+import Hashtags from '../hashtags';
 import TrollsActivity from '../trolls-activity/index';
 import TopNews from '../top-news/index';
 import TopRetweetedNews from '../top-retweeted-news/index';

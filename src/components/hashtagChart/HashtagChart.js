@@ -5,20 +5,11 @@ import './hashtagChart.css';
 
 class HashtagChart extends Component {
   componentDidMount() {
-    this.createHashtagChart();
-  }
-
-  componentDidUpdate() {
-    this.createHashtagChart();
-  }
-
-  createHashtagChart = () => {
-    let chart = am4core.create('hashtagsChart', am4charts.XYChart);
-    chart.data = this.getHashtagChart();
-    let categoryAxis = chart.xAxes.push(new am4charts.CategoryAxis());
-    categoryAxis.dataFields.category = 'category';
-    let valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
-    let series = chart.series.push(new am4charts.ColumnSeries());
+    this.chart = am4core.create('hashtagsChart', am4charts.XYChart);
+    this.chart.cursor = new am4charts.XYCursor();
+    const categoryAxis = this.chart.xAxes.push(new am4charts.CategoryAxis());
+    const valueAxis = this.chart.yAxes.push(new am4charts.ValueAxis());
+    const series = this.chart.series.push(new am4charts.ColumnSeries());
     series.fill = am4core.color('#d0021b');
     series.stroke = am4core.color('#d0021b');
     series.dataFields.valueY = 'value';
@@ -29,8 +20,28 @@ class HashtagChart extends Component {
     categoryAxis.renderer.grid.template.disabled = true;
     categoryAxis.renderer.disabled = true;
     categoryAxis.renderer.labels.template.fill = am4core.color('#808080');
-    chart.cursor = new am4charts.XYCursor();
     valueAxis.cursorTooltipEnabled = true;
+    categoryAxis.dataFields.category = 'category';
+
+    this.refreshChartData();
+  }
+
+  componentWillUnmount() {
+    this.disposeChart();
+  }
+
+  componentDidUpdate() {
+    this.refreshChartData();
+  }
+
+  disposeChart() {
+    if(this.chart) this.chart.dispose();
+
+    this.chart = null;
+  }
+
+  refreshChartData() {
+    this.chart.data = this.getHashtagChart();
   };
 
   getHashtagChart = () => {
@@ -46,7 +57,7 @@ class HashtagChart extends Component {
   };
 
   render() {
-    return (
+    return(
       <div>
         <div id="hashtagsChart" />
       </div>

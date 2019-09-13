@@ -38,7 +38,7 @@
   color: #222222;
 }
 
-.top-mentioned-users-re-tweets .users-container {
+.top-mentioned-users-re-tweets .users-container-wrapper {
   margin-top: 7px;
 }
 
@@ -47,10 +47,53 @@
   text-align: right;
 }
 
+.top-mentioned-users-re-tweets .slick-slider {
+  position: relative;
+}
+
+.top-mentioned-users-re-tweets .slick-arrow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: auto;
+  height: auto;
+  width: auto;
+  text-align: center;
+  font-size: 18px;
+  line-height: normal;
+  transform: none;
+  color: #ffffff;
+  z-index: 10;
+}
+
+.top-mentioned-users-re-tweets .users-container-wrapper:hover .slick-arrow {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.top-mentioned-users-re-tweets .slick-prev {
+  top: 0;
+}
+
+.top-mentioned-users-re-tweets .slick-prev:before {
+  display: none;
+}
+
+.top-mentioned-users-re-tweets .slick-next {
+  bottom: 0;
+}
+
+.top-mentioned-users-re-tweets .slick-next:before {
+  display: none;
+}
+
 .top-mentioned-users-re-tweets .user-row {
   position: relative;
   padding-top: 13px;
   padding-bottom: 13px;
+  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.12);
+}
+
+.top-mentioned-users-re-tweets .user-row.isSelected {
   box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.12);
 }
 
@@ -71,6 +114,7 @@
 }
 
 .top-mentioned-users-re-tweets .user-avatar {
+  min-width: 60px;
   width: 60px;
   height: 60px;
   -webkit-border-radius: 60px;
@@ -104,9 +148,14 @@
 }
 
 .top-mentioned-users-re-tweets .mark-fake {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
   background-color: #d0021b !important;
   color: #ffffff !important;
   border: solid 2px #d0021b !important;
+  border-radius: 0;
   padding: 5px 0 !important;
   margin-top: 1px;
   width: 106px;
@@ -138,26 +187,13 @@
   padding: 19px 43px;
   display: flex;
   width: 100%;
-  min-height: 340px;
-  max-height: 340px;
+  height: 360px;
   overflow: hidden;
-  overflow-y: scroll;
+  overflow-y: auto;
   border-radius: 4px;
   box-shadow: 0 8px 13px 0 rgba(0, 0, 0, 0.16);
   flex-direction: column;
   color: #000;
-}
-
-.top-mentioned-users-re-tweets .tweets-list:before {
-  display: block;
-  position: absolute;
-  margin-top: 35px;
-  margin-left: -59px;
-  border-top: 8px solid transparent;
-  border-right: 8px solid #ffffff;
-  border-bottom: 8px solid transparent;
-  border-left: 8px solid transparent;
-  content: "";
 }
 
 .top-mentioned-users-re-tweets .tweet {
