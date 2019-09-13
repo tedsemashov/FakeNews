@@ -16,8 +16,6 @@ export function getExpertsData({dates, keyword}) {
 
 export function trainModel({dates}) {
   return (dispatch) => {
-    dispatch(setLoadingState(false));
-
     axios.post(EXPERT_API_URL,
       {...TRAIN_MODEL_BODY, dates },
       {headers: {'Content-Type': 'application/json'}}
@@ -28,9 +26,8 @@ export function trainModel({dates}) {
       } else {
         dispatch(setFlashMessage("Something is wrong! Please try again later."));
       }
+      dispatch(setLoadingState(true));
     }).catch((error) => console.log(error));
-
-    dispatch(setLoadingState(true));
   };
 }
 

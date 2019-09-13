@@ -38,6 +38,7 @@ const mapDispatchToProps = dispatch => {
     trainModel: (period) => {
       const dates = convertToDates(period);
 
+      dispatch(setLoadingState(false));
       dispatch(trainModel({dates}));
     }
   };
