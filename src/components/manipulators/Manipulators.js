@@ -58,16 +58,17 @@ export default class Manipulators extends React.Component {
       <Col key={user} className="grid-item" sm={4}>
         <div className="manipulator-user">
           {isProcessing && this.spinner}
-          <Row className="m-0">
-            <Col className="p-0" sm={3}>
+          <Row>
+            <Col className="user-avatar-col" sm={3}>
               {userAvatar({ ...userData, nickname: user })}
             </Col>
-            <Col className="p-0" sm={5}>
-              <h5 className="user-name"> </h5>
-              <br />
-              <span className="user-nickname">{nickname}</span>
+            <Col sm={5}>
+              <div className="user-info">
+                <h5 className="user-name"> </h5>
+                <span className="user-nickname">{nickname}</span>
+              </div>
             </Col>
-            <Col className="p-0 text-right" sm={4}>
+            <Col className="text-right" sm={4}>
               <button className="action" onClick={() => this.props.unmarkFake(user)}>
                 DELETE
               </button>

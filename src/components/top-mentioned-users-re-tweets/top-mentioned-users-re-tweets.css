@@ -122,8 +122,9 @@
   border-radius: 60px;
 }
 
-.top-mentioned-users-re-tweets .user-details {
-  padding-left: 1px;
+.top-mentioned-users-re-tweets .user-avatar-col {
+  width: 60px;
+  flex-basis: 76px;
 }
 
 .top-mentioned-users-re-tweets .user-name {
