@@ -1,12 +1,15 @@
-.react-confirm-alert .react-confirm-alert-body {
-  border-radius: 0;
-  color: #000;
-  min-width: 200px;
+body.react-confirm-alert-body-element {
+  overflow: auto;
 }
 
-.react-confirm-alert .react-confirm-alert-overlay {
+#react-confirm-alert .react-confirm-alert-body {
+  border-radius: 0;
+  color: #000;
+  width: 250px;
+}
+
+#react-confirm-alert .react-confirm-alert-overlay {
   animation: react-confirm-alert-fadeIn 0.2s 0.2s forwards;
-  opacity: 0;
 }
 
 .react-confirm-alert .react-confirm-alert-button-group button {
@@ -38,11 +41,6 @@
     display: none;
     opacity: 0;
   }
-
-  50% {
-    display: block;
-    opacity: 0.5;
-   }
 
   100% {
     display: block;

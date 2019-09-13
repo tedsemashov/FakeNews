@@ -28,29 +28,26 @@
 }
 
 .keyWord {
-  height: 32px;
-  border-radius: 4px;
-  border: solid 1px #dfdedf;
-  background-color: #ffffff;
-  margin-left: 11px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
+   height: 32px;
+   border-radius: 4px;
+   border: solid 1px #dfdedf;
+   background-color: #ffffff;
+   margin-left: 11px;
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
 }
 
 .keyWordValue {
-  max-width: 150px;
-  overflow: hidden;
-  white-space: nowrap;
-  text-overflow: ellipsis;
-  margin-left: 16px;
-  font-size: 16px;
-  font-weight: normal;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: normal;
-  letter-spacing: normal;
-  color: #000000;
+   margin-left: 16px;
+   font-size: 16px;
+   font-weight: normal;
+   font-style: normal;
+   font-stretch: normal;
+   line-height: normal;
+   letter-spacing: normal;
+   color: #000000;
+   white-space: nowrap;
 }
 
 .keyWord.isDefault .keyWordValue {
