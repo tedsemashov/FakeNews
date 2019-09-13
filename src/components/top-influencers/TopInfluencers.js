@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from 'react';
 import _ from "lodash";
 
 import SectionTitle from '../section-title/SectionTitle';
@@ -9,26 +9,27 @@ import NoData from "./../no-data/NoData";
 
 import './topInfluencers.css';
 
-export default class TopInfluencers extends React.Component {
-  convertUser = (userData, user) => {
-    return {
-      ...userData,
-      account: _.startsWith(user, "@") ? user : `@${user}`
-    };
+class TopInfluencers extends Component {
+  returnInfluencersSection = () => {
+    const influencersArr = Object.keys(this.props.topInfluencers).map(prop => {
+      this.props.topInfluencers[prop].account = '@' + prop;
+      return this.props.topInfluencers[prop];
+    });
+    return influencersArr;
   };
 
-  constructor(props) {
-    super(props);
-
-    this.renderContent = this.renderContent.bind(this);
+  componentDidUpdate() {
+    this.returnInfluencersSection();
   }
 
-  renderContent(users) {
-    // TBD: add correct Fakeness %
+  renderContent() {
+    const influencersArr = this.returnInfluencersSection();
+
     return(
       <React.Fragment>
         <div className="topInfluencersAccounts">
-          {users.map(({ user_name, user_profile_image_url, account, user_followers_count, user_statuses_count }) => (
+          {influencersArr.map(
+            ({ user_name, user_profile_image_url, account, user_followers_count, user_statuses_count }) => (
               <InfluencerDetails
                 account={account}
                 name={user_name}
@@ -50,7 +51,7 @@ export default class TopInfluencers extends React.Component {
   }
 
   render() {
-    const users = _.map(this.props.topInfluencers, this.convertUser);
+    const influencersArr = this.returnInfluencersSection();
 
     return (
       <div className="topInfluencersContainer">
@@ -58,10 +59,10 @@ export default class TopInfluencers extends React.Component {
           <SectionTitle value="TOP INFLUENCERS" />
         </div>
         <div className="influencersWrapper">
-          {_.isEmpty(users) ? <NoData/> : this.renderContent(users)}
+          {_.isEmpty(influencersArr) ? <NoData/> : this.renderContent()}
         </div>
         {
-          !_.isEmpty(users) &&
+          !_.isEmpty(influencersArr) &&
           <div className="buttonSeeAllWrapper">
             <Button value={'SEE ALL'} />
           </div>
@@ -70,3 +71,5 @@ export default class TopInfluencers extends React.Component {
     );
   }
 }
+
+export default TopInfluencers;
