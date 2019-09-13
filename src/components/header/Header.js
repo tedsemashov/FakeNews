@@ -1,17 +1,13 @@
 import React from 'react';
 import { Link } from "react-router-dom";
-import { Redirect } from "react-router";
 
 import { Logo } from "../images/Logo"
 
 import './header.css';
 
-// WARN: pages w/o Header will not be tracked on login/logout;
 export default class Header extends React.Component {
   render() {
-    const { user, userLoggedIn } = this.props;
-
-    if(!userLoggedIn) return(<Redirect to={{ pathname: "/" }} />);
+    const { user } = this.props;
 
     return (
       <header className="headerContainer">

@@ -14,7 +14,7 @@ import Manage from './components/manage/';
 import Expert from './components/expert/';
 import Reports from './components/reports/';
 import Login from './components/login/';
-import { PrivateRoute } from './components/private-rout/PrivateRoute';
+import PrivateRoute from './components/private-route';
 
 import "bootstrap/dist/css/bootstrap.css";
 import "bootstrap-daterangepicker/daterangepicker.css";
