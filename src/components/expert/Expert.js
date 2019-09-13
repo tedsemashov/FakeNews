@@ -15,6 +15,8 @@ import TopUserTweets from "./../top-user-tweets";
 import TopMentionedUsersReTweets from "./../top-mentioned-users-re-tweets";
 import Manipulators from "./../manipulators";
 
+import "slick-carousel/slick/slick.css"; 
+import "slick-carousel/slick/slick-theme.css";
 import './expert.css';
 
 export default class Expert extends React.Component {
