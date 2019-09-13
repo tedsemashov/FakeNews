@@ -6,12 +6,19 @@
   margin-top: 20px;
 }
 
-.manipulators-list .grid-item {
-  padding-right: 87px;
+.manipulators-list .user-avatar-col {
+  width: 60px;
+  flex-basis: 76px;
 }
 
-.manipulators-list .grid-row {
-  margin-right: -87px;
+.manipulators-list .user-name {
+  font-size: 18px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
 }
 
 .manipulators-list .manipulator-user {

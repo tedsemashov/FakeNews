@@ -91,7 +91,7 @@ export default class TopMentionedUsersReTweets extends React.Component {
           <Col sm={9}>
             <div className="user-selection" onClick={onSelect}>
               <Row>
-                <Col sm={3}>{userAvatar({...userData, nickname: user})}</Col>
+                <Col className="user-avatar-col" sm={3}>{userAvatar({...userData, nickname: user})}</Col>
                 <Col className="user-details" sm={9}>
                   <h5 className="user-name"> </h5>
                   <span className="user-nickname">@{user}</span>
