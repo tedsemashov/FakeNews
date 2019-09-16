@@ -15,7 +15,7 @@ export const BODY_POST = {
     'top_favorite_tw_users',
     'top_active_users'
   ],
-  dates: ['2019-08-23', '2019-08-24'],
+  dates: [], //['2019-08-23', '2019-08-24']
   keyword: 'Ukraine',
   hashtags: {
     n_hashtags: 20
