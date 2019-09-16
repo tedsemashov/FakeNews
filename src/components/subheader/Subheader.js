@@ -79,7 +79,6 @@ export default class Subheader extends React.Component {
 
     const { timePeriod } = this.props;
     const periods = [
-      TREE_DAYS,
       LAST_WEEK,
       LAST_TWO_WEEKS,
       LAST_THREE_WEEKS,
