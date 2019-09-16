@@ -31,7 +31,7 @@ const initialState = {
     surname: 'McCarthy'
   },
   userLoggedIn: !_.isEmpty(localStorage.getItem(USER_SESSION_KEY)),
-  timePeriod: 'TREE DAYS',
+  timePeriod: 'LAST WEEK',
   hashtags: {},
   keyword: "ukraine",
   top_favorite_tweets: [],
