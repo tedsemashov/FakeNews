@@ -10,7 +10,7 @@ import CloseImage from "../../../images/header/close@3x.png";
 export const DEFAULT_KEYWORD = "ukraine";
 
 export default class Search extends React.Component {
-  isDefaultKeyword = (keyword) => `${keyword}`.toLowerCase() === DEFAULT_KEYWORD;
+  isDefaultKeyword = (keyword) => _.isEmpty(keyword) || `${keyword}`.toLowerCase() === DEFAULT_KEYWORD;
 
   constructor(props) {
     super(props);

@@ -4,8 +4,7 @@ import TopMentionedUsers from './TopMentionedUsers';
 
 const mapStateToProps = state => {
   return {
-    topMentionedUsers: state.topMentionedUsers,
-    selectedMentionedUser: state.selectedMentionedUser
+    topMentionedUsers: state.topMentionedUsers
   };
 };
 
