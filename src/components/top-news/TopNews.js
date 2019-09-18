@@ -19,7 +19,7 @@ function renderContent(topNews) {
 
 const TopNews = ({ topNews }) => {
   return(
-    <div className="hashtagsWrapper">
+    <div>
       <div className="titleWrapperNews">
         <SectionTitle value="TOP NEWS" />
       </div>

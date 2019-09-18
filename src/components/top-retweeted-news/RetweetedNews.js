@@ -19,7 +19,7 @@ function renderContent(topRetweetedNews) {
 
 const RetweetedNews = ({ topRetweetedNews }) => {
   return (
-    <div className="hashtagsWrapper">
+    <div>
       <div className="titleWrapperNews">
         <SectionTitle value="TOP RETWEETED NEWS" />
       </div>

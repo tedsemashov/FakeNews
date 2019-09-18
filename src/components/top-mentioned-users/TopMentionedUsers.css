@@ -156,7 +156,7 @@
   padding: 19px 43px;
   display: flex;
   width: 100%;
-  min-height: 390px;
+  height: 390px;
   overflow: hidden;
   overflow-y: auto;
   border-radius: 4px;
