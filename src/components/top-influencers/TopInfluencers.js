@@ -75,7 +75,7 @@ export default class TopInfluencers extends React.Component {
     const tweetsList = _.get(topInfluencers, [selectedUser, "top_tweets"], []).map(this.renderTweets);
 
     return(
-      <div className="top-mentioned-users">
+      <div className="top-influencers">
         <div className="title-container">
           <SectionTitle value="TOP INFLUENCERS" />
         </div>
