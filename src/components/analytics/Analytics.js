@@ -26,7 +26,7 @@ export default class Analytics extends Component {
   }
 
   render() {
-    const { isLoaded } = this.props;
+    const { isLoaded, location } = this.props;
 
     return (
       <div className="analytics-page">
@@ -34,7 +34,7 @@ export default class Analytics extends Component {
 
         {!isLoaded && this.spinner}
 
-        <Header />
+        <Header location={location}/>
 
         <Subheader onFilterChange={this.props.onFilterChange}/>
 
