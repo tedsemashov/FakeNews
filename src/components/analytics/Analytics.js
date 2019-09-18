@@ -6,6 +6,8 @@ import Subheader from '../subheader/index';
 import Hashtags from '../hashtags';
 import TopNews from '../top-news/index';
 import TopRetweetedNews from '../top-retweeted-news/index';
+import TopManipulativeRetweets from '../top-manipulative-retweets/index';
+import TopManipulativeNews from '../top-manipulative-news/index';
 import TopInfluencers from '../top-influencers/index';
 import TopTrolls from '../top-trolls/index';
 import TopMentionedUsers from '../top-mentioned-users/index';
@@ -48,6 +50,16 @@ export default class Analytics extends Component {
 
             <div className="topNewsWrapper">
               <TopRetweetedNews />
+            </div>
+          </div>
+
+          <div className="topManipulativeNewsWrapper">
+            <div className="topNewsWrapper">
+              <TopManipulativeNews />
+            </div>
+
+            <div className="topNewsWrapper">
+              <TopManipulativeRetweets />
             </div>
           </div>
 
