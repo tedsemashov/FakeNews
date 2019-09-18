@@ -1,4 +1,4 @@
-.spinnerWrapper {
+.spinner-layout {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -9,10 +9,10 @@
   z-index: 100;
 }
 
-.spinnerWrapper img {
+.spinner-layout img {
   width: 60px;
 }
 
-.spinnerWrapper.small img {
+.spinner-layout.small img {
   width: 30px;
 }
