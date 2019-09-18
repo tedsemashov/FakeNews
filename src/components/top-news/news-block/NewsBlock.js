@@ -1,12 +1,15 @@
 import React from "react";
+import Linkify from "react-linkify";
 
 import "./newsBlock.css";
 
 export default class NewsBlock extends React.Component {
   render() {
-    return (
+    return(
       <div className='newsContainer'>
-        {this.props.text}
+        <Linkify>
+          {this.props.text}
+        </Linkify>
       </div>
     );
   }
