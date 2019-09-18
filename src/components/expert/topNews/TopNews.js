@@ -4,19 +4,14 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import Spinner from "react-bootstrap/Spinner";
+
+import Spinner from "../../spinner/Spinner";
 
 import './top-news.css';
 import checkIcon from "./../../../images/tip_icon.svg";
 
 
 export default class TopNews extends React.Component {
-  spinner = (
-    <div className="spinner-layout">
-      <Spinner animation="border" role="status" variant="dark" />
-    </div>
-  );
-
   renderButton(news) {
     const isFake = news.checked === 1;
     const onClick = () => this.props.toggleFakeStatus(news);
@@ -48,7 +43,7 @@ export default class TopNews extends React.Component {
 
           return(
             <Row className='expert-top-news m-0' key={news.id_txt}>
-            {processing && this.spinner}
+            {processing && <Spinner size="small"/>}
               <Col sm="10" className="news-text">
                 <span>
                  {_.get(news, 'text', '')}

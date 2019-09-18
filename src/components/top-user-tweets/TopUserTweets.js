@@ -5,11 +5,11 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import Spinner from "react-bootstrap/Spinner";
 import Slider from "react-slick";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
+import Spinner from "../spinner/Spinner";
 import SectionTitle from "../section-title/SectionTitle";
 import { userAvatar } from "../../utils/avatar";
 
@@ -27,11 +27,6 @@ export function PrevArrow({ currentSlide, slideCount, ...props }) {
 }
 
 export default class TopUserTweets extends React.Component {
-  spinner = (
-    <div className="spinner-layout">
-      <Spinner animation="border" role="status" variant="dark" />
-    </div>
-  );
   renderTweets = (tweet, index) => {
     return(
       <div className="tweet" key={index}>
@@ -78,7 +73,7 @@ export default class TopUserTweets extends React.Component {
 
     return(
       <div className={className} key={`${user}-${isProcessing}`} >
-        {isProcessing && this.spinner}
+        {isProcessing && <Spinner size="small"/>}
 
         <Row>
           <Col sm={9}>
