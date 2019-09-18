@@ -224,7 +224,7 @@
   padding: 19px 43px;
   display: flex;
   width: 100%;
-  min-height: 400px;
+  height: 390px;
   overflow: hidden;
   overflow-y: auto;
   border-radius: 4px;
@@ -240,4 +240,13 @@
 
 .topTrollsContainer .tweet-body a {
   color: #000000;
+}
+
+.topTrollsContainer .tweet-row {
+  padding: 26px 0 17px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.topTrollsContainer .tweet-row:first-child {
+  padding-top: 0;
 }

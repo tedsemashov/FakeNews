@@ -59,6 +59,7 @@
 
 .top-influencers .buttonsSection {
   padding-top: 24px;
+  justify-content: flex-end;
 }
 
 .top-influencers .user-row.isSelected .accountSection {
