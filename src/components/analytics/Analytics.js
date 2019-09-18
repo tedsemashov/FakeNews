@@ -10,6 +10,7 @@ import TopInfluencers from '../top-influencers/index';
 import TopTrolls from '../top-trolls/index';
 import TopMentionedUsers from '../top-mentioned-users/index';
 import Footer from '../footer/Footer';
+import TopMentionedTrolls from "../top-mentioned-trolls";
 import { setDocumentTitle } from '../meta';
 
 export default class Analytics extends Component {
@@ -57,6 +58,10 @@ export default class Analytics extends Component {
 
           <div className="influencersTrollsMentionedWrapper">
             <TopTrolls />
+          </div>
+
+          <div className="influencersTrollsMentionedWrapper">
+            <TopMentionedTrolls />
           </div>
 
           <div className="influencersMentionedWrapper">

@@ -25,7 +25,7 @@ export function PrevArrow({ currentSlide, slideCount, ...props }) {
   return currentSlide > 0 && (<div {...props}><FontAwesomeIcon icon={faChevronUp} /></div>);
 }
 
-export default class TopMentionedUser extends React.Component {
+export default class TopMentionedUsers extends React.Component {
   renderTweets = (tweet) => {
     return(
       <div className="tweet-row" key={tweet.id}>
