@@ -11,6 +11,7 @@ import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import SectionTitle from '../section-title/SectionTitle';
 import InfluencerDetails from '../influencer-details/InfluencerDetails';
 import NoData from "./../no-data/NoData";
+import {convertLinks} from "../../utils/convertLinks";
 
 import './topInfluencers.css';
 
@@ -35,7 +36,7 @@ export default class TopInfluencers extends React.Component {
         </div>
 
         <div className="tweet-body">
-          {tweet.text}
+          {convertLinks(tweet.text)}
         </div>
       </div>
     );
