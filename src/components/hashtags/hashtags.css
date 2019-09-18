@@ -4,9 +4,10 @@
 }
 
 .hashtagsWrapper {
-   width: 100%;
-   min-height: 602px;
-   background-color: #ffffff;
+  width: 1136px;
+  margin: 0 auto;
+  min-height: 602px;
+  background-color: #ffffff;
 }
 
 .titleWrapper {
