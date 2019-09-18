@@ -11,6 +11,7 @@ import classNames from "classnames";
 import SectionTitle from '../section-title/SectionTitle';
 import NoData from "./../no-data/NoData";
 import { userAvatar } from "../../utils/avatar";
+import {convertLinks} from "../../utils/convertLinks";
 
 import './topTrolls.css';
 
@@ -25,7 +26,7 @@ export function PrevArrow({ currentSlide, slideCount, ...props }) {
 }
 
 export default class TopTrolls extends React.Component {
-  renderTweets = (tweet, index) => {
+  renderTweets = (tweet) => {
     return(
       <div className="tweet tweet-row" key={tweet.id}>
         <div className="tweet-meta">
@@ -35,7 +36,7 @@ export default class TopTrolls extends React.Component {
         </div>
 
         <div className="tweet-body">
-          {tweet.text}
+          {convertLinks(tweet.text)}
         </div>
       </div>
     );
