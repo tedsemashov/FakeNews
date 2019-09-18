@@ -1,9 +1,11 @@
 import React from 'react';
 import _ from "lodash";
 
+import {userAvatar} from "../../utils/avatar";
+
 import './InfluencerDetails.css';
 
-const InfluencerDetails = ({ setSelectedUser, account, color, img, name, tweets, followers, fakePercent }) => {
+const InfluencerDetails = ({ setSelectedUser, account, color, img, name, tweets, followers, fakePercent, skipDetails }) => {
   const convertNumbers = num => {
     return Math.abs(num) > 999
       ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + 'K'
@@ -30,21 +32,25 @@ const InfluencerDetails = ({ setSelectedUser, account, color, img, name, tweets,
     return(
       <button className={`btnFakeNews ${btnColor}`}>{_.round(fakePercent*100, 0)}% fake news</button>
     );
-  }
+  };
+
   return (
     <div className="accountSection" onClick={setSelectedInfluencerHandler}>
       <div className="imageNameSection">
-        <img className="userImage" src={img} alt="User" />
+        {userAvatar({ user_profile_image_url: img }, { className: "userImage", alt: "User" })}
         <div className="userInformWrapper">
           <p className="userNickname">{name}</p>
           <p className="userAccount">{account}</p>
         </div>
       </div>
-      <div className="buttonsSection">
-        <button className="btnTweets buttonsTweetFollowers">{convertNumbers(tweets)} tweets</button>
-        <button className="btnFollowers buttonsTweetFollowers">{convertNumbers(followers)} followers</button>
-        {fakeNewsInfo()}
-      </div>
+      {
+        !skipDetails &&
+        <div className="buttonsSection">
+          <button className="btnTweets buttonsTweetFollowers">{convertNumbers(tweets)} tweets</button>
+          <button className="btnFollowers buttonsTweetFollowers">{convertNumbers(followers)} followers</button>
+          {fakeNewsInfo()}
+        </div>
+      }
     </div>
   );
 };
