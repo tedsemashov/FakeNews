@@ -1,0 +1,193 @@
+.top-mentioned-users-in-retweets {
+   width: 1180px;
+   margin: 0 auto;
+}
+
+.top-mentioned-users-in-retweets .users-container-wrapper {
+  margin-top: 7px;
+}
+
+.top-mentioned-users-in-retweets .slick-slider {
+  position: relative;
+}
+
+.top-mentioned-users-in-retweets .slick-arrow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: auto;
+  height: auto;
+  width: auto;
+  text-align: center;
+  font-size: 18px;
+  line-height: normal;
+  transform: none;
+  color: #ffffff;
+  z-index: 10;
+}
+
+.top-mentioned-users-in-retweets .users-list:hover .slick-arrow {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.top-mentioned-users-in-retweets .slick-prev {
+  top: 0;
+}
+
+.top-mentioned-users-in-retweets .slick-prev:before {
+  display: none;
+}
+
+.top-mentioned-users-in-retweets .slick-next {
+  bottom: 0;
+}
+
+.top-mentioned-users-in-retweets .slick-next:before {
+  display: none;
+}
+
+.top-mentioned-users-in-retweets .accountSection {
+  position: relative;
+  padding-top: 13px;
+  margin-top: 0;
+  padding-bottom: 9px;
+  padding-right: 5px;
+  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.12);
+  height: auto;
+}
+
+.top-mentioned-users-in-retweets .accountSection:hover {
+  cursor: pointer;
+}
+
+.top-mentioned-users-in-retweets .buttonsSection {
+  padding-top: 24px;
+}
+
+.top-mentioned-users-in-retweets .user-row.isSelected .accountSection {
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.12);
+}
+
+.top-mentioned-users-in-retweets .user-row + .user-row {
+  margin-top: 10px;
+}
+
+.top-mentioned-users-in-retweets .user-selection:hover {
+  cursor: pointer;
+}
+
+.top-mentioned-users-in-retweets .switch-user {
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.top-mentioned-users-in-retweets .user-avatar {
+  min-width: 60px;
+  width: 60px;
+  height: 60px;
+  -webkit-border-radius: 60px;
+  -moz-border-radius: 60px;
+  border-radius: 60px;
+}
+
+.top-mentioned-users-in-retweets .user-avatar-col {
+  width: 60px;
+  flex-basis: 76px;
+}
+
+.top-mentioned-users-in-retweets .user-name {
+  font-size: 18px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+  margin-bottom: 6px;
+}
+
+.top-mentioned-users-in-retweets .user-nickname {
+  font-size: 18px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #000000;
+}
+
+.top-mentioned-users-in-retweets .mark-fake {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #d0021b !important;
+  color: #ffffff !important;
+  border: solid 2px #d0021b !important;
+  border-radius: 0;
+  padding: 5px 0 !important;
+  margin-top: 1px;
+  width: 106px;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  text-align: center;
+}
+
+.top-mentioned-users-in-retweets .mark-fake .check-icon {
+  margin-right: 9px;
+}
+
+.top-mentioned-users-in-retweets .mark-fake.isFake {
+  background-color: #ffffff !important;
+  color: #d0021b !important;
+}
+
+.top-mentioned-users-in-retweets .tweets-layout {
+  position: relative;
+}
+
+.top-mentioned-users-in-retweets .tweets-list {
+  margin: 5px;
+  padding: 19px 43px;
+  display: flex;
+  width: 100%;
+  height: 390px;
+  overflow: hidden;
+  overflow-y: auto;
+  border-radius: 4px;
+  box-shadow: 0 8px 13px 0 rgba(0, 0, 0, 0.16);
+  flex-direction: column;
+  color: #000;
+}
+
+.top-mentioned-users-in-retweets .tweet-row {
+  padding: 26px 0 17px;
+  border-bottom: 1px solid #e1e1e1;
+}
+
+.top-mentioned-users-in-retweets .tweet-row:first-child {
+  padding-top: 0;
+}
+
+.top-mentioned-users-in-retweets .tweet-row a {
+  color: #000000;
+}
+
+.top-mentioned-users-in-retweets .tweet-meta {
+  margin-bottom: 3px;
+  font-size: 15px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: -0.5px;
+  color: #42576a;
+}

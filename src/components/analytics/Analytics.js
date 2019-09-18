@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import './analytics.css';
 import Spinner from 'react-bootstrap/Spinner';
+
 import Header from '../header/index';
 import Subheader from '../subheader/index';
 import Hashtags from '../hashtags';
@@ -11,6 +11,9 @@ import TopTrolls from '../top-trolls/index';
 import TopMentionedUsers from '../top-mentioned-users/index';
 import Footer from '../footer/Footer';
 import { setDocumentTitle } from '../meta';
+import TopMentionedUsersInRetweets from "../top-mentioned-users-in-retweets";
+
+import "./analytics.css";
 
 export default class Analytics extends Component {
   spinner = (
@@ -61,6 +64,10 @@ export default class Analytics extends Component {
 
           <div className="influencersMentionedWrapper">
             <TopMentionedUsers />
+          </div>
+
+          <div className="influencersMentionedWrapper">
+            <TopMentionedUsersInRetweets />
           </div>
         </section>
 

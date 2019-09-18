@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { setSelectedMentionedUser } from '../../actions';
+
 import TopMentionedUsers from './TopMentionedUsers';
 
 const mapStateToProps = state => {
@@ -8,13 +8,6 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    setSelectedMentionedUser: value => dispatch(setSelectedMentionedUser(value))
-  };
-};
+const mapDispatchToProps = () => ({});
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(TopMentionedUsers);
+export default connect(mapStateToProps, mapDispatchToProps)(TopMentionedUsers);
