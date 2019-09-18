@@ -44,7 +44,7 @@ export default class TopNews extends React.Component {
           </Col>
         </Row>
         {_.map(topNewsList, (news)=> {
-          const processing = _.includes(topNewsProcessing, news.id_txt)
+          const processing = _.includes(topNewsProcessing, news.id_txt);
 
           return(
             <Row className='expert-top-news m-0' key={news.id_txt}>
