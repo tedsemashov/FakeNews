@@ -41,10 +41,14 @@
    margin: 0 auto;
 }
 
-.topAllNewsWrapper {
+.topAllNewsWrapper, .topManipulativeNewsWrapper {
    margin: 0 auto;
    display: flex;
    justify-content: space-between;
+}
+
+.topManipulativeNewsWrapper {
+  margin-top: 60px;
 }
 
 .topNewsWrapper {
