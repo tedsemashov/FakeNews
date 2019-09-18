@@ -64,14 +64,14 @@ export default class Expert extends React.Component {
   }
 
   render() {
-    const { isLoaded } = this.props;
+    const { isLoaded, location } = this.props;
 
     return (
       <div className="expert-page">
         {setDocumentTitle("Expert")}
         {!isLoaded && this.spinner}
 
-        <Header />
+        <Header location={location}/>
 
         <Subheader onFilterChange={this.props.onFilterChange}/>
 

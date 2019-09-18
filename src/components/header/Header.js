@@ -1,13 +1,24 @@
 import React from 'react';
 import { Link } from "react-router-dom";
+import classNames from "classnames";
 
 import { Logo } from "../images/Logo"
 
 import './header.css';
 
 export default class Header extends React.Component {
+  navLink = (title, route, location) => {
+    const className = classNames("headerLI", { active: route === location.pathname });
+
+    return(
+      <li key={route} className={className}>
+        <Link to={route}>{title}</Link>
+      </li>
+    );
+  };
+
   render() {
-    const { user } = this.props;
+    const { user, location } = this.props;
 
     return (
       <header className="headerContainer">
@@ -16,18 +27,10 @@ export default class Header extends React.Component {
 
           <nav className="navMenu">
             <ul className="headerList">
-              <li className="headerLI">
-                <Link to={"/analytics"}>ANALYTICS</Link>
-              </li>
-              <li>
-                <Link to={"/reports"}>REPORTS</Link>
-              </li>
-              <li>
-                <Link to={"/manage"}>MANAGE</Link>
-              </li>
-              <li>
-                <Link to={"/expert"}>EXPERT</Link>
-              </li>
+              {this.navLink("ANALYTICS", "/analytics", location)}
+              {this.navLink("REPORTS", "/reports", location)}
+              {this.navLink("MANAGE", "/manage", location)}
+              {this.navLink("EXPERT", "/expert", location)}
             </ul>
           </nav>
           <div className="userLogin">
