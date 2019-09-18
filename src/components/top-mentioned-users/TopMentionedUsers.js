@@ -56,7 +56,7 @@ export default class TopMentionedUser extends React.Component {
     const selectedUser = this.state.user || _.keys(topMentionedUsers)[0];
     const usersList = _.map(topMentionedUsers, (userData, user) => {
       const isSelected = user === selectedUser;
-      const className = classNames("user-row", { isSelected });      
+      const className = classNames("user-row", { isSelected });
 
       return(
         <div data-index={user} className={className} key={user}>
@@ -82,7 +82,7 @@ export default class TopMentionedUser extends React.Component {
 
         <Container fluid>
           <Row>
-            <Col className="users-list-container" sm={6}>
+            <Col className="users-list-container pl-0" sm={6}>
               <div className="users-list">
                 {
                   !_.isEmpty(usersList) &&
