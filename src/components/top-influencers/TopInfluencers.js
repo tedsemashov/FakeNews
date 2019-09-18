@@ -61,12 +61,6 @@ class TopInfluencers extends Component {
         <div className="influencersWrapper">
           {_.isEmpty(influencersArr) ? <NoData/> : this.renderContent()}
         </div>
-        {
-          !_.isEmpty(influencersArr) &&
-          <div className="buttonSeeAllWrapper">
-            <Button value={'SEE ALL'} />
-          </div>
-        }
       </div>
     );
   }

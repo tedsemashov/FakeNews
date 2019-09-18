@@ -52,7 +52,7 @@ export default class Manipulators extends React.Component {
 
   submit = (user) => {
     confirmAlert({
-      message: 'Are you sure to do this?',
+      message: 'Are you sure you want to delete this manipulator?',   
       buttons: [
         {
           label: 'Yes',

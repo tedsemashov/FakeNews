@@ -75,6 +75,14 @@ const initialState = {
   topInfluencers: [],
   topMentionedUsers: [],
 
+  top_rt_m_usr: {},
+  top_fnews_tw: [],
+  top_fn_rtweets: [],
+  top_rt_fn_usr: {},
+  top_fn_usr: {},
+  fn_tw_count_ts: {},
+  fn_tw_prob_mean_ts: {},
+
   selectedInfluencer: '',
   selectedMentionedUser: '',
   selectedTroll: '',
@@ -270,6 +278,41 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         userLoggedIn: true
+      };
+    case constants.SET_TOP_RT_M_USR:
+      return {
+        ...state,
+        top_rt_m_usr: action.top_rt_m_usr
+      };
+    case constants.SET_TOP_FNEWS_TW:
+      return {
+        ...state,
+        top_fnews_tw: action.top_fnews_tw
+      };
+    case constants.SET_TOP_FN_RTWEETS:
+      return {
+        ...state,
+        top_fn_rtweets: action.top_fn_rtweets
+      };
+    case constants.SET_TOP_RT_FN_USR:
+      return {
+        ...state,
+        top_rt_fn_usr: action.top_rt_fn_usr
+      };
+    case constants.SET_TOP_FN_USR:
+      return {
+        ...state,
+        top_fn_usr: action.top_fn_usr
+      };
+    case constants.SET_FN_TW_COUNT_TS:
+      return {
+        ...state,
+        fn_tw_count_ts: action.fn_tw_count_ts
+      };
+    case constants.SET_FN_TW_PROB_MEAN_TS:
+      return {
+        ...state,
+        fn_tw_prob_mean_ts: action.fn_tw_prob_mean_ts
       };
     default:
       return state;

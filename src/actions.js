@@ -17,6 +17,13 @@ export const getTwitterData = (params = {}) => {
         dispatch(setTopMentionedUsersData(_.get(data, "top_active_users", {})));
         dispatch(setSelectedInfluencer(Object.keys(_.get(data, "top_influencers", {}))[0] || ""));
         dispatch(setSelectedMentionedUser(Object.keys(_.get(data, "top_active_users", {}))[0] || ""));
+        dispatch(setTopRtMUsr(_.get(data, "top_rt_m_usr", {})));
+        dispatch(setTopFnewsTw(_.get(data, "top_fnews_tw", [])));
+        dispatch(setTopFnRtweets(_.get(data, "top_fn_rtweets", [])));
+        dispatch(setTopRtFnUsr(_.get(data, "top_rt_fn_usr", {})));
+        dispatch(setTopFnUsr(_.get(data, "top_fn_usr", {})));
+        dispatch(setFnTwCountTs(_.get(data, "fn_tw_count_ts", {})));
+        dispatch(setFnTwProbMeanTs(_.get(data, "fn_tw_prob_mean_ts", {})));
         dispatch(setLoadingState(true));
       });
   }
@@ -118,6 +125,55 @@ export const logInUser = (user) => {
     user: user
   };
 };
+
+export function setTopRtMUsr(data) {
+  return {
+    type: constants.SET_TOP_RT_M_USR,
+    top_rt_m_usr: data
+  };
+}
+
+export function setTopFnewsTw(data) {
+  return {
+    type: constants.SET_TOP_FNEWS_TW,
+    top_fnews_tw: data
+  };
+}
+
+export function setTopFnRtweets(data) {
+  return {
+    type: constants.SET_TOP_FN_RTWEETS,
+    top_fn_rtweets: data
+  };
+}
+
+export function setTopRtFnUsr(data) {
+  return {
+    type: constants.SET_TOP_RT_FN_USR,
+    top_rt_fn_usr: data
+  };
+}
+
+export function setTopFnUsr(data) {
+  return {
+    type: constants.SET_TOP_FN_USR,
+    top_fn_usr: data
+  };
+}
+
+export function setFnTwCountTs(data) {
+  return {
+    type: constants.SET_FN_TW_COUNT_TS,
+    fn_tw_count_ts: data
+  };
+}
+
+export function setFnTwProbMeanTs(data) {
+  return {
+    type: constants.SET_FN_TW_PROB_MEAN_TS,
+    fn_tw_prob_mean_ts: data
+  };
+}
 
 export * from "./actions/expert";
 export * from "./actions/filters";
