@@ -100,7 +100,7 @@ const rootReducer = (state = initialState, action) => {
     case constants.KEYWORD_DATA:
       return {
         ...state,
-        keyword: action.keyword
+        keyword: _.get(_.isEmpty(action.keyword) ? initialState : action, "keyword")
       };
     case constants.TOP_FAVORITE_TWEETS_DATA:
       return {

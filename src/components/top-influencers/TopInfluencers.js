@@ -1,69 +1,115 @@
-import React, { Component } from 'react';
+import React from "react";
 import _ from "lodash";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Slider from "react-slick";
+import classNames from "classnames";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 import SectionTitle from '../section-title/SectionTitle';
 import InfluencerDetails from '../influencer-details/InfluencerDetails';
-import Button from '../button/Button';
-import Popup from '../popup-top-accounts/Popup';
 import NoData from "./../no-data/NoData";
 
 import './topInfluencers.css';
 
-class TopInfluencers extends Component {
-  returnInfluencersSection = () => {
-    const influencersArr = Object.keys(this.props.topInfluencers).map(prop => {
-      this.props.topInfluencers[prop].account = '@' + prop;
-      return this.props.topInfluencers[prop];
-    });
-    return influencersArr;
+export function NextArrow({ currentSlide, slideCount, ...props }) {
+  const show = currentSlide + 4 < slideCount;
+
+  return show && (<div {...props}><FontAwesomeIcon icon={faChevronDown} /></div>);
+}
+
+export function PrevArrow({ currentSlide, slideCount, ...props }) {
+  return currentSlide > 0 && (<div {...props}><FontAwesomeIcon icon={faChevronUp} /></div>);
+}
+
+export default class TopInfluencers extends React.Component {
+  renderTweets = (tweet) => {
+    return(
+      <div className="tweet-row" key={tweet.id}>
+        <div className="tweet-meta">
+          <span className="nickname">@{tweet.screen_name}</span>
+          &nbsp;&middot;&nbsp;
+          <span className="date">{tweet.date}</span>
+        </div>
+
+        <div className="tweet-body">
+          {tweet.text}
+        </div>
+      </div>
+    );
   };
 
-  componentDidUpdate() {
-    this.returnInfluencersSection();
+  constructor(props) {
+    super(props);
+
+    this.state = { user: null };
+
+    this.onUserChange = this.onUserChange.bind(this);
   }
 
-  renderContent() {
-    const influencersArr = this.returnInfluencersSection();
-
-    return(
-      <React.Fragment>
-        <div className="topInfluencersAccounts">
-          {influencersArr.map(
-            ({ user_name, user_profile_image_url, account, user_followers_count, user_statuses_count }) => (
-              <InfluencerDetails
-                account={account}
-                name={user_name}
-                img={user_profile_image_url}
-                tweets={user_statuses_count}
-                followers={user_followers_count}
-                color={'green'}
-                key={user_statuses_count}
-                setSelectedUser={this.props.setSelectedInfluencer}
-              />
-            )
-          )}
-        </div>
-        <div className="topUsersPopupWrapper">
-          <Popup users={this.props.topInfluencers} selectedInfluencer={this.props.selectedInfluencer} />
-        </div>
-      </React.Fragment>
-    );
-  }
+  onUserChange(user) { this.setState({ user: user.slice(1, user.length) }); }
 
   render() {
-    const influencersArr = this.returnInfluencersSection();
+    const { topInfluencers } = this.props;
+    const selectedUser = this.state.user || _.keys(topInfluencers)[0];
+    const usersList = _.map(topInfluencers, (userData, user) => {
+      const isSelected = user === selectedUser;
+      const className = classNames("user-row", { isSelected });
 
-    return (
-      <div className="topInfluencersContainer">
-        <div className="titleWrapperNews">
+      return(
+        <div data-index={user} className={className} key={user}>
+          <InfluencerDetails
+            account={`@${user}`}
+            name={userData.user_name}
+            img={userData.user_profile_image_url}
+            tweets={userData.user_statuses_count}
+            followers={userData.user_followers_count}
+            setSelectedUser={this.onUserChange}
+            color="orange"
+            />
+        </div>
+      );
+    });
+    const tweetsList = _.get(topInfluencers, [selectedUser, "top_tweets"], []).map(this.renderTweets);
+
+    return(
+      <div className="top-influencers">
+        <div className="title-container">
           <SectionTitle value="TOP INFLUENCERS" />
         </div>
-        <div className="influencersWrapper">
-          {_.isEmpty(influencersArr) ? <NoData/> : this.renderContent()}
-        </div>
+
+        <Container fluid>
+          <Row>
+            <Col className="users-list-container pl-0" sm={6}>
+              <div className="users-list">
+                {
+                  !_.isEmpty(usersList) &&
+                  <Slider
+                    infinite={false}
+                    slidesToShow={4}
+                    slidesToScroll={1}
+                    nextArrow={<NextArrow />}
+                    prevArrow={<PrevArrow />}
+                    vertical
+                    verticalSwiping
+                    swipeToSlide
+                    >
+                    {usersList}
+                  </Slider>
+                }
+              </div>
+            </Col>
+
+            <Col className="tweets-list-container pr-0" sm={6}>
+              <div className="tweets-list">
+                {_.isEmpty(tweetsList) ? <NoData /> : tweetsList}
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
 }
-
-export default TopInfluencers;

@@ -1,15 +1,13 @@
 import { connect } from "react-redux";
+
 import NewsBlock from './NewsBlock';
 
 const mapStateToProps = (state) => {
-   return {
-      topNews: state.topNews
-   }
+  return {
+    topNews: state.topNews
+  }
 };
 
-const mapDispatchToProps = (dispatch) => {
-   return {
-   }
-};
+const mapDispatchToProps = () => ({});
 
-export default connect(mapStateToProps, mapDispatchToProps)(NewsBlock)
+export default connect(mapStateToProps, mapDispatchToProps)(NewsBlock);
