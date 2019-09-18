@@ -184,3 +184,7 @@
   letter-spacing: -0.5px;
   color: #42576a;
 }
+
+.top-influencers .tweet-body a {
+  color: #000000;
+}

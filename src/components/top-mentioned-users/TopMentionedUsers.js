@@ -11,6 +11,7 @@ import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import SectionTitle from '../section-title/SectionTitle';
 import InfluencerDetails from '../influencer-details/InfluencerDetails';
 import NoData from "./../no-data/NoData";
+import { convertLinks } from "./../../utils/convertLinks";
 
 import './TopMentionedUsers.css';
 
@@ -34,9 +35,7 @@ export default class TopMentionedUser extends React.Component {
           <span className="date">{tweet.date}</span>
         </div>
 
-        <div className="tweet-body">
-          {tweet.text}
-        </div>
+        <div className="tweet-body">{convertLinks(tweet.text)}</div>
       </div>
     );
   };
