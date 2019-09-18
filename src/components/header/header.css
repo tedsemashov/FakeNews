@@ -51,14 +51,10 @@
    text-align: center;
    align-items: center;
    display: flex;
+   border-bottom: 3px solid transparent;
 }
 
-.headerList li a {
-  border-bottom: 3px solid transparent;
-  padding: 4px 0;
-}
-
-.headerList li.active a {
+.headerList li.active {
   border-bottom-color: #000;
 }
 
@@ -71,12 +67,8 @@
    cursor: pointer;
 }
 
-.headerList li {
-   padding-right: 50px;
-}
-
-.headerList li:last-child {
-   padding-right: 0;
+.headerList li + li {
+   margin-left: 50px;
 }
 
 .userLogin {
