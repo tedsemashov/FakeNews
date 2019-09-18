@@ -4,7 +4,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import Spinner from "react-bootstrap/Spinner";
+
+import Spinner from "../../spinner/Spinner";
 
 import { userAvatar } from "../../../utils/avatar";
 import checkIcon from "./../../../images/tip_icon.svg";
@@ -12,12 +13,6 @@ import checkIcon from "./../../../images/tip_icon.svg";
 import '../topNews/top-news.css';
 
 export default class TopRetweetedNews extends React.Component {
-  spinner = (
-    <div className="spinner-layout">
-      <Spinner animation="border" role="status" variant="dark" />
-    </div>
-  );
-
   renderButton(news) {
     const isFake = news.checked === 1;
     const onClick = () => this.props.toggleFakeStatus(news);
@@ -50,7 +45,7 @@ export default class TopRetweetedNews extends React.Component {
 
             return(
               <Row className='expert-top-news m-0' key={news.id_txt}>
-                {processing && this.spinner}
+                {processing && <Spinner size="small"/>}
                 <Col md="10" className="news-text">
                  {userAvatar(news.image_url)}
 

@@ -3,12 +3,12 @@ import _ from "lodash";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import Spinner from "react-bootstrap/Spinner";
 import ReactPaginate from "react-paginate";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { confirmAlert } from 'react-confirm-alert';
 import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
+import Spinner from "../spinner/Spinner";
 import SectionTitle from "./../section-title/SectionTitle";
 import {userAvatar} from "./../../utils/avatar";
 
@@ -17,12 +17,6 @@ import "./manipulators.css";
 export const PER_PAGE = 15;
 
 export default class Manipulators extends React.Component {
-  spinner = (
-    <div className="spinner-layout">
-      <Spinner animation="border" role="status" variant="dark" />
-    </div>
-  );
-
   constructor(props) {
     super(props);
 
@@ -52,7 +46,7 @@ export default class Manipulators extends React.Component {
 
   submit = (user) => {
     confirmAlert({
-      message: 'Are you sure you want to delete this manipulator?',   
+      message: 'Are you sure you want to delete this manipulator?',
       buttons: [
         {
           label: 'Yes',
@@ -73,7 +67,7 @@ export default class Manipulators extends React.Component {
     return(
       <Col key={user} className="grid-item" sm={4}>
         <div className="manipulator-user">
-          {isProcessing && this.spinner}
+          {isProcessing && <Spinner size="small"/>}
           <Row>
             <Col className="user-avatar-col" sm={3}>
               {userAvatar({ ...userData, nickname: user })}

@@ -1,0 +1,19 @@
+.spinnerWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255,255,255,0.9);
+  z-index: 100;
+}
+
+.spinnerWrapper img {
+  width: 60px;
+}
+
+
+.spinnerWrapper.small img {
+  width: 30px;
+}
