@@ -102,7 +102,7 @@ export default class TopMentionedUser extends React.Component {
               </div>
             </Col>
 
-            <Col className="tweets-list-container" sm={6}>
+            <Col className="tweets-list-container pr-0" sm={6}>
               <div className="tweets-list">
                 {_.isEmpty(tweetsList) ? <NoData /> : tweetsList}
               </div>

@@ -74,7 +74,7 @@ export default class TopTrolls extends React.Component {
           <Col className="buttons" sm={5}>
             <button className="btnTweets buttonsTweetFollowers pr-1"> {userData.user_tw_count} tweets </button>
             <button className="btnFollowers buttonsTweetFollowers pr-1"> {userData.followers} followers </button>
-            <button className="btnFakeNews"> {_.round(userData.fnews_pred_mean*100, 1)}% fake news </button>
+            <button className="btnFakeNews"> {userData.fnews_pred_mean}% fake news </button>
           </Col>
         </Row>
       </div>

@@ -34,7 +34,7 @@ const InfluencerDetails = ({ setSelectedUser, account, color, img, name, tweets,
       <div className="buttonsSection">
         <button className="btnTweets buttonsTweetFollowers">{convertNumbers(tweets)} tweets</button>
         <button className="btnFollowers buttonsTweetFollowers">{convertNumbers(followers)} followers</button>
-        <button className={`btnFakeNews ${btnColor}`}>90% fake news</button>
+        <button className={`btnFakeNews ${btnColor}`}>% fake news</button>
       </div>
     </div>
   );
