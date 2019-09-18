@@ -48,7 +48,7 @@ export default class Subheader extends React.Component {
     this.onKeywordChange = this.onKeywordChange.bind(this);
   }
 
-  toggleTimePeriod(event) {
+  toggleTimePeriod() {
     const togglePeriod = !this.state.togglePeriod;
 
     this.setState({ togglePeriod });
@@ -81,7 +81,6 @@ export default class Subheader extends React.Component {
     const periods = [
       LAST_WEEK,
       LAST_TWO_WEEKS,
-      LAST_THREE_WEEKS,
       LAST_MONTH,
       LAST_QUOTER
     ];
