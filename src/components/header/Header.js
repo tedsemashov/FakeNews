@@ -23,7 +23,9 @@ export default class Header extends React.Component {
     return (
       <header className="headerContainer">
         <div className="headerWrapper">
-          <Logo/>
+          <Link to="/analytics">
+            <Logo/>
+          </Link>
 
           <nav className="navMenu">
             <ul className="headerList">
