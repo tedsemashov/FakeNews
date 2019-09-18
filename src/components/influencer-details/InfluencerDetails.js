@@ -1,7 +1,7 @@
 import React from 'react';
 import './InfluencerDetails.css';
 
-const InfluencerDetails = ({ setSelectedUser, account, color, img, name, tweets, followers }) => {
+const InfluencerDetails = ({ setSelectedUser, account, color, img, name, tweets, followers, fakePercent }) => {
   const convertNumbers = num => {
     return Math.abs(num) > 999
       ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + 'K'
@@ -34,7 +34,7 @@ const InfluencerDetails = ({ setSelectedUser, account, color, img, name, tweets,
       <div className="buttonsSection">
         <button className="btnTweets buttonsTweetFollowers">{convertNumbers(tweets)} tweets</button>
         <button className="btnFollowers buttonsTweetFollowers">{convertNumbers(followers)} followers</button>
-        <button className={`btnFakeNews ${btnColor}`}>90% fake news</button>
+        <button className={`btnFakeNews ${btnColor}`}>{fakePercent || 90}% fake news</button>
       </div>
     </div>
   );

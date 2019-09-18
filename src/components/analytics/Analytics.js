@@ -29,7 +29,7 @@ export default class Analytics extends Component {
     const { isLoaded } = this.props;
 
     return (
-      <div>
+      <div className="analytics-page">
         {setDocumentTitle("Analytics")}
 
         {!isLoaded && this.spinner}

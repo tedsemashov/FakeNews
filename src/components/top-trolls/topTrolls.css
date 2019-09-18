@@ -10,13 +10,11 @@
 
 .topTrollsWrapper {
    width: 100%;
-   height: 530px;
    display: flex;
    justify-content: space-between;
 }
 
 .topTrollsSection {
-   width: 44.5%;
    height: 100%;
 }
 
@@ -60,4 +58,104 @@
    letter-spacing: normal;
    color: #030303;
    margin-top: 50px;
+}
+
+.topTrollsContainer .slick-slider {
+  position: relative;
+}
+
+.topTrollsContainer .slick-arrow {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: auto;
+  height: auto;
+  width: auto;
+  text-align: center;
+  font-size: 18px;
+  line-height: normal;
+  transform: none;
+  color: #ffffff;
+  z-index: 10;
+}
+
+.topTrollsContainer .topTrollsSection:hover .slick-arrow {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.topTrollsContainer .slick-prev {
+  top: 0;
+}
+
+.topTrollsContainer .slick-prev:before {
+  display: none;
+}
+
+.topTrollsContainer .slick-next {
+  bottom: 0;
+}
+
+.topTrollsContainer .slick-next:before {
+  display: none;
+}
+
+.topTrollsContainer .accountSection {
+  position: relative;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.12);
+  margin-top: 0;
+}
+
+.topTrollsContainer .accountSection.isSelected {
+  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.12);
+}
+
+.topTrollsContainer .accountSection .userImage {
+  margin-top: 0;
+}
+
+.topTrollsContainer .accountSection .buttonsSection {
+  margin-right: 10px;
+}
+
+.topTrollsContainer .btnTweets {
+  width: 56px;
+  height: 35px;
+}
+
+.topTrollsContainer .buttonsTweetFollowers {
+  border-radius: 3px;
+  background-color: #e0e0e0;
+  border: none;
+  font-size: 12px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.08;
+  letter-spacing: -0.09px;
+  color: #000000;
+  font-weight: 900;
+  margin-right: 10px;
+  padding: 5px;
+}
+
+.topTrollsContainer .btnFakeNews {
+  width: 75px;
+  height: 35px;
+  border-radius: 3px;
+  border: none;
+  font-size: 12px;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.08;
+  letter-spacing: -0.09px;
+  color: #ffffff;
+  font-weight: 900;
+  padding: 5px;
+  background-color: #d0021b;
+}
+
+.topTrollsContainer .buttons {
+  display: flex;
+  align-items: flex-start;
 }

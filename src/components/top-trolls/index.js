@@ -4,8 +4,7 @@ import TopTrolls from './TopTrolls';
 
 const mapStateToProps = state => {
   return {
-    fakeData: state.fakeData,
-    topInfluencers: state.topInfluencers
+    topTrolls: state.top_fn_usr
   };
 };
 

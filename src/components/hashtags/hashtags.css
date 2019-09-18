@@ -5,7 +5,7 @@
 
 .hashtagsWrapper {
    width: 100%;
-   height: 602px;
+   min-height: 602px;
    background-color: #ffffff;
 }
 

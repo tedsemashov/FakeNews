@@ -7,7 +7,6 @@ export const getTwitterData = (params = {}) => {
   return (dispatch) => {
     axios.post(constants.TARGET_URL, {...constants.BODY_POST, ...params}, {headers: {'Content-Type': 'application/json'}})
       .then(({ data }) => {
-        debugger; 
         dispatch(setHashtagsData(_.get(data, "hashtags", {})));
         dispatch(setKeywordData(_.get(data, "keyword", "")));
         dispatch(setTopFavoriteTweetsData(_.get(data, "top_favorite_tweets", [])));
