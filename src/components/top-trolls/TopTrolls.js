@@ -27,8 +27,16 @@ export function PrevArrow({ currentSlide, slideCount, ...props }) {
 export default class TopTrolls extends React.Component {
   renderTweets = (tweet, index) => {
     return(
-      <div className="tweet" key={index}>
-        {tweet.text}
+      <div className="tweet tweet-row" key={tweet.id}>
+        <div className="tweet-meta">
+          <span className="nickname">@{tweet.screen_name}</span>
+          &nbsp;&middot;&nbsp;
+          <span className="date">{tweet.date}</span>
+        </div>
+
+        <div className="tweet-body">
+          {tweet.text}
+        </div>
       </div>
     );
   };
@@ -57,14 +65,14 @@ export default class TopTrolls extends React.Component {
                 <Col className="user-avatar-col" sm={3}>{userAvatar({...userData, nickname: user})}</Col>
                 <Col className="user-details" sm={9}>
                   <h5 className="user-name"> </h5>
-                  <span className="user-nickname">@{user}</span>
+                  <p className="user-nickname">@{user}</p>
                 </Col>
               </Row>
             </div>
           </Col>
 
           <Col className="buttons" sm={5}>
-            <button className="btnFollowers buttonsTweetFollowers pr-1"> {userData.user_tw_count} tweets </button>
+            <button className="btnTweets buttonsTweetFollowers pr-1"> {userData.user_tw_count} tweets </button>
             <button className="btnFollowers buttonsTweetFollowers pr-1"> {userData.followers} followers </button>
             <button className="btnFakeNews"> {_.round(userData.fnews_pred_mean*100, 1)}% fake news </button>
           </Col>
@@ -80,7 +88,7 @@ export default class TopTrolls extends React.Component {
     const tweetsList = _.get(topTrolls, [selected, "top_tweets"], []).map(this.renderTweets);
 
     return (
-      <section className="top-user-tweets topTrollsContainer">
+      <section className="topTrollsContainer">
         <div className="section-title">
           <SectionTitle value="TOP TROLLS" />
         </div>
