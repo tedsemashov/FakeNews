@@ -1,75 +1,115 @@
-import React, { Component } from 'react';
+import React from "react";
 import _ from "lodash";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import Slider from "react-slick";
+import classNames from "classnames";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 import SectionTitle from '../section-title/SectionTitle';
 import InfluencerDetails from '../influencer-details/InfluencerDetails';
-import Popup from '../popup-top-accounts/Popup';
-import Button from '../button/Button';
 import NoData from "./../no-data/NoData";
 
 import './TopMentionedUsers.css';
 
-class TopMentionedUser extends Component {
-  generateTopMentionedUersList = () => {
-    const usersList = Object.keys(this.props.topMentionedUsers).map(prop => {
-      this.props.topMentionedUsers[prop].account = '@' + prop;
-      return this.props.topMentionedUsers[prop];
-    });
-    return usersList;
+export function NextArrow({ currentSlide, slideCount, ...props }) {
+  const show = currentSlide + 4 < slideCount;
+
+  return show && (<div {...props}><FontAwesomeIcon icon={faChevronDown} /></div>);
+}
+
+export function PrevArrow({ currentSlide, slideCount, ...props }) {
+  return currentSlide > 0 && (<div {...props}><FontAwesomeIcon icon={faChevronUp} /></div>);
+}
+
+export default class TopMentionedUser extends React.Component {
+  renderTweets = (tweet) => {
+    return(
+      <div className="tweet-row" key={tweet.id}>
+        <div className="tweet-meta">
+          <span className="nickname">@{tweet.screen_name}</span>
+          &nbsp;&middot;&nbsp;
+          <span className="date">{tweet.date}</span>
+        </div>
+
+        <div className="tweet-body">
+          {tweet.text}
+        </div>
+      </div>
+    );
   };
 
-  componentDidUpdate() {
-    this.generateTopMentionedUersList();
+  constructor(props) {
+    super(props);
+
+    this.state = { user: null };
+
+    this.onUserChange = this.onUserChange.bind(this);
   }
 
-  renderContent() {
-    const mentionedUsersList = this.generateTopMentionedUersList();
-
-    return(
-      <React.Fragment>
-        <div className="topMentionedUsersAccounts">
-          {mentionedUsersList.map(
-            ({ user_name, user_profile_image_url, account, user_followers_count, user_statuses_count }) => (
-              <InfluencerDetails
-                account={account}
-                name={user_name}
-                img={user_profile_image_url}
-                tweets={user_statuses_count}
-                followers={user_followers_count}
-                color={'orange'}
-                key={user_statuses_count}
-                setSelectedUser={this.props.setSelectedMentionedUser}
-              />
-            )
-          )}
-        </div>
-        <div className="topMentionedUsersPopup">
-          <Popup users={this.props.topMentionedUsers} selectedInfluencer={this.props.selectedMentionedUser} />
-        </div>
-      </React.Fragment>
-    );
-  }
+  onUserChange(user) { this.setState({ user: user.slice(1, user.length) }); }
 
   render() {
-    const mentionedUsersList = this.generateTopMentionedUersList();
+    const { topMentionedUsers } = this.props;
+    const selectedUser = this.state.user || _.keys(topMentionedUsers)[0];
+    const usersList = _.map(topMentionedUsers, (userData, user) => {
+      const isSelected = user === selectedUser;
+      const className = classNames("user-row", { isSelected });      
 
-    return (
-      <div className="topMentionedUsersContainer">
-        <div className="titleWrapperNews">
+      return(
+        <div data-index={user} className={className} key={user}>
+          <InfluencerDetails
+            account={`@${user}`}
+            name={userData.user_name}
+            img={userData.user_profile_image_url}
+            tweets={userData.user_statuses_count}
+            followers={userData.user_followers_count}
+            setSelectedUser={this.onUserChange}
+            color="orange"
+            />
+        </div>
+      );
+    });
+    const tweetsList = _.get(topMentionedUsers, [selectedUser, "top_tweets"], []).map(this.renderTweets);
+
+    return(
+      <div className="top-mentioned-users">
+        <div className="title-container">
           <SectionTitle value="TOP MENTIONED USER" />
         </div>
-        <div className="topMentionedUsersWrapper">
-          {_.isEmpty(mentionedUsersList) ? <NoData /> : this.renderContent()}
-        </div>
-        {
-          !_.isEmpty(mentionedUsersList) &&
-          <div className="buttonSeeAllWrapper">
-            <Button value={'SEE ALL'} />
-          </div>
-        }
+
+        <Container fluid>
+          <Row>
+            <Col className="users-list-container" sm={6}>
+              <div className="users-list">
+                {
+                  !_.isEmpty(usersList) &&
+                  <Slider
+                    infinite={false}
+                    slidesToShow={4}
+                    slidesToScroll={1}
+                    nextArrow={<NextArrow />}
+                    prevArrow={<PrevArrow />}
+                    vertical
+                    verticalSwiping
+                    swipeToSlide
+                    >
+                    {usersList}
+                  </Slider>
+                }
+              </div>
+            </Col>
+
+            <Col className="tweets-list-container" sm={6}>
+              <div className="tweets-list">
+                {_.isEmpty(tweetsList) ? <NoData /> : tweetsList}
+              </div>
+            </Col>
+          </Row>
+        </Container>
       </div>
     );
   }
 }
-
-export default TopMentionedUser;
