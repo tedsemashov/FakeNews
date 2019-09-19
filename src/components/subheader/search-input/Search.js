@@ -7,7 +7,8 @@ import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 import "./search.css";
 import CloseImage from "../../../images/header/close@3x.png";
 
-export const DEFAULT_KEYWORD = "ukraine";
+// export const DEFAULT_KEYWORD = "ukraine";
+export const DEFAULT_KEYWORD = "";
 
 export default class Search extends React.Component {
   isDefaultKeyword = (keyword) => _.isEmpty(keyword) || `${keyword}`.toLowerCase() === DEFAULT_KEYWORD;
@@ -25,10 +26,11 @@ export default class Search extends React.Component {
   }
 
   keywords() {
-    const search = this.isDefaultKeyword(this.props.keyword) ? [] : [this.props.keyword];
+    // const search = this.isDefaultKeyword(this.props.keyword) ? [] : [this.props.keyword];
 
-    // default goes first;
-    return _.union([DEFAULT_KEYWORD], search);
+    // // default goes first;
+    // return _.union([DEFAULT_KEYWORD], search);
+    return _.isEmpty(this.props.keyword) ? [] : [this.props.keyword];
   }
 
   onChange(e) {
