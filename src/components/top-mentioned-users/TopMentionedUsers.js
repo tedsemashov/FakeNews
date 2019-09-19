@@ -79,9 +79,9 @@ export default class TopMentionedUser extends React.Component {
           <SectionTitle value="TOP MENTIONED USERS" />
         </div>
 
-        <Container fluid>
+        <Container className="p-0" fluid>
           <Row>
-            <Col className="users-list-container pl-0" sm={6}>
+            <Col className="users-list-container" sm={6}>
               <div className="users-list">
                 {
                   !_.isEmpty(usersList) &&
