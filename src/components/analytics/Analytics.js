@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import Spinner from 'react-bootstrap/Spinner';
 
 import Header from '../header/index';
 import Subheader from '../subheader/index';
+import Spinner from "../spinner/Spinner";
 import Hashtags from '../hashtags';
 import TopNews from '../top-news/index';
 import TopRetweetedNews from '../top-retweeted-news/index';
@@ -18,12 +18,6 @@ import TopMentionedUsersInRetweets from "../top-mentioned-users-in-retweets";
 import "./analytics.css";
 
 export default class Analytics extends Component {
-  spinner = (
-    <div className="spinnerWrapper">
-      <Spinner animation="border" role="status" variant="dark" />
-    </div>
-  );
-
   componentDidMount() {
     const { period, keyword } = this.props;
 
@@ -37,7 +31,7 @@ export default class Analytics extends Component {
       <div className="analytics-page">
         {setDocumentTitle("Analytics")}
 
-        {!isLoaded && this.spinner}
+        {!isLoaded && <Spinner/>}
 
         <Header location={location}/>
 

@@ -1,5 +1,4 @@
 import React from "react";
-import Spinner from "react-bootstrap/Spinner";
 import Container from "react-bootstrap/Container";
 import Button from "react-bootstrap/Button";
 
@@ -8,6 +7,7 @@ import Footer from "../footer/Footer";
 import Subheader from "../subheader/index";
 import Breadcrumbs from "../breadcrumbs";
 import FlashMessage from "./../flashMessage";
+import Spinner from "../spinner/Spinner";
 import TopNews from "./topNews";
 import TopRetweetedNews from "./topRetweetedNews";
 import { setDocumentTitle } from "../meta";
@@ -30,12 +30,6 @@ export default class Expert extends React.Component {
   breadcrumbs = [
     { title: "Expert", link: "/expert", active: true }
   ];
-
-  spinner = (
-    <div className="spinnerWrapper">
-      <Spinner animation="border" role="status" variant="dark" />
-    </div>
-  );
 
   componentDidMount() {
     const { dates, keyword } = this.props;
@@ -69,7 +63,7 @@ export default class Expert extends React.Component {
     return (
       <div className="expert-page">
         {setDocumentTitle("Expert")}
-        {!isLoaded && this.spinner}
+        {!isLoaded && <Spinner/>}
 
         <Header location={location}/>
 
