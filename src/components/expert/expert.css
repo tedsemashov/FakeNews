@@ -61,3 +61,7 @@
   60% { box-shadow: 0 0 3px #000000c9; }
   100% { box-shadow: 0 0 0px #000000c9; }
 }
+
+.expert-page a[rel="nofollow noopener noreferrer"] {
+  color: #000000;
+}
