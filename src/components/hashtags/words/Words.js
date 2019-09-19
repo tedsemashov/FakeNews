@@ -27,8 +27,8 @@ export default class Words extends React.Component {
 
     this.series.maxCount = 20;
     this.series.minWordLength = 2;
-    this.series.minFontSize = 30;
-    this.series.maxFontSize = 120;
+    this.series.minFontSize = am4core.percent(8);
+    this.series.maxFontSize = am4core.percent(15);
     this.series.randomness = 0.5;
     this.series.angles = [0];
     this.series.labels.template.fill = am4core.color("#000000");
@@ -38,6 +38,11 @@ export default class Words extends React.Component {
     this.series.events.on("arrangestarted", this.onChartReady);
     this.series.labels.template.events.off("hit", this.onHashTagSelect);
     this.series.labels.template.events.on("hit", this.onHashTagSelect);
+    this.series.labels.template.marginTop = 10;
+    this.series.labels.template.marginBottom = 10;
+    this.series.labels.template.marginLeft = 15;
+    this.series.labels.template.marginRight = 15;
+    this.series.accuracy = 3;
 
     this.refreshChartData();
   }
