@@ -29,7 +29,7 @@ export default class TopMentionedUsersInRetweets extends React.Component {
   renderTweets = (tweet, index) => {
     return(
       <div className="tweet-row" key={index}>
-        <div className="tweet-body">{convertLinks(tweet)}</div>
+        <div className="tweet-body">{convertLinks(tweet.text)}</div>
       </div>
     );
   };
@@ -63,7 +63,7 @@ export default class TopMentionedUsersInRetweets extends React.Component {
         </div>
       );
     });
-    const tweetsList = _.keys(_.get(top_rt_m_usr, [selectedUser], {})).map(this.renderTweets);
+    const tweetsList = _.get(top_rt_m_usr, [selectedUser], []).map(this.renderTweets);
 
     return(
       <div className="top-mentioned-users-in-retweets">
