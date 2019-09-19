@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
 import Spinner from "../../spinner/Spinner";
+import { convertLinks } from "./../../../utils/convertLinks";
 
 import './top-news.css';
 import checkIcon from "./../../../images/tip_icon.svg";
@@ -46,7 +47,7 @@ export default class TopNews extends React.Component {
             {processing && <Spinner size="small"/>}
               <Col sm="10" className="news-text">
                 <span>
-                 {_.get(news, 'text', '')}
+                 {convertLinks(_.get(news, 'text', ''))}
                 </span>
               </Col>
               <Col sm="2" className="mark-fake-button">
