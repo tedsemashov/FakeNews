@@ -12,7 +12,7 @@ export function apiToggleTopNewsFakeStatus(news) {
     const callback = ({ data }) => {
       if(data.result_code === "Ok") {
         news.checked = news.checked === 1 ? 0 : 1
-        dispatch(toggleTopReTweetedNewsFakeStatus(news));
+        dispatch(toggleTopNewsFakeStatus(news));
       }
 
       dispatch(completeProcessTopNews(news.id_txt));
@@ -37,7 +37,7 @@ export function completeProcessTopNews(newsId) {
   };
 }
 
-export function toggleTopReTweetedNewsFakeStatus(news) {
+export function toggleTopNewsFakeStatus(news) {
   return {
     type: TOPNEWS_TOGGLE_FAKE_STATUS,
     news
