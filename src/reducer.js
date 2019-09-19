@@ -1,6 +1,7 @@
 import _ from "lodash";
 
 import * as constants from './constants';
+import { DEFAULT_KEYWORD } from "./components/subheader/search-input/Search";
 
 const USER_SESSION_KEY = "currentUser";
 
@@ -33,7 +34,7 @@ const initialState = {
   userLoggedIn: !_.isEmpty(localStorage.getItem(USER_SESSION_KEY)),
   timePeriod: 'LAST WEEK',
   hashtags: {},
-  keyword: "ukraine",
+  keyword: DEFAULT_KEYWORD,
   top_favorite_tweets: [],
   tweets_count_ts: {},
   fakeUsers: [
