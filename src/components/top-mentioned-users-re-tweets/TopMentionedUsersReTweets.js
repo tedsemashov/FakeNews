@@ -12,6 +12,7 @@ import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import Spinner from "../spinner/Spinner";
 import SectionTitle from "../section-title/SectionTitle";
 import { userAvatar } from "../../utils/avatar";
+import { convertLinks } from "./../../utils/convertLinks";
 
 import "./top-mentioned-users-re-tweets.css";
 import checkIcon from "./../../images/tip_icon.svg";
@@ -30,7 +31,7 @@ export default class TopMentionedUsersReTweets extends React.Component {
   renderTweets = (tweet, index) => {
     return(
       <div className="tweet" key={index}>
-        {tweet}
+        {convertLinks(tweet)}
       </div>
     );
   };

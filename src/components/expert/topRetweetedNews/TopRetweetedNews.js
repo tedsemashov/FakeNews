@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
 import Spinner from "../../spinner/Spinner";
+import { convertLinks } from "./../../../utils/convertLinks";
 
 import { userAvatar } from "../../../utils/avatar";
 import checkIcon from "./../../../images/tip_icon.svg";
@@ -50,7 +51,7 @@ export default class TopRetweetedNews extends React.Component {
                  {userAvatar(news.image_url)}
 
                  <span>
-                   {_.get(news, 'text', '')}
+                   {convertLinks(_.get(news, 'text', ''))}
                  </span>
                 </Col>
                 <Col md="2" className="mark-fake-button">
