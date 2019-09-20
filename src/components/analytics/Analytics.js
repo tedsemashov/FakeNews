@@ -10,6 +10,7 @@ import TopRetweetedNews from '../top-retweeted-news/index';
 import TopManipulativeRetweets from '../top-manipulative-retweets/index';
 import TopManipulativeNews from '../top-manipulative-news/index';
 import TopInfluencers from '../top-influencers/index';
+import TopFavoritedUsers from '../top-favorited-users/index';
 import TopTrolls from '../top-trolls/index';
 import TopMentionedUsers from '../top-mentioned-users/index';
 import Footer from '../footer/Footer';
@@ -66,6 +67,10 @@ export default class Analytics extends Component {
 
           <div className="influencersTrollsMentionedWrapper">
             <TopInfluencers />
+          </div>
+
+          <div className="influencersTrollsMentionedWrapper">
+            <TopFavoritedUsers />
           </div>
 
           <div className="influencersTrollsMentionedWrapper">

@@ -14,6 +14,7 @@ export const getTwitterData = (params = {}) => {
         dispatch(setTopNewsData(_.get(data, "top_news_tw", [])));
         dispatch(setTopRetweetsData(_.get(data, "top_rtweets", [])));
         dispatch(setTopInfluencersData(_.get(data, "top_influencers", {})));
+        dispatch(setTopFavoritedUsersData(_.get(data, "top_favorite_tw_users", {})));
         dispatch(setTopMentionedUsersData(_.get(data, "top_active_users", {})));
         dispatch(setSelectedInfluencer(Object.keys(_.get(data, "top_influencers", {}))[0] || ""));
         dispatch(setSelectedMentionedUser(Object.keys(_.get(data, "top_active_users", {}))[0] || ""));
@@ -96,6 +97,13 @@ export const setTimePeriod = timePeriod => {
   return {
     type: constants.TIME_PERIOD,
     timePeriod
+  };
+};
+
+export const setTopFavoritedUsersData = favoritedUsers => {
+  return {
+    type: constants.TOP_FAVORITED_USERS,
+    favoritedUsers
   };
 };
 
