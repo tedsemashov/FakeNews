@@ -1,16 +1,12 @@
 import React from 'react';
 import _ from "lodash";
 
-import {userAvatar} from "../../utils/avatar";
+import { convertNumbers } from "../../utils/convertNumbers";
+import { userAvatar } from "../../utils/avatar";
 
 import './InfluencerDetails.css';
 
 const InfluencerDetails = ({ setSelectedUser, account, color, img, name, tweets, followers, fakePercent, skipDetails }) => {
-  const convertNumbers = num => {
-    return Math.abs(num) > 999
-      ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + 'K'
-      : Math.sign(num) * Math.abs(num);
-  };
 
   const setSelectedInfluencerHandler = () => {
     setSelectedUser(account);
