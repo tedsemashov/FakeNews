@@ -81,11 +81,11 @@ export default class Analytics extends Component {
             <TopTrollsMentioned />
           </div>
 
-          <div className="influencersMentionedWrapper">
+          <div className="influencersTrollsMentionedWrapper">
             <TopMentionedUsers />
           </div>
 
-          <div className="influencersMentionedWrapper">
+          <div className="influencersTrollsMentionedWrapper">
             <TopMentionedUsersInRetweets />
           </div>
         </section>

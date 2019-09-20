@@ -82,11 +82,8 @@ export default class Subheader extends React.Component {
     this.setState({ togglePeriod });
   };
 
-  onPeriodChange(e) {
-    let period = e.target.outerText;
-    const { keyword } = this.props;
-
-    this.setState({ togglePeriod: false }, () => this.props.onFilterChange(period, keyword));
+  onPeriodChange(period) {
+    this.setState({ togglePeriod: false }, () => this.props.onFilterChange(period, this.props.keyword));
   }
 
   onKeywordChange(keyword) {
@@ -119,7 +116,7 @@ export default class Subheader extends React.Component {
           {_.map(periods, (period)=> {
             const className = timePeriod === period ? "active" : "default";
 
-            return <div key={period} className={className} onClick={this.onPeriodChange}>{period}</div>
+            return <div key={period} className={className} onClick={() => this.onPeriodChange(period)}>{period}</div>
           })}
         </div>
       </div>

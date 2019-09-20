@@ -42,27 +42,50 @@ export default class TopTrollsMentioned extends React.Component {
   currentUser() { return this.state.user || _.keys(this.props.top_rt_fn_usr)[0]; }
 
   renderUser(userData, user) {
-    const key = Math.random();
-    const onClick = () => this.onUserChange(user);
-    const isActive = this.currentUser() === user;
-    const className = classNames("user-row", { isActive });
+    const onSelect = () => this.onUserChange(user);
+    const isSelected = this.currentUser() === user;
+    const className = classNames("m-0 user-row", { isSelected });
 
     return(
-      <div data-index={key} key={key} className={className} onClick={onClick}>
+      <div className={className} key={user} >
         <Row>
-          <Col className="user-avatar-col" sm={2}>{userAvatar({...userData, nickname: user})}</Col>
-          <Col sm={6}>
-            <h5 className="user-name"> </h5>
-            <p className="user-nickname">@{user}</p>
+          <Col sm={7}>
+            <div className="user-selection" onClick={onSelect}>
+              <Row>
+                <Col className="user-avatar-col pr-0" sm={3}>{userAvatar({...userData, nickname: user})}</Col>
+                <Col className="user-details pl-0" sm={9}>
+                  <h5 className="user-name"> </h5>
+                  <p className="user-nickname">@{user}</p>
+                </Col>
+              </Row>
+            </div>
           </Col>
-          <Col className="text-right" sm={4}>
-            <span className="button-view info">
-              <b>{convertNumbers(userData.rt_user_count)}</b> retweets
-            </span>
-            <span className="button-view fake"><b>{_.round(userData.fnews_pred_mean * 100)}%</b> fake news</span>
+
+          <Col className="buttons" sm={5}>
+            <button className="button-view info"><b>{convertNumbers(userData.rt_user_count)}</b> retweets </button>
+            <button className="button-view fake"> <b>{_.round(userData.fnews_pred_mean * 100)}%</b> fake news </button>
           </Col>
         </Row>
       </div>
+    );
+  }
+
+  renderSlider(list) {
+    if(list.length <= 4) return list;
+
+    return(
+      <Slider
+        infinite={false}
+        slidesToShow={4}
+        slidesToScroll={1}
+        nextArrow={<NextArrow />}
+        prevArrow={<PrevArrow />}
+        vertical
+        verticalSwiping
+        swipeToSlide
+      >
+        {list}
+      </Slider>
     );
   }
 
@@ -74,37 +97,24 @@ export default class TopTrollsMentioned extends React.Component {
 
     return(
       <section className="top-trolls-mentioned">
+        <div className="section-title">
         <SectionTitle value="TOP TROLLS MENTIONED IN RETWEETS" />
+        </div>
 
-        <Container className="section-content" fluid>
-          <Row>
-            <Col sm={6}>
-              <div className="users-list">
-                {
-                  !_.isEmpty(usersList) &&
-                  <Slider
-                    infinite={false}
-                    slidesToShow={4}
-                    slidesToScroll={1}
-                    nextArrow={<NextArrow />}
-                    prevArrow={<PrevArrow />}
-                    vertical
-                    verticalSwiping
-                    swipeToSlide
-                    >
-                    {usersList}
-                  </Slider>
-                }
-              </div>
-            </Col>
-
-            <Col sm={6}>
-              <div className="tweets-list">
-                {_.isEmpty(tweetsList) ? <NoData /> : tweetsList}
-              </div>
-            </Col>
-          </Row>
-        </Container>
+      <Container className="section-content" fluid>
+        <Row>
+          <Col className="users-list" sm={6}>
+            <div className="users-container">
+              {!_.isEmpty(usersList) && this.renderSlider(usersList)}
+            </div>
+          </Col>
+          <Col className="tweets-layout" sm={6}>
+            <div className="tweets-list">
+              {_.isEmpty(tweetsList) ? <NoData/> : tweetsList}
+            </div>
+          </Col>
+        </Row>
+      </Container>
       </section>
     );
   }
