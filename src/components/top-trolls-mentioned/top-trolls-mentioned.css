@@ -22,7 +22,7 @@
 }
 
 .top-trolls-mentioned .user-row.isActive {
-  box-shadow: 0 1px 0 0 rgba(0, 0, 0, 0.12);
+  background: rgba(0, 0, 0, 0.12);
 }
 
 .top-trolls-mentioned .user-avatar-col {

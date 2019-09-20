@@ -77,6 +77,7 @@ const initialState = {
   topInfluencers: [],
   topMentionedUsers: [],
 
+  top_favorite_tw_users: {},
   top_rt_m_usr: {},
   top_fnews_tw: [],
   top_fn_rtweets: [],
@@ -148,6 +149,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         topInfluencers: action.topInfluencers
+      };
+    case constants.TOP_FAVORITED_USERS:
+      return {
+        ...state,
+        top_favorite_tw_users: action.favoritedUsers
       };
     case constants.TOP_MENTIONED_USERS:
       return {
