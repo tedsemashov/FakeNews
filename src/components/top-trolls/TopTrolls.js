@@ -10,8 +10,9 @@ import classNames from "classnames";
 
 import SectionTitle from '../section-title/SectionTitle';
 import NoData from "./../no-data/NoData";
+import { convertNumbers } from "../../utils/convertNumbers";
 import { userAvatar } from "../../utils/avatar";
-import {convertLinks} from "../../utils/convertLinks";
+import { convertLinks } from "../../utils/convertLinks";
 
 import './topTrolls.css';
 
@@ -63,9 +64,9 @@ export default class TopTrolls extends React.Component {
           <Col sm={7}>
             <div className="user-selection" onClick={onSelect}>
               <Row>
-                <Col className="user-avatar-col" sm={3}>{userAvatar({...userData, nickname: user})}</Col>
-                <Col className="user-details" sm={9}>
-                  <h5 className="user-name"> </h5>
+                <Col className="user-avatar-col pr-0" sm={3}>{userAvatar({...userData, nickname: user})}</Col>
+                <Col className="user-details pl-0" sm={9}>
+                  <h5 className="user-name">{userData.user_name} </h5>
                   <p className="user-nickname">@{user}</p>
                 </Col>
               </Row>
@@ -73,8 +74,8 @@ export default class TopTrolls extends React.Component {
           </Col>
 
           <Col className="buttons" sm={5}>
-            <button className="btnTweets buttonsTweetFollowers pr-1"> {userData.user_tw_count} tweets </button>
-            <button className="btnFollowers buttonsTweetFollowers pr-1"> {userData.followers} followers </button>
+            <button className="btnTweets buttonsTweetFollowers pr-1"> {convertNumbers(userData.user_tw_count)} tweets </button>
+            <button className="btnFollowers buttonsTweetFollowers pr-1"> {convertNumbers(userData.user_followers_count)} followers </button>
             <button className="btnFakeNews"> {_.round(userData.fnews_pred_mean*100, 0)}% fake news </button>
           </Col>
         </Row>

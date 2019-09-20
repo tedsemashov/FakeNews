@@ -9,13 +9,25 @@ import NoData from "./../no-data/NoData";
 import './hashtags.css';
 
 export default class Hashtags extends React.Component {
+  constructor(props) {
+    super(props);
+
+    this.onChange = this.onChange.bind(this);
+  }
+
+  onChange(keyword) {
+    const { timePeriod, onTagClick } = this.props;
+
+    onTagClick(keyword, timePeriod);
+  }
+
   renderData() {
-    const { hashtags, keyword, tweets_count_ts, onTagClick } = this.props;
+    const { hashtags, keyword, tweets_count_ts } = this.props;
 
     return(
       <React.Fragment>
         <div className='wordsWrapper'>
-          <Words hashtags={hashtags} keyword={keyword} onChange={onTagClick} />
+          <Words hashtags={hashtags} keyword={keyword} onChange={this.onChange} />
           <div className='lineHorizontalSeparator'/>
         </div>
         <div className='lineSeparator'/>

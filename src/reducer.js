@@ -2,6 +2,7 @@ import _ from "lodash";
 
 import * as constants from './constants';
 import { DEFAULT_KEYWORD } from "./components/subheader/search-input/Search";
+import { DEFAULT_PERIOD } from "./components/subheader/Subheader";
 
 const USER_SESSION_KEY = "currentUser";
 
@@ -32,7 +33,7 @@ const initialState = {
     surname: 'McCarthy'
   },
   userLoggedIn: !_.isEmpty(localStorage.getItem(USER_SESSION_KEY)),
-  timePeriod: 'LAST WEEK',
+  timePeriod: DEFAULT_PERIOD,
   hashtags: {},
   keyword: DEFAULT_KEYWORD,
   top_favorite_tweets: [],

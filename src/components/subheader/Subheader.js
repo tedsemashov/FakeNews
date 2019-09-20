@@ -14,6 +14,8 @@ export const LAST_THREE_WEEKS = "LAST THREE WEEKS";
 export const LAST_MONTH = "LAST MONTH";
 export const LAST_QUOTER = "LAST QUARTER";
 
+export const DEFAULT_PERIOD = LAST_WEEK;
+
 export const DATE_FORMAT = "YYYY-MM-DD";
 
 export function formatDate(date) {
@@ -46,6 +48,32 @@ export default class Subheader extends React.Component {
     this.onPeriodChange = this.onPeriodChange.bind(this);
     this.toggleTimePeriod = this.toggleTimePeriod.bind(this);
     this.onKeywordChange = this.onKeywordChange.bind(this);
+    this.handleClickOutside = this.handleClickOutside.bind(this);
+    this.handleEscapePress = this.handleEscapePress.bind(this);
+  }
+
+  handleEscapePress(e) {
+    if (this.state.togglePeriod && e.keyCode === 27) {
+      this.state.togglePeriod();
+    }
+  }
+
+  componentDidMount() {
+    document.addEventListener('mousedown', this.handleClickOutside);
+    document.addEventListener('focusout', this.handleClickOutside);
+    document.addEventListener('keyup', this.handleEscapePress);
+  }
+
+  componentWillUnmount() {
+    document.removeEventListener('mousedown', this.handleClickOutside);
+    document.removeEventListener('focusout', this.handleClickOutside);
+    document.addEventListener('keyup', this.handleEscapePress);
+  }
+
+  handleClickOutside(event) {
+    if (this.wrapperRef && !this.wrapperRef.contains(event.target) && this.state.togglePeriod) {
+      this.toggleTimePeriod();
+    }
   }
 
   toggleTimePeriod() {
@@ -121,7 +149,7 @@ export default class Subheader extends React.Component {
           <div className="subheaderSeparator" />
 
           <div className="subheaderInputs">
-            <div className="inputWrapperTime">
+            <div className="inputWrapperTime" ref={(node) => this.wrapperRef = node}>
               <Dropdown
                 className="dropdownInput"
                 placeholder="Select time period"

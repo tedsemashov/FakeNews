@@ -11,6 +11,7 @@ import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import SectionTitle from "./../section-title/SectionTitle";
 import NoData from "./../no-data/NoData";
 import { convertLinks } from "./../../utils/convertLinks";
+import { convertNumbers } from "./../../utils/convertNumbers";
 import { userAvatar } from "./../../utils/avatar";
 
 import "./top-trolls-mentioned.css";
@@ -56,7 +57,7 @@ export default class TopTrollsMentioned extends React.Component {
           </Col>
           <Col className="text-right" sm={4}>
             <span className="button-view info">
-              <b>{userData.rt_user_count}</b> retweets
+              <b>{convertNumbers(userData.rt_user_count)}</b> retweets
             </span>
             <span className="button-view fake"><b>{_.round(userData.fnews_pred_mean * 100)}%</b> fake news</span>
           </Col>

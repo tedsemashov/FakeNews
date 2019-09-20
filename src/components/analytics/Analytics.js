@@ -4,6 +4,7 @@ import Header from '../header/index';
 import Subheader from '../subheader/index';
 import Spinner from "../spinner/Spinner";
 import Hashtags from '../hashtags';
+import TrollsActivity from '../trolls-activity'
 import TopNews from '../top-news/index';
 import TopRetweetedNews from '../top-retweeted-news/index';
 import TopManipulativeRetweets from '../top-manipulative-retweets/index';
@@ -39,6 +40,8 @@ export default class Analytics extends Component {
         <Subheader onFilterChange={this.props.onFilterChange}/>
 
         <Hashtags />
+
+        <TrollsActivity/>
 
         <section className="topWrapper">
           <div className="topAllNewsWrapper">
