@@ -207,9 +207,10 @@
 .topTrollsContainer .buttons {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
+  justify-content: flex-end;
   padding-left: 0;
   padding-top: 24px;
+  padding-right: 20px;
 }
 
 .topTrollsContainer .tweet-meta {
