@@ -16,7 +16,7 @@ export default class FlashMessage extends React.Component {
   setTimer() {
     window.setTimeout(() => {
       this.removeMessage()
-    }, 2000);
+    }, 4000);
   }
 
   removeMessage() {
