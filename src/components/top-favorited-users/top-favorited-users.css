@@ -3,7 +3,7 @@
    padding: 0;
 }
 
-.topTrollsContainer {
+.topFavoritedUsersContainer {
    width: 1180px;
    margin: 0 auto;
 }
@@ -60,7 +60,7 @@
    margin-top: 50px;
 }
 
-.topTrollsContainer .user-row {
+.topFavoritedUsersContainer .user-row {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -71,7 +71,7 @@
   cursor: pointer;
 }
 
-.topTrollsContainer .user-avatar {
+.topFavoritedUsersContainer .user-avatar {
   min-width: 60px;
   width: 60px;
   height: 60px;
@@ -81,7 +81,7 @@
   border-style: none;
 }
 
-.topTrollsContainer .user-name {
+.topFavoritedUsersContainer .user-name {
   font-size: 18px;
   font-weight: 900;
   font-style: normal;
@@ -93,7 +93,7 @@
   margin: 20px 0 0 16px;
 }
 
-.topTrollsContainer .user-nickname {
+.topFavoritedUsersContainer .user-nickname {
   height: 22px;
   font-size: 18px;
   font-weight: normal;
@@ -105,11 +105,11 @@
   margin: 6px 0 0 16px
 }
 
-.topTrollsContainer .slick-slider {
+.topFavoritedUsersContainer .slick-slider {
   position: relative;
 }
 
-.topTrollsContainer .slick-arrow {
+.topFavoritedUsersContainer .slick-arrow {
   position: absolute;
   left: 0;
   right: 0;
@@ -124,27 +124,27 @@
   z-index: 10;
 }
 
-.topTrollsContainer .users-container:hover .slick-arrow {
+.topFavoritedUsersContainer .users-container:hover .slick-arrow {
   background-color: rgba(0, 0, 0, 0.2);
 }
 
-.topTrollsContainer .slick-prev {
+.topFavoritedUsersContainer .slick-prev {
   top: 0;
 }
 
-.topTrollsContainer .slick-prev:before {
+.topFavoritedUsersContainer .slick-prev:before {
   display: none;
 }
 
-.topTrollsContainer .slick-next {
+.topFavoritedUsersContainer .slick-next {
   bottom: 0;
 }
 
-.topTrollsContainer .slick-next:before {
+.topFavoritedUsersContainer .slick-next:before {
   display: none;
 }
 
-.topTrollsContainer .accountSection {
+.topFavoritedUsersContainer .accountSection {
   position: relative;
   padding-top: 13px;
   padding-bottom: 13px;
@@ -152,27 +152,28 @@
   margin-top: 0;
 }
 
-.topTrollsContainer .user-avatar-col {
+
+.topFavoritedUsersContainer .user-avatar-col {
   flex-basis: 60px;
 }
 
-.topTrollsContainer .user-row.isSelected {
+.topFavoritedUsersContainer .user-row.isSelected {
   background: rgba(0, 0, 0, 0.12);
 }
 
-.topTrollsContainer .btnTweets {
+.topFavoritedUsersContainer .btnTweets {
   width: 56px;
   height: 35px;
   flex: 0 0 56px;
 }
 
-.topTrollsContainer .btnFollowers {
+.topFavoritedUsersContainer .btnFollowers {
   width: 67px;
   height: 35px;
   flex: 0 0 67px;
 }
 
-.topTrollsContainer .buttonsTweetFollowers {
+.topFavoritedUsersContainer .buttonsTweetFollowers {
   border-radius: 3px;
   background-color: #e0e0e0;
   border: none;
@@ -187,7 +188,7 @@
   padding: 5px;
 }
 
-.topTrollsContainer .btnFakeNews {
+.topFavoritedUsersContainer .btnFavorited {
   flex: 0 0 75px;
   width: 75px;
   height: 35px;
@@ -201,10 +202,10 @@
   color: #ffffff;
   font-weight: 900;
   padding: 5px;
-  background-color: #d0021b;
+  background-color: #7dbb3a;
 }
 
-.topTrollsContainer .buttons {
+.topFavoritedUsersContainer .buttons {
   display: flex;
   align-items: flex-start;
   justify-content: center;
@@ -212,7 +213,7 @@
   padding-top: 24px;
 }
 
-.topTrollsContainer .tweet-meta {
+.topFavoritedUsersContainer .tweet-meta {
   margin-bottom: 3px;
   font-size: 15px;
   font-weight: normal;
@@ -223,7 +224,7 @@
   color: #42576a;
 }
 
-.topTrollsContainer .tweets-list {
+.topFavoritedUsersContainer .tweets-list {
   margin: 5px;
   padding: 19px 43px;
   display: flex;
@@ -237,20 +238,20 @@
   color: #000;
 }
 
-.topTrollsContainer .section-content {
+.topFavoritedUsersContainer .section-content {
   padding-left: 0;
   padding-right: 0;
 }
 
-.topTrollsContainer .tweet-body a {
+.topFavoritedUsersContainer .tweet-body a {
   color: #000000;
 }
 
-.topTrollsContainer .tweet-row {
+.topFavoritedUsersContainer .tweet-row {
   padding: 26px 0 17px;
   border-bottom: 1px solid #e1e1e1;
 }
 
-.topTrollsContainer .tweet-row:first-child {
+.topFavoritedUsersContainer .tweet-row:first-child {
   padding-top: 0;
 }
