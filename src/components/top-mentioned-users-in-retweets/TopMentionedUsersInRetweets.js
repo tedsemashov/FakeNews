@@ -68,7 +68,7 @@ export default class TopMentionedUsersInRetweets extends React.Component {
     return(
       <div className="top-mentioned-users-in-retweets">
         <div className="title-container">
-          <SectionTitle value="TOP MENTIONED USERS IN RETWEETS" />
+          <SectionTitle value="TOP MENTIONED USERS" />
         </div>
 
         <Container fluid>
