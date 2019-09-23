@@ -1,11 +1,15 @@
 import axios from "axios";
 import _ from "lodash";
+import { convertToDates } from "./components/subheader/Subheader";
 
 import * as constants from './constants';
 
-export const getTwitterData = (params = {}) => {
+export const getTwitterData = ({ timePeriod, ...params }) => {
   return (dispatch) => {
-    axios.post(constants.TARGET_URL, {...constants.BODY_POST, ...params}, {headers: {'Content-Type': 'application/json'}})
+    const dates = convertToDates(timePeriod, { defaultBlank: true });
+    const headers = { "Content-Type": "application/json" };
+
+    axios.post(constants.TARGET_URL, {...constants.BODY_POST, ...params, dates}, { headers })
       .then(({ data }) => {
         dispatch(setHashtagsData(_.get(data, "hashtags", {})));
         dispatch(setKeywordData(_.get(params, "keyword", "")));

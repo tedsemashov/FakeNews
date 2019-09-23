@@ -20,16 +20,16 @@ import "slick-carousel/slick/slick-theme.css";
 import './expert.css';
 
 export default class Expert extends React.Component {
+  breadcrumbs = [
+    { title: "Expert", link: "/expert", active: true }
+  ];
+
   constructor(props) {
     super(props);
 
     this.onTrainModelButtonClick = this.onTrainModelButtonClick.bind(this);
     this.renderTrainButton = this.renderTrainButton.bind(this);
   }
-
-  breadcrumbs = [
-    { title: "Expert", link: "/expert", active: true }
-  ];
 
   componentDidMount() {
     const { dates, keyword } = this.props;
