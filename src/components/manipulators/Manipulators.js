@@ -10,6 +10,7 @@ import { faArrowRight, faArrowLeft } from '@fortawesome/free-solid-svg-icons'
 
 import Spinner from "../spinner/Spinner";
 import SectionTitle from "./../section-title/SectionTitle";
+import TwitterBadge from "./../twitter-badge/TwitterBadge";
 import {userAvatar} from "./../../utils/avatar";
 
 import "./manipulators.css";
@@ -75,7 +76,11 @@ export default class Manipulators extends React.Component {
             <Col sm={5}>
               <div className="user-info">
                 <h5 className="user-name"> </h5>
-                <span className="user-nickname">{nickname}</span>
+                <span className="user-nickname">
+                  {nickname}
+                  <br />
+                  <TwitterBadge nickname={user} asIcon />
+                </span>
               </div>
             </Col>
             <Col className="text-right" sm={4}>

@@ -6,6 +6,7 @@ import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 
 import Spinner from "../../spinner/Spinner";
+import TwitterBadge from "./../../twitter-badge/TwitterBadge";
 import { convertLinks } from "./../../../utils/convertLinks";
 
 import { userAvatar } from "../../../utils/avatar";
@@ -43,6 +44,9 @@ export default class TopRetweetedNews extends React.Component {
         <div className="news">
           {_.map(topReTweetedNews, (news)=> {
             const processing = _.includes(topReTweetedNewsProcessing, news.id_txt);
+            const newsText = _.get(news, "text", "");
+            const mention = newsText.match(/RT @([^:]+)/i);
+            const nickname = mention[1];
 
             return(
               <Row className='expert-top-news m-0' key={news.id_txt}>
@@ -51,7 +55,16 @@ export default class TopRetweetedNews extends React.Component {
                  {userAvatar(news.image_url)}
 
                  <span>
-                   {convertLinks(_.get(news, 'text', ''))}
+                  {
+                    nickname ?
+                    <React.Fragment>
+                      RT @{nickname}
+                      <TwitterBadge nickname={nickname} asIcon />
+                      {convertLinks(newsText.replace(mention[0], ""))}
+                    </React.Fragment>
+                    :
+                    convertLinks(newsText)
+                  }
                  </span>
                 </Col>
                 <Col md="2" className="mark-fake-button">
