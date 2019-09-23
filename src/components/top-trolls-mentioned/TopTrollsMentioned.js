@@ -10,6 +10,7 @@ import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 import SectionTitle from "./../section-title/SectionTitle";
 import NoData from "./../no-data/NoData";
+import TwitterBadge from "./../twitter-badge/TwitterBadge";
 import { convertLinks } from "./../../utils/convertLinks";
 import { convertNumbers } from "./../../utils/convertNumbers";
 import { userAvatar } from "./../../utils/avatar";
@@ -55,7 +56,10 @@ export default class TopTrollsMentioned extends React.Component {
                 <Col className="user-avatar-col pr-0" sm={3}>{userAvatar({...userData, nickname: user})}</Col>
                 <Col className="user-details pl-0" sm={9}>
                   <h5 className="user-name"> </h5>
-                  <p className="user-nickname">@{user}</p>
+                  <p className="user-nickname">
+                    @{user}
+                    <TwitterBadge nickname={user} asIcon />
+                  </p>
                 </Col>
               </Row>
             </div>

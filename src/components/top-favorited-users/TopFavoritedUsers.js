@@ -10,6 +10,7 @@ import classNames from "classnames";
 
 import SectionTitle from '../section-title/SectionTitle';
 import NoData from "./../no-data/NoData";
+import TwitterBadge from "./../twitter-badge/TwitterBadge";
 import { convertNumbers } from "../../utils/convertNumbers";
 import { userAvatar } from "../../utils/avatar";
 import { convertLinks } from "../../utils/convertLinks";
@@ -67,7 +68,10 @@ export default class TopFavoritedUsers extends React.Component {
                 <Col className="user-avatar-col pr-0" sm={3}>{userAvatar({...userData, nickname: user})}</Col>
                 <Col className="user-details pl-0" sm={9}>
                   <h5 className="user-name">{userData.user_name} </h5>
-                  <p className="user-nickname">@{user}</p>
+                  <p className="user-nickname">
+                    @{user}
+                    <TwitterBadge nickname={user} asIcon />
+                  </p>
                 </Col>
               </Row>
             </div>
