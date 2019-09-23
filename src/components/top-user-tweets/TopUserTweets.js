@@ -11,6 +11,7 @@ import { faChevronUp, faChevronDown } from "@fortawesome/free-solid-svg-icons";
 
 import Spinner from "../spinner/Spinner";
 import SectionTitle from "../section-title/SectionTitle";
+import TwitterBadge from "./../twitter-badge/TwitterBadge";
 import { userAvatar } from "../../utils/avatar";
 import {  convertLinks } from "./../../utils/convertLinks";
 
@@ -83,7 +84,10 @@ export default class TopUserTweets extends React.Component {
                 <Col className="user-avatar-col" sm={3}>{userAvatar({...userData, nickname: user})}</Col>
                 <Col className="user-details" sm={9}>
                   <h5 className="user-name"> </h5>
-                  <span className="user-nickname">@{user}</span>
+                  <span className="user-nickname">
+                    @{user}
+                    <TwitterBadge nickname={user} asIcon />
+                  </span>
                 </Col>
               </Row>
             </div>

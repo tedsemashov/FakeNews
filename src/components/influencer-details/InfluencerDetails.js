@@ -1,6 +1,7 @@
 import React from 'react';
 import _ from "lodash";
 
+import TwitterBadge from "./../twitter-badge/TwitterBadge";
 import { convertNumbers } from "../../utils/convertNumbers";
 import { userAvatar } from "../../utils/avatar";
 
@@ -36,7 +37,11 @@ const InfluencerDetails = ({ setSelectedUser, account, color, img, name, tweets,
         {userAvatar({ user_profile_image_url: img }, { className: "userImage", alt: "User" })}
         <div className="userInformWrapper">
           <p className="userNickname">{name}</p>
-          <p className="userAccount">{account}</p>
+          <p className="userAccount">
+            {account}
+            &nbsp;
+            <TwitterBadge nickname={account} asIcon />
+          </p>
         </div>
       </div>
       {
