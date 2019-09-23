@@ -23,69 +23,7 @@ export const BODY_POST = {
     "fn_tw_prob_mean_ts"
   ],
   dates: [], //["2019-08-23", "2019-08-24"]
-  keyword: "Ukraine",
-  hashtags: {
-    n_hashtags: 20
-  },
-  tweets_count_ts: {
-    ts_size_freq: "H"
-  },
-  top_news_tw: {
-    min_tweets_count: 5,
-    top_news_tweets_count: 5
-  },
-  top_rtweets: {
-    min_tweets_count: 5,
-    top_rt_count: 5
-  },
-  top_favorite_tweets: {
-    n_top_fav_tw: 10
-  },
-  top_influencers: {
-    n_top_users: 5,
-    n_usr_tw: 5
-  },
-  top_favorite_tw_users: {
-    n_top_users: 5,
-    n_usr_tw: 5
-  },
-  top_active_users: {
-    n_top_users: 5,
-    n_usr_tw: 5
-  },
-  top_rt_m_usr: {
-    top_rt_users_count: 30,
-    min_rt_count: 3,
-    max_tw_top_usr: 5
-  },
-  top_fnews_tw: {
-    min_tweets_count: 3,
-    top_fnews_tweets_count: 10,
-    max_top_tw_n: 25
-  },
-  top_fn_rtweets: {
-    min_tweets_count: 25,
-    top_rt_count: 10,
-    max_top_tw_n: 100
-  },
-  top_rt_fn_usr: {
-    top_rt_users_count: 5,
-    min_rt_count: 3,
-    min_user_rt_count: 3,
-    max_rt_top_usr: 5,
-    top_fn_users: 10
-  },
-  top_fn_usr: {
-    n_usr_tw: 5,
-    n_fn_users: 10
-  },
-  fn_tw_count_ts: {
-    freq: "H",
-    fn_prob_thr: 0.7
-  },
-  fn_tw_prob_mean_ts: {
-    freq: "H"
-  }
+  keyword: ""
 };
 
 export const HASHTAGS_DATA = "HASHTAGS_DATA";

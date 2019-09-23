@@ -11,7 +11,11 @@ function renderContent(topRetweetedNews) {
   return(
     <React.Fragment>
       <div className="topNewsBlockWrapper">
-        {topRetweetedNews.map(({ text, count }) => <NewsBlock key={count} text={text} />)}
+        {topRetweetedNews.map(({ text, count, date, fnews_pred_mean }) => {
+          return (
+            <NewsBlock key={text} text={text} count={count} date={date} fakePersent={fnews_pred_mean} />
+          )
+        })}
       </div>
     </React.Fragment>
   );

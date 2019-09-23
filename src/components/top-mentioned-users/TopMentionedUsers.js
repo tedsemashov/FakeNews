@@ -76,7 +76,7 @@ export default class TopMentionedUser extends React.Component {
     return(
       <div className="top-mentioned-users">
         <div className="title-container">
-          <SectionTitle value="TOP MENTIONED USERS" />
+          <SectionTitle value="TOP ACTIVE USERS" />
         </div>
 
         <Container className="p-0" fluid>
