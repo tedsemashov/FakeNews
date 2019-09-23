@@ -2,7 +2,6 @@ import { connect } from "react-redux";
 import _ from "lodash";
 
 import Hashtags from "./Hashtags";
-import { convertToDates } from "./../subheader/Subheader";
 
 import {getTwitterData, setLoadingState} from "../../actions";
 
@@ -10,10 +9,8 @@ const mapStateToProps = (state) => _.pick(state, ["keyword", "hashtags", "timePe
 const mapDispatchToProps = (dispatch) => {
   return {
     onTagClick: (keyword, timePeriod) => {
-      const dates = convertToDates(timePeriod);
-
       dispatch(setLoadingState(false));
-      dispatch(getTwitterData({ keyword, dates }));
+      dispatch(getTwitterData({ keyword, timePeriod }));
     }
   };
 };

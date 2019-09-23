@@ -22,10 +22,10 @@ export function formatDate(date) {
   return date.format(DATE_FORMAT);
 }
 
-export function convertToDates(timePeriod) {
+export function convertToDates(timePeriod, { defaultBlank } = {}) {
   switch(timePeriod) {
     case LAST_WEEK:
-      return [];
+      return defaultBlank ? [] : [formatDate(moment().subtract(1, "w")), formatDate(moment())];
     case LAST_TWO_WEEKS:
       return [formatDate(moment().subtract(2, "w")), formatDate(moment())];
     case LAST_THREE_WEEKS:
@@ -35,7 +35,7 @@ export function convertToDates(timePeriod) {
     case LAST_QUOTER:
       return [formatDate(moment().subtract(4, "M")), formatDate(moment())];
     default: // [<date>, <date>]
-      return [];
+      return defaultBlank ? [] : timePeriod;
   }
 }
 

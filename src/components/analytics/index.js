@@ -1,7 +1,6 @@
 import { connect } from 'react-redux';
 import { getTwitterData, setLoadingState, onFilterChange } from '../../actions';
 import Analytics from './Analytics';
-import { convertToDates } from "./../subheader/Subheader";
 
 const mapStateToProps = state => {
   return {
@@ -14,24 +13,17 @@ const mapStateToProps = state => {
 
 const mapDispatchToProps = dispatch => {
   return {
-    getTwitterData: (period, keyword) => {
-      const dates = convertToDates(period);
-
+    getTwitterData: (timePeriod, keyword) => {
       dispatch(setLoadingState(false));
-      dispatch(getTwitterData({ dates, keyword }));
+      dispatch(getTwitterData({ timePeriod, keyword }));
     },
 
-    onFilterChange: (period, keyword) => {
-      const dates = convertToDates(period);
-
+    onFilterChange: (timePeriod, keyword) => {
       dispatch(setLoadingState(false));
-      dispatch(onFilterChange(period, keyword));
-      dispatch(getTwitterData({ dates, keyword }));
+      dispatch(onFilterChange(timePeriod, keyword));
+      dispatch(getTwitterData({ timePeriod, keyword }));
     }
   };
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(Analytics);
+export default connect(mapStateToProps, mapDispatchToProps)(Analytics);
