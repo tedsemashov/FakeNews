@@ -42,8 +42,6 @@ export default class Analytics extends Component {
 
         <Hashtags />
 
-        <TrollsActivity/>
-
         <section className="topWrapper">
           <div className="topAllNewsWrapper">
             <div className="topNewsWrapper">
@@ -52,16 +50,6 @@ export default class Analytics extends Component {
 
             <div className="topNewsWrapper">
               <TopRetweetedNews />
-            </div>
-          </div>
-
-          <div className="topManipulativeNewsWrapper">
-            <div className="topNewsWrapper">
-              <TopManipulativeNews />
-            </div>
-
-            <div className="topNewsWrapper">
-              <TopManipulativeRetweets />
             </div>
           </div>
 
@@ -74,19 +62,33 @@ export default class Analytics extends Component {
           </div>
 
           <div className="influencersTrollsMentionedWrapper">
-            <TopTrolls />
-          </div>
-
-          <div className="influencersTrollsMentionedWrapper">
-            <TopTrollsMentioned />
-          </div>
-
-          <div className="influencersTrollsMentionedWrapper">
             <TopMentionedUsers />
           </div>
 
           <div className="influencersTrollsMentionedWrapper">
             <TopMentionedUsersInRetweets />
+          </div>
+        </section>
+
+        <TrollsActivity/>
+
+        <section className="topWrapper">
+          <div className="topManipulativeNewsWrapper">
+            <div className="topNewsWrapper">
+              <TopManipulativeNews />
+            </div>
+
+            <div className="topNewsWrapper">
+              <TopManipulativeRetweets />
+            </div>
+          </div>
+
+          <div className="influencersTrollsMentionedWrapper">
+            <TopTrolls />
+          </div>
+
+          <div className="influencersTrollsMentionedWrapper">
+            <TopTrollsMentioned />
           </div>
         </section>
 

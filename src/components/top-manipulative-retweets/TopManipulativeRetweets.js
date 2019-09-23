@@ -9,7 +9,11 @@ function renderContent(topManipulativeRetweets) {
   return(
     <React.Fragment>
       <div className="topNewsBlockWrapper">
-        {topManipulativeRetweets.map(({ text }) => <NewsBlock key={text} text={text} />)}
+        {topManipulativeRetweets.map(({ text, count, date, fnews_pred_mean }) => {
+          return (
+            <NewsBlock key={text} text={text} count={count} date={date} fakePersent={fnews_pred_mean} />
+          )
+        })}
       </div>
     </React.Fragment>
   );
