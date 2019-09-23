@@ -25,7 +25,7 @@ export function formatDate(date) {
 export function convertToDates(timePeriod) {
   switch(timePeriod) {
     case LAST_WEEK:
-      return [formatDate(moment().subtract(1, "w")), formatDate(moment())];
+      return [];
     case LAST_TWO_WEEKS:
       return [formatDate(moment().subtract(2, "w")), formatDate(moment())];
     case LAST_THREE_WEEKS:
@@ -35,7 +35,7 @@ export function convertToDates(timePeriod) {
     case LAST_QUOTER:
       return [formatDate(moment().subtract(4, "M")), formatDate(moment())];
     default: // [<date>, <date>]
-      return timePeriod;
+      return [];
   }
 }
 
