@@ -57,13 +57,19 @@ export default class Analytics extends Component {
             <TopInfluencers />
           </div>
 
-          <div className="influencersTrollsMentionedWrapper">
-            <TopFavoritedUsers />
-          </div>
+          {
+            false &&
+            <div className="influencersTrollsMentionedWrapper">
+              <TopFavoritedUsers />
+            </div>
+          }
 
-          <div className="influencersTrollsMentionedWrapper">
-            <TopMentionedUsers />
-          </div>
+          {
+            false &&
+            <div className="influencersTrollsMentionedWrapper">
+              <TopMentionedUsers />
+            </div>
+          }
 
           <div className="influencersTrollsMentionedWrapper">
             <TopMentionedUsersInRetweets />
@@ -87,9 +93,12 @@ export default class Analytics extends Component {
             <TopTrolls />
           </div>
 
-          <div className="influencersTrollsMentionedWrapper">
-            <TopTrollsMentioned />
-          </div>
+          {
+            false &&
+            <div className="influencersTrollsMentionedWrapper">
+              <TopTrollsMentioned />
+            </div>
+          }
         </section>
 
         <div className="footerWrapper">

@@ -37,9 +37,6 @@ export default class TopRetweetedNews extends React.Component {
           <Col sm={10} className='news-block-header'>
             <h2 className="retweeted-news-title">{title}</h2>
           </Col>
-          <Col sm={2} className="hint-text">
-            <span>Mark news as fake</span>
-          </Col>
         </Row>
         <div className="news">
           {_.map(topReTweetedNews, (news)=> {

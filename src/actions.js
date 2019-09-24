@@ -18,14 +18,14 @@ export const getTwitterData = ({ timePeriod, ...params }) => {
         dispatch(setTopNewsData(_.get(data, "top_news_tw", [])));
         dispatch(setTopRetweetsData(_.get(data, "top_rtweets", [])));
         dispatch(setTopInfluencersData(_.get(data, "top_influencers", {})));
-        dispatch(setTopFavoritedUsersData(_.get(data, "top_favorite_tw_users", {})));
-        dispatch(setTopMentionedUsersData(_.get(data, "top_active_users", {})));
+        // dispatch(setTopFavoritedUsersData(_.get(data, "top_favorite_tw_users", {})));
+        // dispatch(setTopMentionedUsersData(_.get(data, "top_active_users", {})));
         dispatch(setSelectedInfluencer(Object.keys(_.get(data, "top_influencers", {}))[0] || ""));
         dispatch(setSelectedMentionedUser(Object.keys(_.get(data, "top_active_users", {}))[0] || ""));
         dispatch(setTopRtMUsr(_.get(data, "top_rt_m_usr", {})));
         dispatch(setTopFnewsTw(_.get(data, "top_fnews_tw", [])));
         dispatch(setTopFnRtweets(_.get(data, "top_fn_rtweets", [])));
-        dispatch(setTopRtFnUsr(_.get(data, "top_rt_fn_usr", {})));
+        // dispatch(setTopRtFnUsr(_.get(data, "top_rt_fn_usr", {})));
         dispatch(setTopFnUsr(_.get(data, "top_fn_usr", {})));
         dispatch(setFnTwCountTs(_.get(data, "fn_tw_count_ts", {})));
         dispatch(setFnTwProbMeanTs(_.get(data, "fn_tw_prob_mean_ts", {})));

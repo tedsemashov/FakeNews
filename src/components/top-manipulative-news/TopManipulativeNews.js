@@ -23,7 +23,7 @@ const TopManipulativeNews = ({ topManipulativeNews }) => {
   return(
     <div>
       <div className="titleWrapperNews">
-        <SectionTitle value="TOP MANIPULATIVE NEWS" />
+        <SectionTitle value="TOP FAKE NEWS" />
       </div>
       {_.isEmpty(topManipulativeNews) ? (<div className="topNewsBlockWrapper"><NoData /></div>) : renderContent(topManipulativeNews)}
     </div>

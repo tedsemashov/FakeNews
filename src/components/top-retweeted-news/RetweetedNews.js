@@ -25,7 +25,7 @@ const RetweetedNews = ({ topRetweetedNews }) => {
   return (
     <div>
       <div className="titleWrapperNews">
-        <SectionTitle value="TOP RETWEETED NEWS" />
+        <SectionTitle value="TOP RETWEETS" />
       </div>
       {_.isEmpty(topRetweetedNews) ? (<div className="topNewsBlockWrapper"><NoData /></div>) : renderContent(topRetweetedNews)}
     </div>
