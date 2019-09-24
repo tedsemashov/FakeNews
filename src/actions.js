@@ -6,7 +6,7 @@ import * as constants from './constants';
 
 export const getTwitterData = ({ timePeriod, ...params }) => {
   return (dispatch) => {
-    const dates = convertToDates(timePeriod, { defaultBlank: true });
+    const dates = convertToDates(timePeriod);
     const headers = { "Content-Type": "application/json" };
 
     axios.post(constants.TARGET_URL, {...constants.BODY_POST, ...params, dates}, { headers })
