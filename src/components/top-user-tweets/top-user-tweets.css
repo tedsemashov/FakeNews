@@ -207,3 +207,14 @@
 .top-user-tweets .tweet:first-child {
   padding-top: 0;
 }
+
+.top-user-tweets .heading-label {
+  font-size: 16px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #030303;
+  text-transform: uppercase;
+}

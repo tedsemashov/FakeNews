@@ -105,6 +105,7 @@ export default class TopInfluencers extends React.Component {
 
             <Col className="tweets-list-container pr-0" sm={6}>
               <div className="tweets-list">
+                <h5 className="heading-label">Top tweets</h5>
                 {_.isEmpty(tweetsList) ? <NoData /> : tweetsList}
               </div>
             </Col>

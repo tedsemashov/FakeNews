@@ -136,6 +136,7 @@ export default class TopUserTweets extends React.Component {
             </Col>
             <Col className="tweets-layout" sm={6}>
               <div className="tweets-list">
+                <h5 className="heading-label">Top tweets</h5>
                 {_.isEmpty(tweetsList) ? "No data" : tweetsList}
               </div>
             </Col>
