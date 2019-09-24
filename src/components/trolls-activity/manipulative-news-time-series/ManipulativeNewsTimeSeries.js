@@ -44,7 +44,7 @@ export default class ManipulativeNewsTimeSeries extends React.Component {
     this.valueAxis.cursorTooltipEnabled = true;
 
     this.chart.legend = new am4charts.Legend();
-    this.chart.legend.labels.template.text = "Number of manipulative news";
+    this.chart.legend.labels.template.text = "Number of fake news";
     this.chart.legend.labels.template.fill = am4core.color("#808080");
     this.chart.legend.markers.template.width = 12;
     this.chart.legend.markers.template.height = 12;
