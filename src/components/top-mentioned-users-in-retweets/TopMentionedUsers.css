@@ -191,3 +191,14 @@
   letter-spacing: -0.5px;
   color: #42576a;
 }
+
+.top-mentioned-users-in-retweets .heading-label {
+  font-size: 16px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #030303;
+  text-transform: uppercase;
+}

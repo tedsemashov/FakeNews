@@ -95,6 +95,7 @@ export default class TopMentionedUsersInRetweets extends React.Component {
 
             <Col className="tweets-list-container pr-0" sm={6}>
               <div className="tweets-list">
+                <h5 className="heading-label">Top retweets</h5>
                 {_.isEmpty(tweetsList) ? <NoData /> : tweetsList}
               </div>
             </Col>
