@@ -116,10 +116,6 @@ export default class TopUserTweets extends React.Component {
         <Container className="section-content" fluid>
           <Row>
             <Col className="users-list" sm={6}>
-              <Row className="m-0 container-heading">
-                <Col sm={{ offset: 9, span: 3}}>Mark fake user</Col>
-              </Row>
-
               <div className="users-container">
                 {
                   !_.isEmpty(usersList) &&

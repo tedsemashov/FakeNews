@@ -35,9 +35,6 @@ export default class TopNews extends React.Component {
           <Col sm={10} className='news-block-header'>
             <h2>{title}</h2>
           </Col>
-          <Col sm={2} className="hint-text">
-            <span>Mark news as fake</span>
-          </Col>
         </Row>
         {_.map(topNewsList, (news)=> {
           const processing = _.includes(topNewsProcessing, news.id_txt);
