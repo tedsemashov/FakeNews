@@ -227,3 +227,14 @@
 .top-trolls-mentioned .button-view + .button-view {
   margin-left: 10px;
 }
+
+.top-trolls-mentioned .heading-label {
+  font-size: 16px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #030303;
+  text-transform: uppercase;
+}
