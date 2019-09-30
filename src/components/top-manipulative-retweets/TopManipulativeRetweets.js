@@ -23,7 +23,7 @@ const TopManipulativeRetweets = ({ topManipulativeRetweets }) => {
   return(
     <div>
       <div className="titleWrapperNews">
-        <SectionTitle value="TOP MANIPULATIVE RETWEETS" />
+        <SectionTitle value="TOP RETWEETS" />
       </div>
       {_.isEmpty(topManipulativeRetweets) ? (<div className="topNewsBlockWrapper"><NoData /></div>) : renderContent(topManipulativeRetweets)}
     </div>
