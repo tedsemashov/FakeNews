@@ -1,5 +1,3 @@
-export const convertNumbers = num => {
-  return Math.abs(num) > 999
-    ? Math.sign(num) * (Math.abs(num) / 1000).toFixed(1) + 'K'
-    : Math.sign(num) * Math.abs(num);
-};
+import {format} from "d3-format";
+
+export const convertNumbers = (num) => format(".2s")(num);
