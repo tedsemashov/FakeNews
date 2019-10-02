@@ -16,11 +16,11 @@ class TrollsActivity extends React.Component {
           </div>
           <div className='trollsChartsWrapper'>
             <div className='trollsTimeSeries'>
-              <p className='topTrollsWorldHeader'> Manipulative News Amount Time Series</p>
+              <p className='topTrollsWorldHeader'>Fake News Amount Time Series</p>
               <ManipulativeNewsTimeSeries/>
             </div>
             <div className='trollsProbTimeSeries'>
-              <p className='topTrollsWorldHeader'>Manipulative News Probability Time Series</p>
+              <p className='topTrollsWorldHeader'>Fake News Probability Time Series</p>
               <ManipulativeNewsProbTimeSeries/>
             </div>
           </div>
