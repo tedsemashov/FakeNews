@@ -2,7 +2,7 @@
 export * from "./constants/expertsConstants";
 
 // analytics constants;
-export const TARGET_URL = "http://18.222.107.208:8080/get_results/";
+export const TARGET_URL = "http://18.191.23.167:8080/get_results/";
 export const PROXY_URL = "https://cors-anywhere.herokuapp.com/";
 export const BODY_POST = {
   results_names_list: [
