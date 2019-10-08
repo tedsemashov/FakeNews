@@ -4,6 +4,8 @@ import classNames from "classnames";
 import Tooltip from "react-bootstrap/Tooltip";
 import OverlayTrigger from "react-bootstrap/OverlayTrigger";
 
+import FixedKeywords from "./../../fixed-keywords";
+
 import "./search.css";
 import CloseImage from "../../../images/header/close@3x.png";
 
@@ -44,13 +46,13 @@ export default class Search extends React.Component {
   }
 
   onClick() {
-    this.setState({keyword: ""});
-    this.props.onChange(this.state.keyword || DEFAULT_KEYWORD);
+    const { keyword } = this.state;
+
+    this.setState({keyword: "", }, () => this.props.onChange(keyword || DEFAULT_KEYWORD));
   }
 
   onReset() {
-    this.setState({keyword: ""});
-    this.props.onChange(DEFAULT_KEYWORD);
+    this.setState({keyword: ""}, () => this.props.onChange(DEFAULT_KEYWORD));
   }
 
   render() {
@@ -78,6 +80,8 @@ export default class Search extends React.Component {
           <input type="text" className={className} placeholder={placeholder} value={this.state.keyword} onChange={this.onChange} onKeyPress={this.onKeyPress}/>
           <img className="closeImg" src={require('../../../images/header/search@3x.png')} alt="Search" onClick={this.onClick} />
         </div>
+
+        <FixedKeywords />
       </div>
     );
   }

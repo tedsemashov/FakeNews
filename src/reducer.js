@@ -38,6 +38,7 @@ const initialState = {
   keyword: DEFAULT_KEYWORD,
   top_favorite_tweets: [],
   tweets_count_ts: {},
+  kw_links: [],
   fakeUsers: [
     {
       title: 'Trolls',
@@ -321,6 +322,11 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         fn_tw_prob_mean_ts: action.fn_tw_prob_mean_ts
+      };
+    case constants.SET_KW_LINKS:
+      return {
+        ...state,
+        kw_links: action.kw_links
       };
     default:
       return state;

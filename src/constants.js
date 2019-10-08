@@ -52,3 +52,4 @@ export const SET_TOP_RT_FN_USR="SET_TOP_RT_FN_USR"; // top_rt_fn_usr
 export const SET_TOP_FN_USR="SET_TOP_FN_USR"; // top_fn_usr
 export const SET_FN_TW_COUNT_TS="SET_FN_TW_COUNT_TS"; // fn_tw_count_ts
 export const SET_FN_TW_PROB_MEAN_TS="SET_FN_TW_PROB_MEAN_TS"; // fn_tw_prob_mean_ts
+export const SET_KW_LINKS = "SET_KW_LINKS";
