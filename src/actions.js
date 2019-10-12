@@ -29,6 +29,7 @@ export const getTwitterData = ({ timePeriod, ...params }) => {
         dispatch(setTopFnUsr(_.get(data, "top_fn_usr", {})));
         dispatch(setFnTwCountTs(_.get(data, "fn_tw_count_ts", {})));
         dispatch(setFnTwProbMeanTs(_.get(data, "fn_tw_prob_mean_ts", {})));
+        dispatch(setKwLinks(_.get(data, "kw_links", [])));
         dispatch(setLoadingState(true));
       });
   }
@@ -184,6 +185,13 @@ export function setFnTwProbMeanTs(data) {
   return {
     type: constants.SET_FN_TW_PROB_MEAN_TS,
     fn_tw_prob_mean_ts: data
+  };
+}
+
+export function setKwLinks(data) {
+  return {
+    type: constants.SET_KW_LINKS,
+    kw_links: data
   };
 }
 

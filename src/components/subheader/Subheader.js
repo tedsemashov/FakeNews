@@ -1,20 +1,32 @@
 import React from "react";
 import moment from "moment";
 import _ from "lodash";
+import classNames from "classnames";
+import {Container, Row, Col} from "react-bootstrap";
 
 import Section from "./section/Section";
 import Dropdown from "../dropdown";
 import Search from "./search-input/Search";
+// import DatePicker from "./date-picker/DatePicker";
 
-import "./subheader.css";
+import "./subheader.scss";
 
+export const TODAY_PERIOD = "TODAY";
+export const ONE_DAY_PERIOD = "ONE DAY";
+export const TREE_DAYS_PERIOD = "THREE DAYS";
 export const LAST_WEEK = "LAST WEEK";
 export const LAST_TWO_WEEKS = "LAST TWO WEEKS";
 export const LAST_THREE_WEEKS = "LAST THREE WEEKS";
 export const LAST_MONTH = "LAST MONTH";
 export const LAST_QUOTER = "LAST QUARTER";
 
-export const DEFAULT_PERIOD = LAST_WEEK;
+export const DEFAULT_PERIOD = TODAY_PERIOD;
+export const TIME_PERIODS = [
+  TODAY_PERIOD,
+  ONE_DAY_PERIOD,
+  TREE_DAYS_PERIOD,
+  LAST_WEEK
+];
 
 export const DATE_FORMAT = "YYYY-MM-DD";
 
@@ -24,8 +36,14 @@ export function formatDate(date) {
 
 export function convertToDates(timePeriod, { defaultBlank } = {}) {
   switch(timePeriod) {
+    case TODAY_PERIOD:
+      return [formatDate(moment()), formatDate(moment())];
+    case ONE_DAY_PERIOD:
+      return [formatDate(moment().subtract(1, "d")), formatDate(moment())];
+    case TREE_DAYS_PERIOD:
+      return [formatDate(moment().subtract(3, "d")), formatDate(moment())];
     case LAST_WEEK:
-      return defaultBlank ? [] : [formatDate(moment().subtract(1, "w")), formatDate(moment())];
+      return [formatDate(moment().subtract(1, "w")), formatDate(moment())];
     case LAST_TWO_WEEKS:
       return [formatDate(moment().subtract(2, "w")), formatDate(moment())];
     case LAST_THREE_WEEKS:
@@ -37,6 +55,14 @@ export function convertToDates(timePeriod, { defaultBlank } = {}) {
     default: // [<date>, <date>]
       return defaultBlank ? [] : timePeriod;
   }
+}
+
+export function convertToTimePeriod(period) {
+  if(!_.isArray(period)) return period;
+
+  const [startDate, endDate] = period;
+
+  return [formatDate(startDate), formatDate(endDate)];
 }
 
 export default class Subheader extends React.Component {
@@ -70,6 +96,14 @@ export default class Subheader extends React.Component {
     document.addEventListener('keyup', this.handleEscapePress);
   }
 
+  periodLabel() {
+    const { timePeriod } = this.props;
+
+    if(!_.isArray(timePeriod)) return timePeriod;
+
+    return timePeriod.join(" - ");
+  }
+
   handleClickOutside(event) {
     if (this.wrapperRef && !this.wrapperRef.contains(event.target) && this.state.togglePeriod) {
       this.toggleTimePeriod();
@@ -83,7 +117,7 @@ export default class Subheader extends React.Component {
   };
 
   onPeriodChange(period) {
-    this.setState({ togglePeriod: false }, () => this.props.onFilterChange(period, this.props.keyword));
+    this.setState({ togglePeriod: false }, () => this.props.onFilterChange(convertToTimePeriod(period), this.props.keyword));
   }
 
   onKeywordChange(keyword) {
@@ -99,32 +133,41 @@ export default class Subheader extends React.Component {
     this.props.onFilterChange(timePeriod, keyword, emotion);
   }
 
+  // <div className="period-calendar">
+  //   <DatePicker timePeriod={timePeriod} onChange={this.onPeriodChange} />
+  // </div>
   renderPeriod() {
     if(!this.state.togglePeriod) return null;
 
     const { timePeriod } = this.props;
-    const periods = [
-      LAST_WEEK,
-      LAST_TWO_WEEKS,
-      LAST_MONTH,
-      LAST_QUOTER
-    ];
+    const grid = 12;// Math.max(2, Math.ceil(12 / TIME_PERIODS.length));
 
     return(
-      <div className="dropdownWrapper">
-        <div className="timeDropdownWrapper">
-          {_.map(periods, (period)=> {
-            const className = timePeriod === period ? "active" : "default";
+      <div className="dropdownWrapper timeDropdownWrapper">
+        <div className="dropdown-container">
+          <Container fluid>
+            <Row>
+              {_.map(TIME_PERIODS, (period)=> {
+                const className = classNames("dropdownInput", "default", { active: timePeriod === period, default: timePeriod !== period });
+                const onClick = () => this.onPeriodChange(period);
 
-            return <div key={period} className={className} onClick={() => this.onPeriodChange(period)}>{period}</div>
-          })}
+                return(
+                  <Col key={period} sm={grid}>
+                    <div className={className} onClick={onClick}>
+                      {period}
+                    </div>
+                  </Col>
+                );
+              })}
+            </Row>
+          </Container>
         </div>
       </div>
     );
   }
 
   render() {
-    const { timePeriod, keyword } = this.props;
+    const { keyword } = this.props;
 
     return(
       <React.Fragment>
@@ -152,7 +195,7 @@ export default class Subheader extends React.Component {
                 placeholder="Select time period"
                 title="Time Period"
                 onClick={this.toggleTimePeriod}
-                text={timePeriod}
+                text={this.periodLabel()}
                 />
                 {this.renderPeriod()}
             </div>

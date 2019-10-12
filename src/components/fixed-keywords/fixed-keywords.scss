@@ -1,0 +1,24 @@
+.fixed-keywords {
+  .fixed-link {
+    padding: 0 5px;
+    border: none;
+    background: none;
+    font-size: 15px;
+    font-weight: 600;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #505050;
+
+    &:hover {
+      color: #505050;
+      text-decoration: underline;
+    }
+
+    &.active {
+      text-decoration: underline;
+      color: #404040;
+    }
+  }
+}
