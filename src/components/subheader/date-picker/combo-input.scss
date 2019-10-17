@@ -1,0 +1,127 @@
+.combo-date-range-input {
+  margin-top: 5px;
+  border-top: 1px solid rgba(#a0a0a0, 0.28);
+
+  .heading-label {
+    padding: 16px 20px 0;
+    font-size: 16px;
+    font-weight: normal;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+  }
+
+  .DateRangePicker {
+    .DateRangePickerInput {
+      display: flex;
+      justify-content: space-between;
+
+      .DateRangePickerInput_arrow {
+        width: auto;
+        display: flex;
+        flex: 1;
+        align-items: center;
+        padding: 0 3px;
+        color: #1f1f1f;
+      }
+
+      .DateInput {
+        width: auto;
+        display: flex;
+        flex: 8;
+
+        .DateInput_fang {
+          display: none;
+        }
+
+        .DateInput_input {
+          padding: 10px 10px;
+          font-size: 18px;
+          font-weight: 900;
+          font-stretch: normal;
+          font-style: normal;
+          line-height: normal;
+          letter-spacing: normal;
+          color: #1f1f1f;
+
+          &::placeholder {
+            color: rgba(#1f1f1f, 0.6);
+          }
+
+          &.DateInput_input__focused {
+            border-color: #000000;
+          }
+        }
+      }
+    }
+
+    .DateRangePicker_picker {
+      .DayPicker {
+        .DayPickerNavigation_button {
+          border: none;
+        }
+
+        .DayPicker_weekHeader {
+          .DayPicker_weekHeader_li {
+            font-size: 14px;
+            font-weight: bold;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: normal;
+            letter-spacing: -0.11px;
+            color: #1f1f1f;
+
+            small {
+              font-size: inherit;
+              font-weight: inherit;
+            }
+          }
+        }
+
+        .CalendarMonthGrid_month__horizontal:not(.CalendarMonthGrid_month__hidden) {
+          &+ .CalendarMonthGrid_month__horizontal {
+            .CalendarMonth {
+              .CalendarMonth_caption {
+                text-align: left;
+              }
+            }
+          }
+
+          .CalendarMonth {
+            .CalendarMonth_caption {
+              text-align: right;
+              padding-left: 7px;
+              padding-right: 11px;
+            }
+
+            .CalendarDay {
+              border: none;
+              font-size: 14px;
+              font-weight: normal;
+              font-stretch: normal;
+              font-style: normal;
+              line-height: normal;
+              letter-spacing: -0.13px;
+              color: #000000;
+
+              &.CalendarDay__selected {
+                background-color: #1f1f1f;
+                color: #ffffff;
+              }
+
+              &.CalendarDay__blocked_out_of_range {
+                color: rgba(#000000, 0.5);
+              }
+
+              &.CalendarDay__hovered_span, &.CalendarDay__selected_span {
+                background-color: rgba(#1f1f1f, 0.1);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

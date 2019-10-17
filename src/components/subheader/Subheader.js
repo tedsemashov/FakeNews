@@ -8,6 +8,7 @@ import Section from "./section/Section";
 import Dropdown from "../dropdown";
 import Search from "./search-input/Search";
 // import DatePicker from "./date-picker/DatePicker";
+import ComboInput from "./date-picker/ComboInput";
 
 import "./subheader.scss";
 
@@ -101,7 +102,7 @@ export default class Subheader extends React.Component {
 
     if(!_.isArray(timePeriod)) return timePeriod;
 
-    return timePeriod.join(" - ");
+    return timePeriod.join("  -  ");
   }
 
   handleClickOutside(event) {
@@ -162,6 +163,8 @@ export default class Subheader extends React.Component {
             </Row>
           </Container>
         </div>
+
+        <ComboInput key={typeof(timePeriod)} timePeriod={timePeriod} onChange={this.onPeriodChange} />
       </div>
     );
   }
