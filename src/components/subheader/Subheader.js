@@ -42,7 +42,7 @@ export function convertToDates(timePeriod, { defaultBlank } = {}) {
     case ONE_DAY_PERIOD:
       return [formatDate(moment().subtract(1, "d")), formatDate(moment())];
     case TREE_DAYS_PERIOD:
-      return [formatDate(moment().subtract(3, "d")), formatDate(moment())];
+      return [formatDate(moment().subtract(2, "d")), formatDate(moment())];
     case LAST_WEEK:
       return [formatDate(moment().subtract(1, "w")), formatDate(moment())];
     case LAST_TWO_WEEKS:
