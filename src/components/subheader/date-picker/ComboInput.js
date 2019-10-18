@@ -33,6 +33,7 @@ export default class ComboInput extends React.Component {
 
     this.onDatesChange = this.onDatesChange.bind(this);
     this.onClose = this.onClose.bind(this);
+    this.onIconClick = this.onIconClick.bind(this);
   }
 
   onClose({startDate, endDate}) {
@@ -42,6 +43,13 @@ export default class ComboInput extends React.Component {
   }
 
   onDatesChange({startDate, endDate}) { this.setState({ startDate, endDate }) }
+
+  onIconClick() {
+    const currentFocus = this.state.focused;
+    const focused = currentFocus ? null : "startDate";
+
+    this.setState({ focused });
+  }
 
   render() {
     const { focused, startDate, endDate } = this.state;
@@ -66,9 +74,10 @@ export default class ComboInput extends React.Component {
           firstDayOfWeek={1}
           isOutsideRange={(day) => day > moment()}
           noBorder
+          readOnly
           initialVisibleMonth={() => moment().subtract(1, "month")}
           hideKeyboardShortcutsPanel
-          customArrowIcon={<FontAwesomeIcon icon={faArrowRight} />}
+          customArrowIcon={<FontAwesomeIcon icon={faArrowRight} onClick={this.onIconClick} />}
           minimumNights={0}
           onClose={this.onClose}
           verticalSpacing={0}
