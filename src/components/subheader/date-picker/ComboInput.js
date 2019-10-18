@@ -74,8 +74,7 @@ export default class ComboInput extends React.Component {
           firstDayOfWeek={1}
           isOutsideRange={(day) => day > moment()}
           noBorder
-          readOnly
-          initialVisibleMonth={() => moment().subtract(1, "month")}
+          initialVisibleMonth={() => (endDate ? moment(endDate) : moment()).subtract(1, "month")}
           hideKeyboardShortcutsPanel
           customArrowIcon={<FontAwesomeIcon icon={faArrowRight} onClick={this.onIconClick} />}
           minimumNights={0}
