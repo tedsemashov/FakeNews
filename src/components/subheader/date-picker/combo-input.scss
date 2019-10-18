@@ -37,7 +37,7 @@
         }
 
         .DateInput_input {
-          padding: 10px 10px;
+          padding: 10px;
           font-size: 18px;
           font-weight: 900;
           font-stretch: normal;
@@ -46,8 +46,18 @@
           letter-spacing: normal;
           color: #1f1f1f;
 
+          &:focus {
+            outline: none;
+          }
+
           &::placeholder {
             color: rgba(#1f1f1f, 0.6);
+            line-height: normal;
+            font-size: 16px;
+            font-stretch: normal;
+            font-style: normal;
+            letter-spacing: normal;
+            color: #1f1f1f;
           }
 
           &.DateInput_input__focused {
