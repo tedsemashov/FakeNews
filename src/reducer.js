@@ -169,6 +169,7 @@ const rootReducer = (state = initialState, action) => {
         top_rt_users_tw: _.get(action, 'top_rt_users_tw', {}),
         top_users_tw: _.get(action, 'top_users_tw', {}),
         fn_users: _.get(action, 'fn_users', []),
+        kw_links: []
       };
     case constants.TOPUSERTWEETS_MARK_AS_FAKE:
       return {
