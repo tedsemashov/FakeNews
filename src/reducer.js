@@ -3,7 +3,6 @@ import _ from "lodash";
 import * as constants from './constants';
 import { DEFAULT_KEYWORD } from "./components/subheader/search-input/Search";
 import { DEFAULT_PERIOD } from "./components/subheader/Subheader";
-import {SET_MANAGE_DATA} from "./constants";
 
 const USER_SESSION_KEY = "currentUser";
 

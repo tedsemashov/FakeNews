@@ -1,0 +1,267 @@
+.topTrollsContainer {
+  width: 1180px;
+  margin: 0 auto;
+
+  .user-row {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.12);
+    height: 100px;
+    cursor: pointer;
+  }
+
+  .user-avatar {
+    min-width: 60px;
+    width: 60px;
+    height: 60px;
+    border-radius: 60px;
+    margin-top: 15px;
+    vertical-align: middle;
+    border-style: none;
+  }
+
+  .user-name {
+    font-size: 18px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    height: 22px;
+    margin: 20px 0 0 16px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .user-nickname {
+    height: 22px;
+    font-size: 18px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #000000;
+    margin: 6px 0 0 16px
+  }
+
+  .slick-slider {
+    position: relative;
+  }
+
+  .slick-arrow {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: auto;
+    height: auto;
+    width: auto;
+    text-align: center;
+    font-size: 18px;
+    line-height: normal;
+    transform: none;
+    color: #ffffff;
+    z-index: 10;
+  }
+
+  .users-container:hover .slick-arrow {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+
+  .slick-prev {
+    top: 0;
+  }
+
+  .slick-prev:before {
+    display: none;
+  }
+
+  .slick-next {
+    bottom: 0;
+  }
+
+  .slick-next:before {
+    display: none;
+  }
+
+  .accountSection {
+    position: relative;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    box-shadow: 1px 1px 0 0 rgba(0, 0, 0, 0.12);
+    margin-top: 0;
+  }
+
+  .user-avatar-col {
+    flex-basis: 60px;
+  }
+
+  .user-row.isSelected {
+    background: rgba(0, 0, 0, 0.12);
+  }
+
+  .btnTweets {
+    width: 56px;
+    height: 35px;
+    flex: 0 0 56px;
+  }
+
+  .btnFollowers {
+    width: 67px;
+    height: 35px;
+    flex: 0 0 67px;
+  }
+
+  .buttonsTweetFollowers {
+    border-radius: 3px;
+    background-color: #e0e0e0;
+    border: none;
+    font-size: 12px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.08;
+    letter-spacing: -0.09px;
+    color: #000000;
+    font-weight: 900;
+    margin-right: 10px;
+    padding: 5px;
+  }
+
+  .btnFakeNews {
+    flex: 0 0 75px;
+    width: 75px;
+    height: 35px;
+    border-radius: 3px;
+    border: none;
+    font-size: 12px;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: 1.08;
+    letter-spacing: -0.09px;
+    color: #ffffff;
+    font-weight: 900;
+    padding: 5px;
+    background-color: #d0021b;
+  }
+
+  .buttons {
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding-left: 0;
+    padding-top: 24px;
+    padding-right: 20px;
+  }
+
+  .tweet-meta {
+    margin-bottom: 3px;
+    font-size: 15px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: -0.5px;
+    color: #42576a;
+  }
+
+  .tweets-list {
+    margin: 5px;
+    padding: 19px 43px;
+    display: flex;
+    width: 100%;
+    height: 390px;
+    overflow: hidden;
+    overflow-y: auto;
+    border-radius: 4px;
+    box-shadow: 0 8px 13px 0 rgba(0, 0, 0, 0.16);
+    flex-direction: column;
+    color: #000;
+  }
+
+  .section-content {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .tweet-body a {
+    color: #000000;
+  }
+
+  .tweet-row {
+    padding: 26px 0 17px;
+    border-bottom: 1px solid #e1e1e1;
+  }
+
+  .tweet-row:first-child {
+    padding-top: 0;
+  }
+
+  .heading-label {
+    font-size: 16px;
+    font-weight: 900;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    color: #030303;
+    text-transform: uppercase;
+  }
+
+}
+
+.topTrollsWrapper {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.topTrollsSection {
+  height: 100%;
+}
+
+.topTrollsSectionCharts {
+  width: 50%;
+  height: 100%;
+}
+
+.topTrollsSectionBlock {
+  width: 100%;
+  height: 50%;
+  display: flex;
+}
+
+.topTrollsSectionAge {
+  width: 100%;
+  height: 38%;
+}
+
+.topTrollsCharts {
+  height: 100%;
+  width: 50%;
+}
+
+.topTrollsWorldHeader {
+  font-size: 16px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #030303;
+}
+
+.topTrollsAgeHeader {
+  font-size: 16px;
+  font-weight: 900;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: normal;
+  letter-spacing: normal;
+  color: #030303;
+  margin-top: 50px;
+}
