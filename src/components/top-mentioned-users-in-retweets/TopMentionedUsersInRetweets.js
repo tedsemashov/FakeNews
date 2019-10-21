@@ -26,6 +26,12 @@ export function PrevArrow({ currentSlide, slideCount, ...props }) {
 }
 
 export default class TopMentionedUsersInRetweets extends React.Component {
+  autoSelectedUser = (scope, selection) => {
+    const selected = selection || _.keys(scope)[0];
+
+    return scope.hasOwnProperty(selected) ? selected : _.keys(scope)[0];
+  };
+
   renderTweets = (tweet, index) => {
     return(
       <div className="tweet-row" key={index}>
@@ -42,11 +48,21 @@ export default class TopMentionedUsersInRetweets extends React.Component {
     this.onUserChange = this.onUserChange.bind(this);
   }
 
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    const selected = this.state.user;
+
+    if(_.isNil(selected) || this.props.top_rt_m_usr.hasOwnProperty(selected)) return;
+
+    this.setState({
+      user: this.autoSelectedUser(this.props.top_rt_m_usr, selected)
+    });
+  }
+
   onUserChange(user) { this.setState({ user: user.slice(1, user.length) }); }
 
   render() {
     const { top_rt_m_usr } = this.props;
-    const selectedUser = this.state.user || _.keys(top_rt_m_usr)[0];
+    const selectedUser = this.autoSelectedUser(top_rt_m_usr, this.state.user);
     const usersList = _.map(top_rt_m_usr, (userData, user) => {
       const isSelected = user === selectedUser;
       const className = classNames("user-row", { isSelected });
