@@ -6,6 +6,12 @@ import { DEFAULT_PERIOD } from "./components/subheader/Subheader";
 
 const USER_SESSION_KEY = "currentUser";
 
+export function convertToUserMention(username) {
+  if(!username) return "";
+
+  return username.charAt(0) === "@" ? username : `@${username}`;
+}
+
 const expertInitialState = {
   // manipulations;
   topMentionedUsersReTweetsProcessing: [],
@@ -24,7 +30,7 @@ const expertInitialState = {
   needTrainModel: false
 };
 
-const initialState = {
+export const initialState = {
   ...expertInitialState,
   user: {
     email: 'test@test.com',
@@ -96,70 +102,30 @@ const initialState = {
 
 const rootReducer = (state = initialState, action) => {
   switch (action.type) {
-    case constants.HASHTAGS_DATA:
+    case constants.SET_ANALYTICS_DATA:
+      const selectedInfluencer = convertToUserMention(Object.keys(_.get(action, "data.top_influencers", {}))[0]);
+      const selectedMentionedUser = convertToUserMention(Object.keys(_.get(action, "data.top_active_users", {}))[0]);
+
       return {
         ...state,
-        hashtags: action.hashtags
-      };
-    case constants.KEYWORD_DATA:
-      return {
-        ...state,
-        keyword: _.get(_.isEmpty(action.keyword) ? initialState : action, "keyword")
-      };
-    case constants.TOP_FAVORITE_TWEETS_DATA:
-      return {
-        ...state,
-        top_favorite_tweets: action.top_favorite_tweets
-      };
-    case constants.TWEETS_COUNT_TS_DATA:
-      return {
-        ...state,
-        tweets_count_ts: action.tweets_count_ts
-      };
-    case constants.SELECTED_INFLUENCER:
-      return {
-        ...state,
-        selectedInfluencer: action.value
-      };
-    case constants.MENTIONED_USER:
-      return {
-        ...state,
-        selectedMentionedUser: action.value
-      };
-    case constants.TOP_NEWS_DATA:
-      return {
-        ...state,
-        topNews: action.topNews
-      };
-    case constants.TOP_RETWEETED_NEWS:
-      return {
-        ...state,
-        topRetweetedNews: action.topRetweetedNews
-      };
-    case constants.LOADING_STATE:
-      return {
-        ...state,
-        isLoaded: action.isLoaded
-      };
-    case constants.TIME_PERIOD:
-      return {
-        ...state,
-        timePeriod: action.timePeriod
-      };
-    case constants.TOP_INFLUENCERS:
-      return {
-        ...state,
-        topInfluencers: action.topInfluencers
-      };
-    case constants.TOP_FAVORITED_USERS:
-      return {
-        ...state,
-        top_favorite_tw_users: action.favoritedUsers
-      };
-    case constants.TOP_MENTIONED_USERS:
-      return {
-        ...state,
-        topMentionedUsers: action.topMentionedUsers
+        hashtags: _.get(action, "data.hashtags", initialState.hashtags),
+        top_favorite_tweets: _.get(action, "data.top_favorite_tweets", initialState.top_favorite_tweets),
+        tweets_count_ts: _.get(action, "data.tweets_count_ts", initialState.tweets_count_ts),
+        topNews: _.get(action, "data.top_news_tw", initialState.topNews),
+        topRetweetedNews: _.get(action, "data.top_rtweets", initialState.topRetweetedNews),
+        topInfluencers: _.get(action, "data.top_influencers", initialState.topInfluencers),
+        // top_favorite_tw_users: _.get(action, "data.top_favorite_tw_users", initialState.top_favorite_tw_users),
+        // topMentionedUsers: _.get(action, "data.top_active_users", initialState.topMentionedUsers),
+        selectedInfluencer,
+        selectedMentionedUser,
+        top_rt_m_usr: _.get(action, "data.top_rt_m_usr", initialState.top_rt_m_usr),
+        top_fnews_tw: _.get(action, "data.top_fnews_tw", initialState.top_fnews_tw),
+        top_fn_rtweets: _.get(action, "data.top_fn_rtweets", initialState.top_fn_rtweets),
+        // top_rt_fn_usr: _.get(action, "data.top_rt_fn_usr", initialState.top_rt_fn_usr),
+        top_fn_usr: _.get(action, "data.top_fn_usr", initialState.top_fn_usr),
+        fn_tw_count_ts: _.get(action, "data.fn_tw_count_ts", initialState.fn_tw_count_ts),
+        fn_tw_prob_mean_ts: _.get(action, "data.fn_tw_prob_mean_ts", initialState.fn_tw_prob_mean_ts),
+        kw_links: _.get(action, "data.kw_links", initialState.kw_links)
       };
     case constants.EXPERT_SET_DATA:
       return {
@@ -170,6 +136,21 @@ const rootReducer = (state = initialState, action) => {
         top_users_tw: _.get(action, 'top_users_tw', {}),
         fn_users: _.get(action, 'fn_users', []),
         kw_links: []
+      };
+    case constants.KEYWORD_DATA:
+      return {
+        ...state,
+        keyword: _.get(_.isEmpty(action.keyword) ? initialState : action, "keyword")
+      };
+    case constants.LOADING_STATE:
+      return {
+        ...state,
+        isLoaded: action.isLoaded
+      };
+    case constants.TIME_PERIOD:
+      return {
+        ...state,
+        timePeriod: action.timePeriod
       };
     case constants.TOPUSERTWEETS_MARK_AS_FAKE:
       return {
@@ -288,46 +269,6 @@ const rootReducer = (state = initialState, action) => {
       return {
         ...state,
         userLoggedIn: true
-      };
-    case constants.SET_TOP_RT_M_USR:
-      return {
-        ...state,
-        top_rt_m_usr: action.top_rt_m_usr
-      };
-    case constants.SET_TOP_FNEWS_TW:
-      return {
-        ...state,
-        top_fnews_tw: action.top_fnews_tw
-      };
-    case constants.SET_TOP_FN_RTWEETS:
-      return {
-        ...state,
-        top_fn_rtweets: action.top_fn_rtweets
-      };
-    case constants.SET_TOP_RT_FN_USR:
-      return {
-        ...state,
-        top_rt_fn_usr: action.top_rt_fn_usr
-      };
-    case constants.SET_TOP_FN_USR:
-      return {
-        ...state,
-        top_fn_usr: action.top_fn_usr
-      };
-    case constants.SET_FN_TW_COUNT_TS:
-      return {
-        ...state,
-        fn_tw_count_ts: action.fn_tw_count_ts
-      };
-    case constants.SET_FN_TW_PROB_MEAN_TS:
-      return {
-        ...state,
-        fn_tw_prob_mean_ts: action.fn_tw_prob_mean_ts
-      };
-    case constants.SET_KW_LINKS:
-      return {
-        ...state,
-        kw_links: action.kw_links
       };
     default:
       return state;

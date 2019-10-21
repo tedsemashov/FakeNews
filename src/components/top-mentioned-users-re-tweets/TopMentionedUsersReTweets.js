@@ -29,6 +29,12 @@ export function PrevArrow({ currentSlide, slideCount, ...props }) {
 }
 
 export default class TopMentionedUsersReTweets extends React.Component {
+  autoSelectedUser = (scope, selection) => {
+    const selected = selection || _.keys(scope)[0];
+
+    return scope.hasOwnProperty(selected) ? selected : _.keys(scope)[0];
+  };
+
   renderTweets = (tweet, index) => {
     return(
       <div className="tweet" key={index}>
@@ -44,6 +50,16 @@ export default class TopMentionedUsersReTweets extends React.Component {
 
     this.renderUser = this.renderUser.bind(this);
     this.renderTweets = this.renderTweets.bind(this);
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    const selected = this.state.user;
+
+    if(_.isNil(selected) || this.props.users.hasOwnProperty(selected)) return;
+
+    this.setState({
+      user: this.autoSelectedUser(this.props.users, selected)
+    });
   }
 
   renderButton(user) {
@@ -69,7 +85,7 @@ export default class TopMentionedUsersReTweets extends React.Component {
   renderUser(userData, user) {
     const isProcessing = _.includes(this.props.processing, user);
     const onSelect = () => this.setState({ user });
-    const selectedUser = this.state.user ||  _.keys(this.props.users)[0];
+    const selectedUser = this.autoSelectedUser(this.props.users, this.state.user);
     const isSelected = selectedUser === user;
     const className = classNames("user-row", { isSelected });
     const index = `tmurt-${user}-${isProcessing}`;
@@ -104,7 +120,7 @@ export default class TopMentionedUsersReTweets extends React.Component {
 
   render() {
     const { users } = this.props;
-    const user = this.state.user ||  _.keys(this.props.users)[0];
+    const user = this.autoSelectedUser(users, this.state.user);
     const usersList = _.map(users, this.renderUser);
     const tweetsList = _.get(users, [user, "rtweets"], []).map(this.renderTweets);
 
