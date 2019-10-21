@@ -59,11 +59,23 @@ export default class TopInfluencers extends React.Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
     const selected = this.state.user;
 
+    this.revampSliderHeight();
+
     if(_.isNil(selected) || this.props.topInfluencers.hasOwnProperty(selected)) return;
 
     this.setState({
       user: this.autoSelectedUser(this.props.topInfluencers, selected)
     });
+  }
+
+  revampSliderHeight() {
+    if(_.isEmpty(this.props.topInfluencers) || this.props.topInfluencers.length > 4) return;
+
+    const node = document.querySelector('.top-influencers .slick-track');
+
+    if(!node) return;
+
+    node.style.height = "auto";
   }
 
   onUserChange(user) { this.setState({ user: user.slice(1, user.length) }); }

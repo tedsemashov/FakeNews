@@ -55,11 +55,23 @@ export default class TopUserTweets extends React.Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
     const selected = this.state.user;
 
+    this.revampSliderHeight();
+
     if(_.isNil(selected) || this.props.users.hasOwnProperty(selected)) return;
 
     this.setState({
       user: this.autoSelectedUser(this.props.users, selected)
     });
+  }
+
+  revampSliderHeight() {
+    if(_.isEmpty(this.props.topInfluencers) || this.props.topInfluencers.length > 4) return;
+
+    const node = document.querySelector('.top-user-tweets .slick-track');
+
+    if(!node) return;
+
+    node.style.height = "auto";
   }
 
   renderButton(user) {

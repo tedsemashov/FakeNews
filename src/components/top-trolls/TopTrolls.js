@@ -15,7 +15,7 @@ import { convertNumbers } from "../../utils/convertNumbers";
 import { userAvatar } from "../../utils/avatar";
 import { convertLinks } from "../../utils/convertLinks";
 
-import './topTrolls.css';
+import './topTrolls.scss';
 
 export function NextArrow({ currentSlide, slideCount, ...props }) {
   const show = currentSlide + 4 < slideCount;
@@ -62,11 +62,23 @@ export default class TopTrolls extends React.Component {
   componentDidUpdate(prevProps, prevState, snapshot) {
     const { selected } = this.state;
 
+    this.revampSliderHeight();
+
     if(_.isNil(selected) || this.props.topTrolls.hasOwnProperty(selected)) return;
 
     this.setState({
       selected: this.autoSelectedUser(this.props.topTrolls, selected)
     });
+  }
+
+  revampSliderHeight() {
+    if(_.isEmpty(this.props.topTrolls) || this.props.topTrolls.length > 4) return;
+
+    const node = document.querySelector('.topTrollsContainer .slick-track');
+
+    if(!node) return;
+
+    node.style.height = "auto";
   }
 
   renderUser(userData, user) {
@@ -134,6 +146,7 @@ export default class TopTrolls extends React.Component {
                 {
                   !_.isEmpty(topTrollsList) &&
                   <Slider
+                    ref={(ref) => this.slider = ref}
                     infinite={false}
                     slidesToShow={4}
                     slidesToScroll={1}
