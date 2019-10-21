@@ -3,6 +3,7 @@ import _ from "lodash";
 import * as constants from './constants';
 import { DEFAULT_KEYWORD } from "./components/subheader/search-input/Search";
 import { DEFAULT_PERIOD } from "./components/subheader/Subheader";
+import {SET_MANAGE_DATA} from "./constants";
 
 const USER_SESSION_KEY = "currentUser";
 
@@ -135,6 +136,18 @@ const rootReducer = (state = initialState, action) => {
         top_rt_users_tw: _.get(action, 'top_rt_users_tw', {}),
         top_users_tw: _.get(action, 'top_users_tw', {}),
         fn_users: _.get(action, 'fn_users', []),
+        kw_links: []
+      };
+    case constants.SET_REPORTS_DATA:
+      // update applicable state for Reports page;
+      return {
+        ...state,
+        kw_links: []
+      };
+    case constants.SET_MANAGE_DATA:
+      // update applicable state for Manage page;
+      return {
+        ...state,
         kw_links: []
       };
     case constants.KEYWORD_DATA:

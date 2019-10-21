@@ -1,5 +1,7 @@
 // expert constants;
 export * from "./constants/expertsConstants";
+export * from "./constants/reports";
+export * from "./constants/manage";
 
 // analytics constants;
 export const TARGET_URL = "http://18.191.23.167:8080/get_results/";

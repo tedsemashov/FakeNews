@@ -1,0 +1,1 @@
+export const SET_MANAGE_DATA = "SET_MANAGE_DATA";
