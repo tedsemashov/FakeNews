@@ -28,6 +28,12 @@ export function PrevArrow({ currentSlide, slideCount, ...props }) {
 }
 
 export default class TopTrolls extends React.Component {
+  autoSelectedUser = (scope, selection) => {
+    const selected = selection || _.keys(scope)[0];
+
+    return scope.hasOwnProperty(selected) ? selected : _.keys(scope)[0];
+  };
+
   renderTweets = (tweet) => {
     return(
       <div className="tweet tweet-row" key={tweet.id}>
@@ -51,6 +57,16 @@ export default class TopTrolls extends React.Component {
 
     this.renderUser = this.renderUser.bind(this);
     this.renderTweets = this.renderTweets.bind(this);
+  }
+
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    const { selected } = this.state;
+
+    if(_.isNil(selected) || this.props.topTrolls.hasOwnProperty(selected)) return;
+
+    this.setState({
+      selected: this.autoSelectedUser(this.props.topTrolls, selected)
+    });
   }
 
   renderUser(userData, user) {
@@ -100,8 +116,8 @@ export default class TopTrolls extends React.Component {
   }
 
   render() {
-    const selected = this.state.selected || _.keys(this.props.topTrolls)[0];
     const { topTrolls } = this.props;
+    const selected = this.autoSelectedUser(topTrolls, this.state.selected);
     const topTrollsList = _.map(topTrolls, this.renderUser);
     const tweetsList = _.get(topTrolls, [selected, "top_tweets"], []).map(this.renderTweets);
 

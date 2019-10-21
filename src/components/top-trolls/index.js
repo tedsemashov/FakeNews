@@ -8,6 +8,4 @@ const mapStateToProps = state => {
   };
 };
 
-const mapDispatchToProps = () => ({});
-
-export default connect(mapStateToProps,mapDispatchToProps)(TopTrolls);
+export default connect(mapStateToProps)(TopTrolls);
