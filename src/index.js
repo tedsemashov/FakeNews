@@ -22,7 +22,7 @@ import 'react-confirm-alert/src/react-confirm-alert.css';
 
 import './assets/stylesheets/fonts.css';
 import './assets/stylesheets/confirm.css';
-import './index.css';
+import './index.scss';
 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)));

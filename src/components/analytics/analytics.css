@@ -1,14 +1,8 @@
-* {
-   margin: 0;
-   padding: 0;
-}
-
 .analytics-page {
   background: #fff;
 }
 
 .topWrapper {
-   width: 100%;
    background-color: #ffffff;
    padding-bottom: 60px;
    width: 1136px;

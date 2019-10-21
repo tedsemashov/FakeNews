@@ -23,13 +23,6 @@ export const setAnalyticsData = (data) => {
   };
 };
 
-export const setKeywordData = keyword => {
-  return {
-    type: constants.KEYWORD_DATA,
-    keyword
-  };
-};
-
 export const setLoadingState = loadingState => {
   return {
     type: constants.LOADING_STATE,
@@ -53,3 +46,5 @@ export const logInUser = (user) => {
 export * from "./actions/expert";
 export * from "./actions/filters";
 export * from "./actions/flashMessage";
+export * from "./actions/reports";
+export * from "./actions/manage";

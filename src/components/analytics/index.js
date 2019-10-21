@@ -17,7 +17,6 @@ const mapDispatchToProps = dispatch => {
       dispatch(setLoadingState(false));
       dispatch(getTwitterData({ timePeriod, keyword }));
     },
-
     onFilterChange: (timePeriod, keyword) => {
       dispatch(setLoadingState(false));
       dispatch(onFilterChange(timePeriod, keyword));
