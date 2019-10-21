@@ -1,0 +1,23 @@
+.under-construction-layout {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+
+  .under-construction {
+    background: #ffffff;
+    // Formula: 100% - <header> - <tabs, filters> - <footer>
+    height: calc(100% - 64px - 154px - 96px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h2 {
+      font-weight: 500;
+
+      .main-icon {
+        margin-right: 15px;
+        color: #df7600;
+      }
+    }
+  }
+}
