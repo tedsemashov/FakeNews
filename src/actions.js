@@ -16,6 +16,13 @@ export const getTwitterData = ({ timePeriod, ...params }) => {
   }
 };
 
+export const setKeywordData = keyword => {  
+  return {  
+    type: constants.KEYWORD_DATA, 
+    keyword 
+  };  
+};
+
 export const setAnalyticsData = (data) => {
   return {
     type: constants.SET_ANALYTICS_DATA,
