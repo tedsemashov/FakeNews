@@ -13,9 +13,9 @@ import ComboInput from "./date-picker/ComboInput";
 import "./subheader.scss";
 
 export const TODAY_PERIOD = "TODAY";
-export const ONE_DAY_PERIOD = "ONE DAY";
+export const ONE_DAY_PERIOD = "YESTERDAY";
 export const TREE_DAYS_PERIOD = "THREE DAYS";
-export const LAST_WEEK = "LAST WEEK";
+export const LAST_WEEK = "WEEK";
 export const LAST_TWO_WEEKS = "LAST TWO WEEKS";
 export const LAST_THREE_WEEKS = "LAST THREE WEEKS";
 export const LAST_MONTH = "LAST MONTH";
@@ -40,19 +40,19 @@ export function convertToDates(timePeriod, { defaultBlank } = {}) {
     case TODAY_PERIOD:
       return [formatDate(moment()), formatDate(moment())];
     case ONE_DAY_PERIOD:
-      return [formatDate(moment().subtract(1, "d")), formatDate(moment())];
+      return [formatDate(moment().subtract(1, "d")), formatDate(moment().subtract(1, "d"))];
     case TREE_DAYS_PERIOD:
-      return [formatDate(moment().subtract(3, "d")), formatDate(moment())];
+      return [formatDate(moment().subtract(3, "d")), formatDate(moment().subtract(1, "d"))];
     case LAST_WEEK:
-      return [formatDate(moment().subtract(1, "w")), formatDate(moment())];
+      return [formatDate(moment().subtract(1, "w")), formatDate(moment().subtract(1, "d"))];
     case LAST_TWO_WEEKS:
-      return [formatDate(moment().subtract(2, "w")), formatDate(moment())];
+      return [formatDate(moment().subtract(2, "w")), formatDate(moment().subtract(1, "d"))];
     case LAST_THREE_WEEKS:
-     return [formatDate(moment().subtract(3, "w")), formatDate(moment())];
+     return [formatDate(moment().subtract(3, "w")), formatDate(moment().subtract(1, "d"))];
     case LAST_MONTH:
-     return [formatDate(moment().subtract(1, "M")), formatDate(moment())];
+     return [formatDate(moment().subtract(1, "M")), formatDate(moment().subtract(1, "d"))];
     case LAST_QUOTER:
-      return [formatDate(moment().subtract(4, "M")), formatDate(moment())];
+      return [formatDate(moment().subtract(4, "M")), formatDate(moment().subtract(1, "d"))];
     default: // [<date>, <date>]
       return defaultBlank ? [] : timePeriod;
   }
