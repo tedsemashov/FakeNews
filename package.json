@@ -52,7 +52,7 @@
     "reselect": "^4.0.0",
     "slick-carousel": "^1.8.1",
     "typescript": "^3.6.4",
-    "xmldom": "^0.1.27"
+    "xmldom": "^0.6.0"
   },
   "scripts": {
     "start": "react-scripts start",
